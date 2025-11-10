@@ -1,13 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://b32mttqfycxyd"]
+[gd_scene load_steps=12 format=3 uid="uid://b32mttqfycxyd"]
 
 [ext_resource type="Script" uid="uid://craqyrf168y61" path="res://actors/player/player.gd" id="1_ilk7j"]
 [ext_resource type="Texture2D" uid="uid://cifpbcvsjmo6y" path="res://assets/player/player_body.png" id="1_nvxhs"]
+[ext_resource type="Texture2D" uid="uid://n5u6vyaj1v0w" path="res://assets/player/player_body_white.png" id="2_ax26v"]
+[ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="2_lsqbn"]
+
+[sub_resource type="Resource" id="Resource_6p1w3"]
+script = ExtResource("2_lsqbn")
+metadata/_custom_type_script = "uid://ck267f0n0aj0v"
+
+[sub_resource type="Gradient" id="Gradient_lsqbn"]
+colors = PackedColorArray(0, 0.945098, 0.952941, 0.690196, 0.0117647, 0.160784, 0.392157, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6p1w3"]
+gradient = SubResource("Gradient_lsqbn")
+
+[sub_resource type="Curve" id="Curve_15y17"]
+_data = [Vector2(0, 0.759453), 0.0, 0.0, 0, 0, Vector2(0.264113, 0.308835), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bop6h"]
+curve = SubResource("Curve_15y17")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a744p"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_bop6h")
+color_ramp = SubResource("GradientTexture1D_6p1w3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nvxhs"]
 radius = 30.1496
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ilk7j")
+controller = SubResource("Resource_6p1w3")
+
+[node name="ImpulseParticles" type="GPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("2_ax26v")
+process_material = SubResource("ParticleProcessMaterial_a744p")
 
 [node name="Body" type="Sprite2D" parent="."]
 texture = ExtResource("1_nvxhs")

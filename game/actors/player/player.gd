@@ -1,10 +1,14 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var impulse_particles: GPUParticles2D = $ImpulseParticles
 
 @export var controller: BaseController
-@export var impulse_acceleration: float = 1000.0
-@export var max_speed: float = 2500.0
+@export var impulse_acceleration: float = 500.0
+@export var max_speed: float = 1500.0
+
+# Instead of improving handling moments, have breaking power
+# be higher. Then use that when they're turning.
 
 
 func _physics_process(delta: float) -> void:
@@ -14,8 +18,10 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		var goal_velocity := direction * max_speed
 		velocity = velocity.move_toward(goal_velocity, impulse_acceleration * delta)
+		impulse_particles.emitting = true
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, impulse_acceleration * delta)
+		impulse_particles.emitting = false
 	
 	Vector.clamp_vector2_length(velocity, max_speed)
 	move_and_slide()

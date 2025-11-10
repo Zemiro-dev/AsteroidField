@@ -8,11 +8,14 @@
 	- [x] Enemy
 	- [x] Prop
 - [x] Add Test Terrain
-- [ ] Make Actual Player Sprites
-- [ ] Create Base Player Scene
-- [ ] Setup Basic Controls
-	- [ ] Movement
-	- [ ] Dash
-- [ ] Setup Player Movement
+- [x] Setup Git at some point
+- [x] Make Actual Player Sprites
+- [x] Create Base Player Scene
+- [x] Give Player Movement Particles
+- [x] Setup Basic Controls
+	- [x] Movement
+	- [x] Dash
+- [ ] Setup Player Movement via `move_and_collide`
+- [ ] Setup Player + Environment Collision
 - [ ] Convert logic to resources as necessary with enemies in mind
-- [ ] Setup Git at some point
+- [ ] Camera Dampening with Dash
