@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "7ed73e5f53b0149d",
+    "type": "split",
+    "children": [
+      {
+        "id": "5091e671fc442932",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "614d627dd8a51a05",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TODO.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TODO"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d47c773be6633735",
+    "type": "split",
+    "children": [
+      {
+        "id": "a8c13ff8c3f87040",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4dc1bcf8c9679c15",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "61ffcc2dd78aa33a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "990c0677f6289f88",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3caf8c8b3d671c45",
+    "type": "split",
+    "children": [
+      {
+        "id": "338847dab4e8fa8b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "49bfffd48bff7c01",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "readme.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for readme"
+            }
+          },
+          {
+            "id": "bd161ef9b81617ef",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "readme.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from readme"
+            }
+          },
+          {
+            "id": "392182693a385e9f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "e9dab8ddc411c2fb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "readme.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of readme"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "614d627dd8a51a05",
+  "lastOpenFiles": [
+    "game/world/debug/debug_world_a.tscn11540409572.tmp",
+    "game/actors/player/player.gd11490409148.tmp",
+    "game/actors/player/player.tscn11464674172.tmp",
+    "game/actors/player/player.gd.uid",
+    "game/actors/player/player.gd",
+    "game/project.godot11424905334.tmp",
+    "game/actors/player/player.tscn11351051684.tmp",
+    "game/actors/player/player.tscn11343485101.tmp",
+    "game/actors/player/player.tscn11322780431.tmp",
+    "game/actors/player/player.tscn11294641099.tmp",
+    "game/assets/player/player_body.png.import",
+    "game/assets/player/player_body_white.png",
+    "game/assets/player/player_body.png",
+    "assets/concept/player.svg.2025_11_09_21_40_55.0.svg",
+    "assets/concept/player.svg",
+    "assets/concept/test_background - Copy.svg",
+    "game/assets/debug/rock.png",
+    "docs/Physics.md",
+    "readme.md",
+    "docs/Player Structure.md",
+    "idea-stash.md",
+    "TODO.md",
+    "assets/concept/grid_background.png",
+    "game/assets/debug/grid_background.png",
+    "game/assets/debug/test_background.png",
+    "game/assets/debug/blue_ring.png",
+    "docs/Game Actors.md",
+    "docs/Entities and Interactions.md",
+    "docs/Colors.md"
+  ]
+}

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbuskrf64e2ou"]
+
+[ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
+[ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
+[ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="3_4pxye"]
+[ext_resource type="PackedScene" uid="uid://b32mttqfycxyd" path="res://actors/player/player.tscn" id="3_n85cx"]
+
+[sub_resource type="Resource" id="Resource_lsna4"]
+script = ExtResource("3_4pxye")
+metadata/_custom_type_script = "uid://ck267f0n0aj0v"
+
+[node name="DebugWorldA" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_n85cx")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(991, -22)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="Player" parent="." instance=ExtResource("3_n85cx")]
+collision_layer = 2
+controller = SubResource("Resource_lsna4")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-2, 0)

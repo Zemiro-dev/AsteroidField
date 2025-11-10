@@ -1,0 +1,18 @@
+- [x] Setup product resolution settings and resizing
+	- not super happy with it I'm still not sure how the new debug window works
+- [x] Make background grid for testing
+- [x] Create basic world scene with background
+- [x] Setup Physics Layers
+	- [x] Environment
+	- [x] Player
+	- [x] Enemy
+	- [x] Prop
+- [x] Add Test Terrain
+- [ ] Make Actual Player Sprites
+- [ ] Create Base Player Scene
+- [ ] Setup Basic Controls
+	- [ ] Movement
+	- [ ] Dash
+- [ ] Setup Player Movement
+- [ ] Convert logic to resources as necessary with enemies in mind
+- [ ] Setup Git at some point
