@@ -1,13 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://b32mttqfycxyd"]
+[gd_scene load_steps=14 format=3 uid="uid://b32mttqfycxyd"]
 
 [ext_resource type="Script" uid="uid://craqyrf168y61" path="res://actors/player/player.gd" id="1_ilk7j"]
 [ext_resource type="Texture2D" uid="uid://cifpbcvsjmo6y" path="res://assets/player/player_body.png" id="1_nvxhs"]
 [ext_resource type="Texture2D" uid="uid://n5u6vyaj1v0w" path="res://assets/player/player_body_white.png" id="2_ax26v"]
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="2_lsqbn"]
+[ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="3_6p1w3"]
 
 [sub_resource type="Resource" id="Resource_6p1w3"]
 script = ExtResource("2_lsqbn")
 metadata/_custom_type_script = "uid://ck267f0n0aj0v"
+
+[sub_resource type="Resource" id="Resource_15y17"]
+script = ExtResource("3_6p1w3")
+metadata/_custom_type_script = "uid://djf22au03k0mc"
 
 [sub_resource type="Gradient" id="Gradient_lsqbn"]
 colors = PackedColorArray(0, 0.945098, 0.952941, 0.690196, 0.0117647, 0.160784, 0.392157, 0)
@@ -34,6 +39,7 @@ radius = 30.1496
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ilk7j")
 controller = SubResource("Resource_6p1w3")
+player_move_and_collide = SubResource("Resource_15y17")
 
 [node name="ImpulseParticles" type="GPUParticles2D" parent="."]
 emitting = false

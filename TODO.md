@@ -15,7 +15,8 @@
 - [x] Setup Basic Controls
 	- [x] Movement
 	- [x] Dash
-- [ ] Setup Player Movement via `move_and_collide`
-- [ ] Setup Player + Environment Collision
+- [x] Setup Player Movement via `move_and_collide`
+- [x] Setup Player + Environment Collision
+- [ ] Investigate Player Movement via handling force and goal velocity
 - [ ] Convert logic to resources as necessary with enemies in mind
 - [ ] Camera Dampening with Dash
