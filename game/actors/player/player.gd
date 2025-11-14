@@ -7,14 +7,22 @@ class_name Player
 
 
 @export var controller: BaseController
+@export var steerable: BaseSteerable
+@export var direction_steering: DirectionSteeringStrategy
 @export var player_move_and_collide: PlayerMoveAndCollide
-@export var base_impulse_acceleration: float = 2000.0
-@export var base_max_speed: float = 1250.0
 @export var dash_multiplier: float = 6.0
-@export var overspeed_break_force: float = 10000.0
 
 # Instead of improving handling moments, have breaking power
 # be higher. Then use that when they're turning.
+
+
+func _ready() -> void:
+	steerable.steering_strategies.append(direction_steering)
+	dash_duration_timer.timeout.connect(
+		func():
+			steerable.power_multiplier = 1
+	)
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -25,41 +33,30 @@ func _physics_process(delta: float) -> void:
 	if is_dashing(): direction = direction.normalized()
 
 	if direction:
-		var goal_velocity := direction * get_max_speed()
-		var handling_dot := goal_velocity.normalized().dot(velocity.normalized())
-		var handling_impulse := get_impulse_acceleration() * (1.0 if handling_dot > 0 else 2.0)
-		var acceleration := seek(velocity, goal_velocity, handling_impulse)
-		velocity += acceleration * delta
+		direction_steering.goal_vector = direction * get_steerable().get_max_speed()
+		get_steerable().steer(delta)
 		impulse_particles.emitting = true
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, get_impulse_acceleration() * delta)
+		get_steerable().slow(delta)
 		impulse_particles.emitting = false
 	
 	player_move_and_collide.move_and_collide(self, delta)
 
 
-func get_max_speed() -> float:
-	return base_max_speed if !is_dashing() else base_max_speed * dash_multiplier
+func get_steerable() -> BaseSteerable:
+	return steerable
 
 
-func get_impulse_acceleration() -> float:
-	return base_impulse_acceleration if !is_dashing() else base_impulse_acceleration * dash_multiplier
+func get_actor_type() -> GameActor.ActorType:
+	return GameActor.Types.PLAYER
 
 
 func dash() -> void:
 	if controller.is_dash_just_pressed() and dash_cooldown_timer.is_stopped() and dash_duration_timer.is_stopped():
 		dash_cooldown_timer.start()
 		dash_duration_timer.start()
+		steerable.power_multiplier = dash_multiplier
 
 
 func is_dashing() -> bool:
 	return not dash_duration_timer.is_stopped()
-
-
-func seek(current_velocity: Vector2, goal_velocity: Vector2, force: float ) -> Vector2:
-	var steer = (goal_velocity - current_velocity).normalized() * force
-	return steer
-
-
-func get_actor_type() -> GameActor.Types:
-	return GameActor.Types.PLAYER

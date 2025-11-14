@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=6 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
 [ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
+[ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="3_4pxye"]
 [ext_resource type="PackedScene" uid="uid://b32mttqfycxyd" path="res://actors/player/player.tscn" id="3_n85cx"]
+
+[sub_resource type="Resource" id="Resource_lsna4"]
+script = ExtResource("3_4pxye")
+metadata/_custom_type_script = "uid://ck267f0n0aj0v"
 
 [node name="DebugWorldA" type="Node2D"]
 
@@ -32,6 +37,7 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 
 [node name="Player" parent="." instance=ExtResource("3_n85cx")]
 collision_layer = 2
+controller = SubResource("Resource_lsna4")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, 0)

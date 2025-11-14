@@ -17,10 +17,11 @@
 	- [x] Dash
 - [x] Setup Player Movement via `move_and_collide`
 - [x] Setup Player + Environment Collision
-- [ ] Investigate Player Movement via handling force and goal velocity
-- [ ] Implement Player  Dash
-	- [ ] Take the goal velocity and yoink player in that direction + maintain max speed for a fraction of a section?
-	- [ ] Add an animatable cap velocity that uses some kinda super break force
+- [x] Investigate Player Movement via handling force and goal velocity
+- [x] Implement Player  Dash
+	- [x] Take the goal velocity and yoink player in that direction + maintain max speed for a fraction of a section?
+	- [x] Add an animatable cap velocity that uses some kinda super break force
 - [ ] Convert logic to resources as necessary with enemies in mind
+	- [ ] Steerable
 - [ ] Camera Dampening with Dash
 - [ ] Create Target Dummy

@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "readme.md",
+                "file": "TODO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for readme"
+              "title": "Backlinks for TODO"
             }
           },
           {
@@ -155,8 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,32 +170,33 @@
   },
   "active": "614d627dd8a51a05",
   "lastOpenFiles": [
-    "game/actors/player/player.gd4323518823.tmp",
-    "game/actors/player/player.gd4193663514.tmp",
-    "game/actors/player/player.gd3850998176.tmp",
-    "game/actors/player/player.gd3827976724.tmp",
-    "game/actors/player/player.gd3376414315.tmp",
-    "game/actors/player/player.gd3202710492.tmp",
-    "game/project.godot3177754877.tmp",
-    "game/project.godot3171885066.tmp",
-    "game/project.godot3168443581.tmp",
-    "game/project.godot3161532532.tmp",
-    "game/project.godot3157456841.tmp",
+    "game/steering/base_steerable.gd90126193182.tmp",
+    "game/steering/base_steerable.gd90064726610.tmp",
+    "game/steering/base_steerable.gd90006956076.tmp",
+    "game/steering/base_steerable.gd89965262185.tmp",
+    "game/world/debug/debug_world_a.tscn89421992384.tmp",
+    "game/actors/player/player.gd89396437900.tmp",
+    "game/actors/player/player.gd89263878192.tmp",
+    "game/actors/player/player.tscn89048073793.tmp",
+    "game/steering/base_steerable.gd89041824313.tmp",
+    "game/steering/base_steerable.gd89037744796.tmp",
+    "game/actors/player/player.gd88848549636.tmp",
+    "game/addons/script-ide/icon/signal.svg",
+    "game/addons/script-ide/icon/property.svg",
+    "game/addons/script-ide/icon/func_set.svg",
+    "game/addons/script-ide/icon/func_get.svg",
+    "game/addons/script-ide/icon/func.svg",
+    "game/addons/script-ide/icon/export.svg",
+    "game/addons/script-ide/icon/engine_func.svg",
+    "game/addons/script-ide/icon/constant.svg",
+    "game/addons/script-ide/icon/class.svg",
+    "game/addons/script-ide/README.md",
     "game/assets/player/player_body_white.png",
-    "game/assets/player/player_body.png",
-    "assets/concept/player.svg.2025_11_09_21_40_55.0.svg",
-    "assets/concept/player.svg",
-    "assets/concept/test_background - Copy.svg",
-    "game/assets/debug/rock.png",
     "docs/Physics.md",
     "readme.md",
     "docs/Player Structure.md",
     "idea-stash.md",
     "TODO.md",
-    "assets/concept/grid_background.png",
-    "game/assets/debug/grid_background.png",
-    "game/assets/debug/test_background.png",
-    "game/assets/debug/blue_ring.png",
     "docs/Game Actors.md",
     "docs/Entities and Interactions.md",
     "docs/Colors.md"

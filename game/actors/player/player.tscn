@@ -1,14 +1,33 @@
-[gd_scene load_steps=14 format=3 uid="uid://b32mttqfycxyd"]
+[gd_scene load_steps=19 format=3 uid="uid://b32mttqfycxyd"]
 
 [ext_resource type="Script" uid="uid://craqyrf168y61" path="res://actors/player/player.gd" id="1_ilk7j"]
 [ext_resource type="Texture2D" uid="uid://cifpbcvsjmo6y" path="res://assets/player/player_body.png" id="1_nvxhs"]
 [ext_resource type="Texture2D" uid="uid://n5u6vyaj1v0w" path="res://assets/player/player_body_white.png" id="2_ax26v"]
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="2_lsqbn"]
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="3_6p1w3"]
+[ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="3_bop6h"]
+[ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="4_a744p"]
+[ext_resource type="Script" uid="uid://dr8hlak48x06t" path="res://steering/direction_steering_strategy.gd" id="5_a744p"]
 
 [sub_resource type="Resource" id="Resource_6p1w3"]
 script = ExtResource("2_lsqbn")
 metadata/_custom_type_script = "uid://ck267f0n0aj0v"
+
+[sub_resource type="Resource" id="Resource_388e2"]
+script = ExtResource("3_bop6h")
+base_max_speed = 1250.0
+base_max_acceleration = 2000.0
+power_multiplier = 1.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+velocity = Vector2(0, 0)
+steering_strategies = Array[ExtResource("4_a744p")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_lsln6"]
+script = ExtResource("5_a744p")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
 
 [sub_resource type="Resource" id="Resource_15y17"]
 script = ExtResource("3_6p1w3")
@@ -39,6 +58,8 @@ radius = 30.1496
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ilk7j")
 controller = SubResource("Resource_6p1w3")
+steerable = SubResource("Resource_388e2")
+direction_steering = SubResource("Resource_lsln6")
 player_move_and_collide = SubResource("Resource_15y17")
 
 [node name="ImpulseParticles" type="GPUParticles2D" parent="."]
