@@ -17,10 +17,8 @@ metadata/_custom_type_script = "uid://ck267f0n0aj0v"
 script = ExtResource("3_bop6h")
 base_max_speed = 1250.0
 base_max_acceleration = 2000.0
-power_multiplier = 1.0
-turn_around_multiplier = 2.0
+turn_around_multiplier = 3.0
 overspeed_break_force = 10000.0
-velocity = Vector2(0, 0)
 steering_strategies = Array[ExtResource("4_a744p")]([])
 metadata/_custom_type_script = "uid://c7jc7uwjmfido"
 

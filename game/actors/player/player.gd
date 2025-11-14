@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+
 @onready var impulse_particles: GPUParticles2D = $ImpulseParticles
 @onready var dash_duration_timer: Timer = $DashDurationTimer
 @onready var dash_cooldown_timer: Timer = $DashCooldownTimer
@@ -12,9 +13,6 @@ class_name Player
 @export var player_move_and_collide: PlayerMoveAndCollide
 @export var dash_multiplier: float = 6.0
 
-# Instead of improving handling moments, have breaking power
-# be higher. Then use that when they're turning.
-
 
 func _ready() -> void:
 	steerable.steering_strategies.append(direction_steering)
@@ -22,14 +20,13 @@ func _ready() -> void:
 		func():
 			steerable.power_multiplier = 1
 	)
-	
 
 
 func _physics_process(delta: float) -> void:
 	dash()
 	
 	var direction := controller.get_direction_vector()
-	if not direction and is_dashing(): direction = velocity.normalized()
+	if not direction and is_dashing(): direction = get_steerable().velocity.normalized()
 	if is_dashing(): direction = direction.normalized()
 
 	if direction:
