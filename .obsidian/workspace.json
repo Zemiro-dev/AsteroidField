@@ -170,6 +170,8 @@
   },
   "active": "614d627dd8a51a05",
   "lastOpenFiles": [
+    "game/actors/player/player_move_and_collide.gd87632053.tmp",
+    "game/steering/base_steerable.gd59083575.tmp",
     "game/project.godot10486453.tmp",
     "game/actors/player/player.tscn90787196050.tmp",
     "game/actors/player/player.gd90611694080.tmp",
@@ -179,8 +181,6 @@
     "game/steering/base_steerable.gd89965262185.tmp",
     "game/world/debug/debug_world_a.tscn89421992384.tmp",
     "game/actors/player/player.gd89396437900.tmp",
-    "game/actors/player/player.gd89263878192.tmp",
-    "game/actors/player/player.tscn89048073793.tmp",
     "game/addons/script-ide/icon/signal.svg",
     "game/addons/script-ide/icon/property.svg",
     "game/addons/script-ide/icon/func_set.svg",

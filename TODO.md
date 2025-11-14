@@ -21,7 +21,7 @@
 - [x] Implement Player  Dash
 	- [x] Take the goal velocity and yoink player in that direction + maintain max speed for a fraction of a section?
 	- [x] Add an animatable cap velocity that uses some kinda super break force
-- [ ] Convert logic to resources as necessary with enemies in mind
-	- [ ] Steerable
+- [x] Convert logic to resources as necessary with enemies in mind
+	- [x] Steerable
 - [ ] Camera Dampening with Dash
 - [ ] Create Target Dummy

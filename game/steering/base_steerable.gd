@@ -14,7 +14,6 @@ var velocity: Vector2 = Vector2.ZERO
 func steer(delta: float) -> void:
 	var steering_result := combined_steering()
 	var turn_around_dot := steering_result.heading.normalized().dot(velocity.normalized())
-	print(turn_around_dot)
 	var acceleration := steering_result.acceleration * (1.0 if turn_around_dot >= 0 else turn_around_multiplier)
 	velocity += acceleration * delta
 
