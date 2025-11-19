@@ -54,6 +54,8 @@ color_ramp = SubResource("GradientTexture1D_6p1w3")
 radius = 30.1496
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_ilk7j")
 controller = SubResource("Resource_6p1w3")
 steerable = SubResource("Resource_388e2")

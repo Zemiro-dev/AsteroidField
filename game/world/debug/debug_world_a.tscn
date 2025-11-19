@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=5 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
 [ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
 [ext_resource type="PackedScene" uid="uid://b32mttqfycxyd" path="res://actors/player/player.tscn" id="3_n85cx"]
+[ext_resource type="PackedScene" uid="uid://sbfur265ybyr" path="res://actors/enemy/target_dummy/target_dummy.tscn" id="4_lsna4"]
 
 [node name="DebugWorldA" type="Node2D"]
 
@@ -31,7 +32,9 @@ visible = false
 polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
 
 [node name="Player" parent="." instance=ExtResource("3_n85cx")]
-collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, 0)
+
+[node name="TargetDummy" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(1399, -201)

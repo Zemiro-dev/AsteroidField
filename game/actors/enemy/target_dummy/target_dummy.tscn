@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://sbfur265ybyr"]
+[gd_scene load_steps=3 format=3 uid="uid://sbfur265ybyr"]
 
 [ext_resource type="Script" uid="uid://deynvolyv3iss" path="res://actors/enemy/target_dummy/target_dummy.gd" id="1_8j65v"]
+[ext_resource type="Texture2D" uid="uid://cd8pqsfredfid" path="res://assets/enemy/target_dummy/target_dummy_body.png" id="2_uorf0"]
 
 [node name="TargetDummy" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_8j65v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uorf0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-71, 0, -35, -62, 35, -62, 71, 0, 35, 62, -35, 62)

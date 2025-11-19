@@ -24,9 +24,9 @@
 - [x] Convert logic to resources as necessary with enemies in mind
 	- [x] Steerable
 - [ ] Camera Dampening with Dash
-- [ ] Create Target Dummy
-	- [ ] Create Sprite
-	- [ ] Create Dummy Scene
+- [x] Create Target Dummy
+	- [x] Create Sprite
+	- [x] Create Dummy Scene
 - [ ] Basic Projectile
 - [ ] How does player target?
 - [ ] Title Card
