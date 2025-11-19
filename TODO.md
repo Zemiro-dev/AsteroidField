@@ -25,3 +25,8 @@
 	- [x] Steerable
 - [ ] Camera Dampening with Dash
 - [ ] Create Target Dummy
+	- [ ] Create Sprite
+	- [ ] Create Dummy Scene
+- [ ] Basic Projectile
+- [ ] How does player target?
+- [ ] Title Card

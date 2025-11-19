@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://sbfur265ybyr"]
+
+[ext_resource type="Script" uid="uid://deynvolyv3iss" path="res://actors/enemy/target_dummy/target_dummy.gd" id="1_8j65v"]
+
+[node name="TargetDummy" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_8j65v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

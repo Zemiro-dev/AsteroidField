@@ -13,6 +13,8 @@ class_name Player
 @export var player_move_and_collide: PlayerMoveAndCollide
 @export var dash_multiplier: float = 6.0
 
+var actor_type := GameActor.ActorType.PLAYER
+
 
 func _ready() -> void:
 	steerable.steering_strategies.append(direction_steering)
@@ -26,26 +28,18 @@ func _physics_process(delta: float) -> void:
 	dash()
 	
 	var direction := controller.get_direction_vector()
-	if not direction and is_dashing(): direction = get_steerable().velocity.normalized()
+	if not direction and is_dashing(): direction = steerable.velocity.normalized()
 	if is_dashing(): direction = direction.normalized()
 
 	if direction:
-		direction_steering.goal_vector = direction * get_steerable().get_max_speed()
-		get_steerable().steer(delta)
+		direction_steering.goal_vector = direction * steerable.get_max_speed()
+		steerable.steer(delta)
 		impulse_particles.emitting = true
 	else:
-		get_steerable().slow(delta)
+		steerable.slow(delta)
 		impulse_particles.emitting = false
 	
 	player_move_and_collide.move_and_collide(self, delta)
-
-
-func get_steerable() -> BaseSteerable:
-	return steerable
-
-
-func get_actor_type() -> GameActor.ActorType:
-	return GameActor.Types.PLAYER
 
 
 func dash() -> void:

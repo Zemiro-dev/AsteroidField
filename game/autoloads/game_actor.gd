@@ -9,6 +9,9 @@ func get_actor_type(o: Object) -> ActorType:
 		var actor_type = o.get_actor_type()
 		if ActorType.has(actor_type):
 			return actor_type
+	var actor_type = o.get("actor_type")
+	if actor_type != null and ActorType.has(actor_type):
+		return actor_type
 	return ActorType.UNKNOWN
 
 
@@ -17,4 +20,7 @@ func get_steerable(o: Object) -> BaseSteerable:
 		var steerable = o.get_steerable()
 		if steerable is BaseSteerable:
 			return steerable
+	var steerable = o.get("steerable")
+	if steerable != null and steerable is BaseSteerable:
+		return steerable
 	return null
