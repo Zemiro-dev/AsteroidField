@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://sbfur265ybyr"]
+[gd_scene load_steps=5 format=3 uid="uid://sbfur265ybyr"]
 
 [ext_resource type="Script" uid="uid://deynvolyv3iss" path="res://actors/enemy/target_dummy/target_dummy.gd" id="1_8j65v"]
 [ext_resource type="Texture2D" uid="uid://cd8pqsfredfid" path="res://assets/enemy/target_dummy/target_dummy_body.png" id="2_uorf0"]
+[ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="2_ya6m4"]
+
+[sub_resource type="Resource" id="Resource_8mhx6"]
+script = ExtResource("2_ya6m4")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
 [node name="TargetDummy" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_8j65v")
+damagable = SubResource("Resource_8mhx6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_uorf0")

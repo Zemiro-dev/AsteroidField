@@ -24,3 +24,14 @@ func get_steerable(o: Object) -> BaseSteerable:
 	if steerable != null and steerable is BaseSteerable:
 		return steerable
 	return null
+
+
+func get_damagable(o: Object) -> BaseDamagable:
+	if o.has_method("get_damagable"):
+		var damagable = o.get_damagable()
+		if damagable is BaseSteerable:
+			return damagable
+	var damagable = o.get("damagable")
+	if damagable != null and damagable is BaseDamagable:
+		return damagable
+	return null
