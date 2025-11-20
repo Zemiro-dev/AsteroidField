@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_8mhx6"]
 script = ExtResource("2_ya6m4")
 max_health = 10
-max_invulnerability_time = 0.0
+max_invulnerability_time = 0.2
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
 [node name="TargetDummy" type="CharacterBody2D"]

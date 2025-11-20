@@ -27,6 +27,9 @@
 - [x] Create Target Dummy
 	- [x] Create Sprite
 	- [x] Create Dummy Scene
+- [ ] Basic Enemy Transition Animations
+	- [ ] Damage Tween
+	- [ ] Death explosion
 - [ ] Basic Projectile
 - [ ] How does player target?
 - [ ] Title Card

@@ -23,6 +23,8 @@ func physics_process(delta: float) -> void:
 func reset_damagable(_game_actor: Node2D) -> void:
 	current_health = max_health
 	game_actor = _game_actor
+	is_dead = false
+	remaining_invulnerability_time = 0.0
 
 
 func is_damagable() -> bool:
@@ -52,5 +54,9 @@ func die() -> void:
 		on_death.emit(game_actor)
 	is_dead = true
 
+
 func restore_health(health: int) -> void:
-	pass
+	var previous_health = current_health
+	current_health = clampi(current_health + health, current_health, max_health)
+	if current_health != previous_health:
+		on_health_changed.emit(current_health, max_health)
