@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 GameActor="*res://autoloads/game_actor.gd"
 Physics="*res://autoloads/physics.gd"
 Vector="*res://autoloads/vector.gd"
+GlobalSignals="*res://autoloads/global_signals.gd"
 
 [display]
 

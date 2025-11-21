@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://sbfur265ybyr"]
+[gd_scene load_steps=9 format=3 uid="uid://sbfur265ybyr"]
 
 [ext_resource type="Script" uid="uid://deynvolyv3iss" path="res://actors/enemy/target_dummy/target_dummy.gd" id="1_8j65v"]
 [ext_resource type="Texture2D" uid="uid://cd8pqsfredfid" path="res://assets/enemy/target_dummy/target_dummy_body.png" id="2_uorf0"]
 [ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="2_ya6m4"]
+[ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="3_8mhx6"]
 
 [sub_resource type="Resource" id="Resource_8mhx6"]
 script = ExtResource("2_ya6m4")
@@ -10,10 +11,62 @@ max_health = 10
 max_invulnerability_time = 0.2
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
+[sub_resource type="Animation" id="Animation_8mhx6"]
+resource_name = "die"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ncp7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u4e7r"]
+_data = {
+&"RESET": SubResource("Animation_ncp7s"),
+&"die": SubResource("Animation_8mhx6")
+}
+
 [node name="TargetDummy" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_8j65v")
 damagable = SubResource("Resource_8mhx6")
+explosion_scene = ExtResource("3_8mhx6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_uorf0")
@@ -21,3 +74,8 @@ texture = ExtResource("2_uorf0")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(-71, 0, -35, -62, 35, -62, 71, 0, 35, 62, -35, 62)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u4e7r")
+}

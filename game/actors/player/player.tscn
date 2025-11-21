@@ -73,7 +73,7 @@ visible = false
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("7_388e2")
-damage = 2
+damage = 100
 metadata/_custom_type_script = "uid://canb082p77b1f"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageField/Hurtbox"]
