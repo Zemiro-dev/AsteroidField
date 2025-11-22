@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 248.5
   },
   "right": {
     "id": "3caf8c8b3d671c45",
@@ -155,7 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 271.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,17 +170,20 @@
   },
   "active": "614d627dd8a51a05",
   "lastOpenFiles": [
-    "game/particles/explosion_base.gd.uid",
-    "game/particles/explosion_base.gd",
-    "game/actors/enemy/target_dummy/target_dummy.tscn3391308089.tmp",
-    "game/actors/enemy/target_dummy/target_dummy.tscn3322330831.tmp",
-    "game/world/debug/debug_world_a.tscn3174315792.tmp",
-    "game/world/debug/debug_world_a.tscn2824493008.tmp",
-    "game/world/debug/debug_world_a.tscn2792727957.tmp",
-    "game/world/containers/free_particle_container.gd2759938184.tmp",
-    "game/world/containers/FreeParticleContainer.tscn2533440455.tmp",
-    "game/world/containers/FreeParticleContainer.tscn2527327617.tmp",
-    "game/world/containers/free_particle_container.gd.uid",
+    "game/world/debug/debug_world_a.tscn7365284873.tmp",
+    "game/projectiles/cannon/cannon.gd6993490956.tmp",
+    "game/projectiles/cannon/cannon.gd6942109336.tmp",
+    "game/projectiles/cannon/cannon.gd6914979368.tmp",
+    "game/world/debug/debug_world_a.tscn6875059588.tmp",
+    "game/world/debug/debug_world_a.tscn6845475018.tmp",
+    "game/projectiles/cannon/cannon.gd6620771091.tmp",
+    "game/projectiles/cannon/cannon.gd6477369747.tmp",
+    "game/projectiles/cannon/cannon_stats.gd.uid",
+    "game/projectiles/cannon/cannon_stats.gd",
+    "game/world/debug/debug_world_a.tscn6296652793.tmp",
+    "game/assets/projectiles/white_bolt.png",
+    "assets/concept/projectiles.svg",
+    "assets/concept/target_dummy - Copy.svg",
     "game/assets/enemy/target_dummy/target_dummy_body.png",
     "assets/concept/target_dummy.svg",
     "assets/concept/title_card - Copy.svg",
@@ -188,9 +191,6 @@
     "assets/concept/player - Copy.svg",
     "game/addons/script-ide/icon/signal.svg",
     "game/addons/script-ide/icon/property.svg",
-    "game/addons/script-ide/icon/func_set.svg",
-    "game/addons/script-ide/icon/func_get.svg",
-    "game/addons/script-ide/icon/func.svg",
     "game/addons/script-ide/README.md",
     "docs/Physics.md",
     "readme.md",

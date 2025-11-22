@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvlmjn2u87yba"]
+
+[ext_resource type="Script" uid="uid://canb082p77b1f" path="res://damage/hurtbox/hurtbox.gd" id="1_6aipt"]
+[ext_resource type="Texture2D" uid="uid://n5u6vyaj1v0w" path="res://assets/player/player_body_white.png" id="2_53n51"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsln6"]
+radius = 116.155
+
+[node name="DamageField" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_6aipt")
+damage = 100
+metadata/_custom_type_script = "uid://canb082p77b1f"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.87451, 0.160784, 0.207843, 0.298039)
+scale = Vector2(3.72861, 3.72861)
+texture = ExtResource("2_53n51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_lsln6")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b32mttqfycxyd"]
+[gd_scene load_steps=19 format=3 uid="uid://b32mttqfycxyd"]
 
 [ext_resource type="Script" uid="uid://craqyrf168y61" path="res://actors/player/player.gd" id="1_ilk7j"]
 [ext_resource type="Texture2D" uid="uid://cifpbcvsjmo6y" path="res://assets/player/player_body.png" id="1_nvxhs"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="3_bop6h"]
 [ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="4_a744p"]
 [ext_resource type="Script" uid="uid://dr8hlak48x06t" path="res://steering/direction_steering_strategy.gd" id="5_a744p"]
-[ext_resource type="Script" uid="uid://canb082p77b1f" path="res://damage/hurtbox/hurtbox.gd" id="7_388e2"]
 
 [sub_resource type="Resource" id="Resource_6p1w3"]
 script = ExtResource("2_lsqbn")
@@ -31,9 +30,6 @@ metadata/_custom_type_script = "uid://dr8hlak48x06t"
 [sub_resource type="Resource" id="Resource_15y17"]
 script = ExtResource("3_6p1w3")
 metadata/_custom_type_script = "uid://djf22au03k0mc"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lsln6"]
-radius = 116.155
 
 [sub_resource type="Gradient" id="Gradient_lsqbn"]
 colors = PackedColorArray(0, 0.945098, 0.952941, 0.690196, 0.0117647, 0.160784, 0.392157, 0)
@@ -65,24 +61,6 @@ controller = SubResource("Resource_6p1w3")
 steerable = SubResource("Resource_388e2")
 direction_steering = SubResource("Resource_lsln6")
 player_move_and_collide = SubResource("Resource_15y17")
-
-[node name="DamageField" type="Node2D" parent="."]
-
-[node name="Hurtbox" type="Area2D" parent="DamageField"]
-visible = false
-collision_layer = 0
-collision_mask = 4
-script = ExtResource("7_388e2")
-damage = 100
-metadata/_custom_type_script = "uid://canb082p77b1f"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageField/Hurtbox"]
-shape = SubResource("CircleShape2D_lsln6")
-
-[node name="Sprite2D" type="Sprite2D" parent="DamageField"]
-modulate = Color(0.87451, 0.160784, 0.207843, 0.298039)
-scale = Vector2(3.72861, 3.72861)
-texture = ExtResource("2_ax26v")
 
 [node name="ImpulseParticles" type="GPUParticles2D" parent="."]
 emitting = false

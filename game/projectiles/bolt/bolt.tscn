@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvse3reo0fpus"]
+
+[ext_resource type="Texture2D" uid="uid://c4log2ggaeeb6" path="res://assets/projectiles/white_bolt.png" id="1_6l4ds"]
+[ext_resource type="Script" uid="uid://cmrcrwlfode1c" path="res://projectiles/bolt/bolt.gd" id="1_q48h5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6l4ds"]
+radius = 7.0
+height = 18.0
+
+[node name="Bolt" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_q48h5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_6l4ds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6l4ds")

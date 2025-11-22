@@ -23,13 +23,14 @@
 	- [x] Add an animatable cap velocity that uses some kinda super break force
 - [x] Convert logic to resources as necessary with enemies in mind
 	- [x] Steerable
-- [ ] Camera Dampening with Dash
 - [x] Create Target Dummy
 	- [x] Create Sprite
 	- [x] Create Dummy Scene
-- [ ] Basic Enemy Transition Animations
+- [x] Basic Enemy Transition Animations
 	- [x] Damage Tween
-- [ ] Death explosion
+- [x] Death explosion
 - [ ] Basic Projectile
+	- [ ] Cannon Scene - let it handle the targeting for now and think about it later? That way they can all target and what not on their own
 - [ ] How does player target?
 - [ ] Title Card
+- [ ] Camera Dampening with Dash

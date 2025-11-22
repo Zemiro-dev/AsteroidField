@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj6bxuyylc1xc"]
+
+[ext_resource type="Script" uid="uid://dwhfor4stdjru" path="res://world/containers/free_projectile_container.gd" id="1_b5vrf"]
+
+[node name="FreeProjectileContainer" type="Node2D"]
+script = ExtResource("1_b5vrf")
