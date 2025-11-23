@@ -8,10 +8,18 @@ var age: float = 0.0
 var heading: Vector2 = Vector2(1., 0.)
 
 
-func chamber(initial_transform: Transform2D, target: Vector2, mask: int):
+func fire(
+		initial_transform: Transform2D,
+		target: Vector2,
+		spawn_offset: Vector2,
+		mask: int
+	):
 	global_transform = initial_transform
 	collision_mask = mask
-	heading = Vector2.from_angle(global_position.angle_to_point(target))
+	var heading_angle := global_position.angle_to_point(target)
+	heading = Vector2.from_angle(heading_angle)
+	position += spawn_offset.rotated(heading_angle)
+	rotation = heading.angle()
 
 
 func _ready() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=34 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
 [ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cj6bxuyylc1xc" path="res://world/containers/free_projectile_container.tscn" id="4_6ubl6"]
 [ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="4_fn8aq"]
 [ext_resource type="PackedScene" uid="uid://sbfur265ybyr" path="res://actors/enemy/target_dummy/target_dummy.tscn" id="4_lsna4"]
-[ext_resource type="Script" uid="uid://din4uisx5p34n" path="res://projectiles/cannon/cannon.gd" id="6_l4jct"]
-[ext_resource type="Script" uid="uid://yq11iyvgqusn" path="res://projectiles/cannon/cannon_stats.gd" id="8_551gn"]
-[ext_resource type="PackedScene" uid="uid://cvse3reo0fpus" path="res://projectiles/bolt/bolt.tscn" id="9_pudvl"]
+[ext_resource type="PackedScene" uid="uid://tp2ynjhkq3xn" path="res://projectiles/cannon/cannon.tscn" id="8_551gn"]
 
 [sub_resource type="Resource" id="Resource_fn8aq"]
 resource_local_to_scene = true
@@ -39,13 +37,152 @@ max_health = 10
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
-[sub_resource type="Resource" id="Resource_pudvl"]
-script = ExtResource("8_551gn")
-time_between_shots = 0.1
-metadata/_custom_type_script = "uid://yq11iyvgqusn"
+[sub_resource type="Resource" id="Resource_551gn"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l4jct"]
-radius = 487.748
+[sub_resource type="Resource" id="Resource_pudvl"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_60o0b"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_hmuc0"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_782kq"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_ab4jj"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_7jtk5"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_g36r6"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_4qwbx"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_uq1vh"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_k2vu7"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_h35gt"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_fw0c5"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_r18ru"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_be6b7"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_x0rwi"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_5hfsr"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_44p8q"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_qi3qa"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_dse6n"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_6smsd"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
 [node name="DebugWorldA" type="Node2D"]
 
@@ -89,6 +226,90 @@ damagable = SubResource("Resource_38n11")
 position = Vector2(1341, 609)
 damagable = SubResource("Resource_50rxm")
 
+[node name="TargetDummy5" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(1490, -596)
+damagable = SubResource("Resource_551gn")
+
+[node name="TargetDummy6" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(1850, -307)
+damagable = SubResource("Resource_pudvl")
+
+[node name="TargetDummy7" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2073, -618)
+damagable = SubResource("Resource_60o0b")
+
+[node name="TargetDummy8" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(1837, -1002)
+damagable = SubResource("Resource_hmuc0")
+
+[node name="TargetDummy9" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2244, -938)
+damagable = SubResource("Resource_782kq")
+
+[node name="TargetDummy10" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2467, -417)
+damagable = SubResource("Resource_ab4jj")
+
+[node name="TargetDummy11" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(1382, -981)
+damagable = SubResource("Resource_7jtk5")
+
+[node name="TargetDummy12" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2113, -241)
+damagable = SubResource("Resource_g36r6")
+
+[node name="TargetDummy13" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2540, -734)
+damagable = SubResource("Resource_4qwbx")
+
+[node name="TargetDummy14" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2062, -1233)
+damagable = SubResource("Resource_uq1vh")
+
+[node name="TargetDummy15" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(975, -1263)
+damagable = SubResource("Resource_k2vu7")
+
+[node name="TargetDummy16" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2326, 167)
+damagable = SubResource("Resource_h35gt")
+
+[node name="TargetDummy17" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2855, -1061)
+damagable = SubResource("Resource_fw0c5")
+
+[node name="TargetDummy18" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2518, -1460)
+damagable = SubResource("Resource_r18ru")
+
+[node name="TargetDummy19" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(3142, -1252)
+damagable = SubResource("Resource_be6b7")
+
+[node name="TargetDummy20" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(3635, -855)
+damagable = SubResource("Resource_x0rwi")
+
+[node name="TargetDummy21" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(3954, -328)
+damagable = SubResource("Resource_5hfsr")
+
+[node name="TargetDummy22" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(4209, 281)
+damagable = SubResource("Resource_44p8q")
+
+[node name="TargetDummy23" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(3776, 931)
+damagable = SubResource("Resource_qi3qa")
+
+[node name="TargetDummy24" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(2835, 882)
+damagable = SubResource("Resource_dse6n")
+
+[node name="TargetDummy25" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(1879, 869)
+damagable = SubResource("Resource_6smsd")
+
 [node name="FreeProjectileContainer" parent="." instance=ExtResource("4_6ubl6")]
 
 [node name="FreeParticleContainer" parent="." instance=ExtResource("3_4pxye")]
@@ -98,26 +319,5 @@ damagable = SubResource("Resource_50rxm")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, 0)
 
-[node name="Cannon" type="Area2D" parent="Player"]
-position = Vector2(16, -15)
-collision_layer = 0
-collision_mask = 4
-script = ExtResource("6_l4jct")
-stats = SubResource("Resource_pudvl")
-projectile_scene = ExtResource("9_pudvl")
-blocked_by = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Cannon"]
-shape = SubResource("CircleShape2D_l4jct")
-
-[node name="Cannon2" type="Area2D" parent="Player"]
-position = Vector2(-18, 12)
-collision_layer = 0
-collision_mask = 4
-script = ExtResource("6_l4jct")
-stats = SubResource("Resource_pudvl")
-projectile_scene = ExtResource("9_pudvl")
-blocked_by = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Cannon2"]
-shape = SubResource("CircleShape2D_l4jct")
+[node name="Cannon" parent="Player" instance=ExtResource("8_551gn")]
+spawn_offset = Vector2(50, 0)

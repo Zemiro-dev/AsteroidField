@@ -4,8 +4,15 @@ class_name Cannon
 
 @export var stats: CannonStats
 @export var projectile_scene: PackedScene
+@export var spawn_offset: Vector2 = Vector2.ZERO
 @export_flags_2d_physics var blocked_by: int
 var time_since_last_shot: float = 0
+
+
+func _ready() -> void:
+	if stats:
+		var rng = RandomNumberGenerator.new()
+		stats.time_between_shots += rng.randf() * .001
 
 
 func _physics_process(delta: float) -> void:
@@ -22,7 +29,12 @@ func fire(target: Vector2) -> void:
 	if projectile_scene:
 		var projectile: Node2D = projectile_scene.instantiate()
 		if projectile is Bolt:
-			projectile.chamber(global_transform, target, collision_mask + blocked_by)
+			projectile.fire(
+				global_transform,
+				target,
+				spawn_offset, 
+				collision_mask + blocked_by
+			)
 		GlobalSignals.request_projectile_spawn.emit(projectile)
 
 
