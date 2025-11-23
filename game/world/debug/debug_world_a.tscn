@@ -1,17 +1,47 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=17 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
 [ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
 [ext_resource type="PackedScene" uid="uid://b4mcxong48o84" path="res://world/containers/free_particle_container.tscn" id="3_4pxye"]
 [ext_resource type="PackedScene" uid="uid://b32mttqfycxyd" path="res://actors/player/player.tscn" id="3_n85cx"]
 [ext_resource type="PackedScene" uid="uid://cj6bxuyylc1xc" path="res://world/containers/free_projectile_container.tscn" id="4_6ubl6"]
+[ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="4_fn8aq"]
 [ext_resource type="PackedScene" uid="uid://sbfur265ybyr" path="res://actors/enemy/target_dummy/target_dummy.tscn" id="4_lsna4"]
 [ext_resource type="Script" uid="uid://din4uisx5p34n" path="res://projectiles/cannon/cannon.gd" id="6_l4jct"]
 [ext_resource type="Script" uid="uid://yq11iyvgqusn" path="res://projectiles/cannon/cannon_stats.gd" id="8_551gn"]
+[ext_resource type="PackedScene" uid="uid://cvse3reo0fpus" path="res://projectiles/bolt/bolt.tscn" id="9_pudvl"]
+
+[sub_resource type="Resource" id="Resource_fn8aq"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_cglna"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_38n11"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_50rxm"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
 [sub_resource type="Resource" id="Resource_pudvl"]
 script = ExtResource("8_551gn")
-time_between_shots = 1.0
+time_between_shots = 0.1
 metadata/_custom_type_script = "uid://yq11iyvgqusn"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l4jct"]
@@ -45,6 +75,19 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 
 [node name="TargetDummy" parent="." instance=ExtResource("4_lsna4")]
 position = Vector2(1399, -201)
+damagable = SubResource("Resource_fn8aq")
+
+[node name="TargetDummy2" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(469, -643)
+damagable = SubResource("Resource_cglna")
+
+[node name="TargetDummy3" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(1686, 358)
+damagable = SubResource("Resource_38n11")
+
+[node name="TargetDummy4" parent="." instance=ExtResource("4_lsna4")]
+position = Vector2(1341, 609)
+damagable = SubResource("Resource_50rxm")
 
 [node name="FreeProjectileContainer" parent="." instance=ExtResource("4_6ubl6")]
 
@@ -56,11 +99,25 @@ position = Vector2(1399, -201)
 position = Vector2(-2, 0)
 
 [node name="Cannon" type="Area2D" parent="Player"]
+position = Vector2(16, -15)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("6_l4jct")
 stats = SubResource("Resource_pudvl")
+projectile_scene = ExtResource("9_pudvl")
 blocked_by = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Cannon"]
+shape = SubResource("CircleShape2D_l4jct")
+
+[node name="Cannon2" type="Area2D" parent="Player"]
+position = Vector2(-18, 12)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("6_l4jct")
+stats = SubResource("Resource_pudvl")
+projectile_scene = ExtResource("9_pudvl")
+blocked_by = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Cannon2"]
 shape = SubResource("CircleShape2D_l4jct")

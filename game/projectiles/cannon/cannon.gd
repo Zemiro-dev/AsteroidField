@@ -3,6 +3,7 @@ class_name Cannon
 
 
 @export var stats: CannonStats
+@export var projectile_scene: PackedScene
 @export_flags_2d_physics var blocked_by: int
 var time_since_last_shot: float = 0
 
@@ -18,6 +19,14 @@ func _physics_process(delta: float) -> void:
 
 
 func fire(target: Vector2) -> void:
+	if projectile_scene:
+		var projectile: Node2D = projectile_scene.instantiate()
+		if projectile is Bolt:
+			projectile.chamber(global_transform, target, collision_mask + blocked_by)
+		GlobalSignals.request_projectile_spawn.emit(projectile)
+
+
+func _hitscan(target:Vector2) -> void:
 	var space_state := get_world_2d().direct_space_state
 	var query := PhysicsRayQueryParameters2D.create(global_position, target, collision_mask, [self])
 	var result := space_state.intersect_ray(query)
