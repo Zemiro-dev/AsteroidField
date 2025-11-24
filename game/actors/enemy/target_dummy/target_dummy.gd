@@ -3,10 +3,12 @@ class_name TargetDummy
 
 
 @export var damagable: BaseDamagable
+@export var tween_damaged: TweenDamaged
 @export var explosion_scene: PackedScene
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var actor_type := GameActor.ActorType.ENEMY
+
 
 var modulate_tween: Tween
 
@@ -15,22 +17,13 @@ func _ready() -> void:
 	if damagable:
 		damagable.reset_damagable(self)
 		damagable.on_death.connect(on_death)
-		damagable.on_damage_taken.connect(on_damage_taken)
+		if tween_damaged:
+			tween_damaged.bind_to_node(self)
 
 
 func _physics_process(delta: float) -> void:
 	if damagable:
 		damagable.physics_process(delta)
-
-
-func on_damage_taken(damage_taken: int):
-	if modulate_tween != null:
-		modulate_tween.kill()
-		modulate = Color(1, 1, 1, 1)
-	
-	modulate_tween =	 create_tween()
-	modulate_tween.tween_property(self, "modulate", Color(1, 0, 0, 1), max(damagable.max_invulnerability_time / 2.0, .1))
-	modulate_tween.tween_property(self, "modulate", Color(1, 1, 1, 1), max(damagable.max_invulnerability_time / 2.0, .1))
 
 
 func on_death(game_actor: Node2D) -> void:

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cvse3reo0fpus" path="res://projectiles/bolt/bolt.tscn" id="3_sdle7"]
 
 [sub_resource type="Resource" id="Resource_pudvl"]
+resource_local_to_scene = true
 script = ExtResource("2_867sx")
 time_between_shots = 0.1
 metadata/_custom_type_script = "uid://yq11iyvgqusn"
