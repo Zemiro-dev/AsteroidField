@@ -13,6 +13,7 @@ var current_health: int = 1
 var is_dead: bool = false
 var is_invincible: bool = false
 
+
 ### Must be called each physics frame by the game actor to
 ### maintain timers
 func physics_process(delta: float) -> void:

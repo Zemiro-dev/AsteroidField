@@ -1,11 +1,11 @@
-extends Area2D
+extends TargetingArea
 class_name Cannon
 
 
+@export var enabled: bool = true
 @export var stats: CannonStats
 @export var projectile_scene: PackedScene
 @export var spawn_offset: Vector2 = Vector2.ZERO
-@export_flags_2d_physics var blocked_by: int
 var time_since_last_shot: float = 0
 
 
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if stats and time_since_last_shot > stats.time_between_shots:
+	if stats and time_since_last_shot > stats.time_between_shots and enabled:
 		var target = get_target()
 		if !target.is_zero_approx():
 			fire(target)
@@ -48,27 +48,3 @@ func _hitscan(target:Vector2) -> void:
 		if damagable:
 			print('hitscan fire!')
 			damagable.take_damage(2)
-
-
-func get_target() -> Vector2:
-	var possible_targets := get_overlapping_bodies().filter(has_los)
-	var target = closest(possible_targets)
-	return target.global_position if target else Vector2.ZERO
-
-
-func has_los(node: Node2D) -> bool:
-	var space_state := get_world_2d().direct_space_state
-	var query := PhysicsRayQueryParameters2D.create(global_position, node.global_position, blocked_by, [self])
-	var result := space_state.intersect_ray(query)
-	return result.is_empty()
-
-
-func closest(nodes: Array[Node2D]) -> Node2D:
-	var closest_node: Node2D = null
-	var closest_sq_distance: float = INF
-	for node in nodes:
-		var node_sq_distance := node.global_position.distance_squared_to(global_position)
-		if node_sq_distance < closest_sq_distance:
-			closest_node = node
-			closest_sq_distance = node_sq_distance 
-	return closest_node

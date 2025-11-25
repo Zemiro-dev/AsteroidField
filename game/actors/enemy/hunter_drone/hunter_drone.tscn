@@ -1,0 +1,80 @@
+[gd_scene load_steps=17 format=3 uid="uid://es1f0l0b3jm5"]
+
+[ext_resource type="Texture2D" uid="uid://c8we5ebwkre7u" path="res://assets/enemy/white_hex_shadowed.png" id="1_qpesd"]
+[ext_resource type="Script" uid="uid://cjmaqsclqu5f6" path="res://actors/enemy/hunter_drone/hunter_drone.gd" id="1_rpdlw"]
+[ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="2_s0sue"]
+[ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="2_wb0p4"]
+[ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="3_pbsvy"]
+[ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="3_pu7o8"]
+[ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="4_knht3"]
+[ext_resource type="Script" uid="uid://dr8hlak48x06t" path="res://steering/direction_steering_strategy.gd" id="4_xcliu"]
+[ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="5_oubhi"]
+[ext_resource type="PackedScene" uid="uid://x56kdse40k5g" path="res://area/targeting_area.tscn" id="6_pbsvy"]
+
+[sub_resource type="Resource" id="Resource_34gyq"]
+resource_local_to_scene = true
+script = ExtResource("2_s0sue")
+base_max_speed = 750.0
+base_max_acceleration = 1000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("3_pu7o8")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_mtkfv"]
+resource_local_to_scene = true
+script = ExtResource("4_xcliu")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_s0sue"]
+resource_local_to_scene = true
+script = ExtResource("2_wb0p4")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_pu7o8"]
+resource_local_to_scene = true
+script = ExtResource("4_knht3")
+explosion_scene = ExtResource("3_pbsvy")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_xcliu"]
+resource_local_to_scene = true
+script = ExtResource("5_oubhi")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knht3"]
+radius = 1911.0
+
+[node name="HunterDrone" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_rpdlw")
+steerable = SubResource("Resource_34gyq")
+direction_steering = SubResource("Resource_mtkfv")
+damagable = SubResource("Resource_s0sue")
+on_death_handler = SubResource("Resource_pu7o8")
+tween_damaged = SubResource("Resource_xcliu")
+
+[node name="TargetingArea" parent="." instance=ExtResource("6_pbsvy")]
+scale = Vector2(1, 1)
+collision_mask = 2
+blocked_by = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetingArea"]
+shape = SubResource("CircleShape2D_knht3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 3.14159
+scale = Vector2(30045.1, -95528)
+polygon = PackedVector2Array(0.0005991, -0.000324512, -0.0005991, -0.000324512, -0.0011982, 0, -0.0005991, 0.000324512, 0.0005991, 0.000324512, 0.0011982, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.431373, 0.145098, 0.580392, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_qpesd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
