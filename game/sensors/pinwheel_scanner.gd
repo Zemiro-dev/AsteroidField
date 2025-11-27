@@ -9,9 +9,11 @@ class_name PinwheelScanner
 
 
 func _ready() -> void:
+	var ray_count: int = get_ray_count()
+	var angle: float = 2.0 * PI / float(ray_count)
 	for_each_ray(
 		func(ray: RayCast2D, i: int): 
-			ray.target_position = Vector2(forward_ray).rotated(i * PI/2)
+			ray.target_position = Vector2(forward_ray).rotated(i * angle)
 			ray.collision_mask = collision_mask
 	)
 
@@ -32,6 +34,12 @@ func scan_ray(ray: RayCast2D) -> Vector2:
 	if !ray.is_colliding(): return Vector2.ZERO	
 	var collision_point: Vector2 = ray.get_collision_point() - global_position
 	return -collision_point.normalized()
+
+
+func get_ray_count() -> int:
+	var count := { "value" : 0}
+	for_each_ray(func(_ray: RayCast2D, i: int): count.value += 1)
+	return count.value
 
 
 func for_each_ray(callable: Callable):

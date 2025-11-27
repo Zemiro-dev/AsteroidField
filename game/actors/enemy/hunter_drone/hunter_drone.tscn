@@ -119,8 +119,8 @@ tween_damaged = SubResource("Resource_xcliu")
 enemy_move_and_collide = SubResource("Resource_7qq4p")
 
 [node name="TargetingArea" parent="." instance=ExtResource("6_pbsvy")]
+visible = false
 collision_mask = 2
-blocked_by = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TargetingArea"]
 shape = SubResource("CircleShape2D_knht3")
@@ -140,5 +140,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_xcliu")
 }
 
-[node name="PinwheelScanner" parent="." instance=ExtResource("11_pu7o8")]
+[node name="WallAvoidScanner" parent="." instance=ExtResource("11_pu7o8")]
 forward_ray = Vector2(200, 0)
+
+[node name="EnemyAvoidScanner" parent="." instance=ExtResource("11_pu7o8")]
+collision_mask = 4

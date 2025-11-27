@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=63 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
 [ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
@@ -76,6 +76,251 @@ metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 script = ExtResource("12_ab4jj")
 metadata/_custom_type_script = "uid://bbq8x45cacqlh"
 
+[sub_resource type="Resource" id="Resource_k2vu7"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 750.0
+base_max_acceleration = 1000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_h35gt"]
+resource_local_to_scene = true
+script = ExtResource("11_7jtk5")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_fw0c5"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_r18ru"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_be6b7"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_x0rwi"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 750.0
+base_max_acceleration = 1000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_5hfsr"]
+resource_local_to_scene = true
+script = ExtResource("11_7jtk5")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_44p8q"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_qi3qa"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_dse6n"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_6smsd"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 750.0
+base_max_acceleration = 1000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_ajp5a"]
+resource_local_to_scene = true
+script = ExtResource("11_7jtk5")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_4n2ey"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_6cor7"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_gm4il"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_1thj5"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 750.0
+base_max_acceleration = 1000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_34xt4"]
+resource_local_to_scene = true
+script = ExtResource("11_7jtk5")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_unxg3"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_8dtdm"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_f6crb"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_56xp0"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 750.0
+base_max_acceleration = 1000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_whtt0"]
+resource_local_to_scene = true
+script = ExtResource("11_7jtk5")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_qs671"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_2e3jx"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_rp74x"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_pqm7x"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 750.0
+base_max_acceleration = 1000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_njmio"]
+resource_local_to_scene = true
+script = ExtResource("11_7jtk5")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_hkyuv"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_asxao"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_s552h"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_pty5m"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 750.0
+base_max_acceleration = 1000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_8w3qn"]
+resource_local_to_scene = true
+script = ExtResource("11_7jtk5")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_qn8io"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_cghjm"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_wvbrc"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
 [sub_resource type="Resource" id="Resource_cglna"]
 resource_local_to_scene = true
 script = ExtResource("10_fn8aq")
@@ -122,6 +367,69 @@ direction_steering = SubResource("Resource_ab4jj")
 damagable = SubResource("Resource_7jtk5")
 on_death_handler = SubResource("Resource_g36r6")
 tween_damaged = SubResource("Resource_4qwbx")
+enemy_move_and_collide = SubResource("Resource_uq1vh")
+
+[node name="HunterDrone2" parent="." instance=ExtResource("8_50rxm")]
+position = Vector2(1399, 551)
+steerable = SubResource("Resource_k2vu7")
+direction_steering = SubResource("Resource_h35gt")
+damagable = SubResource("Resource_fw0c5")
+on_death_handler = SubResource("Resource_r18ru")
+tween_damaged = SubResource("Resource_be6b7")
+enemy_move_and_collide = SubResource("Resource_uq1vh")
+
+[node name="HunterDrone3" parent="." instance=ExtResource("8_50rxm")]
+position = Vector2(1734, -18)
+steerable = SubResource("Resource_x0rwi")
+direction_steering = SubResource("Resource_5hfsr")
+damagable = SubResource("Resource_44p8q")
+on_death_handler = SubResource("Resource_qi3qa")
+tween_damaged = SubResource("Resource_dse6n")
+enemy_move_and_collide = SubResource("Resource_uq1vh")
+
+[node name="HunterDrone4" parent="." instance=ExtResource("8_50rxm")]
+position = Vector2(556, -502)
+steerable = SubResource("Resource_6smsd")
+direction_steering = SubResource("Resource_ajp5a")
+damagable = SubResource("Resource_4n2ey")
+on_death_handler = SubResource("Resource_6cor7")
+tween_damaged = SubResource("Resource_gm4il")
+enemy_move_and_collide = SubResource("Resource_uq1vh")
+
+[node name="HunterDrone5" parent="." instance=ExtResource("8_50rxm")]
+position = Vector2(1422, -546)
+steerable = SubResource("Resource_1thj5")
+direction_steering = SubResource("Resource_34xt4")
+damagable = SubResource("Resource_unxg3")
+on_death_handler = SubResource("Resource_8dtdm")
+tween_damaged = SubResource("Resource_f6crb")
+enemy_move_and_collide = SubResource("Resource_uq1vh")
+
+[node name="HunterDrone6" parent="." instance=ExtResource("8_50rxm")]
+position = Vector2(1769, -376)
+steerable = SubResource("Resource_56xp0")
+direction_steering = SubResource("Resource_whtt0")
+damagable = SubResource("Resource_qs671")
+on_death_handler = SubResource("Resource_2e3jx")
+tween_damaged = SubResource("Resource_rp74x")
+enemy_move_and_collide = SubResource("Resource_uq1vh")
+
+[node name="HunterDrone7" parent="." instance=ExtResource("8_50rxm")]
+position = Vector2(1863, 212)
+steerable = SubResource("Resource_pqm7x")
+direction_steering = SubResource("Resource_njmio")
+damagable = SubResource("Resource_hkyuv")
+on_death_handler = SubResource("Resource_asxao")
+tween_damaged = SubResource("Resource_s552h")
+enemy_move_and_collide = SubResource("Resource_uq1vh")
+
+[node name="HunterDrone8" parent="." instance=ExtResource("8_50rxm")]
+position = Vector2(2049, -224)
+steerable = SubResource("Resource_pty5m")
+direction_steering = SubResource("Resource_8w3qn")
+damagable = SubResource("Resource_qn8io")
+on_death_handler = SubResource("Resource_cghjm")
+tween_damaged = SubResource("Resource_wvbrc")
 enemy_move_and_collide = SubResource("Resource_uq1vh")
 
 [node name="FreeProjectileContainer" parent="." instance=ExtResource("4_6ubl6")]
