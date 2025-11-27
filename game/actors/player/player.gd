@@ -23,6 +23,8 @@ func _ready() -> void:
 		func():
 			steerable.power_multiplier = 1
 	)
+	damagable.reset_damagable(self)
+	damagable.on_damage_taken.connect(func(damage_taken: int): print(damage_taken))
 
 
 func _physics_process(delta: float) -> void:

@@ -36,8 +36,8 @@ func is_invulnerable() -> bool:
 	return remaining_invulnerability_time > 0.0
 
 
-func take_damage(damage: int) -> void:
-	if !is_damagable(): return
+func take_damage(damage: int) -> bool:
+	if !is_damagable(): return false
 	
 	current_health -= damage
 	on_health_changed.emit(current_health, max_health)
@@ -47,6 +47,8 @@ func take_damage(damage: int) -> void:
 	
 	if current_health <= 0:
 		die()
+	
+	return true
 
 
 func die() -> void:

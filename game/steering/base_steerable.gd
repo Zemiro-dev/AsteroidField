@@ -34,13 +34,13 @@ func slow(delta: float) -> void:
 	velocity = velocity.move_toward(Vector2.ZERO, get_max_acceleration() * delta)
 
 
-## TODO Shouldn't set. Should instead add to a vector that needs
-## draining into the velocity is frame I think.
-## slow and steer both need to have a post function
-## that drains into the velocity. Halt should
-## also consider draining knockback too? Not sure.
-func knockback(new_velocity: Vector2) -> void:
-	velocity = new_velocity
+func halt() -> void:
+	velocity = Vector2.ZERO
+
+
+func knockback(knockback_vector: Vector2) -> void:
+	velocity = velocity / 2.
+	velocity += knockback_vector
 
 
 func should_overspeed_break() -> bool:

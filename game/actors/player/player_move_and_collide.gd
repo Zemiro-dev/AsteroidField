@@ -11,5 +11,5 @@ func move_and_collide(player: PhysicsBody2D, delta: float) -> void:
 		match (collider_type):
 			GameActor.ActorType.UNKNOWN, GameActor.ActorType.TERRAIN, GameActor.ActorType.ENEMY:
 				steerable.velocity = steerable.velocity.bounce(collision.get_normal())
-	if steerable.should_overspeed_break():
-		steerable.overspeed_break(delta)
+	#if steerable.should_overspeed_break():
+		#steerable.overspeed_break(delta)

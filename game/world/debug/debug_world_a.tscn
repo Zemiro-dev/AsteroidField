@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=70 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
 [ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" uid="uid://yq11iyvgqusn" path="res://projectiles/cannon/cannon_stats.gd" id="10_fn8aq"]
 [ext_resource type="Script" uid="uid://dr8hlak48x06t" path="res://steering/direction_steering_strategy.gd" id="11_7jtk5"]
 [ext_resource type="Script" uid="uid://bbq8x45cacqlh" path="res://actors/physics_body_move_and_collide.gd" id="12_ab4jj"]
+[ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="16_g36r6"]
+[ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
 
 [sub_resource type="Resource" id="Resource_fn8aq"]
 resource_local_to_scene = true
@@ -321,6 +323,39 @@ script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 
+[sub_resource type="Resource" id="Resource_311cb"]
+resource_local_to_scene = true
+script = ExtResource("16_g36r6")
+metadata/_custom_type_script = "uid://ck267f0n0aj0v"
+
+[sub_resource type="Resource" id="Resource_lrit0"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 500.0
+base_max_acceleration = 1500.0
+turn_around_multiplier = 3.0
+overspeed_break_force = 500.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_4y5k8"]
+resource_local_to_scene = true
+script = ExtResource("11_7jtk5")
+goal_vector = Vector2(0, 0)
+metadata/_custom_type_script = "uid://dr8hlak48x06t"
+
+[sub_resource type="Resource" id="Resource_ebrbd"]
+resource_local_to_scene = true
+script = ExtResource("17_4qwbx")
+metadata/_custom_type_script = "uid://djf22au03k0mc"
+
+[sub_resource type="Resource" id="Resource_r52ci"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 100
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
 [sub_resource type="Resource" id="Resource_cglna"]
 resource_local_to_scene = true
 script = ExtResource("10_fn8aq")
@@ -437,10 +472,17 @@ enemy_move_and_collide = SubResource("Resource_uq1vh")
 [node name="FreeParticleContainer" parent="." instance=ExtResource("3_4pxye")]
 
 [node name="Player" parent="." instance=ExtResource("3_n85cx")]
+controller = SubResource("Resource_311cb")
+steerable = SubResource("Resource_lrit0")
+direction_steering = SubResource("Resource_4y5k8")
+player_move_and_collide = SubResource("Resource_ebrbd")
+dash_multiplier = 2.0
+damagable = SubResource("Resource_r52ci")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, 0)
 
 [node name="Cannon" parent="Player" instance=ExtResource("8_551gn")]
+enabled = false
 stats = SubResource("Resource_cglna")
 spawn_offset = Vector2(50, 0)

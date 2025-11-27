@@ -114,7 +114,7 @@ radius = 8.0
 
 [node name="HunterDrone" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_rpdlw")
 steerable = SubResource("Resource_34gyq")
 direction_steering = SubResource("Resource_mtkfv")
@@ -153,32 +153,32 @@ forward_ray = Vector2(200, 0)
 collision_mask = 4
 
 [node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("13_mtkfv")
 metadata/_custom_type_script = "uid://canb082p77b1f"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Hurtbox"]
 modulate = Color(1, 0.988235, 0.192157, 1)
-position = Vector2(49, -11)
+position = Vector2(33.125, -11)
 rotation = 1.57079
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_7qq4p")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Hurtbox"]
 modulate = Color(1, 0.988235, 0.192157, 1)
-position = Vector2(49, 11)
+position = Vector2(33.125, 11)
 rotation = 1.57079
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_7qq4p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hurtbox"]
 modulate = Color(1, 0.988235, 0.192157, 1)
-position = Vector2(52, 0)
+position = Vector2(36.125, 0)
 rotation = 1.57079
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_7qq4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(49, 0)
+position = Vector2(33.125, 0)
 shape = SubResource("CapsuleShape2D_mtkfv")

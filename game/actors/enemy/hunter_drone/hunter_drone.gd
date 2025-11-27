@@ -14,6 +14,7 @@ var actor_type := GameActor.ActorType.ENEMY
 @onready var enemy_avoid_scanner: PinwheelScanner = $EnemyAvoidScanner
 @onready var targeting_area: TargetingArea = $TargetingArea
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var hurtbox: Hurtbox = $Hurtbox
 
 @export var stop_radius: float = 20.0
 var last_known_target_location: Vector2 = Vector2.ZERO
@@ -32,6 +33,7 @@ func _ready() -> void:
 			tween_damaged.bind_to_node(self)
 	if steerable:
 		steerable.steering_strategies.append(direction_steering)
+		hurtbox.on_damage_dealt.connect(self_knockback)
 	target_offset_vector = raw_offset_vector.rotated(rng.randf_range(0, 2 * PI))
 
 
@@ -53,10 +55,16 @@ func _physics_process(delta: float) -> void:
 				steerable.steer(delta)
 			else:
 				steerable.slow(delta)
-			velocity = steerable.velocity
-			rotation = velocity.angle()
+			rotation = steerable.velocity.angle()
 		else:
-			velocity = Vector2.ZERO
+			steerable.halt()
 			
-		
+		if steerable.should_overspeed_break():
+			steerable.overspeed_break(delta)
+			
 		enemy_move_and_collide.move_and_collide(self, delta)
+
+func self_knockback(_t: Node2D, _d: int):
+	if steerable:
+		var heading := steerable.velocity.normalized()
+		steerable.knockback(-heading * 3000.)
