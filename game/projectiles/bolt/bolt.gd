@@ -32,7 +32,6 @@ func _physics_process(delta: float) -> void:
 		rotation = heading.angle()
 		position += projectile_stats.speed * heading * delta
 		if projectile_stats.lifetime < age:
-			print('boom 1')
 			queue_free()
 
 
@@ -40,7 +39,5 @@ func on_body_entered(node: Node2D) -> void:
 	if projectile_stats:
 		var damagable := GameActor.get_damagable(node)
 		if damagable:
-			print('take damage')
 			damagable.take_damage(projectile_stats.damage)
-	print('boom 2')
 	queue_free()

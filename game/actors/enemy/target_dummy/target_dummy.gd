@@ -5,6 +5,7 @@ class_name TargetDummy
 @export var damagable: BaseDamagable
 @export var on_death_handler: BaseOnDeathHandler
 @export var tween_damaged: TweenDamaged
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var actor_type := GameActor.ActorType.ENEMY
 

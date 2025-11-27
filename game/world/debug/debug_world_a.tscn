@@ -127,6 +127,5 @@ tween_damaged = SubResource("Resource_4qwbx")
 position = Vector2(-2, 0)
 
 [node name="Cannon" parent="Player" instance=ExtResource("8_551gn")]
-enabled = false
 stats = SubResource("Resource_cglna")
 spawn_offset = Vector2(50, 0)

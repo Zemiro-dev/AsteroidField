@@ -46,5 +46,4 @@ func _hitscan(target:Vector2) -> void:
 	if obj is Object:
 		var damagable = GameActor.get_damagable(obj)
 		if damagable:
-			print('hitscan fire!')
 			damagable.take_damage(2)

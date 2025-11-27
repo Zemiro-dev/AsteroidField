@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://es1f0l0b3jm5"]
+[gd_scene load_steps=20 format=3 uid="uid://es1f0l0b3jm5"]
 
 [ext_resource type="Texture2D" uid="uid://c8we5ebwkre7u" path="res://assets/enemy/white_hex_shadowed.png" id="1_qpesd"]
 [ext_resource type="Script" uid="uid://cjmaqsclqu5f6" path="res://actors/enemy/hunter_drone/hunter_drone.gd" id="1_rpdlw"]
@@ -49,6 +49,57 @@ metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 [sub_resource type="CircleShape2D" id="CircleShape2D_knht3"]
 radius = 1911.0
 
+[sub_resource type="Animation" id="Animation_s0sue"]
+resource_name = "die"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_pu7o8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcliu"]
+_data = {
+&"RESET": SubResource("Animation_pu7o8"),
+&"die": SubResource("Animation_s0sue")
+}
+
 [node name="HunterDrone" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -60,7 +111,6 @@ on_death_handler = SubResource("Resource_pu7o8")
 tween_damaged = SubResource("Resource_xcliu")
 
 [node name="TargetingArea" parent="." instance=ExtResource("6_pbsvy")]
-scale = Vector2(1, 1)
 collision_mask = 2
 blocked_by = 1
 
@@ -78,3 +128,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_qpesd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xcliu")
+}

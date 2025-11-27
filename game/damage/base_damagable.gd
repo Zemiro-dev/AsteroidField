@@ -39,7 +39,6 @@ func is_invulnerable() -> bool:
 func take_damage(damage: int) -> void:
 	if !is_damagable(): return
 	
-	print("Inc Damage: %s, Current Health: %s" % [damage, current_health])
 	current_health -= damage
 	on_health_changed.emit(current_health, max_health)
 	on_damage_taken.emit(damage)

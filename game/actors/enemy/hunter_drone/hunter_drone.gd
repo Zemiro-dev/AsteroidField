@@ -10,6 +10,7 @@ class_name HunterDrone
 var actor_type := GameActor.ActorType.ENEMY
 
 @onready var targeting_area: TargetingArea = $TargetingArea
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
@@ -29,11 +30,15 @@ func _physics_process(delta: float) -> void:
 		damagable.physics_process(delta)
 	var target = targeting_area.get_target()
 	if steerable:
-		if !target.is_zero_approx():
-			direction_steering.goal_vector = global_position.direction_to(target) * steerable.get_max_speed()
-			steerable.steer(delta)
+		if !damagable.is_dead:
+			if !target.is_zero_approx():
+				direction_steering.goal_vector = global_position.direction_to(target) * steerable.get_max_speed()
+				steerable.steer(delta)
+			else:
+				steerable.slow(delta)
+			velocity = steerable.velocity
 		else:
-			steerable.slow(delta)
+			velocity = Vector2.ZERO
 			
-		velocity = steerable.velocity
+		
 		move_and_slide()
