@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce21wlshv8uku"]
+
+[ext_resource type="Script" uid="uid://b865ta60hqdw1" path="res://sensors/pinwheel_scanner.gd" id="1_25ca5"]
+
+[node name="PinwheelScanner" type="Node2D"]
+script = ExtResource("1_25ca5")
+collision_mask = 1
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]

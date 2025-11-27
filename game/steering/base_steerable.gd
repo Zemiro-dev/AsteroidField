@@ -18,8 +18,12 @@ func steer(delta: float) -> void:
 	velocity += acceleration * delta
 
 
-func slow(delta: float):
+func slow(delta: float) -> void:
 	velocity = velocity.move_toward(Vector2.ZERO, get_max_acceleration() * delta)
+
+
+func halt() -> void:
+	velocity = Vector2.ZERO
 
 
 func should_overspeed_break() -> bool:

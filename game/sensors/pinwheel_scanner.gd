@@ -1,0 +1,42 @@
+extends Node2D
+class_name PinwheelScanner
+
+
+@export var forward_ray: Vector2 = Vector2(100., 0)
+@export var spinning: bool = true
+@export var rotation_speed: float = TAU * 6.
+@export_flags_2d_physics var collision_mask: int
+
+
+func _ready() -> void:
+	for_each_ray(
+		func(ray: RayCast2D, i: int): 
+			ray.target_position = Vector2(forward_ray).rotated(i * PI/2)
+			ray.collision_mask = collision_mask
+	)
+
+
+func _physics_process(delta: float) -> void:
+	if spinning:
+		rotation += delta * rotation_speed
+
+
+func scan() -> Vector2:	
+	var sense := { "value" : Vector2.ZERO }
+	for_each_ray(func(ray: RayCast2D, _i: int): sense.value += scan_ray(ray))
+	Vector.clamp_vector2_length(sense.value, 1.)
+	return sense.value
+
+
+func scan_ray(ray: RayCast2D) -> Vector2:
+	if !ray.is_colliding(): return Vector2.ZERO	
+	var collision_point: Vector2 = ray.get_collision_point() - global_position
+	return -collision_point.normalized()
+
+
+func for_each_ray(callable: Callable):
+	var index := 0
+	for ray in get_children():
+		if ray is RayCast2D:
+			callable.call(ray, index)
+			index += 1

@@ -1,8 +1,8 @@
-extends Resource
+extends PhysicsBodyMoveAndCollide
 class_name PlayerMoveAndCollide
 
 
-func move_and_collide(player: Player, delta: float) -> void:
+func move_and_collide(player: PhysicsBody2D, delta: float) -> void:
 	var steerable: BaseSteerable = GameActor.get_steerable(player)
 	var collision: KinematicCollision2D = player.move_and_collide(steerable.velocity * delta)
 	if collision:

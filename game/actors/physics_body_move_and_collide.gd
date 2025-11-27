@@ -1,0 +1,16 @@
+extends Resource
+class_name PhysicsBodyMoveAndCollide
+
+
+func move_and_collide(body: PhysicsBody2D, delta: float) -> void:
+	var steerable: BaseSteerable = GameActor.get_steerable(body)
+	if steerable:		
+		var collision: KinematicCollision2D = body.move_and_collide(steerable.velocity * delta)
+		if collision:
+			var collider: Object = collision.get_collider()
+			var collider_type =	GameActor.get_actor_type(collider)
+			match (collider_type):
+				GameActor.ActorType.UNKNOWN, GameActor.ActorType.TERRAIN, GameActor.ActorType.ENEMY:
+					steerable.velocity = steerable.velocity.bounce(collision.get_normal())
+		if steerable.should_overspeed_break():
+			steerable.overspeed_break(delta)

@@ -1,6 +1,7 @@
 extends Area2D
 class_name TargetingArea
 
+
 @export_flags_2d_physics var blocked_by: int
 
 
