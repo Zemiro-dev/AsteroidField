@@ -29,8 +29,20 @@
 - [x] Basic Enemy Transition Animations
 	- [x] Damage Tween
 - [x] Death explosion
-- [ ] Basic Projectile
+- [x] Basic Projectile
 	- [ ] Cannon Scene - let it handle the targeting for now and think about it later? That way they can all target and what not on their own
-- [ ] How does player target?
+- [x] How does player target?
+
+- [x] hunter attack sprite
+- [ ] Add hurtbox to hunter
+- [ ] add knockback to hurtbox and steerable interactions
+	- [ ] Knockback should be animatable. Not just hard set. But that animation needs to be crazy fast. I feel like I need to fill up a knockback vector and the steerable 'dumps' it into the velocity at a high rate? I could also just take away control, but I'm not sure I like that either.
+- [ ] add damagable to player
+- [ ] add knockback based on damage
+- [ ] create heath bar
+- [ ] add player death
+	- [ ] state
+	- [ ] reset
+	- [ ] animation
 - [ ] Title Card
 - [ ] Camera Dampening with Dash

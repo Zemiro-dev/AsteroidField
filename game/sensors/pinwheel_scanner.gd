@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 func scan() -> Vector2:	
 	var sense := { "value" : Vector2.ZERO }
 	for_each_ray(func(ray: RayCast2D, _i: int): sense.value += scan_ray(ray))
-	Vector.clamp_vector2_length(sense.value, 1.)
+	sense.value = Vector.clamp_vector2_length(sense.value, 1.)
 	return sense.value
 
 

@@ -9,3 +9,7 @@ func get_direction_vector() -> Vector2:
 
 func is_dash_just_pressed() -> bool:
 	return Input.is_action_just_pressed("dash")
+
+
+func is_dash_pressed() -> bool:
+	return Input.is_action_pressed("dash")

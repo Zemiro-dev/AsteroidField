@@ -18,6 +18,10 @@ var actor_type := GameActor.ActorType.ENEMY
 @export var stop_radius: float = 20.0
 var last_known_target_location: Vector2 = Vector2.ZERO
 
+@export var raw_offset_vector: Vector2 = Vector2.ZERO
+var target_offset_vector: Vector2
+var rng = RandomNumberGenerator.new()
+
 
 func _ready() -> void:
 	if damagable:
@@ -28,7 +32,7 @@ func _ready() -> void:
 			tween_damaged.bind_to_node(self)
 	if steerable:
 		steerable.steering_strategies.append(direction_steering)
-		
+	target_offset_vector = raw_offset_vector.rotated(rng.randf_range(0, 2 * PI))
 
 
 func _physics_process(delta: float) -> void:
@@ -44,12 +48,13 @@ func _physics_process(delta: float) -> void:
 				#target = global_position + Vector2(0, -1)
 				var wall_avoid := wall_avoid_scanner.scan()
 				var enemy_avoid := enemy_avoid_scanner.scan()
-				var target_goal := enemy_avoid if !enemy_avoid.is_zero_approx() else global_position.direction_to(target)
+				var target_goal := enemy_avoid if !enemy_avoid.is_zero_approx() else global_position.direction_to(target + target_offset_vector)
 				direction_steering.goal_vector = (global_position.direction_to(target) + wall_avoid + enemy_avoid).normalized() * steerable.get_max_speed()
 				steerable.steer(delta)
 			else:
 				steerable.slow(delta)
 			velocity = steerable.velocity
+			rotation = velocity.angle()
 		else:
 			velocity = Vector2.ZERO
 			

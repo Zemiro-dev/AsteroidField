@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://es1f0l0b3jm5"]
+[gd_scene load_steps=26 format=3 uid="uid://es1f0l0b3jm5"]
 
 [ext_resource type="Texture2D" uid="uid://c8we5ebwkre7u" path="res://assets/enemy/white_hex_shadowed.png" id="1_qpesd"]
 [ext_resource type="Script" uid="uid://cjmaqsclqu5f6" path="res://actors/enemy/hunter_drone/hunter_drone.gd" id="1_rpdlw"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://x56kdse40k5g" path="res://sensors/targeting_area.tscn" id="6_pbsvy"]
 [ext_resource type="Script" uid="uid://bbq8x45cacqlh" path="res://actors/physics_body_move_and_collide.gd" id="9_xcliu"]
 [ext_resource type="PackedScene" uid="uid://ce21wlshv8uku" path="res://sensors/pinwheel_scanner.tscn" id="11_pu7o8"]
+[ext_resource type="Script" uid="uid://canb082p77b1f" path="res://damage/hurtbox/hurtbox.gd" id="13_mtkfv"]
+[ext_resource type="Texture2D" uid="uid://bwh7h1cmcsear" path="res://assets/projectiles/white_triangle_hole.png" id="14_7qq4p"]
 
 [sub_resource type="Resource" id="Resource_34gyq"]
 resource_local_to_scene = true
@@ -107,9 +109,12 @@ _data = {
 &"die": SubResource("Animation_s0sue")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtkfv"]
+radius = 8.0
+
 [node name="HunterDrone" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_rpdlw")
 steerable = SubResource("Resource_34gyq")
 direction_steering = SubResource("Resource_mtkfv")
@@ -117,6 +122,7 @@ damagable = SubResource("Resource_s0sue")
 on_death_handler = SubResource("Resource_pu7o8")
 tween_damaged = SubResource("Resource_xcliu")
 enemy_move_and_collide = SubResource("Resource_7qq4p")
+raw_offset_vector = Vector2(300, 0)
 
 [node name="TargetingArea" parent="." instance=ExtResource("6_pbsvy")]
 visible = false
@@ -145,3 +151,34 @@ forward_ray = Vector2(200, 0)
 
 [node name="EnemyAvoidScanner" parent="." instance=ExtResource("11_pu7o8")]
 collision_mask = 4
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("13_mtkfv")
+metadata/_custom_type_script = "uid://canb082p77b1f"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Hurtbox"]
+modulate = Color(1, 0.988235, 0.192157, 1)
+position = Vector2(49, -11)
+rotation = 1.57079
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_7qq4p")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Hurtbox"]
+modulate = Color(1, 0.988235, 0.192157, 1)
+position = Vector2(49, 11)
+rotation = 1.57079
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_7qq4p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hurtbox"]
+modulate = Color(1, 0.988235, 0.192157, 1)
+position = Vector2(52, 0)
+rotation = 1.57079
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_7qq4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(49, 0)
+shape = SubResource("CapsuleShape2D_mtkfv")

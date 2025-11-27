@@ -18,22 +18,6 @@ func steer(delta: float) -> void:
 	velocity += acceleration * delta
 
 
-func slow(delta: float) -> void:
-	velocity = velocity.move_toward(Vector2.ZERO, get_max_acceleration() * delta)
-
-
-func halt() -> void:
-	velocity = Vector2.ZERO
-
-
-func should_overspeed_break() -> bool:
-	return velocity.length() > get_max_speed()
-
-
-func overspeed_break(delta: float) -> void:
-	velocity = velocity.move_toward(velocity.normalized() * get_max_speed(), overspeed_break_force)
-
-
 func combined_steering() -> SteeringResult:
 	var combined_result := SteeringResult.new(Vector2.ZERO, Vector2.ZERO)
 	
@@ -44,7 +28,28 @@ func combined_steering() -> SteeringResult:
 	combined_result.limit_length(get_max_acceleration(), get_max_speed())
 	
 	return combined_result
-	
+
+
+func slow(delta: float) -> void:
+	velocity = velocity.move_toward(Vector2.ZERO, get_max_acceleration() * delta)
+
+
+## TODO Shouldn't set. Should instead add to a vector that needs
+## draining into the velocity is frame I think.
+## slow and steer both need to have a post function
+## that drains into the velocity. Halt should
+## also consider draining knockback too? Not sure.
+func knockback(new_velocity: Vector2) -> void:
+	velocity = new_velocity
+
+
+func should_overspeed_break() -> bool:
+	return velocity.length() > get_max_speed()
+
+
+func overspeed_break(delta: float) -> void:
+	velocity = velocity.move_toward(velocity.normalized() * get_max_speed(), overspeed_break_force)
+
 
 func get_max_speed() -> float:
 	return base_max_speed * power_multiplier

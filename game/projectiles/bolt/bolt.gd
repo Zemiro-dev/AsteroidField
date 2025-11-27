@@ -6,6 +6,7 @@ class_name Bolt
 @export var explosion_scene: PackedScene
 var age: float = 0.0
 var heading: Vector2 = Vector2(1., 0.)
+var velocity: Vector2 = Vector2.ZERO
 
 
 func fire(
@@ -29,8 +30,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if projectile_stats:
 		age += delta
-		rotation = heading.angle()
-		position += projectile_stats.speed * heading * delta
+		rotation = velocity.angle()
+		velocity += projectile_stats.acceleration * heading * delta
+		velocity = Vector.clamp_vector2_length(velocity, projectile_stats.max_speed)
+		position += velocity
 		if projectile_stats.lifetime < age:
 			queue_free()
 

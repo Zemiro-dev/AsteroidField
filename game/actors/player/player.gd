@@ -11,7 +11,8 @@ class_name Player
 @export var steerable: BaseSteerable
 @export var direction_steering: DirectionSteeringStrategy
 @export var player_move_and_collide: PlayerMoveAndCollide
-@export var dash_multiplier: float = 6.0
+@export var dash_multiplier: float = 3.0
+@export var damagable: BaseDamagable
 
 var actor_type := GameActor.ActorType.PLAYER
 
@@ -43,10 +44,14 @@ func _physics_process(delta: float) -> void:
 
 
 func dash() -> void:
-	if controller.is_dash_just_pressed() and dash_cooldown_timer.is_stopped() and dash_duration_timer.is_stopped():
-		dash_cooldown_timer.start()
-		dash_duration_timer.start()
+	if controller.is_dash_pressed():
 		steerable.power_multiplier = dash_multiplier
+	else:
+		steerable.power_multiplier = 1
+	#if controller.is_dash_just_pressed() and dash_cooldown_timer.is_stopped() and dash_duration_timer.is_stopped():
+		#dash_cooldown_timer.start()
+		#dash_duration_timer.start()
+		#steerable.power_multiplier = dash_multiplier
 
 
 func is_dashing() -> bool:

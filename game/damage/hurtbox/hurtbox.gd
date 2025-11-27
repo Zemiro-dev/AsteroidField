@@ -3,6 +3,7 @@ class_name Hurtbox
 
 ### Damage per enter
 @export var damage: int = 1
+@export var is_knockback: bool = false
 
 
 func _ready() -> void:
