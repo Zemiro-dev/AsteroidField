@@ -170,6 +170,7 @@
   },
   "active": "614d627dd8a51a05",
   "lastOpenFiles": [
+    "game/world/debug/debug_world_a.tscn27803061365.tmp",
     "game/world/debug/debug_world_a.tscn26978687708.tmp",
     "game/world/debug/debug_world_a.tscn26619036037.tmp",
     "game/world/debug/debug_world_a.tscn26547566573.tmp",
@@ -180,7 +181,6 @@
     "game/world/debug/debug_world_a.tscn26299090283.tmp",
     "game/actors/enemy/hunter_drone/hunter_drone.gd26267954620.tmp",
     "game/world/debug/debug_world_a.tscn17602909730.tmp",
-    "game/actors/enemy/hunter_drone/hunter_drone.tscn17340993656.tmp",
     "game/assets/projectiles/white_triangle_hole.png",
     "game/assets/projectiles/white_triangle.png",
     "game/assets/enemy/white_hex_shadowed.png",
