@@ -15,6 +15,7 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 @export var dash_multiplier: float = 3.0
 @export var damagable: BaseDamagable
 @export var max_boost_duration: float = 1.0
+@export var boost_recharge_ratio: float = 1.0
 ## Value between 0-1, percentage where boost resets after full empty
 @export var boost_cd_reset: float = .75
 @export var on_death_handler: BaseOnDeathHandler
@@ -67,7 +68,7 @@ func dash(delta: float) -> void:
 		update_boost_duration(-delta)
 	else:
 		steerable.power_multiplier = 1
-		update_boost_duration(delta)
+		update_boost_duration(delta * boost_recharge_ratio)
 	
 
 

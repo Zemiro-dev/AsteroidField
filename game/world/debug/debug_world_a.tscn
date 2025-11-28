@@ -1,14 +1,16 @@
-[gd_scene load_steps=34 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=42 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
 [ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
 [ext_resource type="PackedScene" uid="uid://b4mcxong48o84" path="res://world/containers/free_particle_container.tscn" id="3_4pxye"]
 [ext_resource type="PackedScene" uid="uid://b32mttqfycxyd" path="res://actors/player/player.tscn" id="3_n85cx"]
+[ext_resource type="PackedScene" uid="uid://be2rx3v6u8nhq" path="res://world/asteroids/asteroid_with_path.tscn" id="3_r18ru"]
 [ext_resource type="PackedScene" uid="uid://cj6bxuyylc1xc" path="res://world/containers/free_projectile_container.tscn" id="4_6ubl6"]
 [ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="4_fn8aq"]
 [ext_resource type="PackedScene" uid="uid://sbfur265ybyr" path="res://actors/enemy/target_dummy/target_dummy.tscn" id="4_lsna4"]
 [ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="5_38n11"]
+[ext_resource type="PackedScene" uid="uid://bpexwtnvt8ije" path="res://world/asteroids/asteroid_a.tscn" id="5_be6b7"]
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="5_pudvl"]
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="6_50rxm"]
 [ext_resource type="PackedScene" uid="uid://tp2ynjhkq3xn" path="res://projectiles/cannon/cannon.tscn" id="8_551gn"]
@@ -44,33 +46,71 @@ script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 
-[sub_resource type="Resource" id="Resource_311cb"]
+[sub_resource type="Resource" id="Resource_44p8q"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_qi3qa"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_dse6n"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_6smsd"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 10
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_ajp5a"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_4n2ey"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_fw0c5"]
 resource_local_to_scene = true
 script = ExtResource("16_g36r6")
 metadata/_custom_type_script = "uid://ck267f0n0aj0v"
 
-[sub_resource type="Resource" id="Resource_lrit0"]
+[sub_resource type="Resource" id="Resource_r18ru"]
 resource_local_to_scene = true
 script = ExtResource("9_782kq")
 base_max_speed = 500.0
-base_max_acceleration = 1500.0
+base_max_acceleration = 1250.0
 turn_around_multiplier = 3.0
 overspeed_break_force = 500.0
 steering_strategies = Array[ExtResource("10_ab4jj")]([])
 metadata/_custom_type_script = "uid://c7jc7uwjmfido"
 
-[sub_resource type="Resource" id="Resource_4y5k8"]
+[sub_resource type="Resource" id="Resource_be6b7"]
 resource_local_to_scene = true
 script = ExtResource("11_7jtk5")
 goal_vector = Vector2(0, 0)
 metadata/_custom_type_script = "uid://dr8hlak48x06t"
 
-[sub_resource type="Resource" id="Resource_ebrbd"]
+[sub_resource type="Resource" id="Resource_x0rwi"]
 resource_local_to_scene = true
 script = ExtResource("17_4qwbx")
 metadata/_custom_type_script = "uid://djf22au03k0mc"
 
-[sub_resource type="Resource" id="Resource_r52ci"]
+[sub_resource type="Resource" id="Resource_5hfsr"]
 resource_local_to_scene = true
 script = ExtResource("4_fn8aq")
 max_health = 10
@@ -96,84 +136,370 @@ motion_mirroring = Vector2(1920, 1080)
 texture = ExtResource("1_n85cx")
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="AsteroidWithPath" parent="Asteroids" instance=ExtResource("3_r18ru")]
 position = Vector2(991, -22)
-collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("2_4pxye")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+[node name="StaticBody2D5" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(-27, 247)
 rotation = 0.70953
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D5"]
 texture = ExtResource("2_4pxye")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D5"]
 visible = false
 polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D5"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D5"]
 visible = false
 polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(2447, -223)
 rotation = 1.14156
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D2"]
 texture = ExtResource("2_4pxye")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D2"]
 visible = false
 polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D2"]
 visible = false
 polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(2470, -1964)
 rotation = 0.617049
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D3"]
 texture = ExtResource("2_4pxye")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D3"]
 visible = false
 polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D3"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D3"]
 visible = false
 polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(572, -1717)
 rotation = 1.9238
+scale = Vector2(1, 1)
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D4"]
 texture = ExtResource("2_4pxye")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D4"]
 visible = false
 polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D4"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D4"]
 visible = false
 polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Asteroids"]
+position = Vector2(40.0001, 2567)
+rotation = 1.9238
+scale = Vector2(1, 1)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D6"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D6"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D6"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Asteroids"]
+position = Vector2(466, 3441)
+rotation = 1.77868
+scale = Vector2(1, 1)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D7"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D7"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D7"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Asteroids"]
+position = Vector2(1035, 4217)
+rotation = 1.54745
+scale = Vector2(1, 1)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D8"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D8"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D8"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Asteroids"]
+position = Vector2(1666, 4875)
+rotation = 1.54745
+scale = Vector2(1, 1)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D9"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D9"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D9"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Asteroids"]
+position = Vector2(3028, 4836)
+rotation = -0.0643611
+scale = Vector2(1, 1)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D10"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D10"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D10"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Asteroids"]
+position = Vector2(3712, 4180)
+rotation = -0.0643611
+scale = Vector2(1, 1)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D11"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D11"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D11"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Asteroids"]
+position = Vector2(4418, 3496)
+rotation = -0.0643611
+scale = Vector2(1, 1)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D12"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D12"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D12"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Asteroids"]
+position = Vector2(4974, 2664)
+rotation = -0.341724
+scale = Vector2(1, 1)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D13"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D13"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Asteroids/StaticBody2D13"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="AsteroidA" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(839, 1532)
+
+[node name="AsteroidA2" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(1199, 1111)
+rotation = 1.10307
+
+[node name="AsteroidA26" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1297, 886)
+rotation = 2.92578
+
+[node name="AsteroidA27" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2163, 2490)
+rotation = 2.65773
+
+[node name="AsteroidA3" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(1897, 1146)
+rotation = -0.673861
+
+[node name="AsteroidA4" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(1643, 1801)
+rotation = 0.197765
+
+[node name="AsteroidA28" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(2613, 1760)
+rotation = 0.98189
+
+[node name="AsteroidA29" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(3169, 3452)
+rotation = -1.80054
+
+[node name="AsteroidA30" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(1433, 3445)
+rotation = -1.80054
+
+[node name="AsteroidA5" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(2020, 3149)
+rotation = 0.197765
+
+[node name="AsteroidA6" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(2130, 2685)
+rotation = -0.859627
+
+[node name="AsteroidA7" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(2856, 2603)
+rotation = 0.630311
+
+[node name="AsteroidA9" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(2907, 797)
+rotation = -0.11052
+
+[node name="AsteroidA12" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(523, -818)
+rotation = 0.592707
+
+[node name="AsteroidA13" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(3372, -897)
+rotation = 0.592707
+
+[node name="AsteroidA14" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(1483, -2616)
+rotation = 0.592707
+
+[node name="AsteroidA15" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-776, 3973)
+rotation = 0.592707
+
+[node name="AsteroidA16" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-649, 4764)
+rotation = 0.592707
+
+[node name="AsteroidA17" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(338, 5004)
+rotation = 0.592707
+
+[node name="AsteroidA18" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(598, 5737)
+rotation = 0.592707
+
+[node name="AsteroidA19" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(1571, 6399)
+rotation = 0.592707
+
+[node name="AsteroidA20" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(2852, 6248)
+rotation = -1.45107
+
+[node name="AsteroidA21" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(3839, 5637)
+rotation = 1.19983
+
+[node name="AsteroidA22" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5040, 4407)
+rotation = 1.52368
+
+[node name="AsteroidA23" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5040, 4407)
+rotation = 1.52368
+
+[node name="AsteroidA24" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(6003, 2966)
+rotation = 2.25777
+
+[node name="AsteroidA25" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(6003, 2966)
+rotation = 2.25777
+
+[node name="AsteroidA10" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(4387, 1799)
+rotation = 0.630311
+
+[node name="AsteroidA31" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5386, 1537)
+rotation = 0.630311
+
+[node name="AsteroidA32" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5386, 1537)
+rotation = 0.630311
+
+[node name="AsteroidA37" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5634, 1485)
+rotation = 2.25357
+
+[node name="AsteroidA38" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5859, 1558)
+rotation = 3.24085
+
+[node name="AsteroidA39" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5927, 1706)
+rotation = 4.2016
+
+[node name="AsteroidA40" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5930, 1932)
+rotation = 4.54187
+
+[node name="AsteroidA33" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5944, 2196)
+rotation = 0.0262508
+
+[node name="AsteroidA34" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5944, 2196)
+rotation = 0.0262508
+
+[node name="AsteroidA35" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5944, 2196)
+rotation = 0.0262508
+
+[node name="AsteroidA36" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(4914, 1859)
+rotation = 1.58176
+
+[node name="AsteroidA11" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(3606, 1234)
+rotation = 1.53833
+
+[node name="AsteroidA8" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(2497, 3384)
+rotation = 0.197765
 
 [node name="FreeProjectileContainer" parent="." instance=ExtResource("4_6ubl6")]
 
@@ -211,17 +537,55 @@ position = Vector2(1631, -1988)
 
 [node name="HunterSpawner8" parent="Enemies" instance=ExtResource("11_k2vu7")]
 position = Vector2(2550, -1114)
+
+[node name="HunterSpawner9" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(1966, 5734)
+
+[node name="HunterSpawner10" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(2745, 5734)
+
+[node name="HunterSpawner11" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(2.99997, 4435)
+
+[node name="HunterSpawner12" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(5381, 2018)
+
+[node name="HunterSpawner13" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(4192, 4991)
+
+[node name="HunterSpawner14" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(5566, 3533)
+
+[node name="HunterSpawner15" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(2341, 4218)
 scale = Vector2(0.998352, 1)
 
+[node name="HunterSpawner16" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(1125, 2259)
+scale = Vector2(0.998352, 1)
+
+[node name="HunterSpawner17" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(3890, 2297)
+
+[node name="TargetDummy2" parent="Enemies" instance=ExtResource("4_lsna4")]
+position = Vector2(2341, 5538)
+damagable = SubResource("Resource_44p8q")
+on_death_handler = SubResource("Resource_qi3qa")
+tween_damaged = SubResource("Resource_dse6n")
+
+[node name="TargetDummy3" parent="Enemies" instance=ExtResource("4_lsna4")]
+position = Vector2(5628, 1742)
+damagable = SubResource("Resource_6smsd")
+on_death_handler = SubResource("Resource_ajp5a")
+tween_damaged = SubResource("Resource_4n2ey")
+
 [node name="Player" parent="." instance=ExtResource("3_n85cx")]
-position = Vector2(-1468, 390)
-controller = SubResource("Resource_311cb")
-steerable = SubResource("Resource_lrit0")
-direction_steering = SubResource("Resource_4y5k8")
-player_move_and_collide = SubResource("Resource_ebrbd")
-dash_multiplier = 2.0
-damagable = SubResource("Resource_r52ci")
-max_boost_duration = 2.0
+position = Vector2(-1009, 1902)
+controller = SubResource("Resource_fw0c5")
+steerable = SubResource("Resource_r18ru")
+direction_steering = SubResource("Resource_be6b7")
+player_move_and_collide = SubResource("Resource_x0rwi")
+damagable = SubResource("Resource_5hfsr")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, 0)

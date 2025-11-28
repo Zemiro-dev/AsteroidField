@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://be2rx3v6u8nhq"]
+
+[ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="1_i5n0t"]
+
+[node name="AsteroidWithPath" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i5n0t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)

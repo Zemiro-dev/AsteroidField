@@ -15,4 +15,4 @@ func spawnAll() -> void:
 		if child is Marker2D:
 			var enemy: Node2D = enemy_scene.instantiate()
 			add_child(enemy)
-			enemy.global_transform = child.global_transform
+			enemy.global_position = child.global_position

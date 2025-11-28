@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpexwtnvt8ije"]
+
+[ext_resource type="Texture2D" uid="uid://bf1875be1uggy" path="res://assets/asteroids/asteroid_small_a.png" id="1_ndxi5"]
+
+[node name="AsteroidA" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ndxi5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(11, -151, -108, -66, -99, -37, -162, 8, -119, 147, 26, 151, 33, 131, 116, 133, 163, -6, 119, -37, 128, -62)

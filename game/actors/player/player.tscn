@@ -20,10 +20,10 @@ metadata/_custom_type_script = "uid://ck267f0n0aj0v"
 [sub_resource type="Resource" id="Resource_388e2"]
 resource_local_to_scene = true
 script = ExtResource("3_bop6h")
-base_max_speed = 750.0
+base_max_speed = 500.0
 base_max_acceleration = 1250.0
 turn_around_multiplier = 3.0
-overspeed_break_force = 10000.0
+overspeed_break_force = 500.0
 steering_strategies = Array[ExtResource("4_a744p")]([])
 metadata/_custom_type_script = "uid://c7jc7uwjmfido"
 
@@ -80,7 +80,11 @@ controller = SubResource("Resource_6p1w3")
 steerable = SubResource("Resource_388e2")
 direction_steering = SubResource("Resource_lsln6")
 player_move_and_collide = SubResource("Resource_15y17")
+dash_multiplier = 4.0
 damagable = SubResource("Resource_hiosj")
+max_boost_duration = 0.5
+boost_recharge_ratio = 0.25
+boost_cd_reset = 0.99
 on_death_handler = SubResource("Resource_7aotg")
 
 [node name="ImpulseParticles" type="GPUParticles2D" parent="."]
