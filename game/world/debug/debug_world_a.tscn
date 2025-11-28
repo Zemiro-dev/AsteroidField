@@ -80,7 +80,7 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 [sub_resource type="Resource" id="Resource_cglna"]
 resource_local_to_scene = true
 script = ExtResource("10_fn8aq")
-time_between_shots = 0.05
+time_between_shots = 0.2
 metadata/_custom_type_script = "uid://yq11iyvgqusn"
 
 [node name="DebugWorldA" type="Node2D"]
@@ -214,13 +214,14 @@ position = Vector2(2550, -1114)
 scale = Vector2(0.998352, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_n85cx")]
-position = Vector2(-860, 239)
+position = Vector2(-1468, 390)
 controller = SubResource("Resource_311cb")
 steerable = SubResource("Resource_lrit0")
 direction_steering = SubResource("Resource_4y5k8")
 player_move_and_collide = SubResource("Resource_ebrbd")
 dash_multiplier = 2.0
 damagable = SubResource("Resource_r52ci")
+max_boost_duration = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, 0)

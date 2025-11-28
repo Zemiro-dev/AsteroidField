@@ -19,7 +19,11 @@ func _physics_process(delta: float) -> void:
 	if stats and time_since_last_shot > stats.time_between_shots and enabled:
 		var target = get_target()
 		if target:
-			fire(target.global_position)
+			var fire_target: Vector2 = target.global_position
+			var steerable := GameActor.get_steerable(target)
+			if steerable:
+				fire_target += steerable.velocity * delta * 5. # look ahead 5 frames?
+			fire(fire_target)
 			time_since_last_shot = 0.0
 	if stats and time_since_last_shot < stats.time_between_shots:
 		time_since_last_shot += delta
@@ -28,6 +32,7 @@ func _physics_process(delta: float) -> void:
 func fire(target: Vector2) -> void:
 	if projectile_scene:
 		var projectile: Node2D = projectile_scene.instantiate()
+		GlobalSignals.request_projectile_spawn.emit(projectile)
 		if projectile is Bolt:
 			projectile.fire(
 				global_transform,
@@ -35,7 +40,6 @@ func fire(target: Vector2) -> void:
 				spawn_offset, 
 				collision_mask + blocked_by
 			)
-		GlobalSignals.request_projectile_spawn.emit(projectile)
 
 
 func _hitscan(target:Vector2) -> void:

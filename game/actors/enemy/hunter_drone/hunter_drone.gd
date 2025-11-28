@@ -23,6 +23,10 @@ var last_known_target_location: Vector2 = Vector2.ZERO
 var target_offset_vector: Vector2
 var rng = RandomNumberGenerator.new()
 
+@export var charge_distance: float = 400.
+@export var charge_max_speed: float = 5000
+var original_max_speed: float
+
 
 func _ready() -> void:
 	if damagable:
@@ -34,6 +38,7 @@ func _ready() -> void:
 	if steerable:
 		steerable.steering_strategies.append(direction_steering)
 		hurtbox.on_damage_dealt.connect(self_knockback)
+		original_max_speed = steerable.base_max_speed
 	target_offset_vector = raw_offset_vector.rotated(rng.randf_range(0, 2 * PI))
 
 
@@ -47,6 +52,10 @@ func _physics_process(delta: float) -> void:
 		target = last_known_target_location
 	if target_node:
 		target = target_node.global_position
+	if target_node and steerable and target_node.global_position.distance_to(global_position) < charge_distance:
+		steerable.base_max_speed = charge_max_speed
+	else:
+		steerable.base_max_speed = original_max_speed
 	if steerable:
 		if !damagable.is_dead:
 			if (!target_damagable or !target_damagable.is_dead) and !target.is_zero_approx() and global_position.distance_to(target) > stop_radius:

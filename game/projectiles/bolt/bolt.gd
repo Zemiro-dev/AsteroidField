@@ -20,7 +20,7 @@ func fire(
 	var heading_angle := global_position.angle_to_point(target)
 	heading = Vector2.from_angle(heading_angle)
 	position += spawn_offset.rotated(heading_angle)
-	rotation = heading.angle()
+	rotation = heading_angle
 
 
 func _ready() -> void:
@@ -30,10 +30,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if projectile_stats:
 		age += delta
-		rotation = velocity.angle()
 		velocity += projectile_stats.acceleration * heading * delta
 		velocity = Vector.clamp_vector2_length(velocity, projectile_stats.max_speed)
 		position += velocity
+		rotation = velocity.angle()
 		if projectile_stats.lifetime < age:
 			queue_free()
 
