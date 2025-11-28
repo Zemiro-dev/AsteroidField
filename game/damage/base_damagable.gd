@@ -1,6 +1,7 @@
 extends Resource
 class_name BaseDamagable
 
+
 signal on_damage_taken(damage_dealt: int)
 signal on_health_changed(new_health: int, max_health: int)
 signal on_death(actor: Node2D)

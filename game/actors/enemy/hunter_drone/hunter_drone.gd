@@ -40,12 +40,16 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if damagable:
 		damagable.physics_process(delta)
-	var target = targeting_area.get_target()
-	if target.is_zero_approx() and !last_known_target_location.is_zero_approx():
+	var target := Vector2.ZERO
+	var target_node = targeting_area.get_target()
+	var target_damagable = GameActor.get_damagable(target_node) if target_node else null
+	if !target_node and !last_known_target_location.is_zero_approx():
 		target = last_known_target_location
+	if target_node:
+		target = target_node.global_position
 	if steerable:
 		if !damagable.is_dead:
-			if !target.is_zero_approx() and global_position.distance_to(target) > stop_radius:
+			if (!target_damagable or !target_damagable.is_dead) and !target.is_zero_approx() and global_position.distance_to(target) > stop_radius:
 				last_known_target_location = target
 				var wall_avoid := wall_avoid_scanner.scan()
 				var enemy_avoid := enemy_avoid_scanner.scan()
@@ -53,10 +57,11 @@ func _physics_process(delta: float) -> void:
 				direction_steering.goal_vector = (global_position.direction_to(target) + wall_avoid + enemy_avoid).normalized() * steerable.get_max_speed()
 				steerable.steer(delta)
 			else:
-				steerable.slow(delta)
-			rotation = steerable.velocity.angle()
+				steerable.slow(delta)			
 		else:
 			steerable.halt()
+		if !steerable.velocity.is_zero_approx():
+			rotation = steerable.velocity.angle()
 			
 		if steerable.should_overspeed_break():
 			steerable.overspeed_break(delta)

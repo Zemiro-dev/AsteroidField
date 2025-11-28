@@ -18,8 +18,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if stats and time_since_last_shot > stats.time_between_shots and enabled:
 		var target = get_target()
-		if !target.is_zero_approx():
-			fire(target)
+		if target:
+			fire(target.global_position)
 			time_since_last_shot = 0.0
 	if stats and time_since_last_shot < stats.time_between_shots:
 		time_since_last_shot += delta

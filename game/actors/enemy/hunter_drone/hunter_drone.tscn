@@ -18,7 +18,7 @@
 [sub_resource type="Resource" id="Resource_34gyq"]
 resource_local_to_scene = true
 script = ExtResource("2_s0sue")
-base_max_speed = 750.0
+base_max_speed = 1250.0
 base_max_acceleration = 1000.0
 turn_around_multiplier = 2.0
 overspeed_break_force = 10000.0

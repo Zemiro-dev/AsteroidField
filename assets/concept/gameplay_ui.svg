@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="503.46003"
-     inkscape:cy="177.4838"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="428.86026"
+     inkscape:cy="328.4511"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
@@ -139,6 +139,7 @@
 
 
 
+
 &quot; /&gt;
     <inkscape:path-effect
    effect="powermask"
@@ -189,6 +190,7 @@
    flatten="false"
    hide_clip="false"
    message="!" />
+
 
 
 
@@ -364,6 +366,7 @@
 
 
 
+
 &quot; /&gt;
     <inkscape:path-effect
    effect="powerclip"
@@ -383,6 +386,7 @@
    flatten="false"
    hide_clip="false"
    message="L" />
+
 
 
 
@@ -466,6 +470,7 @@
 
 
 
+
 &quot; /&gt;
     <clipPath
    clipPathUnits="userSpaceOnUse"
@@ -519,6 +524,7 @@
    flatten="false"
    hide_clip="false"
    message="4" />
+
 
 
 
@@ -691,6 +697,7 @@
    flatten="false"
    hide_clip="false"
    message="M" />
+
 
 
 
@@ -988,6 +995,7 @@
 
 
 
+
 &quot; /&gt;
     <clipPath
    clipPathUnits="userSpaceOnUse"
@@ -1037,6 +1045,7 @@
    flatten="false"
    hide_clip="false"
    message="" />
+
 
 
 
@@ -1096,6 +1105,7 @@
    flatten="false"
    hide_clip="false"
    message="^" />
+
 
 
 
@@ -3372,25 +3382,28 @@
        id="rect145-9"
        width="394"
        height="68"
-       x="405.43414"
-       y="55.277699"
-       inkscape:label="progress-bottom" />
+       x="278.69699"
+       y="280.07816"
+       inkscape:label="health-progress-bottom"
+       inkscape:export-filename="..\..\game\assets\ui\health\progress_bottom.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
-       style="fill:#df2935;fill-opacity:1;stroke:#df2935;stroke-width:6;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1;paint-order:normal"
+       style="fill:#df2935;fill-opacity:1;stroke:none;stroke-width:6;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1;paint-order:normal"
        id="rect1"
-       width="394"
-       height="68"
-       x="401.89859"
-       y="161.34372"
-       inkscape:label="progress-resource" />
-    <rect
-       style="fill:none;fill-opacity:1;stroke:#fafaee;stroke-width:6;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1;paint-order:normal"
+       width="388"
+       height="61.999992"
+       x="279.57596"
+       y="377.12332"
+       inkscape:label="health-progress-resource"
+       inkscape:export-filename="..\..\game\assets\ui\health\progress_resource.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="color:#000000;fill:#fafaee;stroke-linecap:square;stroke-miterlimit:5;-inkscape-stroke:none"
+       d="m 275.69699,177.02251 v 74 h 400 v -74 z m 6,6 h 388 v 62 h -388 z"
        id="rect6"
-       width="394"
-       height="68"
-       x="399.77728"
-       y="267.40973"
-       inkscape:label="progress-top" />
+       inkscape:label="health-progress-top" />
   </g>
   <g
      inkscape:groupmode="layer"

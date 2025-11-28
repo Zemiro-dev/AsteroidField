@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=34 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -19,9 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://nwj7votb2bgb" path="res://actors/enemy/hunter_drone/hunter_spawner.tscn" id="11_k2vu7"]
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="16_g36r6"]
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
-[ext_resource type="Texture2D" uid="uid://c0q5vh17n5duo" path="res://assets/ui/health/progress_bottom.png" id="20_k2vu7"]
-[ext_resource type="Texture2D" uid="uid://b1fs2m3eq3t3t" path="res://assets/ui/health/progress_top.png" id="21_h35gt"]
-[ext_resource type="Texture2D" uid="uid://4norlwwroefc" path="res://assets/ui/health/progress_resource.png" id="22_fw0c5"]
+[ext_resource type="Texture2D" uid="uid://c0q5vh17n5duo" path="res://assets/ui/health/boost_progress_bottom.png" id="20_k2vu7"]
+[ext_resource type="Texture2D" uid="uid://b1fs2m3eq3t3t" path="res://assets/ui/health/boost_progress_top.png" id="21_h35gt"]
+[ext_resource type="Texture2D" uid="uid://4norlwwroefc" path="res://assets/ui/health/boost_progress_resource.png" id="22_fw0c5"]
+[ext_resource type="Texture2D" uid="uid://dlqb2ogbfqql6" path="res://assets/ui/boost/boost_progress_bottom.png" id="23_fw0c5"]
+[ext_resource type="Texture2D" uid="uid://da30fpclc38dx" path="res://assets/ui/boost/boost_progress_resource.png" id="24_r18ru"]
 
 [sub_resource type="Resource" id="Resource_fn8aq"]
 resource_local_to_scene = true
@@ -71,7 +73,7 @@ metadata/_custom_type_script = "uid://djf22au03k0mc"
 [sub_resource type="Resource" id="Resource_r52ci"]
 resource_local_to_scene = true
 script = ExtResource("4_fn8aq")
-max_health = 100
+max_health = 10
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
@@ -234,7 +236,17 @@ offset_left = 74.0
 offset_top = 88.0
 offset_right = 474.0
 offset_bottom = 162.0
-value = 50.0
+value = 1.0
 texture_under = ExtResource("20_k2vu7")
 texture_over = ExtResource("21_h35gt")
 texture_progress = ExtResource("22_fw0c5")
+texture_progress_offset = Vector2(6, 6)
+
+[node name="Boost" type="TextureProgressBar" parent="UI"]
+offset_left = 74.0
+offset_top = 170.0
+offset_right = 474.0
+offset_bottom = 210.0
+value = 100.0
+texture_under = ExtResource("23_fw0c5")
+texture_progress = ExtResource("24_r18ru")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b32mttqfycxyd"]
+[gd_scene load_steps=24 format=3 uid="uid://b32mttqfycxyd"]
 
 [ext_resource type="Script" uid="uid://craqyrf168y61" path="res://actors/player/player.gd" id="1_ilk7j"]
 [ext_resource type="Texture2D" uid="uid://cifpbcvsjmo6y" path="res://assets/player/player_body.png" id="1_nvxhs"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="4_a744p"]
 [ext_resource type="Script" uid="uid://dr8hlak48x06t" path="res://steering/direction_steering_strategy.gd" id="5_a744p"]
 [ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="7_388e2"]
+[ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="8_hiosj"]
+[ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="9_ssdk0"]
 
 [sub_resource type="Resource" id="Resource_6p1w3"]
 resource_local_to_scene = true
@@ -18,7 +20,7 @@ metadata/_custom_type_script = "uid://ck267f0n0aj0v"
 [sub_resource type="Resource" id="Resource_388e2"]
 resource_local_to_scene = true
 script = ExtResource("3_bop6h")
-base_max_speed = 1250.0
+base_max_speed = 1000.0
 base_max_acceleration = 2000.0
 turn_around_multiplier = 3.0
 overspeed_break_force = 10000.0
@@ -39,9 +41,14 @@ metadata/_custom_type_script = "uid://djf22au03k0mc"
 [sub_resource type="Resource" id="Resource_hiosj"]
 resource_local_to_scene = true
 script = ExtResource("7_388e2")
-max_health = 100
+max_health = 10
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_7aotg"]
+script = ExtResource("9_ssdk0")
+explosion_scene = ExtResource("8_hiosj")
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Gradient" id="Gradient_lsqbn"]
 colors = PackedColorArray(0, 0.945098, 0.952941, 0.690196, 0.0117647, 0.160784, 0.392157, 0)
@@ -74,6 +81,7 @@ steerable = SubResource("Resource_388e2")
 direction_steering = SubResource("Resource_lsln6")
 player_move_and_collide = SubResource("Resource_15y17")
 damagable = SubResource("Resource_hiosj")
+on_death_handler = SubResource("Resource_7aotg")
 
 [node name="ImpulseParticles" type="GPUParticles2D" parent="."]
 emitting = false
@@ -87,10 +95,4 @@ texture = ExtResource("1_nvxhs")
 visible = false
 shape = SubResource("CircleShape2D_nvxhs")
 
-[node name="DashDurationTimer" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
-[node name="DashCooldownTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
+[node name="BoostResetTimer" type="Timer" parent="."]

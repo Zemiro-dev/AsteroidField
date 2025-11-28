@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_fkph1"]
 script = ExtResource("2_r7u3w")
-damage = 2
+damage = 1
 lifetime = 30.0
 max_speed = 1500.0
 acceleration = 500.0
