@@ -47,7 +47,6 @@ func _physics_process(delta: float) -> void:
 		if !damagable.is_dead:
 			if !target.is_zero_approx() and global_position.distance_to(target) > stop_radius:
 				last_known_target_location = target
-				#target = global_position + Vector2(0, -1)
 				var wall_avoid := wall_avoid_scanner.scan()
 				var enemy_avoid := enemy_avoid_scanner.scan()
 				var target_goal := enemy_avoid if !enemy_avoid.is_zero_approx() else global_position.direction_to(target + target_offset_vector)

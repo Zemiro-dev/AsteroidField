@@ -34,11 +34,10 @@
 - [x] How does player target?
 
 - [x] hunter attack sprite
-- [ ] Add hurtbox to hunter
-- [ ] add knockback to hurtbox and steerable interactions
-	- [ ] Knockback should be animatable. Not just hard set. But that animation needs to be crazy fast. I feel like I need to fill up a knockback vector and the steerable 'dumps' it into the velocity at a high rate? I could also just take away control, but I'm not sure I like that either.
-- [ ] add damagable to player
-- [ ] add knockback based on damage
+- [x] Add hurtbox to hunter
+- [x] add knockback to hurtbox and steerable interactions
+- [x] add damagable to player
+- [x] add knockback
 - [ ] create heath bar
 - [ ] add player death
 	- [ ] state

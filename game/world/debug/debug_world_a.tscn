@@ -1,5 +1,6 @@
-[gd_scene load_steps=70 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=32 format=3 uid="uid://bbuskrf64e2ou"]
 
+[ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
 [ext_resource type="Texture2D" uid="uid://bp3mmomfwaj16" path="res://assets/debug/rock.png" id="2_4pxye"]
 [ext_resource type="PackedScene" uid="uid://b4mcxong48o84" path="res://world/containers/free_particle_container.tscn" id="3_4pxye"]
@@ -10,15 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="5_38n11"]
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="5_pudvl"]
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="6_50rxm"]
-[ext_resource type="PackedScene" uid="uid://es1f0l0b3jm5" path="res://actors/enemy/hunter_drone/hunter_drone.tscn" id="8_50rxm"]
 [ext_resource type="PackedScene" uid="uid://tp2ynjhkq3xn" path="res://projectiles/cannon/cannon.tscn" id="8_551gn"]
 [ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="9_782kq"]
 [ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="10_ab4jj"]
 [ext_resource type="Script" uid="uid://yq11iyvgqusn" path="res://projectiles/cannon/cannon_stats.gd" id="10_fn8aq"]
 [ext_resource type="Script" uid="uid://dr8hlak48x06t" path="res://steering/direction_steering_strategy.gd" id="11_7jtk5"]
-[ext_resource type="Script" uid="uid://bbq8x45cacqlh" path="res://actors/physics_body_move_and_collide.gd" id="12_ab4jj"]
+[ext_resource type="PackedScene" uid="uid://nwj7votb2bgb" path="res://actors/enemy/hunter_drone/hunter_spawner.tscn" id="11_k2vu7"]
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="16_g36r6"]
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
+[ext_resource type="Texture2D" uid="uid://c0q5vh17n5duo" path="res://assets/ui/health/progress_bottom.png" id="20_k2vu7"]
+[ext_resource type="Texture2D" uid="uid://b1fs2m3eq3t3t" path="res://assets/ui/health/progress_top.png" id="21_h35gt"]
+[ext_resource type="Texture2D" uid="uid://4norlwwroefc" path="res://assets/ui/health/progress_resource.png" id="22_fw0c5"]
 
 [sub_resource type="Resource" id="Resource_fn8aq"]
 resource_local_to_scene = true
@@ -34,290 +37,6 @@ explosion_scene = ExtResource("5_38n11")
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_ytl8k"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_782kq"]
-resource_local_to_scene = true
-script = ExtResource("9_782kq")
-base_max_speed = 750.0
-base_max_acceleration = 1000.0
-turn_around_multiplier = 2.0
-overspeed_break_force = 10000.0
-steering_strategies = Array[ExtResource("10_ab4jj")]([])
-metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_ab4jj"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
-[sub_resource type="Resource" id="Resource_7jtk5"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 10
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_g36r6"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_4qwbx"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_uq1vh"]
-script = ExtResource("12_ab4jj")
-metadata/_custom_type_script = "uid://bbq8x45cacqlh"
-
-[sub_resource type="Resource" id="Resource_k2vu7"]
-resource_local_to_scene = true
-script = ExtResource("9_782kq")
-base_max_speed = 750.0
-base_max_acceleration = 1000.0
-turn_around_multiplier = 2.0
-overspeed_break_force = 10000.0
-steering_strategies = Array[ExtResource("10_ab4jj")]([])
-metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_h35gt"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
-[sub_resource type="Resource" id="Resource_fw0c5"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 10
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_r18ru"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_be6b7"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_x0rwi"]
-resource_local_to_scene = true
-script = ExtResource("9_782kq")
-base_max_speed = 750.0
-base_max_acceleration = 1000.0
-turn_around_multiplier = 2.0
-overspeed_break_force = 10000.0
-steering_strategies = Array[ExtResource("10_ab4jj")]([])
-metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_5hfsr"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
-[sub_resource type="Resource" id="Resource_44p8q"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 10
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_qi3qa"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_dse6n"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_6smsd"]
-resource_local_to_scene = true
-script = ExtResource("9_782kq")
-base_max_speed = 750.0
-base_max_acceleration = 1000.0
-turn_around_multiplier = 2.0
-overspeed_break_force = 10000.0
-steering_strategies = Array[ExtResource("10_ab4jj")]([])
-metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_ajp5a"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
-[sub_resource type="Resource" id="Resource_4n2ey"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 10
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_6cor7"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_gm4il"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_1thj5"]
-resource_local_to_scene = true
-script = ExtResource("9_782kq")
-base_max_speed = 750.0
-base_max_acceleration = 1000.0
-turn_around_multiplier = 2.0
-overspeed_break_force = 10000.0
-steering_strategies = Array[ExtResource("10_ab4jj")]([])
-metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_34xt4"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
-[sub_resource type="Resource" id="Resource_unxg3"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 10
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_8dtdm"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_f6crb"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_56xp0"]
-resource_local_to_scene = true
-script = ExtResource("9_782kq")
-base_max_speed = 750.0
-base_max_acceleration = 1000.0
-turn_around_multiplier = 2.0
-overspeed_break_force = 10000.0
-steering_strategies = Array[ExtResource("10_ab4jj")]([])
-metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_whtt0"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
-[sub_resource type="Resource" id="Resource_qs671"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 10
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_2e3jx"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_rp74x"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_pqm7x"]
-resource_local_to_scene = true
-script = ExtResource("9_782kq")
-base_max_speed = 750.0
-base_max_acceleration = 1000.0
-turn_around_multiplier = 2.0
-overspeed_break_force = 10000.0
-steering_strategies = Array[ExtResource("10_ab4jj")]([])
-metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_njmio"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
-[sub_resource type="Resource" id="Resource_hkyuv"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 10
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_asxao"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_s552h"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_pty5m"]
-resource_local_to_scene = true
-script = ExtResource("9_782kq")
-base_max_speed = 750.0
-base_max_acceleration = 1000.0
-turn_around_multiplier = 2.0
-overspeed_break_force = 10000.0
-steering_strategies = Array[ExtResource("10_ab4jj")]([])
-metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_8w3qn"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
-[sub_resource type="Resource" id="Resource_qn8io"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 10
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_cghjm"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_wvbrc"]
 resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
@@ -359,12 +78,14 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 [sub_resource type="Resource" id="Resource_cglna"]
 resource_local_to_scene = true
 script = ExtResource("10_fn8aq")
-time_between_shots = 0.1
+time_between_shots = 0.05
 metadata/_custom_type_script = "uid://yq11iyvgqusn"
 
 [node name="DebugWorldA" type="Node2D"]
+script = ExtResource("1_h35gt")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1920, 1080)
@@ -388,90 +109,110 @@ polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341,
 visible = false
 polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
 
-[node name="TargetDummy" parent="." instance=ExtResource("4_lsna4")]
-position = Vector2(1399, -201)
-collision_mask = 3
-damagable = SubResource("Resource_fn8aq")
-on_death_handler = SubResource("Resource_60o0b")
-tween_damaged = SubResource("Resource_ytl8k")
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-27, 247)
+rotation = 0.70953
+collision_mask = 0
 
-[node name="HunterDrone" parent="." instance=ExtResource("8_50rxm")]
-position = Vector2(768, 202)
-steerable = SubResource("Resource_782kq")
-direction_steering = SubResource("Resource_ab4jj")
-damagable = SubResource("Resource_7jtk5")
-on_death_handler = SubResource("Resource_g36r6")
-tween_damaged = SubResource("Resource_4qwbx")
-enemy_move_and_collide = SubResource("Resource_uq1vh")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
+texture = ExtResource("2_4pxye")
 
-[node name="HunterDrone2" parent="." instance=ExtResource("8_50rxm")]
-position = Vector2(1399, 551)
-steerable = SubResource("Resource_k2vu7")
-direction_steering = SubResource("Resource_h35gt")
-damagable = SubResource("Resource_fw0c5")
-on_death_handler = SubResource("Resource_r18ru")
-tween_damaged = SubResource("Resource_be6b7")
-enemy_move_and_collide = SubResource("Resource_uq1vh")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
 
-[node name="HunterDrone3" parent="." instance=ExtResource("8_50rxm")]
-position = Vector2(1734, -18)
-steerable = SubResource("Resource_x0rwi")
-direction_steering = SubResource("Resource_5hfsr")
-damagable = SubResource("Resource_44p8q")
-on_death_handler = SubResource("Resource_qi3qa")
-tween_damaged = SubResource("Resource_dse6n")
-enemy_move_and_collide = SubResource("Resource_uq1vh")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D5"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
 
-[node name="HunterDrone4" parent="." instance=ExtResource("8_50rxm")]
-position = Vector2(556, -502)
-steerable = SubResource("Resource_6smsd")
-direction_steering = SubResource("Resource_ajp5a")
-damagable = SubResource("Resource_4n2ey")
-on_death_handler = SubResource("Resource_6cor7")
-tween_damaged = SubResource("Resource_gm4il")
-enemy_move_and_collide = SubResource("Resource_uq1vh")
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(2447, -223)
+rotation = 1.14156
+collision_mask = 0
 
-[node name="HunterDrone5" parent="." instance=ExtResource("8_50rxm")]
-position = Vector2(1422, -546)
-steerable = SubResource("Resource_1thj5")
-direction_steering = SubResource("Resource_34xt4")
-damagable = SubResource("Resource_unxg3")
-on_death_handler = SubResource("Resource_8dtdm")
-tween_damaged = SubResource("Resource_f6crb")
-enemy_move_and_collide = SubResource("Resource_uq1vh")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("2_4pxye")
 
-[node name="HunterDrone6" parent="." instance=ExtResource("8_50rxm")]
-position = Vector2(1769, -376)
-steerable = SubResource("Resource_56xp0")
-direction_steering = SubResource("Resource_whtt0")
-damagable = SubResource("Resource_qs671")
-on_death_handler = SubResource("Resource_2e3jx")
-tween_damaged = SubResource("Resource_rp74x")
-enemy_move_and_collide = SubResource("Resource_uq1vh")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
 
-[node name="HunterDrone7" parent="." instance=ExtResource("8_50rxm")]
-position = Vector2(1863, 212)
-steerable = SubResource("Resource_pqm7x")
-direction_steering = SubResource("Resource_njmio")
-damagable = SubResource("Resource_hkyuv")
-on_death_handler = SubResource("Resource_asxao")
-tween_damaged = SubResource("Resource_s552h")
-enemy_move_and_collide = SubResource("Resource_uq1vh")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
 
-[node name="HunterDrone8" parent="." instance=ExtResource("8_50rxm")]
-position = Vector2(2049, -224)
-steerable = SubResource("Resource_pty5m")
-direction_steering = SubResource("Resource_8w3qn")
-damagable = SubResource("Resource_qn8io")
-on_death_handler = SubResource("Resource_cghjm")
-tween_damaged = SubResource("Resource_wvbrc")
-enemy_move_and_collide = SubResource("Resource_uq1vh")
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(2470, -1964)
+rotation = 0.617049
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D3"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(572, -1717)
+rotation = 1.9238
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+texture = ExtResource("2_4pxye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+visible = false
+polygon = PackedVector2Array(-594, 69, -561, -175, -392, -206, -380, -293, -341, -300, -332, -373, -162, -402, -150, -491, 91, -533, 206, -317, 36, -142, -9, -164, -34, -139, -24, -120, -193, 57, -239, 35, -372, 174)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D4"]
+visible = false
+polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238, 20, 279, 43, 403, -76, 594, 27, 554, 240, 403, 260, 391, 338, 356, 345, 344, 409, 193, 429, 178, 505, -36, 536)
 
 [node name="FreeProjectileContainer" parent="." instance=ExtResource("4_6ubl6")]
 
 [node name="FreeParticleContainer" parent="." instance=ExtResource("3_4pxye")]
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="TargetDummy" parent="Enemies" instance=ExtResource("4_lsna4")]
+position = Vector2(2467, -1943)
+collision_mask = 3
+damagable = SubResource("Resource_fn8aq")
+on_death_handler = SubResource("Resource_60o0b")
+tween_damaged = SubResource("Resource_ytl8k")
+
+[node name="HunterSpawner" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(1876, 647)
+
+[node name="HunterSpawner2" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(3215, 52)
+
+[node name="HunterSpawner3" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(1678, -435)
+
+[node name="HunterSpawner4" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(1531, -1146)
+
+[node name="HunterSpawner5" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(135, -2334)
+
+[node name="HunterSpawner6" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(3224, -2027)
+
+[node name="HunterSpawner7" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(1631, -1988)
+
+[node name="HunterSpawner8" parent="Enemies" instance=ExtResource("11_k2vu7")]
+position = Vector2(2550, -1114)
+scale = Vector2(0.998352, 1)
+
 [node name="Player" parent="." instance=ExtResource("3_n85cx")]
+position = Vector2(-860, 239)
 controller = SubResource("Resource_311cb")
 steerable = SubResource("Resource_lrit0")
 direction_steering = SubResource("Resource_4y5k8")
@@ -485,3 +226,15 @@ position = Vector2(-2, 0)
 [node name="Cannon" parent="Player" instance=ExtResource("8_551gn")]
 stats = SubResource("Resource_cglna")
 spawn_offset = Vector2(50, 0)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Health" type="TextureProgressBar" parent="UI"]
+offset_left = 74.0
+offset_top = 88.0
+offset_right = 474.0
+offset_bottom = 162.0
+value = 50.0
+texture_under = ExtResource("20_k2vu7")
+texture_over = ExtResource("21_h35gt")
+texture_progress = ExtResource("22_fw0c5")

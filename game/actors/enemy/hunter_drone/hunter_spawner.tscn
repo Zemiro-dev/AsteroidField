@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://nwj7votb2bgb"]
+
+[ext_resource type="PackedScene" uid="uid://n75gmptu8t37" path="res://actors/enemy/enemy_spawner.tscn" id="1_utp10"]
+[ext_resource type="Texture2D" uid="uid://c8we5ebwkre7u" path="res://assets/enemy/white_hex_shadowed.png" id="2_87716"]
+[ext_resource type="PackedScene" uid="uid://es1f0l0b3jm5" path="res://actors/enemy/hunter_drone/hunter_drone.tscn" id="3_3xhrt"]
+
+[node name="HunterSpawner" instance=ExtResource("1_utp10")]
+self_modulate = Color(0.431373, 0.145098, 0.580392, 1)
+texture = ExtResource("2_87716")
+enemy_scene = ExtResource("3_3xhrt")
+
+[node name="Marker2D" type="Marker2D" parent="." index="0"]
+position = Vector2(-337, 123)
+
+[node name="Marker2D2" type="Marker2D" parent="." index="1"]
+position = Vector2(-108, 122)
+
+[node name="Marker2D3" type="Marker2D" parent="." index="2"]
+position = Vector2(93, 124)
+
+[node name="Marker2D4" type="Marker2D" parent="." index="3"]
+position = Vector2(324, 122)
+
+[node name="Marker2D5" type="Marker2D" parent="." index="4"]
+position = Vector2(-214, 0)
+
+[node name="Marker2D6" type="Marker2D" parent="." index="5"]
+position = Vector2(1, -5)
+
+[node name="Marker2D7" type="Marker2D" parent="." index="6"]
+position = Vector2(202, -10)
+
+[node name="Marker2D8" type="Marker2D" parent="." index="7"]
+position = Vector2(-112, -121)
+
+[node name="Marker2D9" type="Marker2D" parent="." index="8"]
+position = Vector2(111, -123)
+
+[node name="Marker2D10" type="Marker2D" parent="." index="9"]
+position = Vector2(3, -233)

@@ -122,7 +122,6 @@ damagable = SubResource("Resource_s0sue")
 on_death_handler = SubResource("Resource_pu7o8")
 tween_damaged = SubResource("Resource_xcliu")
 enemy_move_and_collide = SubResource("Resource_7qq4p")
-raw_offset_vector = Vector2(300, 0)
 
 [node name="TargetingArea" parent="." instance=ExtResource("6_pbsvy")]
 visible = false
