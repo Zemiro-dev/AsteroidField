@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://e8354pl52w2l"]
+
+[ext_resource type="Texture2D" uid="uid://cs23671mxlh1k" path="res://assets/ui/screens/screen_main.png" id="1_faa2a"]
+[ext_resource type="Script" uid="uid://c4ek4m8ic1ax2" path="res://ui/screens/screen_main.gd" id="1_gtmg7"]
+[ext_resource type="Texture2D" uid="uid://buydo4nlwpjbb" path="res://assets/ui/screens/button_launch_normal.png" id="3_ama0g"]
+[ext_resource type="Texture2D" uid="uid://b5jjpax5mbumu" path="res://assets/ui/screens/button_launch_focused.png" id="4_3lkr3"]
+[ext_resource type="Texture2D" uid="uid://dysweixfc5fy3" path="res://assets/ui/screens/button_abort_normal.png" id="5_1cw8y"]
+[ext_resource type="Texture2D" uid="uid://dy244ff77web5" path="res://assets/ui/screens/button_abort_focused.png" id="6_pyvk1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdxwf"]
+texture = ExtResource("1_faa2a")
+
+[node name="ScreenMain" type="CanvasLayer"]
+script = ExtResource("1_gtmg7")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdxwf")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 165
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 2
+
+[node name="LaunchButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../AbortButton")
+focus_neighbor_bottom = NodePath("../AbortButton")
+texture_normal = ExtResource("3_ama0g")
+texture_focused = ExtResource("4_3lkr3")
+
+[node name="AbortButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../LaunchButton")
+focus_neighbor_bottom = NodePath("../LaunchButton")
+texture_normal = ExtResource("5_1cw8y")
+texture_focused = ExtResource("6_pyvk1")

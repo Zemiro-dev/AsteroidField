@@ -7,7 +7,7 @@
    viewBox="0 0 1920 1080"
    version="1.1"
    id="svg1"
-   sodipodi:docname="gameplay_ui.svg"
+   sodipodi:docname="asteroids.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    inkscape:export-filename="grid_background.png"
    inkscape:export-xdpi="96"
@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
-     inkscape:zoom="2"
-     inkscape:cx="435.5"
-     inkscape:cy="273.5"
+     inkscape:zoom="1"
+     inkscape:cx="843"
+     inkscape:cy="738"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
@@ -140,6 +140,7 @@
 
 
 
+
 &quot; /&gt;
     <inkscape:path-effect
    effect="powermask"
@@ -190,6 +191,7 @@
    flatten="false"
    hide_clip="false"
    message="!" />
+
 
 
 
@@ -367,6 +369,7 @@
 
 
 
+
 &quot; /&gt;
     <inkscape:path-effect
    effect="powerclip"
@@ -386,6 +389,7 @@
    flatten="false"
    hide_clip="false"
    message="L" />
+
 
 
 
@@ -471,6 +475,7 @@
 
 
 
+
 &quot; /&gt;
     <clipPath
    clipPathUnits="userSpaceOnUse"
@@ -524,6 +529,7 @@
    flatten="false"
    hide_clip="false"
    message="4" />
+
 
 
 
@@ -697,6 +703,7 @@
    flatten="false"
    hide_clip="false"
    message="M" />
+
 
 
 
@@ -996,6 +1003,7 @@
 
 
 
+
 &quot; /&gt;
     <clipPath
    clipPathUnits="userSpaceOnUse"
@@ -1045,6 +1053,7 @@
    flatten="false"
    hide_clip="false"
    message="" />
+
 
 
 
@@ -1105,6 +1114,7 @@
    flatten="false"
    hide_clip="false"
    message="^" />
+
 
 
 
@@ -2330,6 +2340,15 @@
      id="layer5"
      inkscape:label="UI"
      inkscape:highlight-color="#cc341c">
+    <path
+       id="path157"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#363634;fill-opacity:1;stroke:#989891;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal"
+       inkscape:transform-center-x="-0.68211399"
+       inkscape:transform-center-y="-11.427125"
+       d="m 1256.459,265.48242 -121.7969,85.2832 9.2227,30.16797 -63.3106,44.33203 43.4707,142.1875 148.6641,2.59571 6.5195,-18.9336 82.0684,1.4336 48.4062,-140.58399 -42.9746,-32.38476 8.4746,-24.61524 z"
+       inkscape:export-filename="..\..\game\assets\asteroids\small_a.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <g
        id="g65"
        transform="translate(133.25264,870.47487)">
@@ -3426,6 +3445,12 @@
        d="m 275.69699,177.02251 v 74 h 400 v -74 z m 6,6 h 388 v 62 h -388 z"
        id="rect6"
        inkscape:label="health-progress-top" />
+    <path
+       id="path71"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#363634;fill-opacity:1;stroke:#989891;stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal"
+       inkscape:transform-center-x="-0.68211399"
+       inkscape:transform-center-y="-11.427125"
+       d="m 726.45898,582.48242 -121.79687,85.2832 43.4707,142.1875 11.59571,0.20313 -66.56641,46.60937 43.4707,142.1875 148.66406,2.59568 26.88477,-78.08005 90.52734,1.58008 48.40625,-140.58399 -114.84765,-86.54687 8.93554,-25.95313 z" />
   </g>
   <g
      inkscape:groupmode="layer"

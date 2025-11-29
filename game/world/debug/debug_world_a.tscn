@@ -192,7 +192,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D4" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(572, -1717)
 rotation = 1.9238
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D4"]
@@ -209,7 +208,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D6" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(40.0001, 2567)
 rotation = 1.9238
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D6"]
@@ -226,7 +224,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D7" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(466, 3441)
 rotation = 1.77868
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D7"]
@@ -243,7 +240,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D8" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(1035, 4217)
 rotation = 1.54745
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D8"]
@@ -260,7 +256,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D9" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(1666, 4875)
 rotation = 1.54745
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D9"]
@@ -277,7 +272,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D10" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(3028, 4836)
 rotation = -0.0643611
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D10"]
@@ -294,7 +288,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D11" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(3712, 4180)
 rotation = -0.0643611
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D11"]
@@ -311,7 +304,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D12" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(4418, 3496)
 rotation = -0.0643611
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D12"]
@@ -328,7 +320,6 @@ polygon = PackedVector2Array(-131, 338, 27, 187, 67, 210, 89, 187, 81, 171, 238,
 [node name="StaticBody2D13" type="StaticBody2D" parent="Asteroids"]
 position = Vector2(4974, 2664)
 rotation = -0.341724
-scale = Vector2(1, 1)
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Asteroids/StaticBody2D13"]
@@ -370,7 +361,7 @@ position = Vector2(2613, 1760)
 rotation = 0.98189
 
 [node name="AsteroidA29" parent="Asteroids" instance=ExtResource("5_be6b7")]
-position = Vector2(3169, 3452)
+position = Vector2(2710, 2945)
 rotation = -1.80054
 
 [node name="AsteroidA30" parent="Asteroids" instance=ExtResource("5_be6b7")]
@@ -386,7 +377,7 @@ position = Vector2(2130, 2685)
 rotation = -0.859627
 
 [node name="AsteroidA7" parent="Asteroids" instance=ExtResource("5_be6b7")]
-position = Vector2(2856, 2603)
+position = Vector2(3706, 3505)
 rotation = 0.630311
 
 [node name="AsteroidA9" parent="Asteroids" instance=ExtResource("5_be6b7")]
