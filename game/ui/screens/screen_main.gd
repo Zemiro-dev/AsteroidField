@@ -14,3 +14,4 @@ func _ready() -> void:
 		func():
 			GameManager.quit_game()
 	)
+	Jukebox.play_menu_music()
