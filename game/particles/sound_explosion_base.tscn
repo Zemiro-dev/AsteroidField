@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0tanq11w7gl5"]
+
+[ext_resource type="PackedScene" uid="uid://dhrhl1wo7agsm" path="res://audio/extended_audio_stream_player_2d.tscn" id="1_5vnpw"]
+[ext_resource type="AudioStream" uid="uid://bjluwsgeer2c6" path="res://assets/jukebox/explosion_pop.mp3" id="2_yqbod"]
+
+[node name="SoundExplosionBase" instance=ExtResource("1_5vnpw")]
+stream = ExtResource("2_yqbod")
+volume_db = -8.0
+one_shot = true

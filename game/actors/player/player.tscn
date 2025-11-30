@@ -100,3 +100,6 @@ visible = false
 shape = SubResource("CircleShape2D_nvxhs")
 
 [node name="BoostResetTimer" type="Timer" parent="."]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true

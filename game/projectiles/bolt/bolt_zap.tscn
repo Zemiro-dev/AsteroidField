@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg54rgkw5sq62"]
+
+[ext_resource type="PackedScene" uid="uid://dhrhl1wo7agsm" path="res://audio/extended_audio_stream_player_2d.tscn" id="1_swtxo"]
+[ext_resource type="AudioStream" uid="uid://r0a7pv0lknp4" path="res://assets/jukebox/laser_zap1.mp3" id="2_r2b2b"]
+
+[node name="BoltZap" instance=ExtResource("1_swtxo")]
+stream = ExtResource("2_r2b2b")
+volume_db = -16.0
+pitch_jitter = 0.2
+one_shot = true

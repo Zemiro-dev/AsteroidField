@@ -4,6 +4,7 @@ class_name Bolt
 
 @export var projectile_stats: ProjectileStats
 @export var explosion_scene: PackedScene
+@export var sound_scene: PackedScene
 var age: float = 0.0
 var heading: Vector2 = Vector2(1., 0.)
 var velocity: Vector2 = Vector2.ZERO
@@ -21,6 +22,7 @@ func fire(
 	heading = Vector2.from_angle(heading_angle)
 	position += spawn_offset.rotated(heading_angle)
 	rotation = heading_angle
+	GlobalSignals.request_world_sound_spawn.emit(self, sound_scene)
 
 
 func _ready() -> void:
@@ -35,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		position += velocity
 		rotation = velocity.angle()
 		if projectile_stats.lifetime < age:
-			queue_free()
+			on_death()
 
 
 func on_body_entered(node: Node2D) -> void:
@@ -43,4 +45,9 @@ func on_body_entered(node: Node2D) -> void:
 		var damagable := GameActor.get_damagable(node)
 		if damagable:
 			damagable.take_damage(projectile_stats.damage)
+	on_death()
+
+
+func on_death() -> void:
+	GlobalSignals.request_explosion_spawn.emit(self, explosion_scene)
 	queue_free()

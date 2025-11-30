@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvse3reo0fpus"]
+[gd_scene load_steps=7 format=3 uid="uid://cvse3reo0fpus"]
 
 [ext_resource type="Texture2D" uid="uid://c4log2ggaeeb6" path="res://assets/projectiles/white_bolt.png" id="1_6l4ds"]
 [ext_resource type="Script" uid="uid://cmrcrwlfode1c" path="res://projectiles/bolt/bolt.gd" id="1_q48h5"]
 [ext_resource type="Script" uid="uid://cyvnerigeg0ir" path="res://projectiles/projectile_stats.gd" id="2_r7u3w"]
+[ext_resource type="PackedScene" uid="uid://bg54rgkw5sq62" path="res://projectiles/bolt/bolt_zap.tscn" id="3_fkph1"]
 
 [sub_resource type="Resource" id="Resource_fkph1"]
 script = ExtResource("2_r7u3w")
@@ -22,6 +23,7 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_q48h5")
 projectile_stats = SubResource("Resource_fkph1")
+sound_scene = ExtResource("3_fkph1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)

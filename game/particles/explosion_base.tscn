@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8evrqqc8b313"]
+[gd_scene load_steps=11 format=3 uid="uid://c8evrqqc8b313"]
 
 [ext_resource type="Texture2D" uid="uid://n5u6vyaj1v0w" path="res://assets/player/player_body_white.png" id="1_gkvhv"]
 [ext_resource type="Script" uid="uid://bxtvthi3pn7gs" path="res://particles/explosion_base.gd" id="2_fpgf3"]
+[ext_resource type="PackedScene" uid="uid://b0tanq11w7gl5" path="res://particles/sound_explosion_base.tscn" id="3_jl23w"]
 
 [sub_resource type="Curve" id="Curve_fpgf3"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.971698, 0), 0.0, 0.0, 0, 0]
@@ -52,3 +53,4 @@ explosiveness = 0.5
 randomness = 0.2
 process_material = SubResource("ParticleProcessMaterial_0kwff")
 script = ExtResource("2_fpgf3")
+sound_scene = ExtResource("3_jl23w")
