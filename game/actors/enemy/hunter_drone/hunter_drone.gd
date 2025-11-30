@@ -36,6 +36,7 @@ func _ready() -> void:
 		if tween_damaged:
 			tween_damaged.bind_to_node(self)
 	if steerable:
+		steerable.reset()
 		steerable.steering_strategies.append(direction_steering)
 		hurtbox.on_damage_dealt.connect(self_knockback)
 		original_max_speed = steerable.base_max_speed

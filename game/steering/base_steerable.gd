@@ -11,6 +11,11 @@ var velocity: Vector2 = Vector2.ZERO
 @export var steering_strategies: Array[SteeringStrategy]
 
 
+func reset() -> void:
+	steering_strategies = []
+	velocity = Vector2.ZERO
+
+
 func steer(delta: float) -> void:
 	var steering_result := combined_steering()
 	var turn_around_dot := steering_result.heading.normalized().dot(velocity.normalized())

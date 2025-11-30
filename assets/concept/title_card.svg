@@ -28,8 +28,8 @@
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
      inkscape:zoom="0.70710678"
-     inkscape:cx="223.44574"
-     inkscape:cy="735.39105"
+     inkscape:cx="828.72915"
+     inkscape:cy="994.19213"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
@@ -3304,6 +3304,22 @@
            style="stroke-width:0.950284" />
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:94.6708px;font-family:'OCR A Extended';-inkscape-font-specification:'OCR A Extended, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0.378683px;word-spacing:0px;display:inline;fill:#fafaee;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:5;stroke-opacity:1"
+       x="689.4259"
+       y="1217.014"
+       id="text196"
+       inkscape:label="ABORT"
+       transform="scale(1.0180335,0.98228595)"
+       inkscape:export-filename="..\..\game\assets\ui\screens\button_abort_focused.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         x="689.4259"
+         y="1217.014"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:94.6708px;font-family:'OCR A Extended';-inkscape-font-specification:'OCR A Extended, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#fafaee;fill-opacity:1;stroke:none;stroke-width:4;stroke-opacity:1"
+         id="tspan196">PAUSED</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

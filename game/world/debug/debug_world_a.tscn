@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=43 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://4norlwwroefc" path="res://assets/ui/health/boost_progress_resource.png" id="22_fw0c5"]
 [ext_resource type="Texture2D" uid="uid://dlqb2ogbfqql6" path="res://assets/ui/boost/boost_progress_bottom.png" id="23_fw0c5"]
 [ext_resource type="Texture2D" uid="uid://da30fpclc38dx" path="res://assets/ui/boost/boost_progress_resource.png" id="24_r18ru"]
+[ext_resource type="PackedScene" uid="uid://vllh1g1mt2xn" path="res://ui/screens/pause_screen.tscn" id="27_x0rwi"]
 
 [sub_resource type="Resource" id="Resource_fn8aq"]
 resource_local_to_scene = true
@@ -606,3 +607,9 @@ offset_bottom = 210.0
 value = 100.0
 texture_under = ExtResource("23_fw0c5")
 texture_progress = ExtResource("24_r18ru")
+
+[node name="PauseScreen" parent="." instance=ExtResource("27_x0rwi")]
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

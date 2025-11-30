@@ -4,6 +4,7 @@ extends Node2D
 @onready var player: Player = $Player
 @onready var health: TextureProgressBar = $UI/Health
 @onready var boost: TextureProgressBar = $UI/Boost
+@onready var death_timer: Timer = $DeathTimer
 
 
 func _ready() -> void:
@@ -14,6 +15,10 @@ func _ready() -> void:
 			func(new_health: int, max_health: int): 
 				health.value = ceil(float(new_health) / float(max_health) * health.max_value)
 		)
+		damagable.on_death.connect(
+			func(actor: Node2D):
+				death_timer.start()
+		)
 	player.on_boost_duration_changed.connect(
 		func(new_duration: float, max_duration: float, player: Player):
 			boost.value = ceil(float(new_duration) / float(max_duration) * boost.max_value)
@@ -23,3 +28,4 @@ func _ready() -> void:
 				boost.modulate = Color.WHITE, .5
 				
 	)
+	death_timer.timeout.connect(func(): GameManager.change_scene_to_main_menu())

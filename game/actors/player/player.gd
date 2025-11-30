@@ -27,6 +27,7 @@ var actor_type := GameActor.ActorType.PLAYER
 
 
 func _ready() -> void:
+	steerable.reset()
 	steerable.steering_strategies.append(direction_steering)
 	damagable.reset_damagable(self)
 	damagable.on_damage_taken.connect(func(damage_taken: int): print(damage_taken))
