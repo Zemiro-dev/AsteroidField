@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://es1f0l0b3jm5"]
+[gd_scene load_steps=27 format=3 uid="uid://es1f0l0b3jm5"]
 
 [ext_resource type="Texture2D" uid="uid://c8we5ebwkre7u" path="res://assets/enemy/white_hex_shadowed.png" id="1_qpesd"]
 [ext_resource type="Script" uid="uid://cjmaqsclqu5f6" path="res://actors/enemy/hunter_drone/hunter_drone.gd" id="1_rpdlw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="5_oubhi"]
 [ext_resource type="PackedScene" uid="uid://x56kdse40k5g" path="res://sensors/targeting_area.tscn" id="6_pbsvy"]
 [ext_resource type="Script" uid="uid://bbq8x45cacqlh" path="res://actors/physics_body_move_and_collide.gd" id="9_xcliu"]
+[ext_resource type="PackedScene" uid="uid://k6bnb6r527uc" path="res://audio/sound_collision.tscn" id="10_7qq4p"]
 [ext_resource type="PackedScene" uid="uid://ce21wlshv8uku" path="res://sensors/pinwheel_scanner.tscn" id="11_pu7o8"]
 [ext_resource type="Script" uid="uid://canb082p77b1f" path="res://damage/hurtbox/hurtbox.gd" id="13_mtkfv"]
 [ext_resource type="Texture2D" uid="uid://bwh7h1cmcsear" path="res://assets/projectiles/white_triangle_hole.png" id="14_7qq4p"]
@@ -122,6 +123,7 @@ damagable = SubResource("Resource_s0sue")
 on_death_handler = SubResource("Resource_pu7o8")
 tween_damaged = SubResource("Resource_xcliu")
 enemy_move_and_collide = SubResource("Resource_7qq4p")
+collision_scene = ExtResource("10_7qq4p")
 charge_max_speed = 7500.0
 
 [node name="TargetingArea" parent="." instance=ExtResource("6_pbsvy")]

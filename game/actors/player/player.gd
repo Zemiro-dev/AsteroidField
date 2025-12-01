@@ -34,6 +34,10 @@ func _ready() -> void:
 	update_boost_duration(max_boost_duration)
 	if on_death_handler:
 		on_death_handler.bind_to_node(self)
+	damagable.on_damage_taken.connect(
+		func(damage_dealt: int):
+			GlobalSignals.request_hitstop.emit(70)
+	)
 	damagable.on_death.connect(
 		func(actor: Node2D):
 			if has_node("Cannon"):

@@ -23,6 +23,7 @@ Vector="*res://autoloads/vector.gd"
 GlobalSignals="*res://autoloads/global_signals.gd"
 GameManager="*res://autoloads/game_manager.gd"
 Jukebox="*res://autoloads/jukebox.gd"
+Hitstop="*res://autoloads/hitstop.gd"
 
 [display]
 

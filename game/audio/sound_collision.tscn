@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6bnb6r527uc"]
+
+[ext_resource type="PackedScene" uid="uid://dhrhl1wo7agsm" path="res://audio/extended_audio_stream_player_2d.tscn" id="1_v156j"]
+[ext_resource type="AudioStream" uid="uid://dr5w4mtvxerfa" path="res://assets/jukebox/collision.wav" id="2_rrlc6"]
+
+[node name="SoundCollision" instance=ExtResource("1_v156j")]
+stream = ExtResource("2_rrlc6")
+one_shot = true

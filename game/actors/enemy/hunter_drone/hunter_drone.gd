@@ -8,6 +8,7 @@ class_name HunterDrone
 @export var on_death_handler: BaseOnDeathHandler
 @export var tween_damaged: TweenDamaged
 @export var enemy_move_and_collide: PhysicsBodyMoveAndCollide
+@export var collision_scene: PackedScene
 var actor_type := GameActor.ActorType.ENEMY
 
 @onready var wall_avoid_scanner: PinwheelScanner = $WallAvoidScanner
@@ -39,6 +40,11 @@ func _ready() -> void:
 		steerable.reset()
 		steerable.steering_strategies.append(direction_steering)
 		hurtbox.on_damage_dealt.connect(self_knockback)
+		hurtbox.on_damage_dealt.connect(
+			func (_t: Node2D, _d: int):
+				GlobalSignals.request_world_sound_spawn.emit(self, collision_scene)
+				GlobalSignals.request_camera_shake.emit(.2, 500)
+		)
 		original_max_speed = steerable.base_max_speed
 	target_offset_vector = raw_offset_vector.rotated(rng.randf_range(0, 2 * PI))
 
