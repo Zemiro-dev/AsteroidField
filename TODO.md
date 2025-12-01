@@ -30,7 +30,7 @@
 	- [x] Damage Tween
 - [x] Death explosion
 - [x] Basic Projectile
-	- [ ] Cannon Scene - let it handle the targeting for now and think about it later? That way they can all target and what not on their own
+	- [x] Cannon Scene - let it handle the targeting for now and think about it later? That way they can all target and what not on their own
 - [x] How does player target?
 
 - [x] hunter attack sprite
@@ -38,10 +38,10 @@
 - [x] add knockback to hurtbox and steerable interactions
 - [x] add damagable to player
 - [x] add knockback
-- [ ] create heath bar
-- [ ] add player death
-	- [ ] state
-	- [ ] reset
-	- [ ] animation
-- [ ] Title Card
+- [x] create heath bar
+- [x] add player death
+	- [x] state
+	- [x] reset
+	- [x] animation
+- [x] Title Card
 - [ ] Camera Dampening with Dash

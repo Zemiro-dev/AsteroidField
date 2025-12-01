@@ -5,6 +5,6 @@
 
 [node name="BoltZap" instance=ExtResource("1_swtxo")]
 stream = ExtResource("2_r2b2b")
-volume_db = -16.0
+volume_db = -18.0
 pitch_jitter = 0.2
 one_shot = true

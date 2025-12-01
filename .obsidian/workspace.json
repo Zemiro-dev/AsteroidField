@@ -170,6 +170,8 @@
   },
   "active": "614d627dd8a51a05",
   "lastOpenFiles": [
+    "game/projectiles/bolt/bolt_zap.tscn12916256882.tmp",
+    "game/projectiles/bolt/bolt_zap.tscn12885408220.tmp",
     "game/autoloads/jukebox.gd12156059526.tmp",
     "game/actors/player/player.tscn12135530143.tmp",
     "game/actors/player/player.tscn12020828252.tmp",
@@ -179,8 +181,6 @@
     "game/actors/player/player.tscn11555262981.tmp",
     "game/assets/jukebox/scifi-engine-loop.mp3.import11448308967.tmp",
     "game/actors/player/player.tscn11343414390.tmp",
-    "game/assets/jukebox/scifi-engine-loop.mp3.import",
-    "game/assets/jukebox/scifi-engine-loop.mp3",
     "game/assets/ui/screens/label_paused_focused.png",
     "game/assets/ui/screens/button_launch_normal.png",
     "game/assets/ui/screens/button_abort_normal.png",
