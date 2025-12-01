@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b32mttqfycxyd"]
+[gd_scene load_steps=25 format=3 uid="uid://b32mttqfycxyd"]
 
 [ext_resource type="Script" uid="uid://craqyrf168y61" path="res://actors/player/player.gd" id="1_ilk7j"]
 [ext_resource type="Texture2D" uid="uid://cifpbcvsjmo6y" path="res://assets/player/player_body.png" id="1_nvxhs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="7_388e2"]
 [ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="8_hiosj"]
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="9_ssdk0"]
+[ext_resource type="AudioStream" uid="uid://c4xey6l8aokhn" path="res://assets/jukebox/scifi-engine-loop.mp3" id="12_ssdk0"]
 
 [sub_resource type="Resource" id="Resource_6p1w3"]
 resource_local_to_scene = true
@@ -102,4 +103,8 @@ shape = SubResource("CircleShape2D_nvxhs")
 [node name="BoostResetTimer" type="Timer" parent="."]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
-current = true
+
+[node name="EngineSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_ssdk0")
+volume_db = -80.0
+autoplay = true

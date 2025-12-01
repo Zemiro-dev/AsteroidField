@@ -7,6 +7,8 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 
 @onready var impulse_particles: GPUParticles2D = $ImpulseParticles
 @onready var boost_reset_timer: Timer = $BoostResetTimer
+@onready var audio_listener_2d: AudioListener2D = $AudioListener2D
+@onready var engine_sound: AudioStreamPlayer2D = $EngineSound
 
 @export var controller: BaseController
 @export var steerable: BaseSteerable
@@ -19,6 +21,8 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 ## Value between 0-1, percentage where boost resets after full empty
 @export var boost_cd_reset: float = .75
 @export var on_death_handler: BaseOnDeathHandler
+@export var engine_sound_volumn_db: float = -20.
+@export var engine_sound_rev_speed: float = 200.
 
 var remaining_boost_duration: float = 0.0
 var is_boost_on_cd: bool = false
@@ -46,6 +50,7 @@ func _ready() -> void:
 			steerable.halt()
 			modulate = Color(Color.WHITE, 0.)
 	)
+	audio_listener_2d.make_current()
 
 
 func _physics_process(delta: float) -> void:
@@ -57,10 +62,12 @@ func _physics_process(delta: float) -> void:
 	if is_dashing(): direction = direction.normalized()
 
 	if direction:
+		engine_sound.volume_db = move_toward(engine_sound.volume_db, engine_sound_volumn_db, engine_sound_rev_speed * delta)
 		direction_steering.goal_vector = direction * steerable.get_max_speed()
 		steerable.steer(delta)
 		impulse_particles.emitting = true
 	else:
+		engine_sound.volume_db = move_toward(engine_sound.volume_db, -100, engine_sound_rev_speed * delta)
 		steerable.slow(delta)
 		impulse_particles.emitting = false
 	
