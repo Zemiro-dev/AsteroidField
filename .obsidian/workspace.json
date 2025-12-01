@@ -170,6 +170,8 @@
   },
   "active": "614d627dd8a51a05",
   "lastOpenFiles": [
+    "game/world/debug/debug_world_a.tscn1289996136.tmp",
+    "game/world/debug/debug_world_a.tscn1194003652.tmp",
     "game/world/debug/debug_world_a.tscn1167059157.tmp",
     "game/world/debug/debug_world_a.tscn1139913735.tmp",
     "game/world/debug/debug_world_a.tscn1137748456.tmp",
@@ -179,8 +181,6 @@
     "game/world/debug/debug_world_a.tscn1096184557.tmp",
     "game/actors/player/player.gd1091520884.tmp",
     "game/world/debug/debug_world_a.tscn1091476688.tmp",
-    "game/world/debug/debug_world_a.tscn1016816049.tmp",
-    "game/audio/extended_audio_stream_player_2d.gd",
     "game/assets/ui/screens/label_paused_focused.png",
     "game/assets/ui/screens/button_launch_normal.png",
     "game/assets/ui/screens/button_abort_normal.png",
