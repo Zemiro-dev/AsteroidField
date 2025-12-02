@@ -1,3 +1,14 @@
+- [ ] Warp Sound
+- [ ] Collectibles
+	- [ ] Health
+	- [ ] XP
+- [ ] Upgrade System
+	- [ ] Level Up Tracker
+	- [ ] When Level up pause and present upgrade screen
+	- [ ] Run player actions and damage through upgrade stats
+- [ ] Tick Rate System
+- [ ] Bolt Explosion Particles
+# Archive
 - [x] Setup product resolution settings and resizing
 	- not super happy with it I'm still not sure how the new debug window works
 - [x] Make background grid for testing
@@ -44,4 +55,4 @@
 	- [x] reset
 	- [x] animation
 - [x] Title Card
-- [ ] Camera Dampening with Dash
+
