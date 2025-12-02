@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=45 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -17,8 +17,9 @@
 [ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="9_782kq"]
 [ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="10_ab4jj"]
 [ext_resource type="Script" uid="uid://yq11iyvgqusn" path="res://projectiles/cannon/cannon_stats.gd" id="10_fn8aq"]
-[ext_resource type="Script" uid="uid://dr8hlak48x06t" path="res://steering/direction_steering_strategy.gd" id="11_7jtk5"]
 [ext_resource type="PackedScene" uid="uid://nwj7votb2bgb" path="res://actors/enemy/hunter_drone/hunter_spawner.tscn" id="11_k2vu7"]
+[ext_resource type="PackedScene" uid="uid://dneb78jrn1r0x" path="res://world/containers/free_collectible_container.tscn" id="14_qi3qa"]
+[ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="15_dse6n"]
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="16_g36r6"]
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
 [ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/camera.gd" id="20_5hfsr"]
@@ -40,6 +41,8 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 resource_local_to_scene = true
 script = ExtResource("6_50rxm")
 explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_ytl8k"]
@@ -59,6 +62,8 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 resource_local_to_scene = true
 script = ExtResource("6_50rxm")
 explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_dse6n"]
@@ -78,6 +83,8 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 resource_local_to_scene = true
 script = ExtResource("6_50rxm")
 explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_4n2ey"]
@@ -85,6 +92,16 @@ resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_6cor7"]
+resource_local_to_scene = true
+script = ExtResource("9_782kq")
+base_max_speed = 1250.0
+base_max_acceleration = 2000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("10_ab4jj")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
 
 [sub_resource type="Resource" id="Resource_fw0c5"]
 resource_local_to_scene = true
@@ -100,12 +117,6 @@ turn_around_multiplier = 3.0
 overspeed_break_force = 500.0
 steering_strategies = Array[ExtResource("10_ab4jj")]([])
 metadata/_custom_type_script = "uid://c7jc7uwjmfido"
-
-[sub_resource type="Resource" id="Resource_be6b7"]
-resource_local_to_scene = true
-script = ExtResource("11_7jtk5")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
 
 [sub_resource type="Resource" id="Resource_x0rwi"]
 resource_local_to_scene = true
@@ -572,11 +583,17 @@ damagable = SubResource("Resource_6smsd")
 on_death_handler = SubResource("Resource_ajp5a")
 tween_damaged = SubResource("Resource_4n2ey")
 
+[node name="FreeCollectibleContainer" parent="." instance=ExtResource("14_qi3qa")]
+
+[node name="CollectibleHealthSmall" parent="FreeCollectibleContainer" instance=ExtResource("15_dse6n")]
+position = Vector2(-2051, 516)
+action_amount = 2.0
+steerable = SubResource("Resource_6cor7")
+
 [node name="Player" parent="." instance=ExtResource("3_n85cx")]
 position = Vector2(-1009, 1902)
 controller = SubResource("Resource_fw0c5")
 steerable = SubResource("Resource_r18ru")
-direction_steering = SubResource("Resource_be6b7")
 player_move_and_collide = SubResource("Resource_x0rwi")
 damagable = SubResource("Resource_5hfsr")
 

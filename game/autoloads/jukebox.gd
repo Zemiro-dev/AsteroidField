@@ -39,6 +39,7 @@ func _ready() -> void:
 	
 	GlobalSignals.request_sound_spawn.connect(add_sound_to_world)
 	GlobalSignals.request_world_sound_spawn.connect(handle_request_world_sound_spawn)
+	GlobalSignals.request_play_sound_at.connect(play_sound_at)
 
 
 func play_menu_music():
@@ -63,3 +64,13 @@ func handle_request_world_sound_spawn(source: Node2D, sound_scene: PackedScene):
 		if sound is AudioStreamPlayer2D:
 			sound.global_position = source.global_position
 			GlobalSignals.request_sound_spawn.emit(sound)
+
+
+func play_sound_at(position: Vector2, stream: AudioStream, volumn_db: float = 0.0):
+	var stream_player := ExtendedAudioStreamPlayer2D.new()
+	stream_player.one_shot = true
+	stream_player.stream = stream
+	stream_player.global_position = position
+	stream_player.volume_db = volumn_db
+	GlobalSignals.request_sound_spawn.emit(stream_player)
+	

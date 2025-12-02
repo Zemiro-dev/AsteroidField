@@ -12,7 +12,6 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 
 @export var controller: BaseController
 @export var steerable: BaseSteerable
-@export var direction_steering: DirectionSteeringStrategy
 @export var player_move_and_collide: PlayerMoveAndCollide
 @export var dash_multiplier: float = 3.0
 @export var damagable: BaseDamagable
@@ -26,14 +25,15 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 
 var remaining_boost_duration: float = 0.0
 var is_boost_on_cd: bool = false
+var direction_steering: DirectionSteeringStrategy
 
 var actor_type := GameActor.ActorType.PLAYER
 
 
 func _ready() -> void:
-	steerable.reset()
-	steerable.steering_strategies.append(direction_steering)
+	init_steering()
 	damagable.reset_damagable(self)
+	damagable.current_health = 5
 	damagable.on_damage_taken.connect(func(damage_taken: int): print(damage_taken))
 	update_boost_duration(max_boost_duration)
 	if on_death_handler:
@@ -51,6 +51,12 @@ func _ready() -> void:
 			modulate = Color(Color.WHITE, 0.)
 	)
 	audio_listener_2d.make_current()
+
+
+func init_steering():
+	direction_steering = DirectionSteeringStrategy.new()
+	steerable.reset()
+	steerable.steering_strategies.append(direction_steering)
 
 
 func _physics_process(delta: float) -> void:

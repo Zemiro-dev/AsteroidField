@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxxk5aowxxwu2"]
+
+[ext_resource type="PackedScene" uid="uid://bx2jpl4ew27p" path="res://collectibles/collectible.tscn" id="1_g3p0o"]
+[ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="2_24m7x"]
+[ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="3_k2j6u"]
+[ext_resource type="Texture2D" uid="uid://ckmbfqrllmgm8" path="res://assets/collectibles/collectible_health.png" id="4_7cef4"]
+[ext_resource type="AudioStream" uid="uid://cio5cwvnyikmn" path="res://assets/jukebox/health.wav" id="4_24m7x"]
+
+[sub_resource type="Resource" id="Resource_t0e3j"]
+resource_local_to_scene = true
+script = ExtResource("2_24m7x")
+base_max_speed = 1250.0
+base_max_acceleration = 2000.0
+turn_around_multiplier = 2.0
+overspeed_break_force = 10000.0
+steering_strategies = Array[ExtResource("3_k2j6u")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w0alt"]
+radius = 694.487
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_67qjg"]
+radius = 17.0294
+
+[node name="CollectibleHealthSmall" instance=ExtResource("1_g3p0o")]
+steerable = SubResource("Resource_t0e3j")
+collect_sound = ExtResource("4_24m7x")
+collect_sound_volumn_db = -20.0
+
+[node name="CollisionShape2D" parent="AttractionZone" index="0"]
+shape = SubResource("CircleShape2D_w0alt")
+debug_color = Color(0.431, 0.145, 0.58, 0.473)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_67qjg")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("4_7cef4")

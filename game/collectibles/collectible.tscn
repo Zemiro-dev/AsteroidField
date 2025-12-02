@@ -17,15 +17,17 @@ metadata/_custom_type_script = "uid://c7jc7uwjmfido"
 [node name="Collectible" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 script = ExtResource("1_mctxo")
 steerable = SubResource("Resource_aa1be")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="AttractionZone" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttractionZone"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

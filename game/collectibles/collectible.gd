@@ -9,6 +9,8 @@ enum Action { GIVE_HEALTH }
 @export var action: Action = Action.GIVE_HEALTH
 @export var action_amount: float = 1.
 @export var steerable: BaseSteerable
+@export var collect_sound: AudioStream
+@export_range(-80, 24, 1, "suffix:dB") var collect_sound_volumn_db: float = 0.0
 
 var direction_steering: DirectionSteeringStrategy
 var player: Player
@@ -45,12 +47,18 @@ func collect() -> void:
 	has_been_collected = true
 	hide()
 	
-	# TODO play noise
+	if collect_sound:
+		GlobalSignals.request_play_sound_at.emit(
+			global_position,
+			collect_sound,
+			collect_sound_volumn_db
+		)
 	match action:
 		Action.GIVE_HEALTH:
 			var damagable := GameActor.get_damagable(player)
 			if damagable:
 				damagable.restore_health(int(action_amount))
+	queue_free()
 
 
 func init_steering() -> void:
