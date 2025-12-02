@@ -29,9 +29,21 @@ func get_steerable(o: Object) -> BaseSteerable:
 func get_damagable(o: Object) -> BaseDamagable:
 	if o.has_method("get_damagable"):
 		var damagable = o.get_damagable()
-		if damagable is BaseSteerable:
+		if damagable is BaseDamagable:
 			return damagable
 	var damagable = o.get("damagable")
 	if damagable != null and damagable is BaseDamagable:
 		return damagable
 	return null
+
+
+func get_levelable(o: Object) -> Levelable:
+	if o.has_method("get_levelable"):
+		var levelable = o.get_levelable()
+		if levelable is Levelable:
+			return levelable
+	var levelable = o.get("levelable")
+	if levelable != null and levelable is Levelable:
+		return levelable
+	return null
+	

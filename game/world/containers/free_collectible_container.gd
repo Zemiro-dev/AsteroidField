@@ -11,4 +11,4 @@ func unpack_and_spawn_collectible(position: Vector2, scene: PackedScene) -> void
 		var instantiated_scene = scene.instantiate()
 		if instantiated_scene is Collectible:
 			instantiated_scene.global_position = position
-			add_child(instantiated_scene)
+			add_child.call_deferred(instantiated_scene)

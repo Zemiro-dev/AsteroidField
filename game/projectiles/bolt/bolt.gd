@@ -14,7 +14,8 @@ func fire(
 		initial_transform: Transform2D,
 		target: Vector2,
 		spawn_offset: Vector2,
-		mask: int
+		mask: int,
+		damage_boost: int = 0
 	):
 	global_transform = initial_transform
 	collision_mask = mask
@@ -22,6 +23,8 @@ func fire(
 	heading = Vector2.from_angle(heading_angle)
 	position += spawn_offset.rotated(heading_angle)
 	rotation = heading_angle
+	if projectile_stats and damage_boost:
+		projectile_stats.damage += damage_boost
 	GlobalSignals.request_world_sound_spawn.emit(self, sound_scene)
 
 

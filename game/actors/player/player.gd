@@ -26,11 +26,13 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 var remaining_boost_duration: float = 0.0
 var is_boost_on_cd: bool = false
 var direction_steering: DirectionSteeringStrategy
+var levelable: Levelable
 
 var actor_type := GameActor.ActorType.PLAYER
 
 
 func _ready() -> void:
+	levelable = Levelable.new()
 	init_steering()
 	damagable.reset_damagable(self)
 	damagable.current_health = 5

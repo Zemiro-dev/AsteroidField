@@ -10,3 +10,6 @@ https://freesound.org/people/VanEngelen/sounds/784660/
 
 collision
 https://freesound.org/people/Osvoldon/sounds/653294/
+
+health pickup
+curse of the tomb

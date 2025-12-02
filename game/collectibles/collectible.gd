@@ -2,7 +2,7 @@ extends Area2D
 class_name Collectible
 
 
-enum Action { GIVE_HEALTH }
+enum Action { GIVE_HEALTH, GIVE_XP }
 
 @onready var attraction_zone: Area2D = $AttractionZone
 
@@ -25,7 +25,6 @@ func _ready() -> void:
 				player = body
 	)
 	body_entered.connect(handle_on_body_entered)
-	
 
 
 func _physics_process(delta: float) -> void:
@@ -58,6 +57,10 @@ func collect() -> void:
 			var damagable := GameActor.get_damagable(player)
 			if damagable:
 				damagable.restore_health(int(action_amount))
+		Action.GIVE_XP:
+			var levelable := GameActor.get_levelable(player)
+			if levelable:
+				levelable.give_xp(int(action_amount))
 	queue_free()
 
 

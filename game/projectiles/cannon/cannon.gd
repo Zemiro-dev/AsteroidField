@@ -6,6 +6,7 @@ class_name Cannon
 @export var stats: CannonStats
 @export var projectile_scene: PackedScene
 @export var spawn_offset: Vector2 = Vector2.ZERO
+var weilder: Node2D
 var time_since_last_shot: float = 0
 
 
@@ -13,6 +14,10 @@ func _ready() -> void:
 	if stats:
 		var rng = RandomNumberGenerator.new()
 		stats.time_between_shots += rng.randf() * .001
+
+
+func set_weilder(_weilder: Node2D):
+	weilder = _weilder
 
 
 func _physics_process(delta: float) -> void:
@@ -34,11 +39,16 @@ func fire(target: Vector2) -> void:
 		var projectile: Node2D = projectile_scene.instantiate()
 		GlobalSignals.request_projectile_spawn.emit(projectile)
 		if projectile is Bolt:
+			var damage_boost: int = 0
+			if weilder:
+				var levelable = GameActor.get_levelable(weilder)
+				damage_boost += (levelable.level - 1)
 			projectile.fire(
 				global_transform,
 				target,
 				spawn_offset, 
-				collision_mask + blocked_by
+				collision_mask + blocked_by,
+				damage_boost
 			)
 
 

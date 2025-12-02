@@ -12,7 +12,6 @@ class AudioStreams extends Node:
 			bg_music_player.stop()
 		bg_music_player.stream = stream
 	
-	
 	func set_bg_music_volumn_db(volumn_db: float):
 		if bg_music_player:
 			bg_music_player.volume_db = volumn_db
@@ -46,7 +45,7 @@ func play_menu_music():
 	if current_bg_music != menu_music.resource_path:
 		current_bg_music = menu_music.resource_path
 		audio_streams.set_bg_music(menu_music)
-		audio_streams.set_bg_music_volumn_db(-24.)
+		audio_streams.set_bg_music_volumn_db(-16.)
 		audio_streams.play_bg_music()
 
 

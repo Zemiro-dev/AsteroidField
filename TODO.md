@@ -8,6 +8,9 @@
 	- [ ] Run player actions and damage through upgrade stats
 - [ ] Tick Rate System
 - [ ] Bolt Explosion Particles
+- [ ] Collision Improvements
+	- [ ] https://www.youtube.com/watch?v=nXrEX6j-Mws video with math for reference
+	- [ ] Need to check if things are actually moving toward each other before bouncing
 # Archive
 - [x] Setup product resolution settings and resizing
 	- not super happy with it I'm still not sure how the new debug window works

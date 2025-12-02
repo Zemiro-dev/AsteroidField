@@ -7,10 +7,11 @@
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="3_6p1w3"]
 [ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="3_bop6h"]
 [ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="4_a744p"]
-[ext_resource type="Script" uid="uid://dr8hlak48x06t" path="res://steering/direction_steering_strategy.gd" id="5_a744p"]
 [ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="7_388e2"]
 [ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="8_hiosj"]
+[ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="8_ssdk0"]
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="9_ssdk0"]
+[ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="10_7aotg"]
 [ext_resource type="AudioStream" uid="uid://c4xey6l8aokhn" path="res://assets/jukebox/scifi-engine-loop.mp3" id="12_ssdk0"]
 
 [sub_resource type="Resource" id="Resource_6p1w3"]
@@ -28,12 +29,6 @@ overspeed_break_force = 500.0
 steering_strategies = Array[ExtResource("4_a744p")]([])
 metadata/_custom_type_script = "uid://c7jc7uwjmfido"
 
-[sub_resource type="Resource" id="Resource_lsln6"]
-resource_local_to_scene = true
-script = ExtResource("5_a744p")
-goal_vector = Vector2(0, 0)
-metadata/_custom_type_script = "uid://dr8hlak48x06t"
-
 [sub_resource type="Resource" id="Resource_15y17"]
 resource_local_to_scene = true
 script = ExtResource("3_6p1w3")
@@ -49,6 +44,11 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 [sub_resource type="Resource" id="Resource_7aotg"]
 script = ExtResource("9_ssdk0")
 explosion_scene = ExtResource("8_hiosj")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("8_ssdk0")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("10_7aotg")
+max_collectible_delta = 50.0
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Gradient" id="Gradient_lsqbn"]
@@ -79,7 +79,6 @@ collision_mask = 5
 script = ExtResource("1_ilk7j")
 controller = SubResource("Resource_6p1w3")
 steerable = SubResource("Resource_388e2")
-direction_steering = SubResource("Resource_lsln6")
 player_move_and_collide = SubResource("Resource_15y17")
 dash_multiplier = 4.0
 damagable = SubResource("Resource_hiosj")
