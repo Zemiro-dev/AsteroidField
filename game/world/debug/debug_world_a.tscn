@@ -145,6 +145,7 @@ script = ExtResource("1_h35gt")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2(-1011, 1902)
+process_callback = 0
 drag_left_margin = 0.05
 drag_top_margin = 0.05
 drag_right_margin = 0.05
