@@ -185,6 +185,7 @@
   },
   "active": "ff1c368b13bfbee2",
   "lastOpenFiles": [
+    "game/project.godot6413430.tmp",
     "game/projectiles/bolt/bolt.tscn4190405305.tmp",
     "game/projectiles/cannon/cannon.gd4189406860.tmp",
     "game/world/debug/debug_world_a.tscn3815068558.tmp",
@@ -195,7 +196,6 @@
     "game/projectiles/cannon/cannon.gd3467554954.tmp",
     "game/world/debug/debug_world_a.tscn3282979931.tmp",
     "game/projectiles/bolt/bolt.tscn3282097562.tmp",
-    "game/projectiles/bolt/bolt.tscn3260299596.tmp",
     "game/assets/ui/xp/xp_progress_resource.png",
     "game/assets/ui/xp/xp_progress_bottom.png",
     "game/assets/collectibles/collectible_xp.png",

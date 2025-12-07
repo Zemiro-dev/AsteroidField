@@ -23,13 +23,13 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if !can_fire():
+		time_since_last_shot += delta
 	if can_fire() and enabled:
 		var target = get_target()
 		if target:
 			time_until_next_shot = fire(target, delta)
 			time_since_last_shot = 0.0
-	if !can_fire():
-		time_since_last_shot += delta
 
 
 func can_fire() -> bool:

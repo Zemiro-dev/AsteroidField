@@ -2,16 +2,17 @@
 - [x] Collectibles
 	- [x] Health
 	- [x] XP
-- [ ] Structure Cannon into player properly so it can spawn its own and provide its leveable to it for damage and rof
+- [x] Structure Cannon into player properly so it can spawn its own and provide its leveable to it for damage and rof
 - [ ] Upgrade System
-	- [ ] Level Up Tracker
+	- [x] Level Up Tracker
 	- [ ] When Level up pause and present upgrade screen
-	- [ ] Run player actions and damage through upgrade stats
+	- [ ] Run player damage through upgrade stats
+	- [ ] run player movement through upgrade stats
 - [ ] Tick Rate System
 - [ ] Bolt Explosion Particles
 - [ ] Collision Improvements
 	- [ ] https://www.youtube.com/watch?v=nXrEX6j-Mws video with math for reference
-	- [ ] Need to check if things are actually moving toward each other before bouncing
+	- [x] Need to check if things are actually moving toward each other before bouncing
 # Archive
 - [x] Setup product resolution settings and resizing
 	- not super happy with it I'm still not sure how the new debug window works
