@@ -26,11 +26,7 @@ func _physics_process(delta: float) -> void:
 	if can_fire() and enabled:
 		var target = get_target()
 		if target:
-			var fire_target: Vector2 = target.global_position
-			var steerable := GameActor.get_steerable(target)
-			if steerable:
-				fire_target += steerable.velocity * delta * 5. # look ahead 5 frames?
-			time_until_next_shot = fire(fire_target)
+			time_until_next_shot = fire(target, delta)
 			time_since_last_shot = 0.0
 	if !can_fire():
 		time_since_last_shot += delta
@@ -41,23 +37,28 @@ func can_fire() -> bool:
 
 
 ## returns time until next show allowed
-func fire(target: Vector2) -> float:
+func fire(target_node: Node2D, delta: float) -> float:
 	if projectile_scene:
 		var projectile: Node2D = projectile_scene.instantiate()
 		GlobalSignals.request_projectile_spawn.emit(projectile)
 		if projectile is Bolt:
-			var damage_boost: int = 0
-			if wielder:
-				var levelable = GameActor.get_levelable(wielder)
-				damage_boost += (levelable.level - 1)
+			var target: Vector2 = target_node.global_position
+			var steerable := GameActor.get_steerable(target_node)
+			if steerable:
+				var look_ahead: Vector2 = target + steerable.velocity * delta * (30000. / projectile.get_max_speed())
+				var to_target := global_position.direction_to(target)
+				var to_look_ahead := global_position.direction_to(look_ahead)
+				if to_target.dot(to_look_ahead) > 0:
+					target = look_ahead
+			var levelable = GameActor.get_levelable(wielder)
 			projectile.fire(
 				global_transform,
 				target,
 				spawn_offset, 
 				collision_mask + blocked_by,
-				damage_boost
+				levelable
 			)
-			return projectile.stats.time_between_shots
+			return projectile.get_time_between_shots()
 	return 0.
 
 

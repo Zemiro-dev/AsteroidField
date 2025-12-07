@@ -373,6 +373,239 @@ rotation = 2.92578
 position = Vector2(-2163, 2490)
 rotation = 2.65773
 
+[node name="AsteroidA41" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1451, 2075)
+rotation = 3.87519
+
+[node name="AsteroidA42" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-757, 1419)
+rotation = 2.56688
+
+[node name="AsteroidA43" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2014, 1436)
+rotation = 2.56688
+scale = Vector2(0.626024, 0.607562)
+
+[node name="AsteroidA44" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-3013, 874)
+rotation = 3.62606
+scale = Vector2(0.772892, 0.719284)
+
+[node name="AsteroidA45" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2713, 1467)
+rotation = 4.95174
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA46" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2434, 1317)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA47" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1602, 1196)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA48" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1280, 1486)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA49" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-921, 350)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA50" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1426, -428)
+rotation = 6.54205
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA51" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-723, -944)
+rotation = 7.59343
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA52" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2745, -484)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA53" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2389, 311)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA54" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1872, -1023)
+rotation = 3.69481
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA55" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1138, -1596)
+rotation = 6.52665
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA56" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1160, -1112)
+rotation = 5.48324
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA57" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-604, -1779)
+rotation = 6.52665
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA58" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1749, -1790)
+rotation = 4.73822
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA59" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2728, -1529)
+rotation = 6.17864
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA60" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-3151, -962)
+rotation = 6.17864
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA68" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5820, 734.001)
+rotation = 6.54205
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA69" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(6523, 218)
+rotation = 7.59343
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA70" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(4501, 678)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA71" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5374, 139)
+rotation = 3.69481
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA72" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(6108, -434)
+rotation = 6.52665
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA73" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(6086, 50.0002)
+rotation = 5.48324
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA74" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(6642, -617)
+rotation = 6.52665
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA75" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5497, -628)
+rotation = 4.73822
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA76" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(4518, -367)
+rotation = 6.17864
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA77" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(4095, 200)
+rotation = 6.17864
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA78" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5181, -867)
+rotation = 6.54205
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA79" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5884, -1383)
+rotation = 7.59343
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA80" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(3862, -923)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA81" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(4735, -1462)
+rotation = 3.69481
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA82" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5469, -2035)
+rotation = 6.52665
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA83" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(5447, -1551)
+rotation = 5.48324
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA84" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(6003, -2218)
+rotation = 6.52665
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA85" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(4858, -2229)
+rotation = 4.73822
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA86" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(3879, -1968)
+rotation = 6.17864
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA87" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(3456, -1401)
+rotation = 6.17864
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA61" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1694, 4268)
+rotation = 4.70647
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA62" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2893, 2619)
+rotation = 2.92602
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA63" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2770, 1852)
+rotation = 3.96943
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA64" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-1736, 3179)
+rotation = 5.40985
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA65" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2100, 3790)
+rotation = 5.40985
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA66" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2575, 3491)
+rotation = 4.70647
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA67" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2981, 3013)
+rotation = 5.40985
+scale = Vector2(0.278737, 0.259404)
+
 [node name="AsteroidA3" parent="Asteroids" instance=ExtResource("5_be6b7")]
 position = Vector2(1897, 1146)
 rotation = -0.673861
@@ -646,7 +879,7 @@ offset_left = 74.0
 offset_top = 238.0
 offset_right = 474.0
 offset_bottom = 278.0
-max_value = 10.0
+max_value = 40.0
 texture_under = ExtResource("29_dse6n")
 texture_progress = ExtResource("30_6smsd")
 

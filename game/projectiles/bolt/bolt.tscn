@@ -6,12 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bg54rgkw5sq62" path="res://projectiles/bolt/bolt_zap.tscn" id="3_fkph1"]
 
 [sub_resource type="Resource" id="Resource_fkph1"]
-resource_local_to_scene = true
 script = ExtResource("2_r7u3w")
 damage = 1
 lifetime = 30.0
-max_speed = 1000.0
-acceleration = 500.0
+max_speed = 2000.0
+acceleration = 10000.0
 time_between_shots = 0.1
 metadata/_custom_type_script = "uid://cyvnerigeg0ir"
 

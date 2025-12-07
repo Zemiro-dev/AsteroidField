@@ -36,7 +36,6 @@ func _ready() -> void:
 	levelable = Levelable.new()
 	init_steering()
 	damagable.reset_damagable(self)
-	damagable.current_health = 5
 	damagable.on_damage_taken.connect(func(damage_taken: int): print(damage_taken))
 	update_boost_duration(max_boost_duration)
 	if on_death_handler:
