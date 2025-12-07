@@ -52,7 +52,7 @@ func should_overspeed_break() -> bool:
 	return velocity.length() > get_max_speed()
 
 
-func overspeed_break(delta: float) -> void:
+func overspeed_break(_delta: float) -> void:
 	velocity = velocity.move_toward(velocity.normalized() * get_max_speed(), overspeed_break_force)
 
 

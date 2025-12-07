@@ -32,7 +32,7 @@ func fire(
 func get_time_between_shots() -> float:
 	if !stats: return 0.0
 	
-	return stats.time_between_shots * (1 if !levelable else levelable.stats.projectile_time_between_shots_mult)
+	return stats.time_between_shots * (1.0 if !levelable else levelable.stats.projectile_time_between_shots_mult)
 
 
 func get_damage() -> int:

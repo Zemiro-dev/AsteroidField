@@ -6,9 +6,9 @@ func _ready() -> void:
 	GlobalSignals.request_collectible_spawn.connect(unpack_and_spawn_collectible)
 
 
-func unpack_and_spawn_collectible(position: Vector2, scene: PackedScene) -> void:
+func unpack_and_spawn_collectible(_global_position: Vector2, scene: PackedScene) -> void:
 	if scene and scene.can_instantiate():
 		var instantiated_scene = scene.instantiate()
 		if instantiated_scene is Collectible:
-			instantiated_scene.global_position = position
+			instantiated_scene.global_position = _global_position
 			add_child.call_deferred(instantiated_scene)

@@ -69,7 +69,7 @@ func _physics_process(delta: float) -> void:
 				last_known_target_location = target
 				var wall_avoid := wall_avoid_scanner.scan()
 				var enemy_avoid := enemy_avoid_scanner.scan()
-				var target_goal := enemy_avoid if !enemy_avoid.is_zero_approx() else global_position.direction_to(target + target_offset_vector)
+				#var target_goal := enemy_avoid if !enemy_avoid.is_zero_approx() else global_position.direction_to(target + target_offset_vector)
 				direction_steering.goal_vector = (global_position.direction_to(target) + wall_avoid + enemy_avoid).normalized() * steerable.get_max_speed()
 				steerable.steer(delta)
 			else:

@@ -14,13 +14,8 @@ var wielder: Node2D:
 	set(value):
 		wielder = value
 		damagable = GameActor.get_damagable(wielder)
-		damagable.on_death.connect(func(actor: Node2D): enabled = false)
+		damagable.on_death.connect(func(_actor: Node2D): enabled = false)
 		levelable = GameActor.get_levelable(wielder)
-
-
-func _ready() -> void:
-	var rng = RandomNumberGenerator.new()
-
 
 func _physics_process(delta: float) -> void:
 	if !can_fire():
@@ -50,7 +45,6 @@ func fire(target_node: Node2D, delta: float) -> float:
 				var to_look_ahead := global_position.direction_to(look_ahead)
 				if to_target.dot(to_look_ahead) > 0:
 					target = look_ahead
-			var levelable = GameActor.get_levelable(wielder)
 			projectile.fire(
 				global_transform,
 				target,
@@ -62,12 +56,12 @@ func fire(target_node: Node2D, delta: float) -> float:
 	return 0.
 
 
-func _hitscan(target:Vector2) -> void:
-	var space_state := get_world_2d().direct_space_state
-	var query := PhysicsRayQueryParameters2D.create(global_position, target, collision_mask, [self])
-	var result := space_state.intersect_ray(query)
-	var obj = result.get('collider')
-	if obj is Object:
-		var damagable = GameActor.get_damagable(obj)
-		if damagable:
-			damagable.take_damage(2)
+#func _hitscan(target:Vector2) -> void:
+	#var space_state := get_world_2d().direct_space_state
+	#var query := PhysicsRayQueryParameters2D.create(global_position, target, collision_mask, [self])
+	#var result := space_state.intersect_ray(query)
+	#var obj = result.get('collider')
+	#if obj is Object:
+		#var damagable = GameActor.get_damagable(obj)
+		#if damagable:
+			#damagable.take_damage(2)

@@ -19,7 +19,7 @@ func _ready() -> void:
 				health.value = ceil(float(new_health) / float(max_health) * health.max_value)
 		)
 		damagable.on_death.connect(
-			func(actor: Node2D):
+			func(_actor: Node2D):
 				death_timer.start()
 		)
 	var levelable := GameActor.get_levelable(player)
@@ -32,9 +32,9 @@ func _ready() -> void:
 				level.value = current_level - 1
 		)
 	player.on_boost_duration_changed.connect(
-		func(new_duration: float, max_duration: float, player: Player):
+		func(new_duration: float, max_duration: float, _player: Player):
 			boost.value = ceil(float(new_duration) / float(max_duration) * boost.max_value)
-			if player.is_boost_on_cd:
+			if _player.is_boost_on_cd:
 				boost.modulate = Color(Color.WHITE, .25)
 			else: 
 				boost.modulate = Color.WHITE

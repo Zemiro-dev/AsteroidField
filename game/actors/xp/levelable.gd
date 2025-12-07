@@ -28,6 +28,7 @@ func level_up() -> void:
 
 
 func level_up_projectile_stats() -> void:
+	@warning_ignore("integer_division")
 	stats.projectile_damage_up = (level + 1) / 2
 	stats.projectile_max_speed_up = 100.
 	stats.projectile_acceleration_up = 100.

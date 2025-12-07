@@ -9,7 +9,7 @@ func _ready() -> void:
 	GlobalSignals.request_hitstop.connect(on_hitstop_requested)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Time.get_ticks_msec() > hitstop_end_time_ms and is_in_hitstop:
 		exit_hitstop()
 

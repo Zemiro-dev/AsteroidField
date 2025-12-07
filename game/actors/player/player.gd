@@ -41,11 +41,11 @@ func _ready() -> void:
 	if on_death_handler:
 		on_death_handler.bind_to_node(self)
 	damagable.on_damage_taken.connect(
-		func(damage_dealt: int):
+		func(_damage_dealt: int):
 			GlobalSignals.request_hitstop.emit(70)
 	)
 	damagable.on_death.connect(
-		func(actor: Node2D):
+		func(_actor: Node2D):
 			if has_node("Cannon"):
 				var cannon: Cannon = get_node("Cannon")
 				cannon.enabled = false
