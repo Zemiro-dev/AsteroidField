@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnirugbiyi7nj"]
+
+[ext_resource type="Script" uid="uid://bvs48pso7ls3e" path="res://projectiles/cannon/cannon_hardpoint.gd" id="1_q4xnw"]
+
+[node name="CannonHardpoint" type="Node2D"]
+script = ExtResource("1_q4xnw")

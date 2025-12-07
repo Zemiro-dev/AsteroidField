@@ -1,25 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://tp2ynjhkq3xn"]
+[gd_scene load_steps=2 format=3 uid="uid://tp2ynjhkq3xn"]
 
 [ext_resource type="Script" uid="uid://din4uisx5p34n" path="res://projectiles/cannon/cannon.gd" id="1_2aglg"]
-[ext_resource type="Script" uid="uid://yq11iyvgqusn" path="res://projectiles/cannon/cannon_stats.gd" id="2_867sx"]
-[ext_resource type="PackedScene" uid="uid://cvse3reo0fpus" path="res://projectiles/bolt/bolt.tscn" id="3_sdle7"]
-
-[sub_resource type="Resource" id="Resource_pudvl"]
-resource_local_to_scene = true
-script = ExtResource("2_867sx")
-time_between_shots = 0.1
-metadata/_custom_type_script = "uid://yq11iyvgqusn"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_l4jct"]
-radius = 487.748
 
 [node name="Cannon" type="Area2D"]
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_2aglg")
-stats = SubResource("Resource_pudvl")
-projectile_scene = ExtResource("3_sdle7")
 blocked_by = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_l4jct")

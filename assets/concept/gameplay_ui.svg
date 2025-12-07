@@ -28,8 +28,8 @@
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
      inkscape:zoom="2"
-     inkscape:cx="435.5"
-     inkscape:cy="273.5"
+     inkscape:cx="422"
+     inkscape:cy="438.5"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
@@ -140,6 +140,7 @@
 
 
 
+
 &quot; /&gt;
     <inkscape:path-effect
    effect="powermask"
@@ -190,6 +191,7 @@
    flatten="false"
    hide_clip="false"
    message="!" />
+
 
 
 
@@ -367,6 +369,7 @@
 
 
 
+
 &quot; /&gt;
     <inkscape:path-effect
    effect="powerclip"
@@ -386,6 +389,7 @@
    flatten="false"
    hide_clip="false"
    message="L" />
+
 
 
 
@@ -471,6 +475,7 @@
 
 
 
+
 &quot; /&gt;
     <clipPath
    clipPathUnits="userSpaceOnUse"
@@ -524,6 +529,7 @@
    flatten="false"
    hide_clip="false"
    message="4" />
+
 
 
 
@@ -697,6 +703,7 @@
    flatten="false"
    hide_clip="false"
    message="M" />
+
 
 
 
@@ -996,6 +1003,7 @@
 
 
 
+
 &quot; /&gt;
     <clipPath
    clipPathUnits="userSpaceOnUse"
@@ -1045,6 +1053,7 @@
    flatten="false"
    hide_clip="false"
    message="" />
+
 
 
 
@@ -1105,6 +1114,7 @@
    flatten="false"
    hide_clip="false"
    message="^" />
+
 
 
 
@@ -3426,6 +3436,28 @@
        d="m 275.69699,177.02251 v 74 h 400 v -74 z m 6,6 h 388 v 62 h -388 z"
        id="rect6"
        inkscape:label="health-progress-top" />
+    <rect
+       style="fill:#363634;fill-opacity:1;stroke:none;stroke-width:6;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1;paint-order:normal"
+       id="rect12"
+       width="400"
+       height="9.655654"
+       x="275.69699"
+       y="363.0191"
+       inkscape:label="xp-progress-bottom "
+       inkscape:export-filename="..\..\game\assets\ui\xp\xp_progress_bottom.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#00f1f3;fill-opacity:1;stroke:none;stroke-width:6;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1;paint-order:normal"
+       id="rect13"
+       width="400"
+       height="9.655654"
+       x="275.69699"
+       y="409.60699"
+       inkscape:label="xp-progress-resource"
+       inkscape:export-filename="..\..\game\assets\ui\xp\xp_progress_resource.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
   <g
      inkscape:groupmode="layer"

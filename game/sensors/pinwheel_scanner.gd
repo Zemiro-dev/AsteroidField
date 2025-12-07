@@ -38,7 +38,7 @@ func scan_ray(ray: RayCast2D) -> Vector2:
 
 func get_ray_count() -> int:
 	var count := { "value" : 0}
-	for_each_ray(func(_ray: RayCast2D, i: int): count.value += 1)
+	for_each_ray(func(_ray: RayCast2D, _i: int): count.value += 1)
 	return count.value
 
 

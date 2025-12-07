@@ -9,11 +9,12 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 @onready var boost_reset_timer: Timer = $BoostResetTimer
 @onready var audio_listener_2d: AudioListener2D = $AudioListener2D
 @onready var engine_sound: AudioStreamPlayer2D = $EngineSound
+@onready var cannon_hardpoint: CannonHardpoint = $CannonHardpoint
 
 @export var controller: BaseController
 @export var steerable: BaseSteerable
 @export var player_move_and_collide: PlayerMoveAndCollide
-@export var dash_multiplier: float = 3.0
+@export var dash_multiplier: float = 4.
 @export var damagable: BaseDamagable
 @export var max_boost_duration: float = 1.0
 @export var boost_recharge_ratio: float = 1.0
@@ -53,6 +54,8 @@ func _ready() -> void:
 			modulate = Color(Color.WHITE, 0.)
 	)
 	audio_listener_2d.make_current()
+	if cannon_hardpoint.get_child_count() == 0:
+		cannon_hardpoint.add_cannon(cannon_hardpoint.BOLT_CANNON, self)
 
 
 func init_steering():

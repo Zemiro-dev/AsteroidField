@@ -93,6 +93,10 @@ pause={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Props"
 
+[physics]
+
+common/physics_interpolation=true
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

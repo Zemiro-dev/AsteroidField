@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=45 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -13,17 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://bpexwtnvt8ije" path="res://world/asteroids/asteroid_a.tscn" id="5_be6b7"]
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="5_pudvl"]
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="6_50rxm"]
-[ext_resource type="PackedScene" uid="uid://tp2ynjhkq3xn" path="res://projectiles/cannon/cannon.tscn" id="8_551gn"]
 [ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="9_782kq"]
 [ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="10_ab4jj"]
-[ext_resource type="Script" uid="uid://yq11iyvgqusn" path="res://projectiles/cannon/cannon_stats.gd" id="10_fn8aq"]
 [ext_resource type="PackedScene" uid="uid://nwj7votb2bgb" path="res://actors/enemy/hunter_drone/hunter_spawner.tscn" id="11_k2vu7"]
 [ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="13_6smsd"]
 [ext_resource type="PackedScene" uid="uid://dneb78jrn1r0x" path="res://world/containers/free_collectible_container.tscn" id="14_qi3qa"]
 [ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="15_dse6n"]
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="16_g36r6"]
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
-[ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/camera.gd" id="20_5hfsr"]
+[ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/player_camera.gd" id="20_5hfsr"]
 [ext_resource type="Texture2D" uid="uid://c0q5vh17n5duo" path="res://assets/ui/health/boost_progress_bottom.png" id="20_k2vu7"]
 [ext_resource type="Texture2D" uid="uid://b1fs2m3eq3t3t" path="res://assets/ui/health/boost_progress_top.png" id="21_h35gt"]
 [ext_resource type="Texture2D" uid="uid://4norlwwroefc" path="res://assets/ui/health/boost_progress_resource.png" id="22_fw0c5"]
@@ -142,14 +140,16 @@ max_health = 10
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
-[sub_resource type="Resource" id="Resource_cglna"]
-resource_local_to_scene = true
-script = ExtResource("10_fn8aq")
-time_between_shots = 0.2
-metadata/_custom_type_script = "uid://yq11iyvgqusn"
-
 [node name="DebugWorldA" type="Node2D"]
 script = ExtResource("1_h35gt")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2(-1011, 1902)
+drag_left_margin = 0.05
+drag_top_margin = 0.05
+drag_right_margin = 0.05
+drag_bottom_margin = 0.05
+script = ExtResource("20_5hfsr")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false
@@ -608,14 +608,6 @@ controller = SubResource("Resource_fw0c5")
 steerable = SubResource("Resource_r18ru")
 player_move_and_collide = SubResource("Resource_x0rwi")
 damagable = SubResource("Resource_5hfsr")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-2, 0)
-script = ExtResource("20_5hfsr")
-
-[node name="Cannon" parent="Player" instance=ExtResource("8_551gn")]
-stats = SubResource("Resource_cglna")
-spawn_offset = Vector2(50, 0)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

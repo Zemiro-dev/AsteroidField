@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b32mttqfycxyd"]
+[gd_scene load_steps=26 format=3 uid="uid://b32mttqfycxyd"]
 
 [ext_resource type="Script" uid="uid://craqyrf168y61" path="res://actors/player/player.gd" id="1_ilk7j"]
 [ext_resource type="Texture2D" uid="uid://cifpbcvsjmo6y" path="res://assets/player/player_body.png" id="1_nvxhs"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="9_ssdk0"]
 [ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="10_7aotg"]
 [ext_resource type="AudioStream" uid="uid://c4xey6l8aokhn" path="res://assets/jukebox/scifi-engine-loop.mp3" id="12_ssdk0"]
+[ext_resource type="PackedScene" uid="uid://bnirugbiyi7nj" path="res://projectiles/cannon/cannon_hardpoint.tscn" id="14_k67x5"]
 
 [sub_resource type="Resource" id="Resource_6p1w3"]
 resource_local_to_scene = true
@@ -80,7 +81,6 @@ script = ExtResource("1_ilk7j")
 controller = SubResource("Resource_6p1w3")
 steerable = SubResource("Resource_388e2")
 player_move_and_collide = SubResource("Resource_15y17")
-dash_multiplier = 4.0
 damagable = SubResource("Resource_hiosj")
 max_boost_duration = 0.5
 boost_recharge_ratio = 0.25
@@ -107,3 +107,5 @@ shape = SubResource("CircleShape2D_nvxhs")
 stream = ExtResource("12_ssdk0")
 volume_db = -80.0
 autoplay = true
+
+[node name="CannonHardpoint" parent="." instance=ExtResource("14_k67x5")]

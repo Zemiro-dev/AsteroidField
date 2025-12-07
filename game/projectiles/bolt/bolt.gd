@@ -2,7 +2,7 @@ extends Area2D
 class_name Bolt
 
 
-@export var projectile_stats: ProjectileStats
+@export var stats: ProjectileStats
 @export var explosion_scene: PackedScene
 @export var sound_scene: PackedScene
 var age: float = 0.0
@@ -23,9 +23,10 @@ func fire(
 	heading = Vector2.from_angle(heading_angle)
 	position += spawn_offset.rotated(heading_angle)
 	rotation = heading_angle
-	if projectile_stats and damage_boost:
-		projectile_stats.damage += damage_boost
+	if stats and damage_boost:
+		stats.damage += damage_boost
 	GlobalSignals.request_world_sound_spawn.emit(self, sound_scene)
+	reset_physics_interpolation()
 
 
 func _ready() -> void:
@@ -33,21 +34,21 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if projectile_stats:
+	if stats:
 		age += delta
-		velocity += projectile_stats.acceleration * heading * delta
-		velocity = Vector.clamp_vector2_length(velocity, projectile_stats.max_speed)
+		velocity += stats.acceleration * heading * delta
+		velocity = Vector.clamp_vector2_length(velocity, stats.max_speed)
 		position += velocity
 		rotation = velocity.angle()
-		if projectile_stats.lifetime < age:
+		if stats.lifetime < age:
 			on_death()
 
 
 func on_body_entered(node: Node2D) -> void:
-	if projectile_stats:
+	if stats:
 		var damagable := GameActor.get_damagable(node)
 		if damagable:
-			damagable.take_damage(projectile_stats.damage)
+			damagable.take_damage(stats.damage)
 	on_death()
 
 

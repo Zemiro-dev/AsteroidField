@@ -1,7 +1,8 @@
 - [ ] Warp Sound
-- [ ] Collectibles
-	- [ ] Health
-	- [ ] XP
+- [x] Collectibles
+	- [x] Health
+	- [x] XP
+- [ ] Structure Cannon into player properly so it can spawn its own and provide its leveable to it for damage and rof
 - [ ] Upgrade System
 	- [ ] Level Up Tracker
 	- [ ] When Level up pause and present upgrade screen

@@ -7,7 +7,7 @@ extends Node2D
 @onready var xp: TextureProgressBar = $UI/Xp
 @onready var level: TextureProgressBar = $UI/Level
 @onready var death_timer: Timer = $DeathTimer
-@onready var cannon: Cannon = $Player/Cannon
+@onready var player_camera: PlayerCamera = $PlayerCamera
 
 
 func _ready() -> void:
@@ -37,8 +37,8 @@ func _ready() -> void:
 			if player.is_boost_on_cd:
 				boost.modulate = Color(Color.WHITE, .25)
 			else: 
-				boost.modulate = Color.WHITE, .5
+				boost.modulate = Color.WHITE
 				
 	)
 	death_timer.timeout.connect(func(): GameManager.change_scene_to_main_menu())
-	cannon.set_weilder(player)
+	player_camera.player = player

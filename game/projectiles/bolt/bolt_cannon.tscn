@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://p7sdfaqdyrms"]
+
+[ext_resource type="PackedScene" uid="uid://tp2ynjhkq3xn" path="res://projectiles/cannon/cannon.tscn" id="1_p5e36"]
+[ext_resource type="Script" uid="uid://yq11iyvgqusn" path="res://projectiles/cannon/cannon_stats.gd" id="2_yelxd"]
+[ext_resource type="PackedScene" uid="uid://cvse3reo0fpus" path="res://projectiles/bolt/bolt.tscn" id="3_djgnl"]
+
+[sub_resource type="Resource" id="Resource_d6v76"]
+script = ExtResource("2_yelxd")
+time_between_shots = 0.1
+metadata/_custom_type_script = "uid://yq11iyvgqusn"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yelxd"]
+radius = 500.0
+
+[node name="BoltCannon" instance=ExtResource("1_p5e36")]
+stats = SubResource("Resource_d6v76")
+projectile_scene = ExtResource("3_djgnl")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_yelxd")
+debug_color = Color(0.875, 0.161, 0.208, 0.311)
