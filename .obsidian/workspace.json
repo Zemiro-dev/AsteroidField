@@ -185,6 +185,8 @@
   },
   "active": "ff1c368b13bfbee2",
   "lastOpenFiles": [
+    "game/world/debug/debug_world_a.tscn14873948850.tmp",
+    "game/world/debug/debug_world_a.tscn14677915197.tmp",
     "game/world/debug/debug_world_a.tscn14616075325.tmp",
     "game/world/debug/debug_world_a.tscn14446480526.tmp",
     "game/world/debug/debug_world_a.tscn14444209604.tmp",
@@ -194,8 +196,6 @@
     "game/actors/player/player.gd14268923340.tmp",
     "game/projectiles/cannon/cannon.gd14249266363.tmp",
     "game/projectiles/bolt/bolt.gd14182825435.tmp",
-    "game/projectiles/bolt/bolt.gd14171536056.tmp",
-    "game/autoloads/global_signals.gd14157466170.tmp",
     "game/assets/ui/xp/xp_progress_resource.png",
     "game/assets/ui/xp/xp_progress_bottom.png",
     "game/assets/collectibles/collectible_xp.png",
