@@ -7,7 +7,7 @@
    viewBox="0 0 256 256"
    version="1.1"
    id="svg1"
-   sodipodi:docname="ui.svg"
+   sodipodi:docname="upgrade_ui.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="1018.9409"
-     inkscape:cy="627.91082"
-     inkscape:window-width="2560"
-     inkscape:window-height="1494"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer5"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="-1537.2501"
+     inkscape:cy="-567.80675"
+     inkscape:window-width="2538"
+     inkscape:window-height="1472"
+     inkscape:window-x="36"
+     inkscape:window-y="134"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer8"
      showgrid="true"
      borderlayer="true"
      showguides="true"
@@ -4165,8 +4165,7 @@
        width="1546.255"
        height="302.64172"
        x="175.3625"
-       y="678.82251"
-       sodipodi:insensitive="true" />
+       y="678.82251" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:1.2px;word-spacing:0px;opacity:1;vector-effect:none;fill:#fafaee;fill-opacity:1;stroke:none;stroke-width:12;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;filter:url(#filter246)"
@@ -4187,6 +4186,70 @@
          x="710.0318"
          y="853.97668"
          id="tspan246">Level Up!!!</tspan></text>
+    <rect
+       style="vector-effect:none;fill:#050505;fill-opacity:1;stroke:#00f1f3;stroke-width:12;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="rect244-1"
+       width="1546.255"
+       height="302.64172"
+       x="-771"
+       y="-1487" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:1.2px;word-spacing:0px;vector-effect:none;fill:#fafaee;fill-opacity:1;stroke:none;stroke-width:12;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       x="-236.3307"
+       y="-1311.8458"
+       id="text246-0"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\texture_level_up_message.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         x="-236.3307"
+         y="-1311.8458"
+         id="tspan246-2">Level Up!!!</tspan></text>
+    <rect
+       style="font-variation-settings:normal;vector-effect:none;fill:#050505;fill-opacity:1;stroke:#00b0f3;stroke-width:12;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+       id="rect14-5"
+       width="458"
+       height="458"
+       x="-1085.9474"
+       y="-1548.6438"
+       ry="12.5"
+       rx="12.5"
+       transform="translate(230.47816,835.38895)" />
+    <rect
+       style="fill:#050505;fill-opacity:1;stroke:#fffc31;stroke-width:12;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+       id="rect78-5"
+       width="448"
+       height="448"
+       x="-1383.791"
+       y="-713.25482"
+       ry="12.500001"
+       rx="12.500001"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_weaponstat_focused.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#050505;fill-opacity:1;stroke:#fafaee;stroke-width:12;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+       id="rect13"
+       width="431.125"
+       height="431.125"
+       x="-1375.3535"
+       y="-704.81732"
+       ry="12.500001"
+       rx="12.500001"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_weapon_normal.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-size:300px;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';letter-spacing:1.2px;word-spacing:0px;fill:#000000;fill-opacity:0;stroke:#fafaee;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+       x="-1491.5"
+       y="-386"
+       id="text106"><tspan
+         sodipodi:role="line"
+         id="tspan106"
+         x="-1491.5"
+         y="-386" /></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -5150,6 +5213,122 @@
          inkscape:transform-center-x="2.61489"
          transform="matrix(0.16680459,0.13996567,0.13996567,-0.16680459,3.3307596,700.93682)"
          inkscape:transform-center-y="-5.1503052" />
+    </g>
+    <g
+       id="g109"
+       transform="translate(-520.43059,-6.442931)"
+       inkscape:export-filename="..\..\game\assets\ui\upgrades\attack_speed.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:1.22227px;word-spacing:0px;fill:#fafaee;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5;stroke-dasharray:64, 128"
+         x="-1306.6803"
+         y="-314.08331"
+         id="text56-4"><tspan
+           sodipodi:role="line"
+           x="-1306.6803"
+           y="-314.08331"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:2"
+           id="tspan107">Attack Speed</tspan></text>
+      <g
+         id="g104"
+         transform="translate(-0.70549255,-23.888423)">
+        <path
+           id="path22"
+           style="fill:#fffc31;fill-opacity:1;stroke:none;stroke-width:4.00003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+           d="m -1262.9247,-574.17117 c -10.4192,8.37366 -10.4192,31.72816 0,40.10181 24.2132,19.45874 90.9901,-11.61523 91.0057,-20.05091 0,-8.43584 -66.7925,-39.50957 -91.0057,-20.0509 z"
+           sodipodi:nodetypes="aaca" />
+        <path
+           id="path23"
+           style="fill:#fffc31;fill-opacity:1;stroke:none;stroke-width:4.00003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+           d="m -1221.7506,-461.62849 c -10.4191,8.37364 -10.4191,31.72814 0,40.10179 24.2132,19.45876 90.9903,-11.61521 91.0059,-20.05089 0,-8.43584 -66.7927,-39.50957 -91.0059,-20.0509 z"
+           sodipodi:nodetypes="aaca" />
+        <path
+           id="path26"
+           style="fill:#fffc31;fill-opacity:1;stroke:none;stroke-width:4.00003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+           d="m -1153.1266,-543.97678 c -10.4198,8.37365 -10.4198,31.72815 0,40.1018 24.2125,19.45875 90.9896,-11.61521 91.0059,-20.05089 0,-8.43584 -66.7934,-39.50957 -91.0059,-20.05091 z"
+           sodipodi:nodetypes="aaca" />
+        <path
+           id="path63"
+           style="fill:#fffc31;fill-opacity:1;stroke:none;stroke-width:4.00003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+           d="m -1177.8311,-629.07005 c -10.4191,8.37366 -10.4191,31.72816 0,40.10181 24.2125,19.45874 90.9902,-11.61523 91.0057,-20.05091 0,-8.43584 -66.7932,-39.50957 -91.0057,-20.0509 z"
+           sodipodi:nodetypes="aaca" />
+        <path
+           id="path64"
+           style="fill:#fffc31;fill-opacity:1;stroke:none;stroke-width:4.00003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+           d="m -1166.8515,-401.23977 c -10.4191,8.37365 -10.4191,31.72815 0,40.10179 24.2125,19.45874 90.9902,-11.61522 91.0057,-20.0509 0,-8.43582 -66.7932,-39.50956 -91.0057,-20.05089 z"
+           sodipodi:nodetypes="aaca" />
+        <path
+           id="path65"
+           style="fill:#fffc31;fill-opacity:1;stroke:none;stroke-width:4.00003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+           d="m -1081.7578,-489.07797 c -10.4201,8.37365 -10.4201,31.72815 0,40.10179 24.2122,19.45876 90.9894,-11.61521 91.0049,-20.05088 0,-8.43584 -66.7927,-39.50958 -91.0049,-20.05091 z"
+           sodipodi:nodetypes="aaca" />
+        <path
+           id="path66"
+           style="fill:#fffc31;fill-opacity:1;stroke:none;stroke-width:4.00003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+           d="m -1065.2884,-587.89591 c -10.4199,8.37364 -10.4199,31.72816 0,40.10181 24.2124,19.45874 90.9903,-11.61523 91.0058,-20.05091 0,-8.43584 -66.7934,-39.50957 -91.0058,-20.0509 z"
+           sodipodi:nodetypes="aaca" />
+        <g
+           id="g102"
+           transform="matrix(2.549397,0,0,2.549397,-1743.5984,-2066.3917)"
+           style="stroke-width:0.392249">
+          <path
+             sodipodi:type="star"
+             style="fill:#f6b512;fill-opacity:1;stroke:none;stroke-width:7.2056;stroke-linecap:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+             id="path67"
+             inkscape:flatsided="true"
+             sodipodi:sides="3"
+             sodipodi:cx="488"
+             sodipodi:cy="717"
+             sodipodi:r1="138.31123"
+             sodipodi:r2="69.155624"
+             sodipodi:arg1="2.0943951"
+             sodipodi:arg2="3.1415927"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 418.84438,836.78104 0,-239.56208 L 626.31123,717 Z"
+             inkscape:transform-center-x="-7.5292913"
+             transform="matrix(0.21774793,0,0,0.21774793,82.34886,457.75441)"
+             inkscape:transform-center-y="-2.5085288e-06" />
+          <path
+             sodipodi:type="star"
+             style="fill:#f6b512;fill-opacity:1;stroke:none;stroke-width:7.2056;stroke-linecap:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+             id="path93"
+             inkscape:flatsided="true"
+             sodipodi:sides="3"
+             sodipodi:cx="488"
+             sodipodi:cy="717"
+             sodipodi:r1="138.31123"
+             sodipodi:r2="69.155624"
+             sodipodi:arg1="2.0943951"
+             sodipodi:arg2="3.1415927"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 418.84438,836.78104 0,-239.56208 L 626.31123,717 Z"
+             inkscape:transform-center-x="2.6148825"
+             transform="matrix(0.16680459,-0.13996567,0.13996567,0.16680459,3.3307596,526.82255)"
+             inkscape:transform-center-y="5.1503105" />
+          <path
+             sodipodi:type="star"
+             style="fill:#f6b512;fill-opacity:1;stroke:none;stroke-width:7.2056;stroke-linecap:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+             id="path97"
+             inkscape:flatsided="true"
+             sodipodi:sides="3"
+             sodipodi:cx="488"
+             sodipodi:cy="717"
+             sodipodi:r1="138.31123"
+             sodipodi:r2="69.155624"
+             sodipodi:arg1="2.0943951"
+             sodipodi:arg2="3.1415927"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 418.84438,836.78104 0,-239.56208 L 626.31123,717 Z"
+             inkscape:transform-center-x="2.61489"
+             transform="matrix(0.16680459,0.13996567,0.13996567,-0.16680459,3.3307596,700.93682)"
+             inkscape:transform-center-y="-5.1503052" />
+        </g>
+      </g>
     </g>
   </g>
 </svg>

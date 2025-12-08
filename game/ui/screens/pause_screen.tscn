@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7h68s2cacj2w" path="res://ui/screens/pause_screen.gd" id="1_pd7ce"]
 [ext_resource type="Texture2D" uid="uid://bc2tnlwnlobgg" path="res://assets/ui/screens/label_paused_focused.png" id="2_m2bf8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2bf8"]
-bg_color = Color(0.596, 0.596, 0.569, 0.25)
+[ext_resource type="StyleBox" uid="uid://1lbkcbyia4a1" path="res://ui/screens/stylebox_fade_overlay.tres" id="2_qaqnv"]
 
 [node name="PauseScreen" type="CanvasLayer"]
 process_mode = 3
@@ -16,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_m2bf8")
+theme_override_styles/panel = ExtResource("2_qaqnv")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
