@@ -8,7 +8,6 @@ bg_color = Color(0.596, 0.596, 0.569, 0.25)
 
 [node name="PauseScreen" type="CanvasLayer"]
 process_mode = 3
-visible = false
 script = ExtResource("1_pd7ce")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

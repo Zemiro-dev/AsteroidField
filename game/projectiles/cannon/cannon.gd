@@ -10,7 +10,7 @@ var levelable: Levelable
 var time_until_next_shot: float = 0.
 var time_since_last_shot: float = 0.
 
-var wielder: Node2D:
+@export var wielder: Node2D:
 	set(value):
 		wielder = value
 		damagable = GameActor.get_damagable(wielder)

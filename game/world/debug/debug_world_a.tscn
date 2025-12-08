@@ -472,6 +472,36 @@ position = Vector2(-3151, -962)
 rotation = 6.17864
 scale = Vector2(0.278737, 0.259404)
 
+[node name="AsteroidA88" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-3938, 1245)
+rotation = 5.47526
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA89" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-3921, 200)
+rotation = 6.17864
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA90" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-4344, 767)
+rotation = 6.17864
+scale = Vector2(0.278737, 0.259404)
+
+[node name="AsteroidA91" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-4697, -853)
+rotation = 5.47526
+scale = Vector2(-0.225566, -0.146906)
+
+[node name="AsteroidA92" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-2365, -2990)
+rotation = 6.17864
+scale = Vector2(-0.225565, -0.146906)
+
+[node name="AsteroidA93" parent="Asteroids" instance=ExtResource("5_be6b7")]
+position = Vector2(-4021, -2706)
+rotation = 6.17864
+scale = Vector2(-0.225565, -0.146906)
+
 [node name="AsteroidA68" parent="Asteroids" instance=ExtResource("5_be6b7")]
 position = Vector2(5820, 734.001)
 rotation = 6.54205

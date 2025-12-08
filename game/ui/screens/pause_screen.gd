@@ -1,19 +1,29 @@
 extends CanvasLayer
 
 
-var is_paused := false
+@export var max_cooldown: float = .05
+var remaining_cooldown: float = 0.0
+var paused: bool = false
 
 
 func _ready() -> void:
-	set_paused(false)
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	visible = false
+	GameManager.paused.connect(func(): visible = true)
+	GameManager.unpaused.connect(func(): visible = false)
 
 
-func set_paused(should_pause: bool) -> void:
-	is_paused = should_pause
-	visible = should_pause
-	get_tree().paused = should_pause
+func _physics_process(delta: float) -> void:
+	if remaining_cooldown > 0.:
+		remaining_cooldown -= delta
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
-		set_paused(not is_paused)
+	if event.is_action_pressed("pause") and remaining_cooldown <= 0.:
+		remaining_cooldown = max_cooldown
+		if get_tree().paused == true and paused:
+			paused = false
+			GameManager.request_unpause.emit()
+		elif get_tree().paused != true and !paused:
+			paused = true
+			GameManager.request_pause.emit()

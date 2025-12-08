@@ -10,4 +10,5 @@ func add_cannon(cannon_scene: PackedScene, wielder: Node2D = null):
 		var cannon := cannon_scene.instantiate()
 		if cannon is Cannon:
 			cannon.wielder = wielder
+			cannon.spawn_offset = Vector2(20., 0.)
 			add_child(cannon)
