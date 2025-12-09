@@ -24,7 +24,7 @@ radius = 17.0294
 
 [node name="CollectibleXpSmall" instance=ExtResource("1_lme6a")]
 action = 1
-action_amount = 2.0
+action_amount = 3.0
 steerable = SubResource("Resource_t0e3j")
 collect_sound = ExtResource("4_444rq")
 collect_sound_volumn_db = -20.0

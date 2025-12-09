@@ -14,7 +14,7 @@ enum LevelableStatModifierType { WEAPON_STAT }
 @export var texture_path: String
 
 
-func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
+func modify(_levelable: Levelable, stats: LevelableStats) -> LevelableStats:
 	return stats;
 
 

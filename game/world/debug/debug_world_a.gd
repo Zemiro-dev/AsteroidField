@@ -8,6 +8,7 @@ extends Node2D
 @onready var level: TextureProgressBar = $UI/Level
 @onready var death_timer: Timer = $DeathTimer
 @onready var player_camera: PlayerCamera = $PlayerCamera
+@onready var upgrade_screen: UpgradeScreen = $UpgradeScreen
 
 
 func _ready() -> void:
@@ -30,6 +31,38 @@ func _ready() -> void:
 			func(current_xp: int, max_xp: int, current_level: int):
 				xp.value = ceil(float(current_xp) / float(max_xp) * xp.max_value)
 				level.value = current_level - 1
+		)
+		levelable.on_level_up.connect(
+			func(_levelable: Levelable):
+				get_tree().paused = true
+				var options: Array[LevelableStatModifier]
+				if _levelable.stat_modifiers.size() > 0:
+					options = []
+					options.assign(_levelable.stat_modifiers.map(
+						func(modifier: LevelableStatModifier):
+							var clone: LevelableStatModifier = modifier.duplicate()
+							clone.strength += 1
+							return clone
+					),)
+				else:
+					options = [LevelableStatModifier.ProjectileAttackSpeedUpPerLevel.new()]
+				 
+				upgrade_screen.render_for_options(options)
+		)
+		upgrade_screen.upgrade_selected.connect(
+			func(upgrade: LevelableStatModifier):
+				if upgrade:
+					var modIndex: int = levelable.stat_modifiers.find_custom(
+						func(modifier: LevelableStatModifier):
+							return upgrade.code == modifier.code
+					)
+					if modIndex >= 0:
+						levelable.stat_modifiers[modIndex] = upgrade
+					else:
+						levelable.stat_modifiers.append(upgrade)
+					levelable.calc_stats()				
+					
+				get_tree().paused = false
 		)
 	player.on_boost_duration_changed.connect(
 		func(new_duration: float, max_duration: float, _player: Player):

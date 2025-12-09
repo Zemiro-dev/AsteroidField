@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://6d183gys4088" path="res://assets/ui/screens/upgrade/texture_level_up_message.png" id="3_pc5be"]
 
 [node name="UpgradeScreen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_3knh7")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

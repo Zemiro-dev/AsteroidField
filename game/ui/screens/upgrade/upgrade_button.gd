@@ -18,7 +18,8 @@ func _ready() -> void:
 		bind_to_stat_modifier(modifier)
 
 
-func bind_to_stat_modifier(modifier: LevelableStatModifier):
+func bind_to_stat_modifier(_modifier: LevelableStatModifier):
+	modifier = _modifier
 	match(modifier.type):
 		LevelableStatModifier.LevelableStatModifierType.WEAPON_STAT:
 			set_to_weapon_stat_textures()
