@@ -9,6 +9,7 @@ signal on_xp_changed(xp: int, max_xp: int, level: int)
 var xp: int = 0
 var level: int = 1
 var stats: LevelableStats = LevelableStats.new()
+var stat_modifiers: Array[LevelableStatModifier]
 
 
 func give_xp(add_xp: int) -> void:
@@ -24,12 +25,6 @@ func level_up() -> void:
 	xp = 0
 	level += 1
 	if stats:
-		level_up_projectile_stats()
-
-
-func level_up_projectile_stats() -> void:
-	@warning_ignore("integer_division")
-	stats.projectile_damage_up = (level + 1) / 2
-	stats.projectile_max_speed_up = 100.
-	stats.projectile_acceleration_up = 100.
-	stats.projectile_time_between_shots_mult = maxf(1. - (.05 * level), .001)
+		stats = LevelableStats.new()
+		for modifier in stat_modifiers:
+			modifier.modify(self, stats)
