@@ -2,7 +2,7 @@ extends Resource
 class_name LevelableStatModifier
 
 
-enum LevelableStatModifierType { WEAPON_STAT }
+enum LevelableStatModifierType { BUILT_IN, WEAPON_STAT, SPECIAL_STAT }
 
 
 @export var priority: int = 0
@@ -12,6 +12,7 @@ enum LevelableStatModifierType { WEAPON_STAT }
 @export var code: String
 @export var type: LevelableStatModifierType
 @export var texture_path: String
+@export var description: String
 
 
 func modify(_levelable: Levelable, stats: LevelableStats) -> LevelableStats:
@@ -27,6 +28,8 @@ class ProjectileDamageUpPerLevel extends LevelableStatModifier:
 		name = 'Damage up'
 		code = 'damage_up'
 		type = LevelableStatModifierType.WEAPON_STAT
+		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
+		description = 'Increases damage per level'
 
 
 	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
@@ -41,6 +44,7 @@ class ProjectileAttackSpeedUpPerLevel extends LevelableStatModifier:
 		code = 'attack_speed'
 		type = LevelableStatModifierType.WEAPON_STAT
 		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
+		description = 'Increases attack speed per level'
 
 
 	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
@@ -48,4 +52,23 @@ class ProjectileAttackSpeedUpPerLevel extends LevelableStatModifier:
 		stats.projectile_time_between_shots_mult = maxf(
 			stats.projectile_time_between_shots_mult - (scale * levelable.level)
 		, .001)
+		return stats
+
+
+class ThrusterModifier extends LevelableStatModifier:
+	@export var thruster_power := 100.
+	func _init() -> void:
+		name = 'Thrusters'
+		code = 'thruster'
+		type = LevelableStatModifierType.SPECIAL_STAT
+		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
+		description = 'Increases the strength of your thrusters'
+		max_strength = 10
+
+
+	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
+		var boost = thruster_power * float(levelable.level) * strength_weight()
+		stats.max_speed_up += boost
+		stats.max_acceleration_up += boost
+		stats.boost_power_up = clampf(lerpf(.0, 1., strength_weight()), 0., 1.)
 		return stats

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODO.md",
+                "file": "idea-stash.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "idea-stash"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TODO.md",
+                "file": "idea-stash.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for TODO"
+              "title": "Backlinks for idea-stash"
             }
           },
           {
@@ -185,17 +185,21 @@
   },
   "active": "ff1c368b13bfbee2",
   "lastOpenFiles": [
-    "game/collectibles/collectible_xp_small.tscn44867230989.tmp",
-    "game/collectibles/collectible_xp_small.tscn44425397536.tmp",
-    "game/world/debug/debug_world_a.tscn44264383512.tmp",
-    "game/world/debug/debug_world_a.tscn44263688864.tmp",
-    "game/world/debug/debug_world_a.gd44241081001.tmp",
-    "game/world/debug/debug_world_a.tscn44056674364.tmp",
-    "game/world/debug/debug_world_a.tscn43988825627.tmp",
-    "game/world/debug/debug_world_a.tscn43908993583.tmp",
-    "game/world/debug/debug_world_a.gd43757384174.tmp",
-    "game/world/debug/debug_world_a.gd43405678365.tmp",
-    "game/world/debug/debug_world_a.gd43152542353.tmp",
+    "game/actors/player/player.tscn8919303655.tmp",
+    "game/actors/player/player.gd8723848304.tmp",
+    "game/actors/player/player.tscn8723805649.tmp",
+    "game/actors/player/player.tscn8711964322.tmp",
+    "game/actors/player/player.gd7725663412.tmp",
+    "game/ui/screens/upgrade_screen.gd7435014436.tmp",
+    "game/actors/xp/levelable_stat_modifier.gd7288466737.tmp",
+    "game/assets/ui/screens/upgrade/button_upgrade_specialstat_focused.png",
+    "game/assets/ui/screens/upgrade/button_upgrade_specialstat_normal.png",
+    "game/actors/player/player.tscn6919594864.tmp",
+    "game/actors/player/player.tscn6742472038.tmp",
+    "game/actors/xp/levelable_stat_modifier.gd6496205647.tmp",
+    "game/actors/player/player.tscn6270257443.tmp",
+    "TODO.md",
+    "game/assets/ui/screens/upgrade/texture_level_up_message_bg.png",
     "game/assets/font/upgrade_attack_speed.png",
     "game/assets/ui/upgrades/upgrade_attack_speed.png",
     "game/assets/ui/upgrades/attack_speed.png",
@@ -203,11 +207,7 @@
     "game/assets/ui/screens/upgrade/button_upgrade_weaponstat_normal.png",
     "game/assets/ui/screens/upgrade/texture_level_up_message.png",
     "game/assets/ui/screens/upgrade/button_upgrade_weapon_normal.png",
-    "game/assets/ui/xp/xp_progress_resource.png",
-    "game/assets/ui/xp/xp_progress_bottom.png",
-    "game/assets/collectibles/collectible_xp.png",
     "readme.md",
-    "TODO.md",
     "idea-stash.md",
     "game/addons/script-ide/README.md",
     "docs/Physics.md",

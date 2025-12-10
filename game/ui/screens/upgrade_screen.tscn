@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhblea01cgtii"]
+[gd_scene load_steps=5 format=3 uid="uid://bhblea01cgtii"]
 
 [ext_resource type="Script" uid="uid://br470rlbaqgop" path="res://ui/screens/upgrade_screen.gd" id="1_3knh7"]
 [ext_resource type="StyleBox" uid="uid://1lbkcbyia4a1" path="res://ui/screens/stylebox_fade_overlay.tres" id="1_77a43"]
-[ext_resource type="Texture2D" uid="uid://6d183gys4088" path="res://assets/ui/screens/upgrade/texture_level_up_message.png" id="3_pc5be"]
+[ext_resource type="Theme" uid="uid://w84mrrl43phd" path="res://ui/theme/text-base.tres" id="2_3knh7"]
+[ext_resource type="Texture2D" uid="uid://bh1cujmkotynx" path="res://assets/ui/screens/upgrade/texture_level_up_message_bg.png" id="4_o8mbd"]
 
 [node name="UpgradeScreen" type="CanvasLayer"]
 process_mode = 3
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_3knh7")
 theme_override_styles/panel = ExtResource("1_77a43")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -34,6 +36,23 @@ alignment = 1
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/CenterContainer"]
+[node name="UpgradeDescriptionBg" type="TextureRect" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("3_pc5be")
+texture = ExtResource("4_o8mbd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/CenterContainer/UpgradeDescriptionBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="Description" type="RichTextLabel" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/CenterContainer/UpgradeDescriptionBg/MarginContainer"]
+layout_mode = 2
+text = "Description: "
+scroll_active = false

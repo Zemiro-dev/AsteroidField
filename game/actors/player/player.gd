@@ -14,7 +14,7 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 @export var controller: BaseController
 @export var steerable: BaseSteerable
 @export var player_move_and_collide: PlayerMoveAndCollide
-@export var dash_multiplier: float = 4.
+@export var dash_multiplier: float = 3.
 @export var damagable: BaseDamagable
 @export var max_boost_duration: float = 1.0
 @export var boost_recharge_ratio: float = 1.0
@@ -34,6 +34,11 @@ var actor_type := GameActor.ActorType.PLAYER
 
 func _ready() -> void:
 	levelable = Levelable.new()
+	levelable.stat_modifiers = [
+		LevelableStatModifier.ProjectileAttackSpeedUpPerLevel.new(),
+		LevelableStatModifier.ThrusterModifier.new(),
+		LevelableStatModifier.ProjectileDamageUpPerLevel.new()
+	]
 	init_steering()
 	damagable.reset_damagable(self)
 	update_boost_duration(max_boost_duration)
@@ -60,6 +65,7 @@ func init_steering():
 	direction_steering = DirectionSteeringStrategy.new()
 	steerable.reset()
 	steerable.steering_strategies.append(direction_steering)
+	steerable.levelable = levelable
 
 
 func _physics_process(delta: float) -> void:

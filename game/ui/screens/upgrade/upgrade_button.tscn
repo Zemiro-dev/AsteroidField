@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcj2pkhj5ghh0"]
+[gd_scene load_steps=4 format=3 uid="uid://dcj2pkhj5ghh0"]
 
+[ext_resource type="Theme" uid="uid://w84mrrl43phd" path="res://ui/theme/text-base.tres" id="1_18fwj"]
 [ext_resource type="Script" uid="uid://dp51jngc3jxvl" path="res://ui/screens/upgrade/upgrade_button.gd" id="1_vai54"]
 [ext_resource type="FontFile" uid="uid://dn8fv1m3cj5ic" path="res://assets/font/Orbitron-VariableFont_wght.ttf" id="3_2sll1"]
 
 [node name="UpgradeButton" type="TextureButton"]
 offset_right = 460.0
 offset_bottom = 460.0
+theme = ExtResource("1_18fwj")
 script = ExtResource("1_vai54")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

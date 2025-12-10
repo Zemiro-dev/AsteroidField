@@ -16,12 +16,17 @@ var stats: LevelableStats
 
 func _init() -> void:
 	calc_stats()
+	calc_max_xp()
 
 
 func calc_stats() -> void:
 	stats = LevelableStats.new()
 	for modifier in stat_modifiers:
 		modifier.modify(self, stats)
+
+
+func calc_max_xp() -> void:
+	max_xp = 5 * (level + 1)
 
 
 func give_xp(add_xp: int) -> void:
@@ -36,4 +41,5 @@ func give_xp(add_xp: int) -> void:
 func level_up() -> void:
 	xp = 0
 	level += 1
+	calc_max_xp()
 	on_level_up.emit(self)

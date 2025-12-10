@@ -9,6 +9,7 @@ class_name BaseSteerable
 var power_multiplier: float = 1.0
 var velocity: Vector2 = Vector2.ZERO
 @export var steering_strategies: Array[SteeringStrategy]
+var levelable: Levelable
 
 
 func reset() -> void:
@@ -57,8 +58,16 @@ func overspeed_break(_delta: float) -> void:
 
 
 func get_max_speed() -> float:
-	return base_max_speed * power_multiplier
+	var levelableBonus := 0.
+	var powerBonus := 0.
+	if levelable and levelable.stats:
+		levelableBonus = levelable.stats.max_speed_up
+		powerBonus = levelable.stats.boost_power_up
+	return (base_max_speed + levelableBonus) * (power_multiplier + powerBonus)
 
 
 func get_max_acceleration() -> float:
-	return base_max_acceleration * power_multiplier
+	var levelableBonus := 0.
+	if levelable and levelable.stats:
+		levelableBonus = levelable.stats.max_acceleration_up
+	return (base_max_acceleration + levelableBonus) * power_multiplier

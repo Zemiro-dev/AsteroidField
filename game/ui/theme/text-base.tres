@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://w84mrrl43phd"]
+
+[ext_resource type="FontFile" uid="uid://dn8fv1m3cj5ic" path="res://assets/font/Orbitron-VariableFont_wght.ttf" id="1_qxkxq"]
+
+[resource]
+default_font = ExtResource("1_qxkxq")
+default_font_size = 36

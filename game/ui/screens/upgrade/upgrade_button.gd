@@ -11,6 +11,8 @@ var modifier: LevelableStatModifier
 
 const BUTTON_UPGRADE_WEAPONSTAT_FOCUSED = preload("res://assets/ui/screens/upgrade/button_upgrade_weaponstat_focused.png")
 const BUTTON_UPGRADE_WEAPONSTAT_NORMAL = preload("res://assets/ui/screens/upgrade/button_upgrade_weaponstat_normal.png")
+const BUTTON_UPGRADE_SPECIALSTAT_FOCUSED = preload("res://assets/ui/screens/upgrade/button_upgrade_specialstat_focused.png")
+const BUTTON_UPGRADE_SPECIALSTAT_NORMAL = preload("res://assets/ui/screens/upgrade/button_upgrade_specialstat_normal.png")
 
 
 func _ready() -> void:
@@ -23,8 +25,12 @@ func bind_to_stat_modifier(_modifier: LevelableStatModifier):
 	match(modifier.type):
 		LevelableStatModifier.LevelableStatModifierType.WEAPON_STAT:
 			set_to_weapon_stat_textures()
-	upgrade_texture.texture = load(modifier.texture_path)
-	upgrade_name.text = modifier.name
+		LevelableStatModifier.LevelableStatModifierType.SPECIAL_STAT:
+			set_to_special_stat_textures()
+	if modifier.texture_path:
+		upgrade_texture.texture = load(modifier.texture_path)
+	if modifier.name:
+		upgrade_name.text = modifier.name
 	upgrade_strength.text = '%d' % modifier.strength
 
 
@@ -32,3 +38,9 @@ func set_to_weapon_stat_textures() -> void:
 	texture_normal = BUTTON_UPGRADE_WEAPONSTAT_NORMAL
 	texture_focused = BUTTON_UPGRADE_WEAPONSTAT_FOCUSED
 	texture_hover = BUTTON_UPGRADE_WEAPONSTAT_FOCUSED
+
+
+func set_to_special_stat_textures() -> void:
+	texture_normal = BUTTON_UPGRADE_SPECIALSTAT_NORMAL
+	texture_focused = BUTTON_UPGRADE_SPECIALSTAT_FOCUSED
+	texture_hover = BUTTON_UPGRADE_SPECIALSTAT_FOCUSED

@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="-1537.2501"
-     inkscape:cy="-567.80675"
+     inkscape:zoom="1"
+     inkscape:cx="-1408"
+     inkscape:cy="-839"
      inkscape:window-width="2538"
      inkscape:window-height="1472"
-     inkscape:window-x="36"
-     inkscape:window-y="134"
+     inkscape:window-x="9"
+     inkscape:window-y="9"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer8"
+     inkscape:current-layer="layer5"
      showgrid="true"
      borderlayer="true"
      showguides="true"
@@ -4192,30 +4192,32 @@
        width="1546.255"
        height="302.64172"
        x="-771"
-       y="-1487" />
+       y="-1487"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\texture_level_up_message_bg.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:1.2px;word-spacing:0px;vector-effect:none;fill:#fafaee;fill-opacity:1;stroke:none;stroke-width:12;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
-       x="-236.3307"
-       y="-1311.8458"
+       x="-196.3307"
+       y="-726.84583"
        id="text246-0"
        inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\texture_level_up_message.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          sodipodi:role="line"
-         x="-236.3307"
-         y="-1311.8458"
+         x="-196.3307"
+         y="-726.84583"
          id="tspan246-2">Level Up!!!</tspan></text>
     <rect
        style="font-variation-settings:normal;vector-effect:none;fill:#050505;fill-opacity:1;stroke:#00b0f3;stroke-width:12;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
        id="rect14-5"
-       width="458"
-       height="458"
-       x="-1085.9474"
-       y="-1548.6438"
+       width="448"
+       height="448"
+       x="-1942.2838"
+       y="-1323.9647"
        ry="12.5"
-       rx="12.5"
-       transform="translate(230.47816,835.38895)" />
+       rx="12.5" />
     <rect
        style="fill:#050505;fill-opacity:1;stroke:#fffc31;stroke-width:12;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
        id="rect78-5"
@@ -4250,6 +4252,51 @@
          id="tspan106"
          x="-1491.5"
          y="-386" /></text>
+    <rect
+       style="fill:#050505;fill-opacity:1;stroke:#fafaee;stroke-width:12;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+       id="rect109"
+       width="431.125"
+       height="431.125"
+       x="-1375.3535"
+       y="-704.81732"
+       ry="12.500001"
+       rx="12.500001"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_weapon_normal.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#050505;fill-opacity:1;stroke:#fffc31;stroke-width:12;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+       id="rect110"
+       width="448"
+       height="448"
+       x="-1904.2216"
+       y="-752.69775"
+       ry="12.500001"
+       rx="12.500001"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_weaponstat_focused.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="font-variation-settings:normal;vector-effect:none;fill:#050505;fill-opacity:1;stroke:#00b0f3;stroke-width:12;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+       id="rect112"
+       width="448"
+       height="448"
+       x="-1440.9536"
+       y="-1319.9525"
+       ry="12.5"
+       rx="12.5" />
+    <rect
+       style="fill:#050505;fill-opacity:1;stroke:#fafaee;stroke-width:12;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+       id="rect113"
+       width="431.125"
+       height="431.125"
+       x="-1432.5161"
+       y="-1311.515"
+       ry="12.500001"
+       rx="12.500001"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_weapon_normal.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -5220,17 +5267,6 @@
        inkscape:export-filename="..\..\game\assets\ui\upgrades\attack_speed.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:1.22227px;word-spacing:0px;fill:#fafaee;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5;stroke-dasharray:64, 128"
-         x="-1306.6803"
-         y="-314.08331"
-         id="text56-4"><tspan
-           sodipodi:role="line"
-           x="-1306.6803"
-           y="-314.08331"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:2"
-           id="tspan107">Attack Speed</tspan></text>
       <g
          id="g104"
          transform="translate(-0.70549255,-23.888423)">
