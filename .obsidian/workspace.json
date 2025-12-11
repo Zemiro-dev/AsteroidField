@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "idea-stash.md",
+                "file": "TODO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "idea-stash"
+              "title": "TODO"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "idea-stash.md",
+                "file": "TODO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for idea-stash"
+              "title": "Backlinks for TODO"
             }
           },
           {
@@ -185,17 +185,18 @@
   },
   "active": "ff1c368b13bfbee2",
   "lastOpenFiles": [
-    "game/ui/screens/upgrade/upgrade_button.tscn9482096762.tmp",
-    "game/ui/screens/upgrade/upgrade_button.tscn9465687640.tmp",
-    "game/assets/font/Quantico-BoldItalic.ttf",
-    "game/assets/font/Quantico-Bold.ttf",
-    "game/assets/font/Quantico-Regular.ttf",
-    "game/assets/font/Quantico-Italic.ttf",
-    "assets/fonts/Quantico/Quantico-Bold.ttf",
-    "assets/fonts/Quantico/Quantico-Italic.ttf",
-    "assets/fonts/Quantico/Quantico-BoldItalic.ttf",
-    "assets/fonts/Quantico/Quantico-Regular.ttf",
-    "assets/fonts/Quantico/OFL.txt",
+    "game/world/debug/debug_world_a.tscn31980598.tmp",
+    "game/actors/player/player.tscn7582900364.tmp",
+    "game/actors/player/player.tscn7581862340.tmp",
+    "game/world/debug/debug_world_a.tscn7533768589.tmp",
+    "game/world/debug/debug_world_a.tscn7530841606.tmp",
+    "game/world/debug/corners.gd6485789838.tmp",
+    "game/world/debug/debug_world_a.tscn6378794886.tmp",
+    "game/world/debug/corners.gd6349564521.tmp",
+    "game/world/debug/debug_world_a.tscn5999067181.tmp",
+    "game/world/debug/debug_world_a.tscn5992610938.tmp",
+    "game/world/debug/corners.tscn5802308182.tmp",
+    "idea-stash.md",
     "game/assets/ui/screens/upgrade/button_upgrade_specialstat_focused.png",
     "game/assets/ui/screens/upgrade/button_upgrade_specialstat_normal.png",
     "TODO.md",
@@ -208,7 +209,6 @@
     "game/assets/ui/screens/upgrade/texture_level_up_message.png",
     "game/assets/ui/screens/upgrade/button_upgrade_weapon_normal.png",
     "readme.md",
-    "idea-stash.md",
     "game/addons/script-ide/README.md",
     "docs/Physics.md",
     "docs/Player Structure.md",

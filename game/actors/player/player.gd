@@ -53,7 +53,7 @@ func _ready() -> void:
 			if has_node("Cannon"):
 				var cannon: Cannon = get_node("Cannon")
 				cannon.enabled = false
-			steerable.halt()
+			steerable.halt().call()
 			modulate = Color(Color.WHITE, 0.)
 	)
 	audio_listener_2d.make_current()
@@ -69,7 +69,10 @@ func init_steering():
 
 
 func _physics_process(delta: float) -> void:
-	if damagable.is_dead: return
+	
+	if damagable:
+		if damagable.is_dead: return
+		damagable.physics_process(delta)
 	
 	dash(delta)
 	
@@ -79,11 +82,11 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		engine_sound.volume_db = move_toward(engine_sound.volume_db, engine_sound_volumn_db, engine_sound_rev_speed * delta)
 		direction_steering.goal_vector = direction * steerable.get_max_speed()
-		steerable.steer(delta)
+		steerable.steer().call(delta)
 		impulse_particles.emitting = true
 	else:
 		engine_sound.volume_db = move_toward(engine_sound.volume_db, -100, engine_sound_rev_speed * delta)
-		steerable.slow(delta)
+		steerable.slow().call(delta)
 		impulse_particles.emitting = false
 	
 	player_move_and_collide.move_and_collide(self, delta)

@@ -8,11 +8,13 @@
 	- [ ] When Level up pause and present upgrade screen
 	- [ ] Run player damage through upgrade stats
 	- [ ] run player movement through upgrade stats
-- [ ] Tick Rate System
+- [ ] Tick Rate System, Time Slicing
 - [ ] Bolt Explosion Particles
 - [ ] Collision Improvements
 	- [ ] https://www.youtube.com/watch?v=nXrEX6j-Mws video with math for reference
 	- [x] Need to check if things are actually moving toward each other before bouncing
+- [ ] Nav Elements
+	- [ ] Figure out how to paint stuff on the edge of the screen
 # Archive
 - [x] Setup product resolution settings and resizing
 	- not super happy with it I'm still not sure how the new debug window works

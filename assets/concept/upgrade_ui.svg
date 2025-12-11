@@ -4217,7 +4217,10 @@
        x="-1942.2838"
        y="-1323.9647"
        ry="12.5"
-       rx="12.5" />
+       rx="12.5"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_specialstat_normal.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#050505;fill-opacity:1;stroke:#fffc31;stroke-width:12;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
        id="rect78-5"
@@ -4284,7 +4287,10 @@
        x="-1440.9536"
        y="-1319.9525"
        ry="12.5"
-       rx="12.5" />
+       rx="12.5"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_specialstat_focused.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#050505;fill-opacity:1;stroke:#fafaee;stroke-width:12;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
        id="rect113"

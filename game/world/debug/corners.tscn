@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6lkgciobmc8e"]
+
+[ext_resource type="Script" uid="uid://e2ojbwmmkhya" path="res://world/debug/corners.gd" id="1_j2y3y"]
+[ext_resource type="Texture2D" uid="uid://hyfvb5o47hg2" path="res://assets/debug/blue_ring.png" id="2_aendv"]
+
+[node name="Corners" type="Node2D"]
+script = ExtResource("1_j2y3y")
+
+[node name="TL" type="Sprite2D" parent="."]
+texture = ExtResource("2_aendv")
+
+[node name="TR" type="Sprite2D" parent="."]
+texture = ExtResource("2_aendv")
+
+[node name="BL" type="Sprite2D" parent="."]
+texture = ExtResource("2_aendv")
+
+[node name="BR" type="Sprite2D" parent="."]
+texture = ExtResource("2_aendv")

@@ -17,11 +17,12 @@ func reset() -> void:
 	velocity = Vector2.ZERO
 
 
-func steer(delta: float) -> void:
+func steer() -> Callable:
 	var steering_result := combined_steering()
 	var turn_around_dot := steering_result.heading.normalized().dot(velocity.normalized())
 	var acceleration := steering_result.acceleration * (1.0 if turn_around_dot >= 0 else turn_around_multiplier)
-	velocity += acceleration * delta
+	return func(delta: float): velocity += acceleration * delta
+	
 
 
 func combined_steering() -> SteeringResult:
@@ -36,12 +37,12 @@ func combined_steering() -> SteeringResult:
 	return combined_result
 
 
-func slow(delta: float) -> void:
-	velocity = velocity.move_toward(Vector2.ZERO, get_max_acceleration() * delta)
+func slow() -> Callable:
+	return func(delta: float): velocity = velocity.move_toward(Vector2.ZERO, get_max_acceleration() * delta)
 
 
-func halt() -> void:
-	velocity = Vector2.ZERO
+func halt() -> Callable:
+	return func(_delta: float = 0.): velocity = Vector2.ZERO
 
 
 func knockback(knockback_vector: Vector2) -> void:

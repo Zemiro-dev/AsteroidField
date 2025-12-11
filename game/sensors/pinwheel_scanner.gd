@@ -2,8 +2,17 @@ extends Node2D
 class_name PinwheelScanner
 
 
-@export var forward_ray: Vector2 = Vector2(100., 0)
+@export var enabled: bool = true:
+	set(value):
+		if (value != enabled):
+			for_each_ray(
+				func(ray: RayCast2D, _i: int): 
+					ray.enabled = value
+					ray.force_raycast_update()
+			)
+			enabled = value
 @export var spinning: bool = true
+@export var forward_ray: Vector2 = Vector2(100., 0)
 @export var rotation_speed: float = TAU * 6.
 @export_flags_2d_physics var collision_mask: int
 
@@ -15,6 +24,7 @@ func _ready() -> void:
 		func(ray: RayCast2D, i: int): 
 			ray.target_position = Vector2(forward_ray).rotated(i * angle)
 			ray.collision_mask = collision_mask
+			ray.enabled = enabled
 	)
 
 

@@ -30,7 +30,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if player != null and steerable:
 		direction_steering.goal_vector = global_position.direction_to(player.global_position) * steerable.get_max_speed()
-		steerable.steer(delta)
+		steerable.steer().call(delta)
 		global_position += steerable.velocity * delta
 
 
