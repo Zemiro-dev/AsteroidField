@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=46 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://bey35gsesqg1e" path="res://assets/ui/xp/xp_progress_bottom.png" id="29_dse6n"]
 [ext_resource type="Texture2D" uid="uid://dlyr6wlaa3c7f" path="res://assets/ui/xp/xp_progress_resource.png" id="30_6smsd"]
 [ext_resource type="PackedScene" uid="uid://bhblea01cgtii" path="res://ui/screens/upgrade_screen.tscn" id="31_dse6n"]
-[ext_resource type="PackedScene" uid="uid://b6lkgciobmc8e" path="res://world/debug/corners.tscn" id="32_6smsd"]
 
 [sub_resource type="Resource" id="Resource_fn8aq"]
 resource_local_to_scene = true
@@ -933,5 +932,3 @@ texture_progress = ExtResource("30_6smsd")
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-
-[node name="Corners" parent="." instance=ExtResource("32_6smsd")]

@@ -99,7 +99,6 @@ func dash(delta: float) -> void:
 	else:
 		steerable.power_multiplier = 1
 		update_boost_duration(delta * boost_recharge_ratio)
-	
 
 
 func is_dashing() -> bool:
