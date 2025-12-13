@@ -12,11 +12,14 @@ lifetime = 30.0
 max_speed = 2000.0
 acceleration = 10000.0
 time_between_shots = 0.1
+radial_spread = 0.098
+spread = Vector2(0, 20)
+bonus_projectiles = 0
 metadata/_custom_type_script = "uid://cyvnerigeg0ir"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6l4ds"]
-radius = 7.0
-height = 18.0
+radius = 5.0
+height = 14.0
 
 [node name="Bolt" type="Area2D"]
 modulate = Color(0.87451, 0.160784, 0.207843, 1)
@@ -27,11 +30,10 @@ stats = SubResource("Resource_fkph1")
 sound_scene = ExtResource("3_fkph1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.18, 0.18)
 texture = ExtResource("1_6l4ds")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(4, 0)
+position = Vector2(3, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6l4ds")

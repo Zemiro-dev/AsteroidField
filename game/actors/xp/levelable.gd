@@ -7,7 +7,10 @@ signal on_level_up(levelable: Levelable)
 
 
 @export var max_xp: int = 10
-@export var stat_modifiers: Array[LevelableStatModifier] = []
+@export var stat_modifiers: Array[LevelableStatModifier] = []:
+	set(value):
+		stat_modifiers = value
+		calc_stats()
 
 var xp: int = 0
 var level: int = 1

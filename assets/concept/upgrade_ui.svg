@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
-     inkscape:zoom="1"
-     inkscape:cx="1997.5"
-     inkscape:cy="-129"
+     inkscape:zoom="4"
+     inkscape:cx="2156.125"
+     inkscape:cy="-97"
      inkscape:window-width="2538"
      inkscape:window-height="1472"
      inkscape:window-x="0"
@@ -4731,12 +4731,12 @@
          inkscape:transform-center-y="3.5837927e-06" />
     </g>
     <circle
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5"
+       style="fill:#6e2594;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5"
        id="path4"
        cx="2256.8591"
        cy="-142.95773"
        r="12"
-       inkscape:export-filename="..\..\game\assets\shapes\white_circle_24x24.png"
+       inkscape:export-filename="..\..\game\assets\shapes\purple_circle_24x24.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
   </g>

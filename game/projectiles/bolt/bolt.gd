@@ -16,16 +16,32 @@ func fire(
 		target: Vector2,
 		spawn_offset: Vector2,
 		mask: int,
-		_levelable: Levelable = null
+		_levelable: Levelable = null,
+		is_extra: bool = false
 	):
 	levelable = _levelable
 	global_transform = initial_transform
 	collision_mask = mask
 	var heading_angle := global_position.angle_to_point(target)
-	heading = Vector2.from_angle(heading_angle)
-	position += spawn_offset.rotated(heading_angle)
-	rotation = heading_angle
-	GlobalSignals.request_world_sound_spawn.emit(self, sound_scene)
+	var radial_spread: float = 0.
+	var spread := Vector2.ZERO
+	if stats:
+		radial_spread = randf_range(-stats.radial_spread/2., stats.radial_spread/2.)
+		spread = Vector2(
+			randf_range(-stats.spread.x / 2., stats.spread.x / 2.),
+			randf_range(-stats.spread.y / 2, stats.spread.y / 2.)
+		).rotated(heading_angle)
+		spread = spread.rotated(global_transform.get_rotation())
+	global_position += spawn_offset.rotated(heading_angle) + spread
+	heading = Vector2.from_angle(heading_angle + radial_spread)
+	rotation = heading_angle + radial_spread
+	if sound_scene and sound_scene.can_instantiate():
+		var sound := sound_scene.instantiate()
+		if sound is AudioStreamPlayer2D:
+			sound.global_position = global_position
+			if is_extra:
+				sound.volume_db = sound.volume_db - 8
+			GlobalSignals.request_sound_spawn.emit(sound)
 	reset_physics_interpolation()
 
 

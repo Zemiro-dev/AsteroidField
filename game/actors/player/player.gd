@@ -37,7 +37,8 @@ func _ready() -> void:
 	levelable.stat_modifiers = [
 		LevelableStatModifier.ProjectileAttackSpeedUpPerLevel.new(),
 		LevelableStatModifier.ThrusterModifier.new(),
-		LevelableStatModifier.ProjectileDamageUpPerLevel.new()
+		LevelableStatModifier.ProjectileDamageUpPerLevel.new(),
+		LevelableStatModifier.ProjectileBonusProjectile.new()
 	]
 	init_steering()
 	damagable.reset_damagable(self)

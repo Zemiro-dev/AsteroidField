@@ -5,16 +5,31 @@
 - [x] Structure Cannon into player properly so it can spawn its own and provide its leveable to it for damage and rof
 - [ ] Upgrade System
 	- [x] Level Up Tracker
-	- [ ] When Level up pause and present upgrade screen
-	- [ ] Run player damage through upgrade stats
-	- [ ] run player movement through upgrade stats
-- [ ] Tick Rate System, Time Slicing
+	- [x] When Level up pause and present upgrade screen
+	- [x] Run player damage through upgrade stats
+	- [x] run player movement through upgrade stats
+	- [ ] more art
+	- [ ] more upgrades
+		- [ ] nav size
+		- [ ] proj spread reduction
+- [x] Tick Rate System, Time Slicing
 - [ ] Bolt Explosion Particles
 - [ ] Collision Improvements
 	- [ ] https://www.youtube.com/watch?v=nXrEX6j-Mws video with math for reference
 	- [x] Need to check if things are actually moving toward each other before bouncing
-- [ ] Nav Elements
-	- [ ] Figure out how to paint stuff on the edge of the screen
+- [x] Nav Elements
+	- [x] Figure out how to paint stuff on the edge of the screen
+- [ ] Cannon Improvements
+	- [ ] Spawn Spread
+	- [ ] Some angle spread
+	- [ ] smaller bullet sprite? Orange and bright and longish? White tip
+- [ ] Level Building Elements
+	- [ ] More Asteroids
+	- [ ] Secret Passage Asteroid
+	- [ ] Mineral Rich Asteroids
+	- [ ] Enemy Spawn System
+- [ ] Game End
+	- [ ] Target to Reach
 # Archive
 - [x] Setup product resolution settings and resizing
 	- not super happy with it I'm still not sure how the new debug window works

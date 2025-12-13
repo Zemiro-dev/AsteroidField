@@ -32,7 +32,7 @@ func can_fire() -> bool:
 
 
 ## returns time until next show allowed
-func fire(target_node: Node2D, delta: float) -> float:
+func fire(target_node: Node2D, delta: float, is_extra: bool = false) -> float:
 	if projectile_scene:
 		var projectile: Node2D = projectile_scene.instantiate()
 		GlobalSignals.request_projectile_spawn.emit(projectile)
@@ -50,8 +50,15 @@ func fire(target_node: Node2D, delta: float) -> float:
 				target,
 				spawn_offset, 
 				collision_mask + blocked_by,
-				levelable
+				levelable,
+				is_extra
 			)
+			if (projectile.stats && !is_extra):
+				var bonus_projectiles = projectile.stats.bonus_projectiles
+				if levelable && levelable.stats:
+					bonus_projectiles += levelable.stats.projectile_bonus_projectiles
+				for i in range(0, bonus_projectiles):
+					fire(target_node, delta, true)
 			return projectile.get_time_between_shots()
 	return 0.
 

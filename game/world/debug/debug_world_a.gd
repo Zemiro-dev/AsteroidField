@@ -37,13 +37,19 @@ func _ready() -> void:
 				get_tree().paused = true
 				var options: Array[LevelableStatModifier]
 				if _levelable.stat_modifiers.size() > 0:
-					options = []
-					options.assign(_levelable.stat_modifiers.map(
+					var all_options := _levelable.stat_modifiers.duplicate()
+					all_options = all_options.filter(
+						func(option: LevelableStatModifier):
+							return option.max_strength > option.strength
+					)
+					all_options.shuffle()
+					options.assign(all_options.slice(0, 3).map(
 						func(modifier: LevelableStatModifier):
 							var clone: LevelableStatModifier = modifier.duplicate()
 							clone.strength += 1
 							return clone
 					),)
+					
 				else:
 					options = [LevelableStatModifier.ProjectileAttackSpeedUpPerLevel.new()]
 				 

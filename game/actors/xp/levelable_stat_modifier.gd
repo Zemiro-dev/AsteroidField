@@ -30,6 +30,7 @@ class ProjectileDamageUpPerLevel extends LevelableStatModifier:
 		type = LevelableStatModifierType.WEAPON_STAT
 		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
 		description = 'Increases damage per level'
+		max_strength = 10
 
 
 	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
@@ -54,6 +55,19 @@ class ProjectileAttackSpeedUpPerLevel extends LevelableStatModifier:
 		, .001)
 		return stats
 
+
+class ProjectileBonusProjectile extends LevelableStatModifier:
+	func _init() -> void:
+		name = 'Extra Projectiles'
+		code = 'extra_projectiles'
+		type = LevelableStatModifierType.WEAPON_STAT
+		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
+		description = 'Extra projectiles'
+
+
+	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
+		stats.projectile_bonus_projectiles += clampi(strength - 1, 0, max_strength)
+		return stats
 
 class ThrusterModifier extends LevelableStatModifier:
 	@export var thruster_power := 100.
