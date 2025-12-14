@@ -89,9 +89,13 @@ func on_body_entered(node: Node2D) -> void:
 		var damagable := GameActor.get_damagable(node)
 		if damagable:
 			damagable.take_damage(get_damage())
+	explode()
 	on_death()
 
 
-func on_death() -> void:
+func explode() -> void:	
 	GlobalSignals.request_explosion_spawn.emit(self, explosion_scene)
+
+
+func on_death() -> void:
 	queue_free()

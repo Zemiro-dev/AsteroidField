@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b32mttqfycxyd"]
+[gd_scene load_steps=30 format=3 uid="uid://b32mttqfycxyd"]
 
 [ext_resource type="Script" uid="uid://craqyrf168y61" path="res://actors/player/player.gd" id="1_ilk7j"]
 [ext_resource type="Texture2D" uid="uid://cifpbcvsjmo6y" path="res://assets/player/player_body.png" id="1_nvxhs"]
@@ -15,6 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://c4xey6l8aokhn" path="res://assets/jukebox/scifi-engine-loop.mp3" id="12_ssdk0"]
 [ext_resource type="PackedScene" uid="uid://bnirugbiyi7nj" path="res://projectiles/cannon/cannon_hardpoint.tscn" id="14_k67x5"]
 [ext_resource type="Script" uid="uid://bsafhe0ovewrk" path="res://actors/player/screen_edge_navigation.gd" id="15_rt46e"]
+[ext_resource type="Script" uid="uid://d16s5j17304aa" path="res://actors/player/rising_danger_spawner.gd" id="16_rt46e"]
+[ext_resource type="PackedScene" uid="uid://es1f0l0b3jm5" path="res://actors/enemy/hunter_drone/hunter_drone.tscn" id="17_0wchr"]
 
 [sub_resource type="Resource" id="Resource_6p1w3"]
 resource_local_to_scene = true
@@ -127,3 +129,8 @@ monitorable = false
 shape = SubResource("RectangleShape2D_qrxv1")
 
 [node name="EnemyDots" type="Node2D" parent="ScreenEdgeNavigation"]
+
+[node name="RisingDangerSpawner" type="Node2D" parent="."]
+script = ExtResource("16_rt46e")
+enemy_scene = ExtResource("17_0wchr")
+blocked_by = 3

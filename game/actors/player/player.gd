@@ -91,6 +91,12 @@ func _physics_process(delta: float) -> void:
 		impulse_particles.emitting = false
 	
 	player_move_and_collide.move_and_collide(self, delta)
+	
+	#var is_empty := Physics.is_circle_empty(global_position, 200., collision_mask)
+	#if (is_empty): 
+		#print('Open Space')
+	#else:
+		#print('Closed Space')
 
 
 func dash(delta: float) -> void:

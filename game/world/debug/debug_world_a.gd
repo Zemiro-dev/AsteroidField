@@ -34,7 +34,6 @@ func _ready() -> void:
 		)
 		levelable.on_level_up.connect(
 			func(_levelable: Levelable):
-				get_tree().paused = true
 				var options: Array[LevelableStatModifier]
 				if _levelable.stat_modifiers.size() > 0:
 					var all_options := _levelable.stat_modifiers.duplicate()
@@ -53,7 +52,9 @@ func _ready() -> void:
 				else:
 					options = [LevelableStatModifier.ProjectileAttackSpeedUpPerLevel.new()]
 				 
-				upgrade_screen.render_for_options(options)
+				if !options.is_empty():					
+					get_tree().paused = true
+					upgrade_screen.render_for_options(options)
 		)
 		upgrade_screen.upgrade_selected.connect(
 			func(upgrade: LevelableStatModifier):

@@ -46,6 +46,7 @@ class ProjectileAttackSpeedUpPerLevel extends LevelableStatModifier:
 		type = LevelableStatModifierType.WEAPON_STAT
 		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
 		description = 'Increases attack speed per level'
+		max_strength = 20
 
 
 	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
@@ -77,7 +78,7 @@ class ThrusterModifier extends LevelableStatModifier:
 		type = LevelableStatModifierType.SPECIAL_STAT
 		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
 		description = 'Increases the strength of your thrusters'
-		max_strength = 10
+		max_strength = 5
 
 
 	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
