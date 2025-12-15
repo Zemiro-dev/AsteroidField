@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=47 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -23,14 +23,8 @@
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="16_g36r6"]
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
 [ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/player_camera.gd" id="20_5hfsr"]
-[ext_resource type="Texture2D" uid="uid://c0q5vh17n5duo" path="res://assets/ui/health/boost_progress_bottom.png" id="20_k2vu7"]
-[ext_resource type="Texture2D" uid="uid://b1fs2m3eq3t3t" path="res://assets/ui/health/boost_progress_top.png" id="21_h35gt"]
-[ext_resource type="Texture2D" uid="uid://4norlwwroefc" path="res://assets/ui/health/boost_progress_resource.png" id="22_fw0c5"]
-[ext_resource type="Texture2D" uid="uid://dlqb2ogbfqql6" path="res://assets/ui/boost/boost_progress_bottom.png" id="23_fw0c5"]
-[ext_resource type="Texture2D" uid="uid://da30fpclc38dx" path="res://assets/ui/boost/boost_progress_resource.png" id="24_r18ru"]
+[ext_resource type="PackedScene" uid="uid://bg4856y75n6ij" path="res://ui/player_resource_ui.tscn" id="24_be6b7"]
 [ext_resource type="PackedScene" uid="uid://vllh1g1mt2xn" path="res://ui/screens/pause_screen.tscn" id="27_x0rwi"]
-[ext_resource type="Texture2D" uid="uid://bey35gsesqg1e" path="res://assets/ui/xp/xp_progress_bottom.png" id="29_dse6n"]
-[ext_resource type="Texture2D" uid="uid://dlyr6wlaa3c7f" path="res://assets/ui/xp/xp_progress_resource.png" id="30_6smsd"]
 [ext_resource type="PackedScene" uid="uid://bhblea01cgtii" path="res://ui/screens/upgrade_screen.tscn" id="31_dse6n"]
 
 [sub_resource type="Resource" id="Resource_fn8aq"]
@@ -947,46 +941,7 @@ steerable = SubResource("Resource_r18ru")
 player_move_and_collide = SubResource("Resource_x0rwi")
 damagable = SubResource("Resource_5hfsr")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Health" type="TextureProgressBar" parent="UI"]
-offset_left = 74.0
-offset_top = 88.0
-offset_right = 474.0
-offset_bottom = 162.0
-value = 1.0
-texture_under = ExtResource("20_k2vu7")
-texture_over = ExtResource("21_h35gt")
-texture_progress = ExtResource("22_fw0c5")
-texture_progress_offset = Vector2(6, 6)
-
-[node name="Boost" type="TextureProgressBar" parent="UI"]
-offset_left = 74.0
-offset_top = 170.0
-offset_right = 474.0
-offset_bottom = 210.0
-value = 100.0
-texture_under = ExtResource("23_fw0c5")
-texture_progress = ExtResource("24_r18ru")
-
-[node name="Xp" type="TextureProgressBar" parent="UI"]
-offset_left = 74.0
-offset_top = 208.0
-offset_right = 474.0
-offset_bottom = 248.0
-value = 100.0
-texture_under = ExtResource("29_dse6n")
-texture_progress = ExtResource("30_6smsd")
-
-[node name="Level" type="TextureProgressBar" parent="UI"]
-modulate = Color(0, 0.376471, 0.94902, 1)
-offset_left = 74.0
-offset_top = 238.0
-offset_right = 474.0
-offset_bottom = 278.0
-max_value = 40.0
-texture_under = ExtResource("29_dse6n")
-texture_progress = ExtResource("30_6smsd")
+[node name="UI" parent="." instance=ExtResource("24_be6b7")]
 
 [node name="PauseScreen" parent="." instance=ExtResource("27_x0rwi")]
 
