@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://sbfur265ybyr"]
+[gd_scene load_steps=15 format=3 uid="uid://sbfur265ybyr"]
 
 [ext_resource type="Script" uid="uid://deynvolyv3iss" path="res://actors/enemy/target_dummy/target_dummy.gd" id="1_8j65v"]
 [ext_resource type="Texture2D" uid="uid://cd8pqsfredfid" path="res://assets/enemy/target_dummy/target_dummy_body.png" id="2_uorf0"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="3_8mhx6"]
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="3_ncp7s"]
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="4_u4e7r"]
+[ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="4_ynwk0"]
+[ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="6_jp77w"]
 
 [sub_resource type="Resource" id="Resource_8mhx6"]
 resource_local_to_scene = true
@@ -18,6 +20,11 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 resource_local_to_scene = true
 script = ExtResource("4_u4e7r")
 explosion_scene = ExtResource("3_8mhx6")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("4_ynwk0")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("6_jp77w")
+max_collectible_delta = 50.0
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_u4e7r"]

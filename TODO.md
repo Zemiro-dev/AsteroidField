@@ -19,10 +19,10 @@
 	- [x] Need to check if things are actually moving toward each other before bouncing
 - [x] Nav Elements
 	- [x] Figure out how to paint stuff on the edge of the screen
-- [ ] Cannon Improvements
-	- [ ] Spawn Spread
-	- [ ] Some angle spread
-	- [ ] smaller bullet sprite? Orange and bright and longish? White tip
+- [x] Cannon Improvements
+	- [x] Spawn Spread
+	- [x] Some angle spread
+	- [x] smaller bullet sprite? Orange and bright and longish? White tip
 - [ ] Level Building Elements
 	- [ ] More Asteroids
 	- [ ] Secret Passage Asteroid
@@ -30,6 +30,8 @@
 	- [ ] Enemy Spawn System
 - [ ] Game End
 	- [ ] Target to Reach
+- [ ] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
+- [ ] Have the victory wait a second before showing up
 # Archive
 - [x] Setup product resolution settings and resizing
 	- not super happy with it I'm still not sure how the new debug window works

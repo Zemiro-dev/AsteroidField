@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=49 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -24,6 +24,8 @@
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
 [ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/player_camera.gd" id="20_5hfsr"]
 [ext_resource type="PackedScene" uid="uid://bg4856y75n6ij" path="res://ui/player_resource_ui.tscn" id="24_be6b7"]
+[ext_resource type="PackedScene" uid="uid://cosax4d0f0p1y" path="res://world/death_reset.tscn" id="27_5hfsr"]
+[ext_resource type="PackedScene" uid="uid://d1xdbx3wf1dry" path="res://ui/screens/victory_screen.tscn" id="27_44p8q"]
 [ext_resource type="PackedScene" uid="uid://vllh1g1mt2xn" path="res://ui/screens/pause_screen.tscn" id="27_x0rwi"]
 [ext_resource type="PackedScene" uid="uid://bhblea01cgtii" path="res://ui/screens/upgrade_screen.tscn" id="31_dse6n"]
 
@@ -947,6 +949,6 @@ damagable = SubResource("Resource_5hfsr")
 
 [node name="UpgradeScreen" parent="." instance=ExtResource("31_dse6n")]
 
-[node name="DeathTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
+[node name="VictoryScreen" parent="." instance=ExtResource("27_44p8q")]
+
+[node name="DeathReset" parent="." instance=ExtResource("27_5hfsr")]
