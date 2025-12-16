@@ -32,6 +32,7 @@
 	- [ ] Target to Reach
 - [ ] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
 - [ ] Have the victory wait a second before showing up
+- [ ] Goal Elements in navigation
 # Archive
 - [x] Setup product resolution settings and resizing
 	- not super happy with it I'm still not sure how the new debug window works

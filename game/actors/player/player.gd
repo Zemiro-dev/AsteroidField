@@ -10,6 +10,7 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 @onready var audio_listener_2d: AudioListener2D = $AudioListener2D
 @onready var engine_sound: AudioStreamPlayer2D = $EngineSound
 @onready var cannon_hardpoint: CannonHardpoint = $CannonHardpoint
+@onready var screen_edge_navigation: ScreenEdgeNavigation = $ScreenEdgeNavigation
 
 @export var controller: BaseController
 @export var steerable: BaseSteerable
@@ -125,3 +126,7 @@ func update_boost_duration(delta: float) -> void:
 		is_boost_on_cd = true
 		
 	on_boost_duration_changed.emit(remaining_boost_duration, max_boost_duration, self)
+
+
+func add_goal(node: Node2D) -> void:
+	screen_edge_navigation.add_goal(node)

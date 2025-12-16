@@ -42,7 +42,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("4_8oti7")
 texture_hover = ExtResource("5_qao5v")
-texture_disabled = ExtResource("5_qao5v")
+texture_focused = ExtResource("5_qao5v")
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/CenterContainer/VBoxContainer/ResetButton"]
 layout_mode = 1

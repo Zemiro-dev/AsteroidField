@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://dxld2evehiagy"]
+
+[ext_resource type="Texture2D" uid="uid://cyhxwoqwaigue" path="res://assets/shapes/lightgreen_outline_circle_24x24.png" id="1_wfors"]
+[ext_resource type="Script" uid="uid://5mis12m5vm8e" path="res://particles/goal_dot.gd" id="2_b5jt7"]
+[ext_resource type="Texture2D" uid="uid://bn4guhalyeg3" path="res://assets/shapes/dark_green_circle_24x24.png" id="2_lvcsh"]
+
+[sub_resource type="Gradient" id="Gradient_wfors"]
+colors = PackedColorArray(1, 1, 1, 0.75, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lvcsh"]
+gradient = SubResource("Gradient_wfors")
+
+[sub_resource type="Curve" id="Curve_b5jt7"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0.812693), 0.0, 0.0, 0, 0, Vector2(1, 1.48039), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gfmb3"]
+curve = SubResource("Curve_b5jt7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b5jt7"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_gfmb3")
+color_ramp = SubResource("GradientTexture1D_lvcsh")
+
+[sub_resource type="Animation" id="Animation_lvcsh"]
+resource_name = "fadeout"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_b5jt7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gfmb3"]
+_data = {
+&"RESET": SubResource("Animation_b5jt7"),
+&"fadeout": SubResource("Animation_lvcsh")
+}
+
+[node name="GoalDot" type="GPUParticles2D"]
+physics_interpolation_mode = 2
+amount = 1
+texture = ExtResource("1_wfors")
+randomness = 0.1
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_b5jt7")
+script = ExtResource("2_b5jt7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lvcsh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gfmb3")
+}

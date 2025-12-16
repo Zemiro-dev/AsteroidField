@@ -28,6 +28,7 @@ func _ready() -> void:
 func watch_dummy(target_dummy: TargetDummy) -> void:
 	var d := GameActor.get_damagable(target_dummy)
 	if d:
+		player.add_goal(target_dummy)
 		d.on_death.connect(
 			func(actor: Node2D):
 				death_count += 1
