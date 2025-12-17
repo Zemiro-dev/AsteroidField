@@ -86,6 +86,7 @@ _data = {
 
 [node name="TargetDummy" type="CharacterBody2D"]
 collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_8j65v")
 damagable = SubResource("Resource_8mhx6")
 on_death_handler = SubResource("Resource_hsnq3")

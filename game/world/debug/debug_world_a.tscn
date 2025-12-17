@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=58 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bpexwtnvt8ije" path="res://world/asteroids/asteroid_a.tscn" id="5_be6b7"]
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="5_pudvl"]
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="6_50rxm"]
+[ext_resource type="PackedScene" uid="uid://evdybpyycnow" path="res://world/asteroids/asteroid_large_pocket_a.tscn" id="7_44p8q"]
 [ext_resource type="PackedScene" uid="uid://c7ocpkjo8mdxd" path="res://world/containers/free_enemy_container.tscn" id="9_6smsd"]
 [ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="9_782kq"]
 [ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="10_ab4jj"]
@@ -22,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="15_dse6n"]
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="16_g36r6"]
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
+[ext_resource type="PackedScene" uid="uid://co6p4i708qfli" path="res://actors/destructible/xp_rich_destructible.tscn" id="18_qi3qa"]
+[ext_resource type="PackedScene" uid="uid://j2rqvedttth7" path="res://collectibles/collectible_xp_large.tscn" id="19_dse6n"]
 [ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/player_camera.gd" id="20_5hfsr"]
 [ext_resource type="PackedScene" uid="uid://bg4856y75n6ij" path="res://ui/player_resource_ui.tscn" id="24_be6b7"]
 [ext_resource type="PackedScene" uid="uid://cosax4d0f0p1y" path="res://world/death_reset.tscn" id="27_5hfsr"]
@@ -147,6 +150,52 @@ metadata/_custom_type_script = "uid://cxcn7u635ub72"
 resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_whtt0"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 1
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_qs671"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 100.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_56xp0"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_2e3jx"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 2
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_rp74x"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 100.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_pqm7x"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 
 [sub_resource type="Resource" id="Resource_6cor7"]
@@ -837,9 +886,10 @@ rotation = 1.53833
 position = Vector2(2497, 3384)
 rotation = 0.197765
 
-[node name="FreeProjectileContainer" parent="." instance=ExtResource("4_6ubl6")]
+[node name="StaticBody2D" parent="Asteroids" instance=ExtResource("7_44p8q")]
+position = Vector2(-5044, 2475)
 
-[node name="FreeParticleContainer" parent="." instance=ExtResource("3_4pxye")]
+[node name="FreeProjectileContainer" parent="." instance=ExtResource("4_6ubl6")]
 
 [node name="FreeEnemyContainer" parent="." instance=ExtResource("9_6smsd")]
 
@@ -928,6 +978,22 @@ position = Vector2(-3509, 3022)
 damagable = SubResource("Resource_unxg3")
 on_death_handler = SubResource("Resource_8dtdm")
 tween_damaged = SubResource("Resource_f6crb")
+
+[node name="Destructibles" type="Node2D" parent="."]
+
+[node name="XpRichDestructible" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(-5290, 2759)
+damagable = SubResource("Resource_whtt0")
+on_death_handler = SubResource("Resource_qs671")
+tween_damaged = SubResource("Resource_56xp0")
+
+[node name="XpRichDestructible2" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(-5189, 2726)
+damagable = SubResource("Resource_2e3jx")
+on_death_handler = SubResource("Resource_rp74x")
+tween_damaged = SubResource("Resource_pqm7x")
+
+[node name="FreeParticleContainer" parent="." instance=ExtResource("3_4pxye")]
 
 [node name="FreeCollectibleContainer" parent="." instance=ExtResource("14_qi3qa")]
 

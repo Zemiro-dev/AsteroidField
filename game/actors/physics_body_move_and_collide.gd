@@ -10,7 +10,7 @@ func move_and_collide(body: PhysicsBody2D, delta: float) -> void:
 			var collider: Object = collision.get_collider()
 			var collider_type =	GameActor.get_actor_type(collider)
 			match (collider_type):
-				GameActor.ActorType.UNKNOWN, GameActor.ActorType.TERRAIN, GameActor.ActorType.ENEMY:
+				GameActor.ActorType.UNKNOWN, GameActor.ActorType.TERRAIN, GameActor.ActorType.ENEMY, GameActor.ActorType.DESTRUCTIBLE:
 					if collision.get_normal().dot(steerable.velocity) <= 0.:
 						steerable.velocity = steerable.velocity.bounce(collision.get_normal())
 		if steerable.should_overspeed_break():

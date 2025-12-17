@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
-     inkscape:zoom="4"
-     inkscape:cx="2156.125"
-     inkscape:cy="-97"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="-264.81149"
+     inkscape:cy="-66.291261"
      inkscape:window-width="2538"
      inkscape:window-height="1472"
      inkscape:window-x="0"
@@ -4732,11 +4732,29 @@
     </g>
     <circle
        style="fill:#6e2594;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5"
-       id="path4"
-       cx="2256.8591"
-       cy="-142.95773"
+       id="circle1"
+       cx="-125.03687"
+       cy="-74.947327"
        r="12"
        inkscape:export-filename="..\..\game\assets\shapes\purple_circle_24x24.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#04e824;fill-opacity:1;stroke:#fafaee;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+       id="path4"
+       cx="-276.297"
+       cy="-72.765343"
+       r="11"
+       inkscape:export-filename="..\..\game\assets\shapes\lightgreen_outline_circle_24x24.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#04af1c;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5"
+       id="circle2"
+       cx="-236.44434"
+       cy="-74.164833"
+       r="12"
+       inkscape:export-filename="..\..\game\assets\shapes\dark_green_circle_24x24.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
   </g>

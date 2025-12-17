@@ -30,6 +30,7 @@ var original_max_speed: float
 @export var tick_rate: int = 5
 var tick: int = 0
 var hunt_action: Callable = func(_delta: float = 0.): pass
+var turn_direction := 0.
 
 
 func _ready() -> void:
@@ -51,6 +52,7 @@ func _ready() -> void:
 		)
 		original_max_speed = steerable.base_max_speed
 	target_offset_vector = raw_offset_vector.rotated(rng.randf_range(0, 2 * PI))
+	turn_direction = [-1., 1.].pick_random()
 
 
 func _physics_process(delta: float) -> void:
@@ -93,8 +95,10 @@ func hunt() -> Callable:
 			if (!target_damagable or !target_damagable.is_dead) and !target.is_zero_approx() and global_position.distance_to(target) > stop_radius:
 				last_known_target_location = target
 				var avoid := avoid_scanner.scan()
-				#var target_goal := enemy_avoid if !enemy_avoid.is_zero_approx() else global_position.direction_to(target + target_offset_vector)
-				direction_steering.goal_vector = (global_position.direction_to(target) + avoid).normalized() * steerable.get_max_speed()
+				var target_goal_vector := global_position.direction_to(target)
+				if avoid.dot(target_goal_vector) < .0 and avoid.length() > .25:
+					target_goal_vector = target_goal_vector.rotated(PI / 2. * turn_direction)
+				direction_steering.goal_vector = (target_goal_vector + avoid).normalized() * steerable.get_max_speed()
 				action = steerable.steer()
 			else:
 				action = steerable.slow()

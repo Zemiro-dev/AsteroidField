@@ -1,7 +1,7 @@
 extends Node
 
 
-enum ActorType { PLAYER, ENEMY, TERRAIN, UNKNOWN }
+enum ActorType { PLAYER, ENEMY, TERRAIN, DESTRUCTIBLE, UNKNOWN }
 
 
 func get_actor_type(o: Object) -> ActorType:

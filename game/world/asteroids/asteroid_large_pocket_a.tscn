@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://evdybpyycnow"]
+
+[ext_resource type="Texture2D" uid="uid://j2ilbcx27hli" path="res://assets/asteroids/asteroid_large_pocket_a.png" id="1_21vhd"]
+
+[node name="AsteroidLargePocketA" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_21vhd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-741, -295, -609, -389, -610, -477, -384, -558, -385, -625, -51, -744, 114, -526, 143, -597, 627, -563, 744, -93, 571, 18, 586, 36, 434, 274, 470, 319, 289, 603, 165, 573, 7, 651, -31, 614, -129, 741, -384, 645, -502, 689, -647, 505, -515, 312, -391, 347, -100, 266, -61, 183, 74, 130, 59, -70, -39, -147, -36, -172, -308, -254, -369, -162, -503, -201, -525, -135, -692, -138)

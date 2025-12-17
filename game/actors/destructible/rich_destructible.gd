@@ -1,0 +1,24 @@
+extends StaticBody2D
+class_name RichDestructible
+
+
+@export var damagable: BaseDamagable
+@export var on_death_handler: BaseOnDeathHandler
+@export var tween_damaged: TweenDamaged
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+var actor_type := GameActor.ActorType.DESTRUCTIBLE
+
+
+func _ready() -> void:
+	if damagable:
+		damagable.reset_damagable(self)
+		if on_death_handler:
+			on_death_handler.bind_to_node(self)
+		if tween_damaged:
+			tween_damaged.bind_to_node(self)
+
+
+func _physics_process(delta: float) -> void:
+	if damagable:
+		damagable.physics_process(delta)

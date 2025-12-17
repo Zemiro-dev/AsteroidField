@@ -39,9 +39,8 @@ func fire(
 		var sound := sound_scene.instantiate()
 		if sound is AudioStreamPlayer2D:
 			sound.global_position = global_position
-			if is_extra:
-				sound.volume_db = sound.volume_db - 8
-			GlobalSignals.request_sound_spawn.emit(sound)
+			if !is_extra:
+				GlobalSignals.request_sound_spawn.emit(sound)
 	reset_physics_interpolation()
 
 
