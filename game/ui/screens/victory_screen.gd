@@ -6,7 +6,11 @@ class_name VictoryScreen
 
 func _ready() -> void:
 	visible = false
-	GlobalSignals.request_game_win.connect(render)
+	GlobalSignals.request_game_win.connect(
+		func():
+			await get_tree().create_timer(1.).timeout
+			render()
+	)
 	reset_button.pressed.connect(
 		func():
 			GameManager.change_scene_to_main_menu()

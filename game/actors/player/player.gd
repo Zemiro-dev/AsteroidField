@@ -58,6 +58,10 @@ func _ready() -> void:
 			steerable.halt().call()
 			modulate = Color(Color.WHITE, 0.)
 	)
+	GlobalSignals.request_game_win.connect(
+		func():
+			damagable.is_invincible = true
+	)
 	audio_listener_2d.make_current()
 	if cannon_hardpoint.get_child_count() == 0:
 		cannon_hardpoint.add_cannon(cannon_hardpoint.BOLT_CANNON, self)
