@@ -42,7 +42,7 @@ metadata/_custom_type_script = "uid://djf22au03k0mc"
 resource_local_to_scene = true
 script = ExtResource("7_388e2")
 max_health = 10
-max_invulnerability_time = 0.0
+max_invulnerability_time = 0.05
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
 [sub_resource type="Resource" id="Resource_7aotg"]

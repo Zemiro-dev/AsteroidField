@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://fsyucuwjstyu"]
+
+[ext_resource type="Script" uid="uid://lu127lhly6tw" path="res://actors/destructible/rich_destructible.gd" id="1_ykyyv"]
+[ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="2_3qnt7"]
+[ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="3_1ufti"]
+[ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="4_tmeo3"]
+[ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="5_ykyyv"]
+[ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="6_qowtj"]
+[ext_resource type="Texture2D" uid="uid://cy2p4duu34lwi" path="res://assets/destructible/destructible_worthless_small.png" id="7_3qnt7"]
+
+[sub_resource type="Resource" id="Resource_ryly2"]
+resource_local_to_scene = true
+script = ExtResource("2_3qnt7")
+max_health = 100
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_jogxa"]
+resource_local_to_scene = true
+script = ExtResource("4_tmeo3")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("3_1ufti")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("5_ykyyv")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_mjsui"]
+resource_local_to_scene = true
+script = ExtResource("6_qowtj")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Animation" id="Animation_l1q40"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iaf05"]
+resource_name = "die"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1q40"]
+_data = {
+&"RESET": SubResource("Animation_l1q40"),
+&"die": SubResource("Animation_iaf05")
+}
+
+[node name="WorthlessSmallDestructible" type="StaticBody2D"]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_ykyyv")
+damagable = SubResource("Resource_ryly2")
+on_death_handler = SubResource("Resource_jogxa")
+tween_damaged = SubResource("Resource_mjsui")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("7_3qnt7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-30, -8, 0, -28, 29, -6, 17, 28, -19, 28)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l1q40")
+}

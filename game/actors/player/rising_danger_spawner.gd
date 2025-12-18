@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		time_since_last_spawnup += delta
 	
 	if time_since_danger_up >= time_between_dangerup:
-		danger += max(danger/2, 1)
+		danger += max(danger/3, 1)
 		time_since_danger_up = 0.
 	
 	if time_since_last_spawnup >= time_between_spawnup:

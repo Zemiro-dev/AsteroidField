@@ -6,7 +6,7 @@ class_name TargetingArea
 
 
 func has_los(node: Node2D) -> bool:
-	return Physics.has_los(self, node, blocked_by, [self])
+	return Physics.has_los(self, node, blocked_by, [self, node])
 
 
 func get_target() -> Node2D:
