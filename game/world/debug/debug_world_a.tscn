@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=72 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://co6p4i708qfli" path="res://actors/destructible/xp_rich_destructible.tscn" id="18_qi3qa"]
 [ext_resource type="PackedScene" uid="uid://j2rqvedttth7" path="res://collectibles/collectible_xp_large.tscn" id="19_dse6n"]
 [ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/player_camera.gd" id="20_5hfsr"]
+[ext_resource type="PackedScene" uid="uid://dd3vyk0j5o871" path="res://actors/destructible/health_rich_destructible.tscn" id="20_ytl8k"]
+[ext_resource type="PackedScene" uid="uid://dyebjuf3hi375" path="res://collectibles/collectible_health_large.tscn" id="21_ajp5a"]
 [ext_resource type="PackedScene" uid="uid://bg4856y75n6ij" path="res://ui/player_resource_ui.tscn" id="24_be6b7"]
 [ext_resource type="PackedScene" uid="uid://cosax4d0f0p1y" path="res://world/death_reset.tscn" id="27_5hfsr"]
 [ext_resource type="PackedScene" uid="uid://d1xdbx3wf1dry" path="res://ui/screens/victory_screen.tscn" id="27_44p8q"]
@@ -152,21 +154,21 @@ script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 
-[sub_resource type="Resource" id="Resource_whtt0"]
+[sub_resource type="Resource" id="Resource_njmio"]
 resource_local_to_scene = true
 script = ExtResource("4_fn8aq")
-max_health = 1
+max_health = 30
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
-[sub_resource type="Resource" id="Resource_qs671"]
+[sub_resource type="Resource" id="Resource_s552h"]
 resource_local_to_scene = true
 script = ExtResource("6_50rxm")
 chance_to_spawn_health = 0.0
 health_drop_scene = ExtResource("15_dse6n")
 change_to_spawn_xp = 1.0
 xp_drop_scene = ExtResource("19_dse6n")
-max_collectible_delta = 100.0
+max_collectible_delta = 25.0
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_56xp0"]
@@ -175,24 +177,116 @@ script = ExtResource("5_pudvl")
 damaged_color = Color(0, 0.945098, 0.952941, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 
-[sub_resource type="Resource" id="Resource_2e3jx"]
+[sub_resource type="Resource" id="Resource_qn8io"]
 resource_local_to_scene = true
 script = ExtResource("4_fn8aq")
-max_health = 2
+max_health = 30
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
-[sub_resource type="Resource" id="Resource_rp74x"]
+[sub_resource type="Resource" id="Resource_wvbrc"]
 resource_local_to_scene = true
 script = ExtResource("6_50rxm")
 chance_to_spawn_health = 0.0
 health_drop_scene = ExtResource("15_dse6n")
 change_to_spawn_xp = 1.0
 xp_drop_scene = ExtResource("19_dse6n")
-max_collectible_delta = 100.0
+max_collectible_delta = 25.0
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_pqm7x"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_whtt0"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_qs671"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("21_ajp5a")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 100.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_2e3jx"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_rp74x"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_311cb"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("21_ajp5a")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 20.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_hkyuv"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_asxao"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_lrit0"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("21_ajp5a")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 20.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_pty5m"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_8w3qn"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_4y5k8"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("21_ajp5a")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 20.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_cghjm"]
 resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0, 0.945098, 0.952941, 1)
@@ -983,15 +1077,39 @@ tween_damaged = SubResource("Resource_f6crb")
 
 [node name="XpRichDestructible" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(-5290, 2759)
-damagable = SubResource("Resource_whtt0")
-on_death_handler = SubResource("Resource_qs671")
+damagable = SubResource("Resource_njmio")
+on_death_handler = SubResource("Resource_s552h")
 tween_damaged = SubResource("Resource_56xp0")
 
 [node name="XpRichDestructible2" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(-5189, 2726)
-damagable = SubResource("Resource_2e3jx")
-on_death_handler = SubResource("Resource_rp74x")
+damagable = SubResource("Resource_qn8io")
+on_death_handler = SubResource("Resource_wvbrc")
 tween_damaged = SubResource("Resource_pqm7x")
+
+[node name="HealthRichDestructible" parent="Destructibles" instance=ExtResource("20_ytl8k")]
+position = Vector2(-5421, 2324)
+damagable = SubResource("Resource_whtt0")
+on_death_handler = SubResource("Resource_qs671")
+tween_damaged = SubResource("Resource_2e3jx")
+
+[node name="HealthRichDestructible2" parent="Destructibles" instance=ExtResource("20_ytl8k")]
+position = Vector2(-5241, 2260)
+damagable = SubResource("Resource_rp74x")
+on_death_handler = SubResource("Resource_311cb")
+tween_damaged = SubResource("Resource_hkyuv")
+
+[node name="HealthRichDestructible3" parent="Destructibles" instance=ExtResource("20_ytl8k")]
+position = Vector2(-5087, 2317)
+damagable = SubResource("Resource_asxao")
+on_death_handler = SubResource("Resource_lrit0")
+tween_damaged = SubResource("Resource_pty5m")
+
+[node name="HealthRichDestructible4" parent="Destructibles" instance=ExtResource("20_ytl8k")]
+position = Vector2(-4512, 2636)
+damagable = SubResource("Resource_8w3qn")
+on_death_handler = SubResource("Resource_4y5k8")
+tween_damaged = SubResource("Resource_cghjm")
 
 [node name="FreeParticleContainer" parent="." instance=ExtResource("3_4pxye")]
 
