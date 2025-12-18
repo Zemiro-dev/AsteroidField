@@ -135,4 +135,5 @@ shape = SubResource("RectangleShape2D_qrxv1")
 [node name="RisingDangerSpawner" type="Node2D" parent="."]
 script = ExtResource("16_rt46e")
 enemy_scene = ExtResource("17_0wchr")
+time_between_dangerup = 22.0
 blocked_by = 3
