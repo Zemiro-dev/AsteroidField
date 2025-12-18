@@ -28,8 +28,8 @@
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
      inkscape:zoom="0.088388348"
-     inkscape:cx="8157.1838"
-     inkscape:cy="2093.0361"
+     inkscape:cx="10499.121"
+     inkscape:cy="2805.7997"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
@@ -1791,7 +1791,10 @@
     </g>
     <g
        id="g429"
-       transform="translate(551.54329,330.92597)">
+       transform="translate(5280.6734,3815.5482)"
+       inkscape:export-filename="..\..\game\assets\asteroids\asteroid_large_pocket_a.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g186"
          transform="translate(2909.2799,1910.7619)">
@@ -2413,7 +2416,10 @@
     </g>
     <g
        id="g430"
-       transform="translate(-502.49251,658.49699)">
+       transform="translate(1635.7984,420.90911)"
+       inkscape:export-filename="..\..\game\assets\asteroids\asteroid_massive_pocket_a.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g416"
          transform="matrix(-1.82048e-8,2.5134714,-2.5139185,-2.1490417e-7,11989.414,135.1412)"
