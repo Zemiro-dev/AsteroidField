@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyhscaqmyqmdf"]
 
-[ext_resource type="Texture2D" uid="uid://dr7ioumgfoxe6" path="res://assets/asteroids/asteroid_massive_pocket_a.png" id="1_fdp57"]
+[ext_resource type="Texture2D" uid="uid://cxkptfc6m8g66" path="res://assets/asteroids/asteroid_massive_pocket_a2.png" id="1_fdp57"]
 
 [node name="AsteroidMassivePocketA" type="StaticBody2D"]
 

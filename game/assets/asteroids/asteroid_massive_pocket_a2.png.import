@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr7ioumgfoxe6"
-path="res://.godot/imported/asteroid_massive_pocket_a.png-0ef76b028d5cef0b6f323ef4a94732c9.ctex"
+uid="uid://cxkptfc6m8g66"
+path="res://.godot/imported/asteroid_massive_pocket_a2.png-b11217917bccabe518c7fd9a35a9b37c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/asteroids/asteroid_massive_pocket_a.png"
-dest_files=["res://.godot/imported/asteroid_massive_pocket_a.png-0ef76b028d5cef0b6f323ef4a94732c9.ctex"]
+source_file="res://assets/asteroids/asteroid_massive_pocket_a2.png"
+dest_files=["res://.godot/imported/asteroid_massive_pocket_a2.png-b11217917bccabe518c7fd9a35a9b37c.ctex"]
 
 [params]
 
