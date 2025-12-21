@@ -32,6 +32,6 @@ func watch_dummy(target_dummy: TargetDummy) -> void:
 		d.on_death.connect(
 			func(actor: Node2D):
 				death_count += 1
-				if death_count == 5:
+				if death_count == 1:
 					GlobalSignals.request_game_win.emit()
 		)

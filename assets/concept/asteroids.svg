@@ -143,6 +143,7 @@
 
 
 
+
 &quot; /&gt;
     <inkscape:path-effect
    effect="powermask"
@@ -193,6 +194,7 @@
    flatten="false"
    hide_clip="false"
    message="!" />
+
 
 
 
@@ -376,6 +378,7 @@
 
 
 
+
 &quot; /&gt;
     <inkscape:path-effect
    effect="powerclip"
@@ -395,6 +398,7 @@
    flatten="false"
    hide_clip="false"
    message="L" />
+
 
 
 
@@ -486,6 +490,7 @@
 
 
 
+
 &quot; /&gt;
     <clipPath
    clipPathUnits="userSpaceOnUse"
@@ -539,6 +544,7 @@
    flatten="false"
    hide_clip="false"
    message="4" />
+
 
 
 
@@ -715,6 +721,7 @@
    flatten="false"
    hide_clip="false"
    message="M" />
+
 
 
 
@@ -1020,6 +1027,7 @@
 
 
 
+
 &quot; /&gt;
     <clipPath
    clipPathUnits="userSpaceOnUse"
@@ -1069,6 +1077,7 @@
    flatten="false"
    hide_clip="false"
    message="" />
+
 
 
 
@@ -1132,6 +1141,7 @@
    flatten="false"
    hide_clip="false"
    message="^" />
+
 
 
 
@@ -1791,7 +1801,7 @@
     </g>
     <g
        id="g429"
-       transform="translate(5280.6734,3815.5482)"
+       transform="translate(2406.9915,4573.5667)"
        inkscape:export-filename="..\..\game\assets\asteroids\asteroid_large_pocket_a.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
@@ -2417,7 +2427,7 @@
     <g
        id="g430"
        transform="translate(1635.7984,420.90911)"
-       inkscape:export-filename="..\..\game\assets\asteroids\asteroid_massive_pocket_a.png"
+       inkscape:export-filename="..\..\game\assets\asteroids\asteroid_massive_pocket_a2.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
       <g
