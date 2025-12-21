@@ -1,11 +1,11 @@
 extends Node2D
 
 
-func closest(position: Vector2, nodes: Array[Node2D]) -> Node2D:
+func closest(_position: Vector2, nodes: Array[Node2D]) -> Node2D:
 	var closest_node: Node2D = null
 	var closest_sq_distance: float = INF
 	for node in nodes:
-		var node_sq_distance := node.global_position.distance_squared_to(position)
+		var node_sq_distance := node.global_position.distance_squared_to(_position)
 		if node_sq_distance < closest_sq_distance:
 			closest_node = node
 			closest_sq_distance = node_sq_distance 
@@ -30,6 +30,5 @@ func is_circle_empty(center: Vector2, radius: float = 64, collision_mask: int = 
 	query.collide_with_bodies = true
 	query.collision_mask = collision_mask
 	var result = space_state.intersect_shape(query)
-	return result.is_empty()	
-	return true
+	return result.is_empty()
 	

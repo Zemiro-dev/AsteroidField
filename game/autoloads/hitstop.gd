@@ -10,6 +10,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if is_in_hitstop:
+		Engine.time_scale = 0
 	if Time.get_ticks_msec() > hitstop_end_time_ms and is_in_hitstop:
 		exit_hitstop()
 

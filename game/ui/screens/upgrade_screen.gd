@@ -10,6 +10,7 @@ const UPGRADE_BUTTON: PackedScene = preload("res://ui/screens/upgrade/upgrade_bu
 
 @export var slide_time: float = .3
 var slide_tween: Tween
+var is_game_won := false
 
 
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 	GlobalSignals.request_game_win.connect(
 		func():
 			visible = false
+			is_game_won = true
 			clear_buttons()
 	)
 
@@ -73,7 +75,7 @@ func bind_to_player(player: Player):
 				else:
 					options = [LevelableStatModifier.ProjectileAttackSpeedUpPerLevel.new()]
 				 
-				if !options.is_empty():
+				if !options.is_empty() and !is_game_won:
 					get_tree().paused = true
 					render_for_options(options)
 		)
@@ -112,10 +114,13 @@ func render_for_options(options: Array[LevelableStatModifier]) -> void:
 		for button in buttons:
 			slide_in_finished.connect(
 				func():
-					button.pressed.connect(
-						func():
-							slide_out().connect(func(): upgrade_selected.emit(button.modifier))
-					)
+					if is_game_won:
+						visible = false
+					else:
+						button.pressed.connect(
+							func():
+								slide_out().connect(func(): upgrade_selected.emit(button.modifier))
+						)
 			)
 			button.focus_entered.connect(
 				func():

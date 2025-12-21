@@ -86,4 +86,6 @@ class ThrusterModifier extends LevelableStatModifier:
 		stats.max_speed_up += boost
 		stats.max_acceleration_up += boost
 		stats.boost_power_up = clampf(lerpf(.0, 1., strength_weight()), 0., 1.)
+		stats.boost_duration_increase += levelable.level - 1
+		stats.boost_recharge_ratio += .25 * (levelable.level - 1)
 		return stats

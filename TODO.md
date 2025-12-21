@@ -1,8 +1,6 @@
 - [ ] Warp Sound
-- [x] Collectibles
-	- [x] Health
-	- [x] XP
-- [x] Structure Cannon into player properly so it can spawn its own and provide its leveable to it for damage and rof
+- [ ] Star background
+- [x] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
 - [ ] Upgrade System
 	- [x] Level Up Tracker
 	- [x] When Level up pause and present upgrade screen
@@ -12,28 +10,31 @@
 	- [ ] more upgrades
 		- [ ] nav size
 		- [ ] proj spread reduction
-- [x] Tick Rate System, Time Slicing
 - [ ] Bolt Explosion Particles
 - [ ] Collision Improvements
 	- [ ] https://www.youtube.com/watch?v=nXrEX6j-Mws video with math for reference
 	- [x] Need to check if things are actually moving toward each other before bouncing
+- [ ] Level Building Elements
+	- [x] More Asteroids
+	- [ ] Secret Passage Asteroid
+	- [x] Mineral Rich Asteroids
+	- [x] Enemy Spawn System
+# Archive
+- [x] Collectibles
+	- [x] Health
+	- [x] XP
+- [x] Structure Cannon into player properly so it can spawn its own and provide its leveable to it for damage and rof
+- [x] Tick Rate System, Time Slicing
 - [x] Nav Elements
 	- [x] Figure out how to paint stuff on the edge of the screen
 - [x] Cannon Improvements
 	- [x] Spawn Spread
 	- [x] Some angle spread
 	- [x] smaller bullet sprite? Orange and bright and longish? White tip
-- [ ] Level Building Elements
-	- [ ] More Asteroids
-	- [ ] Secret Passage Asteroid
-	- [ ] Mineral Rich Asteroids
-	- [ ] Enemy Spawn System
-- [ ] Game End
-	- [ ] Target to Reach
-- [ ] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
-- [ ] Have the victory wait a second before showing up
-- [ ] Goal Elements in navigation
-# Archive
+- [x] Game End
+	- [x] Target to Reach
+- [x] Have the victory wait a second before showing up
+- [x] Goal Elements in navigation
 - [x] Setup product resolution settings and resizing
 	- not super happy with it I'm still not sure how the new debug window works
 - [x] Make background grid for testing

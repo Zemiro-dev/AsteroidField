@@ -12,8 +12,17 @@ extends Node2D
 var enemies_to_spawn := 0
 var time_since_last_spawnup: float = 0.
 var time_since_danger_up: float = 0.
-var danger = 0
+var danger := 0
+var spawn_i := 0
 @onready var time_since_last_spawn: float = time_between_spawns
+var _noise := FastNoiseLite.new()
+
+
+func _ready() -> void:
+	_noise.noise_type = FastNoiseLite.NoiseType.TYPE_SIMPLEX_SMOOTH
+	_noise.seed = randi()
+	_noise.fractal_octaves = 4
+	_noise.frequency = 1.0 / 20.0
 
 
 func _process(delta: float) -> void:
@@ -25,7 +34,7 @@ func _process(delta: float) -> void:
 		time_since_last_spawnup += delta
 	
 	if time_since_danger_up >= time_between_dangerup:
-		danger += max(danger/3, 1)
+		danger += max(danger/2, 1)
 		time_since_danger_up = 0.
 	
 	if time_since_last_spawnup >= time_between_spawnup:
@@ -39,11 +48,17 @@ func _process(delta: float) -> void:
 
 
 func get_rng_spawn_point() -> Vector2:
-	var rng_angle := randf_range(0, TAU)
-	return Vector2(
+	spawn_i += 1
+	if spawn_i > 100:
+		spawn_i = 0
+	var noise := (_noise.get_noise_1d(spawn_i) + 1.) * 2
+	
+	var rng_angle := PI * noise
+	var spawn_point := Vector2(
 		randf_range(inner_spawn_radius, outer_spawn_radius),
 		0.
 	).rotated(rng_angle)
+	return spawn_point
 
 
 func test_spawn(test_position: Vector2) -> bool:

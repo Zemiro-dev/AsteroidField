@@ -87,6 +87,7 @@ script = ExtResource("1_ilk7j")
 controller = SubResource("Resource_6p1w3")
 steerable = SubResource("Resource_388e2")
 player_move_and_collide = SubResource("Resource_15y17")
+dash_multiplier = 2.0
 damagable = SubResource("Resource_hiosj")
 max_boost_duration = 0.5
 boost_recharge_ratio = 0.25
@@ -135,5 +136,4 @@ shape = SubResource("RectangleShape2D_qrxv1")
 [node name="RisingDangerSpawner" type="Node2D" parent="."]
 script = ExtResource("16_rt46e")
 enemy_scene = ExtResource("17_0wchr")
-time_between_dangerup = 22.0
 blocked_by = 3

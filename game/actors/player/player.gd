@@ -43,7 +43,7 @@ func _ready() -> void:
 	]
 	init_steering()
 	damagable.reset_damagable(self)
-	update_boost_duration(max_boost_duration)
+	update_boost_duration(get_max_boost_duration())
 	if on_death_handler:
 		on_death_handler.bind_to_node(self)
 	damagable.on_damage_taken.connect(
@@ -108,9 +108,19 @@ func dash(delta: float) -> void:
 	if is_dashing():
 		steerable.power_multiplier = dash_multiplier
 		update_boost_duration(-delta)
+		if levelable.stats.slow_time_on_boost:
+			Engine.time_scale = lerpf(
+				Engine.time_scale,
+				levelable.stats.slow_time_on_boost_intensity, 
+				delta * levelable.stats.slow_time_on_boost_power_up_speed
+			)
 	else:
 		steerable.power_multiplier = 1
-		update_boost_duration(delta * boost_recharge_ratio)
+		update_boost_duration(delta * (boost_recharge_ratio + levelable.stats.boost_recharge_ratio))
+		if is_zero_approx(Engine.time_scale - 1.):
+			Engine.time_scale = 1.
+		if levelable.stats.slow_time_on_boost:
+			Engine.time_scale = lerpf(Engine.time_scale, 1, delta * 20.)
 
 
 func is_dashing() -> bool:
@@ -121,7 +131,7 @@ func is_dashing() -> bool:
 
 func update_boost_duration(delta: float) -> void:
 	remaining_boost_duration += delta
-	remaining_boost_duration = clampf(remaining_boost_duration, 0, max_boost_duration)
+	remaining_boost_duration = clampf(remaining_boost_duration, 0, get_max_boost_duration())
 	
 	if remaining_boost_duration / max_boost_duration > boost_cd_reset:
 		is_boost_on_cd = false
@@ -129,7 +139,11 @@ func update_boost_duration(delta: float) -> void:
 	if is_zero_approx(remaining_boost_duration):
 		is_boost_on_cd = true
 		
-	on_boost_duration_changed.emit(remaining_boost_duration, max_boost_duration, self)
+	on_boost_duration_changed.emit(remaining_boost_duration, get_max_boost_duration(), self)
+
+
+func get_max_boost_duration() -> float:
+	return max_boost_duration + levelable.stats.boost_duration_increase
 
 
 func add_goal(node: Node2D) -> void:
