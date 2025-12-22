@@ -60,11 +60,9 @@ func overspeed_break(_delta: float) -> void:
 
 func get_max_speed() -> float:
 	var levelableBonus := 0.
-	var powerBonus := 0.
 	if levelable and levelable.stats:
 		levelableBonus = levelable.stats.max_speed_up
-		powerBonus = levelable.stats.boost_power_up
-	return (base_max_speed + levelableBonus) * (power_multiplier + powerBonus)
+	return (base_max_speed + levelableBonus) * power_multiplier
 
 
 func get_max_acceleration() -> float:

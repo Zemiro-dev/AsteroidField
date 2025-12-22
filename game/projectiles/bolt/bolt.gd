@@ -26,12 +26,12 @@ func fire(
 	var radial_spread: float = 0.
 	var spread := Vector2.ZERO
 	if stats:
-		radial_spread = randf_range(-stats.radial_spread/2., stats.radial_spread/2.)
+		radial_spread = randf_range(-stats.radial_spread/2., stats.radial_spread/2.) * (1. if !levelable else levelable.stats.projectile_radial_spread_modifier)
 		spread = Vector2(
 			randf_range(-stats.spread.x / 2., stats.spread.x / 2.),
 			randf_range(-stats.spread.y / 2, stats.spread.y / 2.)
 		).rotated(heading_angle)
-		spread = spread.rotated(global_transform.get_rotation())
+		spread = spread.rotated(global_transform.get_rotation()) * (1. if !levelable else levelable.stats.projectile_spread_modifier)
 	global_position += spawn_offset.rotated(heading_angle) + spread
 	heading = Vector2.from_angle(heading_angle + radial_spread)
 	rotation = heading_angle + radial_spread

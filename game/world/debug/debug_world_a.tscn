@@ -2953,7 +2953,7 @@ on_death_handler = SubResource("Resource_m1mo5")
 tween_damaged = SubResource("Resource_qsm4w")
 
 [node name="WorthlessLargeDestructible" parent="Destructibles" instance=ExtResource("18_ajp5a")]
-position = Vector2(1846, 7645)
+position = Vector2(1827, 7656)
 damagable = SubResource("Resource_6cor7")
 on_death_handler = SubResource("Resource_56xp0")
 tween_damaged = SubResource("Resource_whtt0")
@@ -2977,13 +2977,13 @@ on_death_handler = SubResource("Resource_s552h")
 tween_damaged = SubResource("Resource_pty5m")
 
 [node name="WorthlessLargeDestructible6" parent="Destructibles" instance=ExtResource("18_ajp5a")]
-position = Vector2(3000, 7466)
+position = Vector2(2995, 7455)
 damagable = SubResource("Resource_8w3qn")
 on_death_handler = SubResource("Resource_qn8io")
 tween_damaged = SubResource("Resource_cghjm")
 
 [node name="WorthlessLargeDestructible7" parent="Destructibles" instance=ExtResource("18_ajp5a")]
-position = Vector2(3028, 7751)
+position = Vector2(2964, 7760)
 rotation = 0.197954
 damagable = SubResource("Resource_wvbrc")
 on_death_handler = SubResource("Resource_311cb")
@@ -3004,7 +3004,7 @@ on_death_handler = SubResource("Resource_ipj6x")
 tween_damaged = SubResource("Resource_jis13")
 
 [node name="WorthlessLargeDestructible11" parent="Destructibles" instance=ExtResource("18_ajp5a")]
-position = Vector2(1762, 7964)
+position = Vector2(1808, 7978)
 rotation = 0.508344
 damagable = SubResource("Resource_mt4op")
 on_death_handler = SubResource("Resource_y3rxh")
@@ -3172,6 +3172,54 @@ tween_damaged = SubResource("Resource_6x351")
 
 [node name="XpRichDestructible" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(2108, 5041)
+damagable = SubResource("Resource_w75mj")
+on_death_handler = SubResource("Resource_378co")
+tween_damaged = SubResource("Resource_7msbx")
+
+[node name="XpRichDestructible3" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(1725, 5376)
+damagable = SubResource("Resource_w75mj")
+on_death_handler = SubResource("Resource_378co")
+tween_damaged = SubResource("Resource_7msbx")
+
+[node name="XpRichDestructible21" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(2950, 5291)
+damagable = SubResource("Resource_w75mj")
+on_death_handler = SubResource("Resource_378co")
+tween_damaged = SubResource("Resource_7msbx")
+
+[node name="XpRichDestructible22" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(1851, 8743)
+damagable = SubResource("Resource_w75mj")
+on_death_handler = SubResource("Resource_378co")
+tween_damaged = SubResource("Resource_7msbx")
+
+[node name="XpRichDestructible23" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(1811, 8805)
+damagable = SubResource("Resource_w75mj")
+on_death_handler = SubResource("Resource_378co")
+tween_damaged = SubResource("Resource_7msbx")
+
+[node name="XpRichDestructible24" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(4770, 10703)
+damagable = SubResource("Resource_w75mj")
+on_death_handler = SubResource("Resource_378co")
+tween_damaged = SubResource("Resource_7msbx")
+
+[node name="XpRichDestructible25" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(4716, 10738)
+damagable = SubResource("Resource_w75mj")
+on_death_handler = SubResource("Resource_378co")
+tween_damaged = SubResource("Resource_7msbx")
+
+[node name="XpRichDestructible26" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(-56, 11163)
+damagable = SubResource("Resource_w75mj")
+on_death_handler = SubResource("Resource_378co")
+tween_damaged = SubResource("Resource_7msbx")
+
+[node name="XpRichDestructible27" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(-25, 11244)
 damagable = SubResource("Resource_w75mj")
 on_death_handler = SubResource("Resource_378co")
 tween_damaged = SubResource("Resource_7msbx")

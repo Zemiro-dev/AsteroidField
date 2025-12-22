@@ -13,7 +13,9 @@ var projectile_max_speed_up: float = 0.
 var projectile_acceleration_up: float = 0.
 var projectile_time_between_shots_mult: float = 1.
 var projectile_bonus_projectiles: int = 0
+var projectile_radial_spread_modifier: float = 1.
+var projectile_spread_modifier: float = 1.
 
-var slow_time_on_boost: bool = true
-var slow_time_on_boost_intensity: float = .5
+var slow_time_on_boost: bool = false
+var slow_time_on_boost_intensity: float = 1.
 var slow_time_on_boost_power_up_speed: float = 50.

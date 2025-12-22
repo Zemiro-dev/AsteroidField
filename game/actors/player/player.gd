@@ -37,9 +37,7 @@ func _ready() -> void:
 	levelable = Levelable.new()
 	levelable.stat_modifiers = [
 		LevelableStatModifier.ProjectileAttackSpeedUpPerLevel.new(),
-		LevelableStatModifier.ThrusterModifier.new(),
-		LevelableStatModifier.ProjectileDamageUpPerLevel.new(),
-		LevelableStatModifier.ProjectileBonusProjectile.new()
+		LevelableStatModifier.ProjectileDamageUpPerLevel.new()
 	]
 	init_steering()
 	damagable.reset_damagable(self)
@@ -106,7 +104,7 @@ func _physics_process(delta: float) -> void:
 
 func dash(delta: float) -> void:
 	if is_dashing():
-		steerable.power_multiplier = dash_multiplier
+		steerable.power_multiplier = get_dash_multiplier()
 		update_boost_duration(-delta)
 		if levelable.stats.slow_time_on_boost:
 			Engine.time_scale = lerpf(
@@ -129,11 +127,15 @@ func is_dashing() -> bool:
 	return false
 
 
+func get_dash_multiplier() -> float:
+	return dash_multiplier + levelable.stats.boost_power_up
+
+
 func update_boost_duration(delta: float) -> void:
 	remaining_boost_duration += delta
 	remaining_boost_duration = clampf(remaining_boost_duration, 0, get_max_boost_duration())
 	
-	if remaining_boost_duration / max_boost_duration > boost_cd_reset:
+	if remaining_boost_duration / get_max_boost_duration() > boost_cd_reset:
 		is_boost_on_cd = false
 	
 	if is_zero_approx(remaining_boost_duration):
