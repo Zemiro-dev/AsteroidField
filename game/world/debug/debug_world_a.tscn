@@ -1,4 +1,4 @@
-[gd_scene load_steps=286 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=310 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -1278,6 +1278,190 @@ max_collectible_delta = 25.0
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_7msbx"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_yvkyi"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_cwdfm"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_j4qys"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_icawr"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_4j4tj"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_2mm31"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_p441r"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_4b2i8"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_fypkw"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_c006t"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_73e0f"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_awft0"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_dk0jm"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_5c84c"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_50myb"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_77tnm"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_8dm03"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_4tnp5"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_3l8lk"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_r48ug"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_n2qkm"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_fwhtl"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_d5r37"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_g5j6t"]
 resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0, 0.945098, 0.952941, 1)
@@ -3178,51 +3362,51 @@ tween_damaged = SubResource("Resource_7msbx")
 
 [node name="XpRichDestructible3" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(1725, 5376)
-damagable = SubResource("Resource_w75mj")
-on_death_handler = SubResource("Resource_378co")
-tween_damaged = SubResource("Resource_7msbx")
+damagable = SubResource("Resource_yvkyi")
+on_death_handler = SubResource("Resource_cwdfm")
+tween_damaged = SubResource("Resource_j4qys")
 
 [node name="XpRichDestructible21" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(2950, 5291)
-damagable = SubResource("Resource_w75mj")
-on_death_handler = SubResource("Resource_378co")
-tween_damaged = SubResource("Resource_7msbx")
+damagable = SubResource("Resource_icawr")
+on_death_handler = SubResource("Resource_4j4tj")
+tween_damaged = SubResource("Resource_2mm31")
 
 [node name="XpRichDestructible22" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(1851, 8743)
-damagable = SubResource("Resource_w75mj")
-on_death_handler = SubResource("Resource_378co")
-tween_damaged = SubResource("Resource_7msbx")
+damagable = SubResource("Resource_p441r")
+on_death_handler = SubResource("Resource_4b2i8")
+tween_damaged = SubResource("Resource_fypkw")
 
 [node name="XpRichDestructible23" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(1811, 8805)
-damagable = SubResource("Resource_w75mj")
-on_death_handler = SubResource("Resource_378co")
-tween_damaged = SubResource("Resource_7msbx")
+damagable = SubResource("Resource_c006t")
+on_death_handler = SubResource("Resource_73e0f")
+tween_damaged = SubResource("Resource_awft0")
 
 [node name="XpRichDestructible24" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(4770, 10703)
-damagable = SubResource("Resource_w75mj")
-on_death_handler = SubResource("Resource_378co")
-tween_damaged = SubResource("Resource_7msbx")
+damagable = SubResource("Resource_dk0jm")
+on_death_handler = SubResource("Resource_5c84c")
+tween_damaged = SubResource("Resource_50myb")
 
 [node name="XpRichDestructible25" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(4716, 10738)
-damagable = SubResource("Resource_w75mj")
-on_death_handler = SubResource("Resource_378co")
-tween_damaged = SubResource("Resource_7msbx")
+damagable = SubResource("Resource_77tnm")
+on_death_handler = SubResource("Resource_8dm03")
+tween_damaged = SubResource("Resource_4tnp5")
 
 [node name="XpRichDestructible26" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(-56, 11163)
-damagable = SubResource("Resource_w75mj")
-on_death_handler = SubResource("Resource_378co")
-tween_damaged = SubResource("Resource_7msbx")
+damagable = SubResource("Resource_3l8lk")
+on_death_handler = SubResource("Resource_r48ug")
+tween_damaged = SubResource("Resource_n2qkm")
 
 [node name="XpRichDestructible27" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(-25, 11244)
-damagable = SubResource("Resource_w75mj")
-on_death_handler = SubResource("Resource_378co")
-tween_damaged = SubResource("Resource_7msbx")
+damagable = SubResource("Resource_fwhtl")
+on_death_handler = SubResource("Resource_d5r37")
+tween_damaged = SubResource("Resource_g5j6t")
 
 [node name="XpRichDestructible2" parent="Destructibles" instance=ExtResource("18_qi3qa")]
 position = Vector2(2548, 5013)

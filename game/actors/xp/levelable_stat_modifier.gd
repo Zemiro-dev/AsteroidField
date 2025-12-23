@@ -76,7 +76,7 @@ class ProjectileBonusProjectile extends LevelableStatModifier:
 		name = 'Extra Projectiles'
 		code = 'extra_projectiles'
 		type = LevelableStatModifierType.WEAPON_STAT
-		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
+		texture_path = "res://assets/ui/upgrades/upgrade_projectile_count_up.png"
 		description = 'Extra projectiles'
 
 
@@ -92,7 +92,7 @@ class ThrusterModifier extends LevelableStatModifier:
 		name = 'Thrusters'
 		code = 'thruster'
 		type = LevelableStatModifierType.SPECIAL_STAT
-		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
+		texture_path = "res://assets/ui/upgrades/upgrade_speed_up.png"
 		description = 'Increases the strength of your thrusters'
 		max_strength = 3
 
@@ -116,7 +116,7 @@ class TimeManipulator extends LevelableStatModifier:
 		name = 'Time Manipulator'
 		code = 'time_manipulator'
 		type = LevelableStatModifierType.SPECIAL_STAT
-		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
+		texture_path = "res://assets/ui/upgrades/upgrade_time_manipulator.png"
 		description = 'Your boost is weaker, but can now manipulate time.'
 		max_strength = 1
 
@@ -133,7 +133,7 @@ class FocusingCrystals extends LevelableStatModifier:
 		name = 'Focusing Crystals'
 		code = 'focusing_crystals'
 		type = LevelableStatModifierType.WEAPON_STAT
-		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
+		texture_path = "res://assets/ui/upgrades/upgrade_focusing_crystal.png"
 		description = 'Increased damage and reduced spread through focusing crystals'
 		max_strength = 5
 

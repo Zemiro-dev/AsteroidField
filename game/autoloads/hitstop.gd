@@ -6,6 +6,7 @@ var is_in_hitstop := false
 
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	GlobalSignals.request_hitstop.connect(on_hitstop_requested)
 
 

@@ -59,8 +59,8 @@ func bind_to_player(player: Player):
 			func(_levelable: Levelable):
 				var options := RewardManager.get_possislbe_level_up_rewards(_levelable)	 
 				if !options.is_empty() and !is_game_won:
-					get_tree().paused = true
-					render_for_options(options)
+					if render_for_options(options):
+						get_tree().paused = true
 		)
 		upgrade_selected.connect(
 			func(upgrade: LevelableStatModifier):
@@ -73,8 +73,8 @@ func clear_buttons():
 	for child in upgrade_button_container.get_children():
 		child.queue_free()
 	
-func render_for_options(options: Array[LevelableStatModifier]) -> void:
-	if options == null: return
+func render_for_options(options: Array[LevelableStatModifier]) -> bool:
+	if options == null: return false
 	clear_buttons()
 	var buttons: Array[UpgradeButton] = []
 	for option in options:
@@ -83,7 +83,9 @@ func render_for_options(options: Array[LevelableStatModifier]) -> void:
 		button.modifier = option
 		upgrade_button_container.add_child(button)
 	var slide_in_finished := slide_in()
-	if buttons.size() > 0:
+	if buttons.size() == 0:
+		return false
+	else:
 		for button in buttons:
 			slide_in_finished.connect(
 				func():
@@ -100,3 +102,4 @@ func render_for_options(options: Array[LevelableStatModifier]) -> void:
 					description.text = 'Description: %s' % button.modifier.description
 			)
 		buttons[0].grab_focus.call_deferred()
+		return true

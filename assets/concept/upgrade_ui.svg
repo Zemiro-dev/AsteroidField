@@ -24,15 +24,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="-264.81149"
-     inkscape:cy="-66.291261"
+     inkscape:zoom="0.32"
+     inkscape:cx="2539.0625"
+     inkscape:cy="539.0625"
      inkscape:window-width="2538"
      inkscape:window-height="1472"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer15"
+     inkscape:current-layer="layer8"
      showgrid="true"
      borderlayer="true"
      showguides="true"
@@ -4303,6 +4303,108 @@
        inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_weapon_normal.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
+    <g
+       id="g1"
+       inkscape:export-filename="..\..\game\assets\ui\upgrades\upgrade_speed_up.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         style="color:#000000;fill:#00b0f3;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+         d="m -2515.1117,-560.21206 c -19.1243,-18.52252 -50.0679,-18.02435 -68.5864,1.10417 -18.5185,19.12852 -18.0183,50.07666 1.106,68.59918 19.1244,18.52252 50.0658,18.02657 68.5843,-1.10195 18.5185,-19.12853 18.0205,-50.07887 -1.1039,-68.6014 z m -19.63,20.2767 c 8.1683,7.91127 8.3713,20.52017 0.4616,28.69036 -7.9096,8.17017 -20.5136,8.37086 -28.6819,0.45959 -8.1683,-7.91127 -8.3734,-20.51798 -0.4638,-28.68816 7.9096,-8.17019 20.5158,-8.37306 28.6841,-0.46179 z"
+         id="path14-0" />
+      <path
+         style="color:#000000;opacity:0.493507;fill:#00b0f3;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+         d="m -2594.1994,-478.51897 c -11.7444,-11.37477 -30.7468,-11.06878 -42.1191,0.67809 -11.3722,11.74686 -11.0651,30.75215 0.6792,42.12691 11.7442,11.37459 30.7455,11.07007 42.1177,-0.67679 11.3723,-11.74687 11.0664,-30.75362 -0.6778,-42.12821 z m -12.0549,12.45196 c 5.0161,4.85824 5.1408,12.60139 0.2834,17.61872 -4.8573,5.01734 -12.5974,5.14059 -17.6135,0.28234 -5.0163,-4.85842 -5.1422,-12.6002 -0.2849,-17.61754 4.8573,-5.01733 12.5988,-5.14194 17.615,-0.28352 z"
+         id="path15-4" />
+      <path
+         style="color:#000000;fill:#00b0f3;fill-opacity:1;stroke:#00f1f3;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+         d="m -2427.2875,-647.98272 c -29.6154,-28.68344 -77.5339,-27.91198 -106.2112,1.70996 -28.6772,29.62195 -27.9027,77.54747 1.7127,106.23092 29.6154,28.68344 77.5308,27.91557 106.208,-1.70638 28.6773,-29.62194 27.9059,-77.55106 -1.7095,-106.2345 z m -30.3986,31.39999 c 12.6493,12.25128 12.9637,31.77714 0.715,44.42929 -12.2486,12.65214 -31.7669,12.96289 -44.4163,0.71161 -12.6493,-12.25128 -12.9668,-31.77357 -0.7181,-44.4257 12.2486,-12.65216 31.7701,-12.96648 44.4194,-0.7152 z"
+         id="path16-7" />
+      <path
+         style="color:#000000;opacity:0.267532;fill:#00b0f3;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+         d="m -2647.5298,-423.43173 c -4.5323,-4.38967 -11.8656,-4.27159 -16.2544,0.26169 -4.3887,4.53329 -4.2702,11.86771 0.2621,16.25737 4.5322,4.38951 11.8652,4.27211 16.2539,-0.26118 4.3887,-4.53329 4.2705,-11.86838 -0.2616,-16.25788 z m -4.6522,4.80539 c 1.9358,1.87482 1.9839,4.86305 0.1094,6.79931 -1.8745,1.93626 -4.8616,1.98378 -6.7973,0.10896 -1.9359,-1.87499 -1.9846,-4.86269 -0.1101,-6.79895 1.8745,-1.93627 4.8621,-1.98431 6.798,-0.10932 z"
+         id="path18-1" />
+    </g>
+    <rect
+       style="font-variation-settings:normal;vector-effect:none;fill:#050505;fill-opacity:1;stroke:#00b0f3;stroke-width:12;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
+       id="rect16"
+       width="448"
+       height="448"
+       x="-3406.2839"
+       y="-1175.9647"
+       ry="12.5"
+       rx="12.5"
+       inkscape:export-filename="..\..\game\assets\ui\screens\upgrade\button_upgrade_specialstat_normal.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       id="g144"
+       transform="translate(354.9676,125.86501)"
+       inkscape:export-filename="..\..\game\assets\ui\upgrades\upgrade_time_manipulator.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         id="path142"
+         style="fill:#fffc31;stroke-width:8.00001;stroke-linecap:square;stroke-miterlimit:5"
+         inkscape:transform-center-x="4.5183956e-05"
+         inkscape:transform-center-y="14.639705"
+         d="m -3656.5068,-562.17113 101.4269,-1e-5 -35.3444,45.46997 -15.3549,11.60961 -15.355,-11.60961 z"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         id="path144"
+         style="fill:#fffc31;fill-opacity:0.548017;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5"
+         inkscape:transform-center-y="-24.690253"
+         d="m -3570.3019,-390.2793 h -70.9547 l 18.7762,-126.42187 16.7012,-21.7196 16.7011,21.7196 z"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         id="path143"
+         style="fill:#fffc31;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5"
+         inkscape:transform-center-y="-8.125"
+         d="m -3500.3378,-390.27929 h -210.8829 l 105.4415,-27.59392 z"
+         sodipodi:nodetypes="cccc" />
+      <path
+         id="path141"
+         style="fill:none;fill-opacity:1;stroke:#fb89c8;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+         inkscape:transform-center-y="30.438463"
+         d="m -3711.2207,-643.12301 85.4903,126.42184 -85.4903,126.42188 h 210.8829 l -85.4903,-126.42188 85.4903,-126.42184 z"
+         sodipodi:nodetypes="ccccccc" />
+    </g>
+    <g
+       id="g105"
+       transform="translate(565.68543,-41.012194)"
+       inkscape:export-filename="..\..\game\assets\ui\upgrades\upgrade_projectile_count_up.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         id="rect15"
+         style="fill:#00f1f3;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:square;stroke-miterlimit:5;-inkscape-stroke:none"
+         d="m -3228.0342,-1081.3477 v 76.7925 h -76.7882 v 76.78808 h 76.7882 v 76.79246 h 76.7925 v -76.79246 h 76.7924 v -76.78808 h -76.7924 v -76.7925 z" />
+      <path
+         id="path11-1"
+         style="fill:#df2935;fill-opacity:1;stroke:none;stroke-width:4.00002;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+         d="m -3189.1551,-1032.149 c 2.6482,-13.359 -12.6466,-31.5867 -26.2626,-31.2985 -31.6409,0.6698 -63.4088,68.65455 -57.8965,75.24861 5.5425,6.56897 78.0051,-12.90621 84.1591,-43.95011 z"
+         sodipodi:nodetypes="aaca" />
+      <path
+         id="path98"
+         style="fill:#df2935;fill-opacity:1;stroke:none;stroke-width:4.00002;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+         d="m -3081.9714,-1032.2911 c 2.6482,-13.359 -12.6466,-31.5867 -26.2626,-31.2985 -31.6409,0.6698 -63.4088,68.65447 -57.8965,75.24858 5.5425,6.56897 78.0051,-12.90628 84.1591,-43.95008 z"
+         sodipodi:nodetypes="aaca" />
+      <path
+         id="path99"
+         style="fill:#df2935;fill-opacity:1;stroke:none;stroke-width:4.00002;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+         d="m -3226.2973,-931.22009 c 2.6482,-13.359 -12.6466,-31.5867 -26.2626,-31.2985 -31.6409,0.6698 -63.4088,68.65453 -57.8965,75.24864 5.5425,6.56897 78.0051,-12.90625 84.1591,-43.95014 z"
+         sodipodi:nodetypes="aaca" />
+      <path
+         id="path100"
+         style="fill:#df2935;fill-opacity:1;stroke:none;stroke-width:4.00002;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:5;stroke-opacity:1"
+         d="m -3107.4983,-923.73481 c 2.6482,-13.359 -12.6466,-31.5867 -26.2626,-31.2985 -31.6409,0.6698 -63.4088,68.65453 -57.8965,75.24864 5.5425,6.56897 78.0051,-12.90625 84.1591,-43.95014 z"
+         sodipodi:nodetypes="aaca" />
+    </g>
+    <path
+       id="rect145"
+       style="fill:#fafaee;stroke:none;stroke-width:7.99997;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
+       d="m -2918.6672,-564.7084 20.8345,-15.94761 20.8345,15.94761 v 54.725 54.725 l -20.8345,15.94762 -20.8345,-15.94762 v -54.725 z"
+       sodipodi:nodetypes="ccccccccc" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -4911,7 +5013,7 @@
        y="237.39784" />
     <g
        id="g258"
-       transform="matrix(2.2522442,0,0,2.2500004,-2858.6797,-232.19984)"
+       transform="matrix(2.2522442,0,0,2.2500004,-6329.4307,-2170.7203)"
        style="stroke-width:0.444223">
       <rect
          style="fill:#00f1f3;fill-opacity:1;stroke:#fafaee;stroke-width:0.444222;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1;paint-order:normal"
@@ -5399,5 +5501,18 @@
         </g>
       </g>
     </g>
+    <path
+       id="path145"
+       style="fill:#e13741;fill-opacity:1;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5"
+       inkscape:transform-center-x="8.7909755"
+       d="m -2925.1673,-538.31122 1e-4,56.65566 -52.7459,-28.32783 z"
+       inkscape:transform-center-y="-1e-05" />
+    <path
+       id="path146"
+       style="fill:#e13741;fill-opacity:1;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5"
+       inkscape:transform-center-x="-17.957717"
+       d="m -2870.498,-481.65554 v -28.32785 l -2e-4,-28.32785 53.8728,14.1639 2e-4,28.32785 z"
+       inkscape:transform-center-y="2e-05"
+       sodipodi:nodetypes="cccccc" />
   </g>
 </svg>

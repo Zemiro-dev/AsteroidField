@@ -1,15 +1,16 @@
 - [ ] Warp Sound
 - [ ] Star background
 - [x] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
+- [ ] Static Turret Enemy
 - [ ] Upgrade System
 	- [x] Level Up Tracker
 	- [x] When Level up pause and present upgrade screen
 	- [x] Run player damage through upgrade stats
 	- [x] run player movement through upgrade stats
-	- [ ] more art
+	- [x] more art
 	- [ ] more upgrades
-		- [ ] nav size
-		- [ ] proj spread reduction
+		- [x] proj spread reduction
+		- [x] time manipulator
 - [ ] Bolt Explosion Particles
 - [ ] Collision Improvements
 	- [ ] https://www.youtube.com/watch?v=nXrEX6j-Mws video with math for reference
