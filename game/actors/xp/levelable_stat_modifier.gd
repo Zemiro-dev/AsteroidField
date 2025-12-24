@@ -142,3 +142,9 @@ class FocusingCrystals extends LevelableStatModifier:
 		stats.projectile_damage_up += strength * 2
 		stats.projectile_radial_spread_modifier = clampf(stats.projectile_radial_spread_modifier - strength_weight(), .1, 1.)
 		return stats
+
+# TODO UPGRADE IDEAS
+# Sorting
+# Dependencies
+# Blackouts
+# +5 Projectiles, huge radial spread

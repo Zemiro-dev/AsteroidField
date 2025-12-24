@@ -3,6 +3,11 @@ extends Node
 
 var current_world: String = "res://world/debug/debug_world_a.tscn"
 var game_start_world := preload("res://world/debug/debug_world_a.tscn")
+var game_win_count := 0
+
+
+func _ready() -> void:
+	GlobalSignals.request_game_win.connect(func(): game_win_count += 1)
 
 
 func new_game():

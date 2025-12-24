@@ -1,6 +1,6 @@
 - [ ] Warp Sound
 - [ ] Star background
-- [ ] Timer :)
+- [x] Timer :)
 - [x] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
 - [ ] Static Turret Enemy
 - [ ] Upgrade System
@@ -10,6 +10,7 @@
 	- [x] run player movement through upgrade stats
 	- [x] more art
 	- [ ] more upgrades
+		- [ ] See Todos
 		- [x] proj spread reduction
 		- [x] time manipulator
 - [ ] Bolt Explosion Particles
@@ -21,6 +22,8 @@
 	- [ ] Secret Passage Asteroid
 	- [x] Mineral Rich Asteroids
 	- [x] Enemy Spawn System
+- [x] Upgrade Screen Jingle
+- [x] Victory Screen Jingle
 # Archive
 - [x] Collectibles
 	- [x] Health
