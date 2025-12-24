@@ -6,6 +6,8 @@ signal upgrade_selected(upgrade: LevelableStatModifier)
 @onready var margin_container: MarginContainer = $MarginContainer
 @onready var upgrade_button_container: HBoxContainer = $MarginContainer/CenterContainer/VBoxContainer/UpgradeButtonContainer
 @onready var description: RichTextLabel = $MarginContainer/CenterContainer/VBoxContainer/CenterContainer/UpgradeDescriptionBg/MarginContainer/Description
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 const UPGRADE_BUTTON: PackedScene = preload("res://ui/screens/upgrade/upgrade_button.tscn")
 
 @export var slide_time: float = .3
@@ -26,6 +28,7 @@ func _ready() -> void:
 
 func slide_in() -> Signal:
 	visible = true
+	audio_stream_player.play()
 	if slide_tween:
 		slide_tween.kill()
 		offset.y = get_offscreen_y_offset()

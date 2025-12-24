@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhblea01cgtii"]
+[gd_scene load_steps=5 format=3 uid="uid://bhblea01cgtii"]
 
 [ext_resource type="Script" uid="uid://br470rlbaqgop" path="res://ui/screens/upgrade_screen.gd" id="1_3knh7"]
 [ext_resource type="Theme" uid="uid://w84mrrl43phd" path="res://ui/theme/text-base.tres" id="2_3knh7"]
+[ext_resource type="AudioStream" uid="uid://qxyh2owfefxj" path="res://assets/jukebox/levelup.wav" id="4_3knh7"]
 [ext_resource type="Texture2D" uid="uid://bh1cujmkotynx" path="res://assets/ui/screens/upgrade/texture_level_up_message_bg.png" id="4_o8mbd"]
 
 [node name="UpgradeScreen" type="CanvasLayer"]
@@ -49,3 +50,7 @@ layout_mode = 2
 theme = ExtResource("2_3knh7")
 text = "Description: "
 scroll_active = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3knh7")
+volume_db = -10.0
