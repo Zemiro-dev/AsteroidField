@@ -185,6 +185,7 @@
   },
   "active": "ff1c368b13bfbee2",
   "lastOpenFiles": [
+    "game/world/debug/debug_world_a.tscn94680178924.tmp",
     "game/ui/theme/text-mono-base.tres",
     "game/assets/font/SpaceMono-Regular.ttf",
     "game/assets/font/SpaceMono-Italic.ttf",
@@ -195,7 +196,6 @@
     "assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf",
     "assets/fonts/Space_Mono/SpaceMono-Italic.ttf",
     "assets/fonts/Space_Mono/SpaceMono-Bold.ttf",
-    "assets/fonts/Space_Mono/OFL.txt",
     "game/assets/ui/upgrades/upgrade_focusing_crystal.png",
     "game/assets/ui/upgrades/upgrade_time_manipulator.png",
     "game/assets/ui/upgrades/upgrade_projectile_count_up.png",

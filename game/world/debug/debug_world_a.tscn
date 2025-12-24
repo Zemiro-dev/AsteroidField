@@ -2923,7 +2923,7 @@ position = Vector2(6676, 9878)
 position = Vector2(-2178, 10195)
 
 [node name="HunterSpawner29" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(-4758, 8432)
+position = Vector2(-521, 7104)
 
 [node name="HunterSpawner30" parent="Enemies" instance=ExtResource("11_k2vu7")]
 position = Vector2(11551, 9901)
@@ -2948,39 +2948,6 @@ position = Vector2(-3286, -5496)
 
 [node name="HunterSpawner37" parent="Enemies" instance=ExtResource("11_k2vu7")]
 position = Vector2(-6403, -3478)
-
-[node name="HunterSpawner38" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(-8907, 48)
-
-[node name="HunterSpawner39" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(-10235, 4366)
-
-[node name="HunterSpawner40" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(-10465, 9808)
-
-[node name="HunterSpawner41" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(-8702, 13282)
-
-[node name="HunterSpawner42" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(-6403, 16808)
-
-[node name="HunterSpawner43" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(-936, 18852)
-
-[node name="HunterSpawner44" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(2513, 17677)
-
-[node name="HunterSpawner45" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(7188, 18265)
-
-[node name="HunterSpawner46" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(12476, 14331)
-
-[node name="HunterSpawner47" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(11429, 2886)
-
-[node name="HunterSpawner48" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(-7242, 2572)
 
 [node name="HunterSpawner12" parent="Enemies" instance=ExtResource("11_k2vu7")]
 position = Vector2(5381, 2018)
