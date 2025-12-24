@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1xdbx3wf1dry"]
+[gd_scene load_steps=7 format=3 uid="uid://d1xdbx3wf1dry"]
 
 [ext_resource type="Script" uid="uid://tfgw2e8hokji" path="res://ui/screens/victory_screen.gd" id="1_6b5ts"]
 [ext_resource type="Texture2D" uid="uid://dmxv3jfc8aica" path="res://assets/ui/screens/upgrade/button_upgrade_specialstat_normal.png" id="4_8oti7"]
 [ext_resource type="Theme" uid="uid://cb3v64bjldyrq" path="res://ui/theme/text-huge.tres" id="4_tnqh4"]
 [ext_resource type="Texture2D" uid="uid://dafi286cb1s0a" path="res://assets/ui/screens/upgrade/button_upgrade_specialstat_focused.png" id="5_qao5v"]
 [ext_resource type="Theme" uid="uid://bhkdalbpqdc6a" path="res://ui/theme/text-large.tres" id="6_qao5v"]
+[ext_resource type="AudioStream" uid="uid://dkv80nlm5mu1s" path="res://assets/jukebox/victory.wav" id="6_tnqh4"]
 
 [node name="VictoryScreen" type="CanvasLayer"]
 process_mode = 3
@@ -46,3 +47,7 @@ grow_vertical = 2
 layout_mode = 2
 theme = ExtResource("6_qao5v")
 text = "Return to Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tnqh4")
+volume_db = -8.0

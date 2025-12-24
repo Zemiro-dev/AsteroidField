@@ -3,6 +3,7 @@ class_name VictoryScreen
 
 @onready var margin_container: MarginContainer = $MarginContainer
 @onready var reset_button: TextureButton = $MarginContainer/CenterContainer/VBoxContainer/ResetButton
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @export var slide_time: float = .3
 var slide_tween: Tween
 
@@ -17,6 +18,7 @@ func _ready() -> void:
 
 func slide_in() -> Signal:
 	visible = true
+	audio_stream_player.play()
 	if slide_tween:
 		slide_tween.kill()
 		offset.y = get_offscreen_y_offset()
