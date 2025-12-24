@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bg4856y75n6ij"]
+[gd_scene load_steps=11 format=3 uid="uid://bg4856y75n6ij"]
 
 [ext_resource type="Script" uid="uid://d20nrltt7bjd1" path="res://ui/player_resource_ui.gd" id="1_i4qh4"]
 [ext_resource type="Texture2D" uid="uid://c0q5vh17n5duo" path="res://assets/ui/health/boost_progress_bottom.png" id="2_lvkyc"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://da30fpclc38dx" path="res://assets/ui/boost/boost_progress_resource.png" id="6_37fqi"]
 [ext_resource type="Texture2D" uid="uid://bey35gsesqg1e" path="res://assets/ui/xp/xp_progress_bottom.png" id="7_kvoop"]
 [ext_resource type="Texture2D" uid="uid://dlyr6wlaa3c7f" path="res://assets/ui/xp/xp_progress_resource.png" id="8_86s2v"]
+[ext_resource type="Theme" uid="uid://xwss8bfpaeiq" path="res://ui/theme/text-mono-base.tres" id="9_h8h71"]
+[ext_resource type="Script" uid="uid://bqultxnjnyfd3" path="res://ui/stopwatch.gd" id="9_lvkyc"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_i4qh4")
@@ -50,3 +52,23 @@ offset_bottom = 278.0
 max_value = 40.0
 texture_under = ExtResource("7_kvoop")
 texture_progress = ExtResource("8_86s2v")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_top = -66.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="StopwatchLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("9_h8h71")
+vertical_alignment = 1
+script = ExtResource("9_lvkyc")

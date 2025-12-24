@@ -1,5 +1,6 @@
 - [ ] Warp Sound
 - [ ] Star background
+- [ ] Timer :)
 - [x] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
 - [ ] Static Turret Enemy
 - [ ] Upgrade System

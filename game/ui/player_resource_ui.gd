@@ -6,6 +6,7 @@ class_name PlayerResourceUi
 @onready var boost: TextureProgressBar = $Boost
 @onready var xp: TextureProgressBar = $Xp
 @onready var level: TextureProgressBar = $Level
+@onready var stopwatch_label: StopwatchLabel = $MarginContainer/StopwatchLabel
 
 
 func bind_to_player(player: Player):
@@ -33,3 +34,4 @@ func bind_to_player(player: Player):
 			else: 
 				boost.modulate = Color.WHITE
 	)
+	stopwatch_label.is_stopped = false
