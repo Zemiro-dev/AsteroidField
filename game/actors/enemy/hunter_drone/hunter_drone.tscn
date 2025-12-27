@@ -163,6 +163,7 @@ collision_mask = 5
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("13_mtkfv")
+will_knockback = true
 metadata/_custom_type_script = "uid://canb082p77b1f"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Hurtbox"]

@@ -24,13 +24,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#1d1d1c"
      inkscape:document-units="px"
-     inkscape:zoom="0.32"
-     inkscape:cx="2539.0625"
-     inkscape:cy="539.0625"
-     inkscape:window-width="2538"
-     inkscape:window-height="1472"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:zoom="0.45254834"
+     inkscape:cx="2000.8912"
+     inkscape:cy="1208.7107"
+     inkscape:window-width="2536"
+     inkscape:window-height="1470"
+     inkscape:window-x="1"
+     inkscape:window-y="1"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer8"
      showgrid="true"
@@ -4400,11 +4400,6 @@
          d="m -3107.4983,-923.73481 c 2.6482,-13.359 -12.6466,-31.5867 -26.2626,-31.2985 -31.6409,0.6698 -63.4088,68.65453 -57.8965,75.24864 5.5425,6.56897 78.0051,-12.90625 84.1591,-43.95014 z"
          sodipodi:nodetypes="aaca" />
     </g>
-    <path
-       id="rect145"
-       style="fill:#fafaee;stroke:none;stroke-width:7.99997;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1"
-       d="m -2918.6672,-564.7084 20.8345,-15.94761 20.8345,15.94761 v 54.725 54.725 l -20.8345,15.94762 -20.8345,-15.94762 v -54.725 z"
-       sodipodi:nodetypes="ccccccccc" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -5501,18 +5496,30 @@
         </g>
       </g>
     </g>
-    <path
-       id="path145"
-       style="fill:#e13741;fill-opacity:1;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5"
-       inkscape:transform-center-x="8.7909755"
-       d="m -2925.1673,-538.31122 1e-4,56.65566 -52.7459,-28.32783 z"
-       inkscape:transform-center-y="-1e-05" />
-    <path
-       id="path146"
-       style="fill:#e13741;fill-opacity:1;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5"
-       inkscape:transform-center-x="-17.957717"
-       d="m -2870.498,-481.65554 v -28.32785 l -2e-4,-28.32785 53.8728,14.1639 2e-4,28.32785 z"
-       inkscape:transform-center-y="2e-05"
-       sodipodi:nodetypes="cccccc" />
+    <g
+       id="g146"
+       inkscape:export-filename="..\..\game\assets\ui\upgrades\upgrade_focusing_crystal.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         id="rect145"
+         style="fill:#00f1f3;stroke:none;stroke-width:7.99997;stroke-linecap:square;stroke-miterlimit:5;stroke-opacity:1;fill-opacity:1"
+         d="m -2918.6672,-564.7084 20.8345,-15.94761 20.8345,15.94761 v 54.725 54.725 l -20.8345,15.94762 -20.8345,-15.94762 v -54.725 z"
+         sodipodi:nodetypes="ccccccccc" />
+      <path
+         id="path145"
+         style="fill:#e13741;fill-opacity:1;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5"
+         inkscape:transform-center-x="8.7909755"
+         d="m -2925.1673,-536.31122 1e-4,52.65566 -52.7459,-26.32783 z"
+         inkscape:transform-center-y="-1e-05"
+         sodipodi:nodetypes="cccc" />
+      <path
+         id="path146"
+         style="fill:#e13741;fill-opacity:1;stroke-width:8;stroke-linecap:square;stroke-miterlimit:5"
+         inkscape:transform-center-x="-17.957717"
+         d="m -2870.498,-481.65554 v -28.32785 l -2e-4,-28.32785 53.8727,-3.8361 4e-4,64.32785 z"
+         inkscape:transform-center-y="2e-05"
+         sodipodi:nodetypes="cccccc" />
+    </g>
   </g>
 </svg>

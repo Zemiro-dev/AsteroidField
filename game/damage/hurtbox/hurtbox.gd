@@ -22,7 +22,8 @@ func _on_body_entered(body: Node2D) -> void:
 		on_damage_dealt.emit(body, damage)
 		var steerable: BaseSteerable = GameActor.get_steerable(body)
 		if steerable:
-			var knockback_vector: Vector2 = Vector2(raw_knockback_vector).rotated(
-				global_position.angle_to_point(body.global_position)
-			)
-			steerable.knockback(knockback_vector)
+			if will_knockback:
+				var knockback_vector: Vector2 = Vector2(raw_knockback_vector).rotated(
+					global_position.angle_to_point(body.global_position)
+				)
+				steerable.knockback(knockback_vector)

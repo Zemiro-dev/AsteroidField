@@ -1,4 +1,4 @@
-[gd_scene load_steps=310 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=311 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="15_dse6n"]
 [ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="16_g36r6"]
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
+[ext_resource type="PackedScene" uid="uid://c14kgjhddxhi6" path="res://projectiles/laser/laser_cannon.tscn" id="18_6cor7"]
 [ext_resource type="PackedScene" uid="uid://1f8ltc8r7lab" path="res://actors/destructible/worthless_large_destructible.tscn" id="18_ajp5a"]
 [ext_resource type="PackedScene" uid="uid://co6p4i708qfli" path="res://actors/destructible/xp_rich_destructible.tscn" id="18_qi3qa"]
 [ext_resource type="PackedScene" uid="uid://fsyucuwjstyu" path="res://actors/destructible/worthless_small_destructible.tscn" id="19_4n2ey"]
@@ -3014,6 +3015,12 @@ position = Vector2(1340, 11746)
 
 [node name="HunterSpawner24" parent="Enemies" instance=ExtResource("11_k2vu7")]
 position = Vector2(2874, 12062)
+
+[node name="LaserCannon" parent="Enemies" instance=ExtResource("18_6cor7")]
+position = Vector2(-2249.62, 2116.63)
+laser_pool_count = 6
+target_lock_time = 0.1
+activation_cooldown = 0.5
 
 [node name="Destructibles" type="Node2D" parent="."]
 
