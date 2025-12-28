@@ -27,9 +27,14 @@ signal on_state_change(prev: LaserState, current: LaserState)
 @export var max_length := 500.0
 ## Offset to apply to the hurtbox position, in pixels
 @export var hurtbox_offset := Vector2.ZERO
+@export var beam_head_offset := Vector2.ZERO
+@export var beam_end_offset := Vector2.ZERO
 ## Time to show warning before activating laser, in seconds
 @export var warning_time_max := 2.
 var warning_time_remaining := 0.
+## Max time for the laser to stay in the active state in seconds, if
+## 0.0 then the cast time is infinite and the state must be switched to cooldown
+## manually
 @export var cast_time_max := 5.
 var cast_time_remaining := 0.
 @export var cooldown_time_max := 1.
@@ -39,6 +44,7 @@ var cooldown_time_remaining := 0.
 ## Max beam width
 @export var beam_width_max := 20.
 var beam_tween: Tween
+const VISIBILITY_MARGIN := 20.
 
 
 func _ready() -> void:
@@ -52,8 +58,7 @@ func _physics_process(delta: float) -> void:
 			if warning_time_remaining <= 0.:
 				state = LaserState.ACTIVE
 		LaserState.ACTIVE:
-			_process_beamcast(delta)
-			_process_beam()
+			_update_beam_effects(_process_beamcast(delta))
 			if cast_time_max > 0:
 				cast_time_remaining -= delta
 				if cast_time_remaining <= 0.:
@@ -87,7 +92,7 @@ func set_state(new_value: LaserState) -> void:
 	on_state_change.emit(prev, state)
 
 
-func _process_beamcast(delta: float) -> void:
+func _process_beamcast(delta: float) -> Vector2:
 		beam_cast.target_position.x = move_toward(
 			beam_cast.target_position.x,
 			max_length,
@@ -95,26 +100,43 @@ func _process_beamcast(delta: float) -> void:
 		)
 		beam_cast.force_raycast_update()
 		if beam_cast.is_colliding():
-			beam_cast.target_position.x = to_local(beam_cast.get_collision_point()).x
+			var collision_point = Vector2(to_local(beam_cast.get_collision_point()).x, 0.0)
+			beam_cast.target_position.x = collision_point.x
+			return collision_point
+		return beam_cast.target_position
 
 
-func _process_beam() -> void:
-	var laser_head_position: Vector2 = beam_cast.target_position
-	
-	beam.points[1] = laser_head_position
-	beam_head_particles.position = laser_head_position
-	beam_end_particles.position = laser_head_position
-	beam_width_particles.position = laser_head_position * .5
-	beam_width_particles.process_material.emission_box_extents.x = laser_head_position.length() * .5
-	hurtbox.position = laser_head_position * .5 + hurtbox_offset
+func _update_beam_effects(end_position: Vector2):
+	var half_end_position := end_position * .5
+	var half_length := half_end_position.length()
+	beam.points[1] = end_position
+	beam_head_particles.process_material.emission_shape_offset = Vector3(
+		end_position.x + beam_head_offset.x,
+		end_position.y + beam_head_offset.y, 
+	0.0)
+	beam_end_particles.process_material.emission_shape_offset = Vector3(
+		end_position.x + beam_end_offset.x,
+		end_position.y + beam_end_offset.y,
+	0.0)
+	beam_width_particles.process_material.emission_shape_offset = Vector3(half_end_position.x, half_end_position.y, 0.0)
+	beam_width_particles.process_material.emission_box_extents.x = half_length
+	hurtbox.position = half_end_position + hurtbox_offset
 	hurtbox_shape.shape.radius = beam.width * .5
-	hurtbox_shape.shape.height = laser_head_position.length()
+	hurtbox_shape.shape.height = half_length * 2.
 
 
 func _activate_beam() -> void:
 	if (!is_node_ready()): return
+	_update_beam_effects(Vector2.ZERO)
 	for particle in beam_particles:
-		particle.emitting = true
+		if particle is GPUParticles2D:
+			particle.emitting = true
+			var origin = -max_length - VISIBILITY_MARGIN
+			var side_length = max_length * 2.0
+			particle.visibility_rect = Rect2(
+				origin, origin,
+				side_length, side_length
+			)
 	hurtbox.monitoring = true
 	cast_time_remaining = cast_time_max
 	beam.show()
@@ -126,7 +148,8 @@ func _activate_beam() -> void:
 func _deactivate_beam() -> void:
 	if (!is_node_ready()): return
 	for particle in beam_particles:
-		particle.emitting = false
+		if particle is GPUParticles2D:
+			particle.emitting = false
 	hurtbox.monitoring = false
 	hurtbox_shape.shape.height = 0.
 	beam_cast.target_position = Vector2.ZERO

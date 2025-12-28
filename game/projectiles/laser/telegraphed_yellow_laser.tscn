@@ -49,6 +49,7 @@ curve = SubResource("Curve_c4nbb")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hnkk3"]
 particle_flag_disable_z = true
+emission_shape_offset = Vector3(250, 0, 0)
 emission_shape = 3
 emission_box_extents = Vector3(250, 20, 1)
 spread = 180.0
@@ -81,11 +82,12 @@ color_ramp = SubResource("GradientTexture1D_3pxcl")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1kqge"]
 particle_flag_disable_z = true
+emission_shape_offset = Vector3(510, 0, 0)
 emission_shape = 1
-emission_sphere_radius = 14.0
+emission_sphere_radius = 10.0
 spread = 30.0
-initial_velocity_min = -50.0
-initial_velocity_max = -1.0
+initial_velocity_min = -200.0
+initial_velocity_max = -50.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.5
 scale_max = 0.5
@@ -99,32 +101,33 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_3y5yq")
 
 [sub_resource type="Curve" id="Curve_b4i8s"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.493243, 0.858476), 1.55152, 1.55152, 0, 0, Vector2(0.993243, 0.140746), -5.81821, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.172297, 1), 0.374027, 0.374027, 0, 0, Vector2(0.996622, 0.0800934), 0.181347, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_3pxcl"]
 curve = SubResource("Curve_b4i8s")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3y5yq"]
-emission_shape_offset = Vector3(30, 0, 0)
-spread = 20.0
-initial_velocity_min = -100.0
-initial_velocity_max = -100.0
+emission_shape_offset = Vector3(520, 0, 0)
+spread = 10.0
+initial_velocity_min = -600.0
+initial_velocity_max = -500.0
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_3pxcl")
 color_ramp = SubResource("GradientTexture1D_2fd6v")
 
 [node name="TelegraphedYellowLaser" type="Node2D"]
+physics_interpolation_mode = 2
 script = ExtResource("1_1kqge")
 hurtbox_offset = Vector2(10, 0)
+beam_head_offset = Vector2(20, 0)
+beam_end_offset = Vector2(10, 0)
 
 [node name="BeamCast" type="RayCast2D" parent="."]
-physics_interpolation_mode = 2
 target_position = Vector2(0, 0)
 collision_mask = 3
 
 [node name="Hurtbox" parent="." instance=ExtResource("5_o4exf")]
-physics_interpolation_mode = 2
 position = Vector2(260, 0)
 rotation = 1.57079
 collision_layer = 0
@@ -138,15 +141,14 @@ will_knockback = true
 shape = SubResource("CapsuleShape2D_c4nbb")
 
 [node name="WarningParticles" type="GPUParticles2D" parent="."]
-physics_interpolation_mode = 2
 emitting = false
 amount = 32
 texture = ExtResource("2_hnkk3")
+visibility_rect = Rect2(-400, -400, 800, 800)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_2fd6v")
 
 [node name="Beam" type="Line2D" parent="."]
-physics_interpolation_mode = 2
 visible = false
 points = PackedVector2Array(0, 0, 500, 0)
 width = 0.0
@@ -156,37 +158,35 @@ end_cap_mode = 2
 antialiased = true
 
 [node name="BeamWidthParticles" type="GPUParticles2D" parent="."]
-physics_interpolation_mode = 2
-position = Vector2(250, 0)
 emitting = false
 amount = 50
 texture = ExtResource("2_hnkk3")
 lifetime = 0.5
+visibility_rect = Rect2(-520, -520, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_hnkk3")
 
 [node name="BeamStartParticles" type="GPUParticles2D" parent="."]
-physics_interpolation_mode = 2
 emitting = false
 amount = 16
 texture = ExtResource("2_hnkk3")
 lifetime = 0.5
+visibility_rect = Rect2(-520, -520, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_woyya")
 
 [node name="BeamEndParticles" type="GPUParticles2D" parent="."]
-physics_interpolation_mode = 2
-position = Vector2(500, 0)
 emitting = false
-amount = 32
+amount = 50
 texture = ExtResource("2_hnkk3")
+lifetime = 0.5
+visibility_rect = Rect2(-520, -520, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_1kqge")
 
 [node name="BeamHeadParticles" type="GPUParticles2D" parent="."]
-physics_interpolation_mode = 2
-position = Vector2(500, 0)
 emitting = false
-amount = 32
+amount = 16
 texture = ExtResource("3_c4nbb")
-lifetime = 0.8
+lifetime = 0.2
 explosiveness = 0.1
+visibility_rect = Rect2(-520, -520, 1000, 1000)
 draw_order = 2
 process_material = SubResource("ParticleProcessMaterial_3y5yq")

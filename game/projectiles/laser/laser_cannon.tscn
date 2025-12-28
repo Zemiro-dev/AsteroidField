@@ -13,6 +13,7 @@ monitorable = false
 script = ExtResource("1_wcbwx")
 laser_pivot_offset = Vector2(50, 0)
 laser_pool_count = 3
+laser_cast_time_max = 0.5
 target_lock_time = 2.0
 activation_cooldown = 0.1
 
