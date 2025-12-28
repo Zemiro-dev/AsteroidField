@@ -1,4 +1,3 @@
-@tool
 extends Area2D
 class_name LaserCannon
 
@@ -7,6 +6,8 @@ enum FiringStyle { AT_REPEATING, ROTATING }
 
 @onready var laser_container: Node2D = $LaserContainer
 
+## Will this cannon fire lasers
+@export var active := true
 ## The firing style this laser cannon should use.
 @export var firing_style := FiringStyle.AT_REPEATING
 ## Offset to place new lasers at
@@ -22,6 +23,12 @@ enum FiringStyle { AT_REPEATING, ROTATING }
 var lasers: Array[TelegraphedLaser] = [] 
 var laser_pivots: Array[Node2D] = []
 
+## Initial rotation to use when rotating
+@export var initial_rotation := 0.
+@onready var laser_rotation := initial_rotation
+@export var laser_rotation_step := PI / 4
+@export var activation_laser_count: int = 1
+
 class Target extends RefCounted:
 	## The actual target body
 	var body: Node2D
@@ -32,7 +39,7 @@ class Target extends RefCounted:
 		age = _age
 
 ## Time after a target has entered before they can be fired upon, in seconds
-@export var target_lock_time := 5.
+@export var target_lock_time := 2.
 ## Time between activations, in seconds
 @export var activation_cooldown := 0.
 var activation_cooldown_remaining := 0.
@@ -62,7 +69,7 @@ func _physics_process(delta: float) -> void:
 		if target.age < target_lock_time:
 			target.age += delta
 		else:
-			if activation_cooldown_remaining <= 0.:
+			if activation_cooldown_remaining <= 0. && active:
 				fire_laser(target.body)
 
 
@@ -71,17 +78,44 @@ func fire_laser(target: Node2D) -> void:
 	match (firing_style):
 		FiringStyle.AT_REPEATING:
 			fire_success = fire_laser_at_repeating(target)
+		FiringStyle.ROTATING:
+			fire_success = fire_laser_rotating(target)
 	if fire_success:
 		activation_cooldown_remaining = activation_cooldown
 
 
 func fire_laser_at_repeating(target: Node2D) -> bool:
+	var inactive_laser_indexes := get_inactive_lasers_indexes(activation_laser_count)
+	for i in inactive_laser_indexes:
+		laser_pivots[i].rotation = (target.global_position - global_position).angle()
+		lasers[i].state = TelegraphedLaser.LaserState.WARNING
+	return !inactive_laser_indexes.is_empty()
+
+
+func fire_laser_rotating(_target: Node2D) -> bool:
+	var inactive_laser_indexes := get_inactive_lasers_indexes(activation_laser_count)
+	if inactive_laser_indexes.size() == activation_laser_count:
+		for i in range(activation_laser_count):
+			var laser_index := inactive_laser_indexes[i]
+			laser_pivots[laser_index].rotation = laser_rotation + (TAU / activation_laser_count * i)
+			lasers[laser_index].state = TelegraphedLaser.LaserState.WARNING
+		laser_rotation += laser_rotation_step
+		return true
+	return false
+
+
+## Looks for the specific number of inactive laser and if found
+## returns their indexes. If the proper number cannot be found
+## an empty array is returned
+func get_inactive_lasers_indexes(count: int) -> Array[int]:
+	var inactive_lasers: Array[int] = []
 	for i in range(lasers.size()):
 		if lasers[i].state == TelegraphedLaser.LaserState.INACTIVE:
-			laser_pivots[i].rotation = (target.global_position - global_position).angle()
-			lasers[i].state = TelegraphedLaser.LaserState.WARNING
-			return true
-	return false
+			inactive_lasers.append(i)
+		if inactive_lasers.size() >= count:
+			return inactive_lasers
+	return []
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if !targets.any(func(target: Target): target.body == body):

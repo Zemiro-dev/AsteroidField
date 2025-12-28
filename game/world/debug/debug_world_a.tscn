@@ -1,4 +1,4 @@
-[gd_scene load_steps=311 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=313 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
 [ext_resource type="PackedScene" uid="uid://c14kgjhddxhi6" path="res://projectiles/laser/laser_cannon.tscn" id="18_6cor7"]
 [ext_resource type="PackedScene" uid="uid://1f8ltc8r7lab" path="res://actors/destructible/worthless_large_destructible.tscn" id="18_ajp5a"]
+[ext_resource type="Texture2D" uid="uid://belcp0sxesfx" path="res://assets/projectiles/yellow_laser_cap_particle.png" id="18_gm4il"]
 [ext_resource type="PackedScene" uid="uid://co6p4i708qfli" path="res://actors/destructible/xp_rich_destructible.tscn" id="18_qi3qa"]
 [ext_resource type="PackedScene" uid="uid://fsyucuwjstyu" path="res://actors/destructible/worthless_small_destructible.tscn" id="19_4n2ey"]
 [ext_resource type="PackedScene" uid="uid://j2rqvedttth7" path="res://collectibles/collectible_xp_large.tscn" id="19_dse6n"]
@@ -156,6 +157,9 @@ resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1thj5"]
+radius = 628.08
 
 [sub_resource type="Resource" id="Resource_u2txi"]
 resource_local_to_scene = true
@@ -3016,11 +3020,20 @@ position = Vector2(1340, 11746)
 [node name="HunterSpawner24" parent="Enemies" instance=ExtResource("11_k2vu7")]
 position = Vector2(2874, 12062)
 
-[node name="LaserCannon" parent="Enemies" instance=ExtResource("18_6cor7")]
+[node name="Sprite2D" type="Sprite2D" parent="Enemies"]
 position = Vector2(-2249.62, 2116.63)
-laser_pool_count = 6
-target_lock_time = 0.1
-activation_cooldown = 0.5
+texture = ExtResource("18_gm4il")
+
+[node name="LaserCannon" parent="Enemies/Sprite2D" instance=ExtResource("18_6cor7")]
+firing_style = 1
+laser_pivot_offset = Vector2(20, 0)
+laser_pool_count = 4
+laser_cast_time_max = 2.0
+activation_laser_count = 4
+activation_cooldown = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Sprite2D/LaserCannon"]
+shape = SubResource("CircleShape2D_1thj5")
 
 [node name="Destructibles" type="Node2D" parent="."]
 
