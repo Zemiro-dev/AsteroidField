@@ -5,6 +5,10 @@
 - [ ] self defense attacks from base
 - [ ] Bases can summon help
 - [ ] change upgrades to validate stats at end
+- [ ] laser
+	- [ ] laser duration sound
+	- [ ] laser hit sound *zap*
+	- [ ] fix knockback direction
 - [x] Timer :)
 - [x] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
 - [ ] Static Turret Enemy

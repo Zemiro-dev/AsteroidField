@@ -3027,10 +3027,10 @@ texture = ExtResource("18_gm4il")
 [node name="LaserCannon" parent="Enemies/Sprite2D" instance=ExtResource("18_6cor7")]
 firing_style = 1
 laser_pivot_offset = Vector2(20, 0)
-laser_pool_count = 4
-laser_cast_time_max = 2.0
+laser_pool_count = 8
+laser_cast_time_max = 1.0
 activation_laser_count = 4
-activation_cooldown = 4.0
+activation_cooldown = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Sprite2D/LaserCannon"]
 shape = SubResource("CircleShape2D_1thj5")
