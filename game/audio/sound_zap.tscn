@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkm2ffhkt238o"]
+
+[ext_resource type="PackedScene" uid="uid://dhrhl1wo7agsm" path="res://audio/extended_audio_stream_player_2d.tscn" id="1_ayg70"]
+[ext_resource type="AudioStream" uid="uid://d0x3866dvmkf" path="res://assets/jukebox/zap.ogg" id="2_ayg70"]
+
+[node name="SoundZap" instance=ExtResource("1_ayg70")]
+stream = ExtResource("2_ayg70")
+one_shot = true

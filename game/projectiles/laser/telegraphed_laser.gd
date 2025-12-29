@@ -18,6 +18,8 @@ signal on_state_change(prev: LaserState, current: LaserState)
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var hurtbox_shape: CollisionShape2D = $Hurtbox/HurtboxShape
 @onready var beam_particles := [beam_width_particles, beam_start_particles, beam_end_particles, beam_head_particles]
+@onready var laser_loop_player: ExtendedAudioStreamPlayer2D = $LaserLoopPlayer
+
 
 ## The current state of the beamcast
 @export var state := LaserState.INACTIVE: set = set_state
@@ -45,10 +47,20 @@ var cooldown_time_remaining := 0.
 @export var beam_width_max := 20.
 var beam_tween: Tween
 const VISIBILITY_MARGIN := 20.
+@export_range(-80, 24, 1, "suffix:dB") var laser_loop_max_volumn_db: float = 0.0
+var laser_loop_min_volumn_db: float = -60.0
+var sound_tween: Tween
+
+@export var zap_sound_scene := preload("res://audio/sound_zap.tscn")
 
 
 func _ready() -> void:
 	set_state(state) # ensure code requiring ready is called
+	hurtbox.on_damage_dealt.connect(
+		func (_t: Node2D, _d: int):
+			GlobalSignals.request_world_sound_spawn.emit(self, zap_sound_scene)
+			GlobalSignals.request_camera_shake.emit(.2, 500)
+	)
 
 
 func _physics_process(delta: float) -> void:
@@ -143,6 +155,10 @@ func _activate_beam() -> void:
 	if beam_tween: beam_tween.kill()
 	beam_tween = beam.create_tween()
 	beam_tween.tween_property(beam, "width", beam_width_max, growth_time).from(0.0)
+	laser_loop_player.play_at_random_pitch()
+	if sound_tween: sound_tween.kill()
+	sound_tween = laser_loop_player.create_tween()
+	sound_tween.tween_property(laser_loop_player, "volume_db", laser_loop_max_volumn_db, growth_time * 2.).from(laser_loop_min_volumn_db)
 
 
 func _deactivate_beam() -> void:
@@ -157,3 +173,7 @@ func _deactivate_beam() -> void:
 	beam_tween = beam.create_tween()
 	beam_tween.tween_property(beam, "width", 0.0, growth_time).from_current()
 	beam_tween.tween_callback(beam.hide)
+	if sound_tween: sound_tween.kill()
+	sound_tween = laser_loop_player.create_tween()
+	sound_tween.tween_property(laser_loop_player, "volume_db", laser_loop_min_volumn_db, growth_time ).from_current()
+	sound_tween.tween_callback(laser_loop_player.stop)

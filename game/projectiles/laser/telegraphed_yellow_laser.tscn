@@ -1,14 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://63fkskapj53k"]
+[gd_scene load_steps=26 format=3 uid="uid://63fkskapj53k"]
 
 [ext_resource type="Script" uid="uid://b656gjl3rhixd" path="res://projectiles/laser/telegraphed_laser.gd" id="1_1kqge"]
 [ext_resource type="Texture2D" uid="uid://dhgsmjudl26v5" path="res://assets/shapes/yellow_circle_dark_outline_small.png" id="2_hnkk3"]
 [ext_resource type="Texture2D" uid="uid://belcp0sxesfx" path="res://assets/projectiles/yellow_laser_cap_particle.png" id="3_c4nbb"]
+[ext_resource type="PackedScene" uid="uid://dhrhl1wo7agsm" path="res://audio/extended_audio_stream_player_2d.tscn" id="5_c4nbb"]
 [ext_resource type="PackedScene" uid="uid://2wb1428xgagf" path="res://damage/hurtbox/hurtbox.tscn" id="5_o4exf"]
+[ext_resource type="AudioStream" uid="uid://c3nkn6s3t2hr" path="res://assets/jukebox/laser_loop.ogg" id="6_c4nbb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4nbb"]
 resource_local_to_scene = true
-radius = 0.0
-height = 0.0
+height = 500.0
 
 [sub_resource type="Gradient" id="Gradient_c4nbb"]
 offsets = PackedFloat32Array(0, 0.877551, 1)
@@ -126,6 +127,7 @@ color_ramp = SubResource("GradientTexture1D_2fd6v")
 [node name="TelegraphedYellowLaser" type="Node2D"]
 physics_interpolation_mode = 2
 script = ExtResource("1_1kqge")
+state = 2
 hurtbox_offset = Vector2(10, 0)
 beam_head_offset = Vector2(20, 0)
 beam_end_offset = Vector2(10, 0)
@@ -133,7 +135,7 @@ cast_time_max = 0.0
 cooldown_time_max = 0.5
 
 [node name="BeamCast" type="RayCast2D" parent="."]
-target_position = Vector2(0, 0)
+target_position = Vector2(500, 0)
 collision_mask = 3
 
 [node name="Hurtbox" parent="." instance=ExtResource("5_o4exf")]
@@ -141,7 +143,6 @@ position = Vector2(260, 0)
 rotation = 1.57079
 collision_layer = 0
 collision_mask = 2
-monitoring = false
 monitorable = false
 damage = 3
 will_knockback = true
@@ -157,16 +158,14 @@ visibility_rect = Rect2(-400, -400, 800, 800)
 process_material = SubResource("ParticleProcessMaterial_2fd6v")
 
 [node name="Beam" type="Line2D" parent="."]
-visible = false
 points = PackedVector2Array(0, 0, 500, 0)
-width = 0.0
+width = 20.0
 gradient = SubResource("Gradient_o4exf")
 begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
 
 [node name="BeamWidthParticles" type="GPUParticles2D" parent="."]
-emitting = false
 amount = 50
 texture = ExtResource("2_hnkk3")
 lifetime = 0.5
@@ -174,7 +173,6 @@ visibility_rect = Rect2(-520, -520, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_hnkk3")
 
 [node name="BeamStartParticles" type="GPUParticles2D" parent="."]
-emitting = false
 amount = 16
 texture = ExtResource("2_hnkk3")
 lifetime = 0.5
@@ -182,7 +180,6 @@ visibility_rect = Rect2(-520, -520, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_woyya")
 
 [node name="BeamEndParticles" type="GPUParticles2D" parent="."]
-emitting = false
 amount = 50
 texture = ExtResource("2_hnkk3")
 lifetime = 0.5
@@ -190,7 +187,6 @@ visibility_rect = Rect2(-520, -520, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_1kqge")
 
 [node name="BeamHeadParticles" type="GPUParticles2D" parent="."]
-emitting = false
 amount = 16
 texture = ExtResource("3_c4nbb")
 lifetime = 0.2
@@ -198,3 +194,7 @@ explosiveness = 0.1
 visibility_rect = Rect2(-520, -520, 1000, 1000)
 draw_order = 2
 process_material = SubResource("ParticleProcessMaterial_3y5yq")
+
+[node name="LaserLoopPlayer" parent="." instance=ExtResource("5_c4nbb")]
+stream = ExtResource("6_c4nbb")
+volume_db = -60.0
