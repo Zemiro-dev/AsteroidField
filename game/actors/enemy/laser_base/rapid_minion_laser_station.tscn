@@ -50,4 +50,5 @@ target_lock_time = 0.5
 activation_cooldown = 0.25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaserCannon" index="1"]
+visible = false
 shape = SubResource("CircleShape2D_1rhe2")

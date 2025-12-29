@@ -61,7 +61,7 @@ class ProjectileAttackSpeedUp extends LevelableStatModifier:
 		type = LevelableStatModifierType.WEAPON_STAT
 		texture_path = "res://assets/ui/upgrades/upgrade_attack_speed.png"
 		description = 'Increases attack speed per strength'
-		max_strength = 5
+		max_strength = 8
 
 
 	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
@@ -118,13 +118,13 @@ class TimeManipulator extends LevelableStatModifier:
 		type = LevelableStatModifierType.SPECIAL_STAT
 		texture_path = "res://assets/ui/upgrades/upgrade_time_manipulator.png"
 		description = 'Your boost is weaker, but can now manipulate time.'
-		max_strength = 1
+		max_strength = 3
 
 
 	func modify(levelable: Levelable, stats: LevelableStats) -> LevelableStats:
-		stats.boost_power_up -= 1.
 		stats.slow_time_on_boost = true
-		stats.slow_time_on_boost_intensity = .5
+		stats.boost_power_up -= 1 + .75 * strength_weight()
+		stats.slow_time_on_boost_intensity = 1. - .75 * strength_weight()
 		return stats
 
 

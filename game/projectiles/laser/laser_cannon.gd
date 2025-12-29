@@ -118,6 +118,8 @@ func fire_laser_rotating(_target: Node2D) -> bool:
 			laser_pivots[laser_index].rotation = laser_rotation + (TAU / activation_laser_count * i)
 			lasers[laser_index].state = TelegraphedLaser.LaserState.WARNING
 		laser_rotation += laser_rotation_step
+		if laser_rotation > TAU:
+			laser_rotation -= TAU
 		return true
 	return false
 

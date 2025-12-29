@@ -38,7 +38,7 @@ on_death_handler = SubResource("Resource_dxg3d")
 tween_damaged = SubResource("Resource_h4gsb")
 
 [node name="CollisionPolygon2D" parent="." index="0"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 
 [node name="Body" parent="." index="1"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)

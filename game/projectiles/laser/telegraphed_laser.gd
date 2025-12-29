@@ -69,6 +69,7 @@ func _physics_process(delta: float) -> void:
 	match (state):
 		LaserState.WARNING:
 			warning_time_remaining -= delta
+			_update_warning_with_beamcast()
 			if warning_time_remaining <= 0.:
 				state = LaserState.ACTIVE
 		LaserState.ACTIVE:
@@ -95,10 +96,7 @@ func set_state(new_value: LaserState) -> void:
 	## Enter State Handlers
 	match (new_value):
 		LaserState.WARNING:
-			var pm := warning_particles.process_material 
-			if pm is ParticleProcessMaterial:
-				pm.linear_accel_max = warning_linear_accel
-				pm.linear_accel_min = warning_linear_accel
+			_update_warning_with_beamcast()
 			_set_visibility_rect(warning_particles)
 			warning_particles.emitting = true
 			warning_time_remaining = warning_time_max
@@ -109,6 +107,20 @@ func set_state(new_value: LaserState) -> void:
 	var prev := state
 	state = new_value
 	on_state_change.emit(prev, state)
+
+
+func _update_warning_with_beamcast() -> void:	
+	beam_cast.target_position.x = max_length
+	beam_cast.force_raycast_update()
+	var length_ratio := 1.0
+	if beam_cast.is_colliding():
+		var real_length = to_local(beam_cast.get_collision_point()).x
+		length_ratio = real_length / max_length
+	var pm := warning_particles.process_material 
+	if pm is ParticleProcessMaterial:
+		pm.linear_accel_max = warning_linear_accel * length_ratio
+		pm.linear_accel_min = warning_linear_accel * length_ratio
+
 
 
 func _process_beamcast(delta: float) -> Vector2:
@@ -146,6 +158,7 @@ func _update_beam_effects(end_position: Vector2):
 
 func _activate_beam() -> void:
 	if (!is_node_ready()): return
+	beam_cast.target_position = Vector2.ZERO
 	_update_beam_effects(Vector2.ZERO)
 	for particle in beam_particles:
 		if particle is GPUParticles2D:
