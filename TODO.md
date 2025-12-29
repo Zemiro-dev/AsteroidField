@@ -2,16 +2,16 @@
 - [ ] Star background
 - [ ] pause screen reset
 - [ ] health bar for last hit
-- [ ] self defense attacks from base
+- [x] self defense attacks from base
 - [ ] Bases can summon help
 - [ ] change upgrades to validate stats at end
 - [ ] laser
-	- [ ] laser duration sound
-	- [ ] laser hit sound *zap*
+	- [x] laser duration sound
+	- [x] laser hit sound *zap*
 	- [ ] fix knockback direction
 - [x] Timer :)
 - [x] Remember the last spawn point and use some kinda of rng motion to keep things coming from the same direction
-- [ ] Static Turret Enemy
+- [x] Static Turret Enemy
 - [ ] Upgrade System
 	- [x] Level Up Tracker
 	- [x] When Level up pause and present upgrade screen
