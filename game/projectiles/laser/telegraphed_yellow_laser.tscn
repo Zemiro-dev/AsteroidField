@@ -133,7 +133,6 @@ hurtbox_offset = Vector2(10, 0)
 beam_head_offset = Vector2(20, 0)
 beam_end_offset = Vector2(10, 0)
 warning_time_max = 100.0
-warning_linear_accel = null
 cast_time_max = 0.0
 cooldown_time_max = 0.5
 

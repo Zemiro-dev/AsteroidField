@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODO.md",
+                "file": "scratch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "scratch"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.5
+    "width": 248.5,
+    "collapsed": true
   },
   "right": {
     "id": "3caf8c8b3d671c45",
@@ -109,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TODO.md",
+                "file": "scratch.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for TODO"
+              "title": "Backlinks for scratch"
             }
           },
           {
@@ -170,7 +171,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 271.5
+    "width": 271.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,19 +187,19 @@
   },
   "active": "ff1c368b13bfbee2",
   "lastOpenFiles": [
-    "game/world/debug/debug_world_a.tscn14339900798.tmp",
-    "game/actors/player/player.tscn14323095974.tmp",
-    "game/world/debug/debug_world_a.tscn13728150795.tmp",
-    "game/world/debug/debug_world_a.tscn13677091534.tmp",
-    "game/actors/player/player.tscn13502673033.tmp",
-    "game/world/debug/debug_world_a.tscn13502514738.tmp",
-    "game/actors/player/player.tscn13499971401.tmp",
-    "game/world/debug/debug_world_a.tscn13459859788.tmp",
-    "game/world/debug/debug_world_a.tscn13425143340.tmp",
-    "game/world/debug/debug_world_a.tscn13420470447.tmp",
-    "game/world/debug/debug_world_a.tscn13070321002.tmp",
-    "scratch.md",
+    "game/ui/screens/screen_boot.gd3321217590.tmp",
+    "game/autoloads/jukebox.gd3321189641.tmp",
+    "game/ui/screens/screen_boot.gd3276598025.tmp",
+    "game/ui/screens/screen_boot.gd3260235676.tmp",
+    "game/ui/screens/screen_boot.gd3065058141.tmp",
+    "game/ui/screens/screen_boot.gd2432119318.tmp",
+    "game/ui/screens/screen_boot.gd2237018721.tmp",
+    "game/ui/screens/screen_boot.gd2110800703.tmp",
+    "game/ui/screens/screen_main.tscn1967576168.tmp",
+    "game/ui/screens/screen_boot.gd1780515971.tmp",
+    "game/projectiles/laser/telegraphed_yellow_laser.tscn1539971161.tmp",
     "TODO.md",
+    "scratch.md",
     "game/assets/projectiles/yellow_laser_cap_particle.png",
     "game/assets/projectiles/yellow_laser_cap.png",
     "game/assets/shapes/yellow_circle_dark_outline_small.png",

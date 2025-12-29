@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8q47r5innqe4"]
+
+[ext_resource type="Script" uid="uid://dh56xht6ae85v" path="res://ui/screens/screen_boot.gd" id="1_kljmq"]
+
+[node name="ScreenBoot" type="CanvasLayer"]
+script = ExtResource("1_kljmq")

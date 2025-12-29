@@ -1,7 +1,14 @@
+- [ ] Release Touches
+	- [ ] Loading Screen for first load
+		- [ ] BootScreen
+		- [ ] Remember has been opened
+	- [ ] license file
+	- [ ] controls instruction/ui
+- [ ] Release Touches+
+	- [ ] health bar for last hit
+	- [ ] pause screen reset
 - [ ] Warp Sound
 - [ ] Star background
-- [ ] pause screen reset
-- [ ] health bar for last hit
 - [x] self defense attacks from base
 - [ ] Bases can summon help
 - [ ] change upgrades to validate stats at end
