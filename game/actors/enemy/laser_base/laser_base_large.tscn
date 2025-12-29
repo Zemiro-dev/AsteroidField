@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddaq8clvumn2m"]
+
+[ext_resource type="PackedScene" uid="uid://dqategr8qawcg" path="res://actors/enemy/laser_base/laser_base_medium.tscn" id="1_vth7d"]
+[ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="2_dxg3d"]
+[ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="3_h4gsb"]
+[ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="4_y1tlt"]
+[ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="5_4aykq"]
+[ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="6_bkuet"]
+[ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="7_w5peo"]
+
+[sub_resource type="Resource" id="Resource_m4xex"]
+resource_local_to_scene = true
+script = ExtResource("2_dxg3d")
+max_health = 10000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_dxg3d"]
+resource_local_to_scene = true
+script = ExtResource("5_4aykq")
+explosion_scene = ExtResource("3_h4gsb")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("4_y1tlt")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("6_bkuet")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_h4gsb"]
+resource_local_to_scene = true
+script = ExtResource("7_w5peo")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[node name="LaserBaseLarge" instance=ExtResource("1_vth7d")]
+damagable = SubResource("Resource_m4xex")
+on_death_handler = SubResource("Resource_dxg3d")
+tween_damaged = SubResource("Resource_h4gsb")
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+scale = Vector2(2, 2)
+
+[node name="Body" parent="." index="1"]
+scale = Vector2(2, 2)

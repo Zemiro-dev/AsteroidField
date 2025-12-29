@@ -6,12 +6,8 @@ extends Node2D
 @onready var ui: PlayerResourceUi = $UI
 @onready var death_reset: DeathReset = $DeathReset
 @onready var upgrade_screen: UpgradeScreen = $UpgradeScreen
-
-@onready var target_dummy: TargetDummy = $Enemies/TargetDummy
-@onready var target_dummy_2: TargetDummy = $Enemies/TargetDummy2
-@onready var target_dummy_3: TargetDummy = $Enemies/TargetDummy3
-@onready var target_dummy_4: TargetDummy = $Enemies/TargetDummy4
-@onready var target_dummy_5: TargetDummy = $Enemies/TargetDummy5
+@onready var goal_enemies: Node2D = $GoalEnemies
+var death_count_goal := 0
 var death_count = 0
 
 func _ready() -> void:
@@ -19,19 +15,17 @@ func _ready() -> void:
 	ui.bind_to_player(player)
 	death_reset.bind_to_player(player)
 	upgrade_screen.bind_to_player(player)
-	watch_dummy(target_dummy)
-	watch_dummy(target_dummy_2)
-	watch_dummy(target_dummy_3)
-	watch_dummy(target_dummy_4)
-	watch_dummy(target_dummy_5)
+	for child in goal_enemies.get_children():
+		var damagable := GameActor.get_damagable(child)
+		if damagable:
+			watch_damagable(child, damagable)
 
-func watch_dummy(target_dummy: TargetDummy) -> void:
-	var d := GameActor.get_damagable(target_dummy)
-	if d:
-		player.add_goal(target_dummy)
-		d.on_death.connect(
-			func(actor: Node2D):
-				death_count += 1
-				if death_count == 5:
-					GlobalSignals.request_game_win.emit()
-		)
+func watch_damagable(body: Node2D, damagable: BaseDamagable) -> void:
+	player.add_goal(body)
+	death_count_goal += 1
+	damagable.on_death.connect(
+		func(actor: Node2D):
+			death_count += 1
+			if death_count >= death_count_goal:
+				GlobalSignals.request_game_win.emit()
+	)

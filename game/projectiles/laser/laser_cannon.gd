@@ -7,7 +7,7 @@ enum FiringStyle { AT_REPEATING, ROTATING }
 @onready var laser_container: Node2D = $LaserContainer
 
 ## Will this cannon fire lasers
-@export var active := true
+@export var active := true : set = set_active
 ## The firing style this laser cannon should use.
 @export var firing_style := FiringStyle.AT_REPEATING
 ## Offset to place new lasers at
@@ -20,6 +20,12 @@ enum FiringStyle { AT_REPEATING, ROTATING }
 ## 0.0 then the cast time is infinite and the state must be switched to cooldown
 ## manually
 @export var laser_cast_time_max := 5.
+## Time to show warning before activating laser, in seconds
+@export var laser_warning_time_max := 2.
+## The linear acceleration for the warning particles
+@export var laser_warning_linear_accel := 500.
+## Max length of the laser in pixel
+@export var laser_max_length := 500.0
 var lasers: Array[TelegraphedLaser] = [] 
 var laser_pivots: Array[Node2D] = []
 
@@ -48,19 +54,31 @@ var targets: Array[Target] = []
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exit)
 	## Add the lasers and pivots to the laser_container
 	for i in range(laser_pool_count):
 		if laser_scene and laser_scene.can_instantiate():
 			var laser_pivot := Node2D.new()
 			var laser := laser_scene.instantiate()
-			lasers.append(laser)
-			laser_pivots.append(laser_pivot)
-			laser_pivot.add_child(laser)
-			laser_container.add_child(laser_pivot)
-			laser.position += laser_pivot_offset
-			laser.cast_time_max = laser_cast_time_max
-			laser_pivot.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
+			if laser is TelegraphedLaser:
+				lasers.append(laser)
+				laser_pivots.append(laser_pivot)
+				laser_pivot.add_child(laser)
+				laser_container.add_child(laser_pivot)
+				laser.position += laser_pivot_offset
+				laser.cast_time_max = laser_cast_time_max
+				laser.warning_time_max = laser_warning_time_max
+				laser.max_length = laser_max_length
+				laser.warning_linear_accel = laser_warning_linear_accel
+				laser_pivot.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 
+
+func set_active(new_value: bool) -> void:
+	if !new_value:
+		for laser in lasers:
+			if laser.state != TelegraphedLaser.LaserState.INACTIVE:
+				laser.state = TelegraphedLaser.LaserState.COOLDOWN
+	active = new_value
 
 func _physics_process(delta: float) -> void:
 	if activation_cooldown_remaining > 0.:

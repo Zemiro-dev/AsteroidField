@@ -5,5 +5,4 @@
 
 [node name="SoundExplosionBase" instance=ExtResource("1_5vnpw")]
 stream = ExtResource("2_yqbod")
-volume_db = -8.0
 one_shot = true

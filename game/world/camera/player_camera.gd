@@ -9,7 +9,6 @@ var shake_strength := 0.0
 var shake_timer := 0.0
 var player: Player:
 	set(value):
-		position = value.global_position
 		player = value
 
 

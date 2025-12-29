@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=3 uid="uid://dqategr8qawcg"]
+
+[ext_resource type="Script" uid="uid://bi7l5ruhlhpun" path="res://actors/enemy/laser_base/laser_base.gd" id="1_axfdt"]
+[ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="2_tbqih"]
+[ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="3_f7dr1"]
+[ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="4_rs0m4"]
+[ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="5_as35t"]
+[ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="6_cd6tx"]
+[ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="7_avk4d"]
+[ext_resource type="Texture2D" uid="uid://cd8pqsfredfid" path="res://assets/enemy/target_dummy/target_dummy_body.png" id="8_28dfa"]
+
+[sub_resource type="Resource" id="Resource_imnch"]
+resource_local_to_scene = true
+script = ExtResource("2_tbqih")
+max_health = 1000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_l1pdx"]
+resource_local_to_scene = true
+script = ExtResource("5_as35t")
+explosion_scene = ExtResource("3_f7dr1")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("4_rs0m4")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("6_cd6tx")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_u18k8"]
+resource_local_to_scene = true
+script = ExtResource("7_avk4d")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Animation" id="Animation_ncp7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8mhx6"]
+resource_name = "die"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"disable_cannons"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionPolygon2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u4e7r"]
+_data = {
+&"RESET": SubResource("Animation_ncp7s"),
+&"die": SubResource("Animation_8mhx6")
+}
+
+[node name="LaserBaseMedium" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_axfdt")
+damagable = SubResource("Resource_imnch")
+on_death_handler = SubResource("Resource_l1pdx")
+tween_damaged = SubResource("Resource_u18k8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-71, 0, -35, -62, 35, -62, 71, 0, 35, 62, -35, 62)
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("8_28dfa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u4e7r")
+}

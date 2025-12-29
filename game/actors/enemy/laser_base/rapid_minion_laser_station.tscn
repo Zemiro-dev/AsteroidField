@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://cbtqhm8ykvw2b"]
+
+[ext_resource type="PackedScene" uid="uid://bpc4ah537oxqa" path="res://actors/enemy/laser_base/laser_base_small.tscn" id="1_jo2jd"]
+[ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="2_d04sb"]
+[ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="3_1rhe2"]
+[ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="4_cin2l"]
+[ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="5_aiqxx"]
+[ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="6_ydoxb"]
+[ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="7_suxyp"]
+[ext_resource type="PackedScene" uid="uid://c14kgjhddxhi6" path="res://projectiles/laser/laser_cannon.tscn" id="8_d04sb"]
+
+[sub_resource type="Resource" id="Resource_sf60e"]
+resource_local_to_scene = true
+script = ExtResource("2_d04sb")
+max_health = 500
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_0brkn"]
+resource_local_to_scene = true
+script = ExtResource("5_aiqxx")
+explosion_scene = ExtResource("3_1rhe2")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("4_cin2l")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("6_ydoxb")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_egblo"]
+resource_local_to_scene = true
+script = ExtResource("7_suxyp")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rhe2"]
+radius = 800.0
+
+[node name="RapidMinionLaserStation" instance=ExtResource("1_jo2jd")]
+damagable = SubResource("Resource_sf60e")
+on_death_handler = SubResource("Resource_0brkn")
+tween_damaged = SubResource("Resource_egblo")
+
+[node name="LaserCannon" parent="." index="3" instance=ExtResource("8_d04sb")]
+laser_pool_count = 16
+laser_cast_time_max = 0.5
+laser_warning_time_max = 0.75
+laser_max_length = 1000.0
+target_lock_time = 0.5
+activation_cooldown = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserCannon" index="1"]
+shape = SubResource("CircleShape2D_1rhe2")

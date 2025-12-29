@@ -1,4 +1,4 @@
-[gd_scene load_steps=313 format=3 uid="uid://bbuskrf64e2ou"]
+[gd_scene load_steps=339 format=3 uid="uid://bbuskrf64e2ou"]
 
 [ext_resource type="Script" uid="uid://1up1n1hyns4f" path="res://world/debug/debug_world_a.gd" id="1_h35gt"]
 [ext_resource type="Texture2D" uid="uid://d2bvdt72cdv1b" path="res://assets/debug/grid_background.png" id="1_n85cx"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://be2rx3v6u8nhq" path="res://world/asteroids/asteroid_with_path.tscn" id="3_r18ru"]
 [ext_resource type="PackedScene" uid="uid://cj6bxuyylc1xc" path="res://world/containers/free_projectile_container.tscn" id="4_6ubl6"]
 [ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="4_fn8aq"]
-[ext_resource type="PackedScene" uid="uid://sbfur265ybyr" path="res://actors/enemy/target_dummy/target_dummy.tscn" id="4_lsna4"]
 [ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="5_38n11"]
 [ext_resource type="PackedScene" uid="uid://bpexwtnvt8ije" path="res://world/asteroids/asteroid_a.tscn" id="5_be6b7"]
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="5_pudvl"]
@@ -25,10 +24,11 @@
 [ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="17_4qwbx"]
 [ext_resource type="PackedScene" uid="uid://c14kgjhddxhi6" path="res://projectiles/laser/laser_cannon.tscn" id="18_6cor7"]
 [ext_resource type="PackedScene" uid="uid://1f8ltc8r7lab" path="res://actors/destructible/worthless_large_destructible.tscn" id="18_ajp5a"]
-[ext_resource type="Texture2D" uid="uid://belcp0sxesfx" path="res://assets/projectiles/yellow_laser_cap_particle.png" id="18_gm4il"]
+[ext_resource type="PackedScene" uid="uid://dqategr8qawcg" path="res://actors/enemy/laser_base/laser_base_medium.tscn" id="18_gm4il"]
 [ext_resource type="PackedScene" uid="uid://co6p4i708qfli" path="res://actors/destructible/xp_rich_destructible.tscn" id="18_qi3qa"]
 [ext_resource type="PackedScene" uid="uid://fsyucuwjstyu" path="res://actors/destructible/worthless_small_destructible.tscn" id="19_4n2ey"]
 [ext_resource type="PackedScene" uid="uid://j2rqvedttth7" path="res://collectibles/collectible_xp_large.tscn" id="19_dse6n"]
+[ext_resource type="PackedScene" uid="uid://cbtqhm8ykvw2b" path="res://actors/enemy/laser_base/rapid_minion_laser_station.tscn" id="19_gm4il"]
 [ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/player_camera.gd" id="20_5hfsr"]
 [ext_resource type="PackedScene" uid="uid://dd3vyk0j5o871" path="res://actors/destructible/health_rich_destructible.tscn" id="20_ytl8k"]
 [ext_resource type="PackedScene" uid="uid://dyebjuf3hi375" path="res://collectibles/collectible_health_large.tscn" id="21_ajp5a"]
@@ -38,14 +38,14 @@
 [ext_resource type="PackedScene" uid="uid://vllh1g1mt2xn" path="res://ui/screens/pause_screen.tscn" id="27_x0rwi"]
 [ext_resource type="PackedScene" uid="uid://bhblea01cgtii" path="res://ui/screens/upgrade_screen.tscn" id="31_dse6n"]
 
-[sub_resource type="Resource" id="Resource_fn8aq"]
+[sub_resource type="Resource" id="Resource_ubfyp"]
 resource_local_to_scene = true
 script = ExtResource("4_fn8aq")
-max_health = 1000
+max_health = 3000
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
-[sub_resource type="Resource" id="Resource_60o0b"]
+[sub_resource type="Resource" id="Resource_qm2uh"]
 resource_local_to_scene = true
 script = ExtResource("6_50rxm")
 explosion_scene = ExtResource("5_38n11")
@@ -56,20 +56,23 @@ xp_drop_scene = ExtResource("13_6smsd")
 max_collectible_delta = 50.0
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
-[sub_resource type="Resource" id="Resource_ytl8k"]
+[sub_resource type="Resource" id="Resource_keuh3"]
 resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 
-[sub_resource type="Resource" id="Resource_44p8q"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ua10i"]
+radius = 800.0
+
+[sub_resource type="Resource" id="Resource_1thj5"]
 resource_local_to_scene = true
 script = ExtResource("4_fn8aq")
 max_health = 500
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
-[sub_resource type="Resource" id="Resource_qi3qa"]
+[sub_resource type="Resource" id="Resource_34xt4"]
 resource_local_to_scene = true
 script = ExtResource("6_50rxm")
 explosion_scene = ExtResource("5_38n11")
@@ -80,31 +83,7 @@ xp_drop_scene = ExtResource("13_6smsd")
 max_collectible_delta = 50.0
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
-[sub_resource type="Resource" id="Resource_dse6n"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_6smsd"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 500
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_ajp5a"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-chance_to_spawn_health = 1.0
-health_drop_scene = ExtResource("15_dse6n")
-change_to_spawn_xp = 1.0
-xp_drop_scene = ExtResource("13_6smsd")
-max_collectible_delta = 50.0
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_4n2ey"]
+[sub_resource type="Resource" id="Resource_unxg3"]
 resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
@@ -113,31 +92,7 @@ metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 [sub_resource type="Resource" id="Resource_gm4il"]
 resource_local_to_scene = true
 script = ExtResource("4_fn8aq")
-max_health = 27000
-max_invulnerability_time = 0.0
-metadata/_custom_type_script = "uid://lrbq0gpybxmg"
-
-[sub_resource type="Resource" id="Resource_1thj5"]
-resource_local_to_scene = true
-script = ExtResource("6_50rxm")
-explosion_scene = ExtResource("5_38n11")
-chance_to_spawn_health = 1.0
-health_drop_scene = ExtResource("15_dse6n")
-change_to_spawn_xp = 1.0
-xp_drop_scene = ExtResource("13_6smsd")
-max_collectible_delta = 50.0
-metadata/_custom_type_script = "uid://cxcn7u635ub72"
-
-[sub_resource type="Resource" id="Resource_34xt4"]
-resource_local_to_scene = true
-script = ExtResource("5_pudvl")
-damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
-metadata/_custom_type_script = "uid://cimfmvdmucw8r"
-
-[sub_resource type="Resource" id="Resource_unxg3"]
-resource_local_to_scene = true
-script = ExtResource("4_fn8aq")
-max_health = 100
+max_health = 500
 max_invulnerability_time = 0.0
 metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 
@@ -158,8 +113,155 @@ script = ExtResource("5_pudvl")
 damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1thj5"]
-radius = 628.08
+[sub_resource type="Resource" id="Resource_ua10i"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 3000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_xxspd"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_km3pt"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_wr77j"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 3000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_61r76"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_05d18"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_6ckp7"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 1000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_4vcer"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_80142"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_dxnl1"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 2000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_xkcx3"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_x5tmn"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j4abi"]
+radius = 1500.0
+
+[sub_resource type="Resource" id="Resource_j4abi"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 2000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_cm4it"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_52lqs"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_xhj5w"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 2000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_kh3ow"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+explosion_scene = ExtResource("5_38n11")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_qp7ja"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gm4il"]
+radius = 1000.0
 
 [sub_resource type="Resource" id="Resource_u2txi"]
 resource_local_to_scene = true
@@ -386,6 +488,29 @@ max_collectible_delta = 25.0
 metadata/_custom_type_script = "uid://cxcn7u635ub72"
 
 [sub_resource type="Resource" id="Resource_aaqe3"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_3fam4"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_dt78i"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("15_dse6n")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("19_dse6n")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_4fptu"]
 resource_local_to_scene = true
 script = ExtResource("5_pudvl")
 damaged_color = Color(0, 0.945098, 0.952941, 1)
@@ -2116,6 +2241,75 @@ script = ExtResource("5_pudvl")
 damaged_color = Color(0, 0.945098, 0.952941, 1)
 metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 
+[sub_resource type="Resource" id="Resource_ywmk5"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_d05yt"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("21_ajp5a")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 20.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_mdgs3"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_3uwa6"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_1xrei"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("21_ajp5a")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 20.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_b8f60"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_mr1gj"]
+resource_local_to_scene = true
+script = ExtResource("4_fn8aq")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_ae6vd"]
+resource_local_to_scene = true
+script = ExtResource("6_50rxm")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("21_ajp5a")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("13_6smsd")
+max_collectible_delta = 20.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_bb86w"]
+resource_local_to_scene = true
+script = ExtResource("5_pudvl")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
 [sub_resource type="Resource" id="Resource_fw0c5"]
 resource_local_to_scene = true
 script = ExtResource("16_g36r6")
@@ -2147,7 +2341,7 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 script = ExtResource("1_h35gt")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-position = Vector2(-1011, 1902)
+position = Vector2(-993, 1575)
 process_callback = 0
 drag_left_margin = 0.05
 drag_top_margin = 0.05
@@ -2875,165 +3069,279 @@ position = Vector2(3168, 10575)
 
 [node name="FreeEnemyContainer" parent="." instance=ExtResource("9_6smsd")]
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="HunterSpawners" type="Node2D" parent="."]
 
-[node name="TargetDummy" parent="Enemies" instance=ExtResource("4_lsna4")]
-position = Vector2(2493, -1917)
-scale = Vector2(1.7, 1.7)
-collision_mask = 3
-damagable = SubResource("Resource_fn8aq")
-on_death_handler = SubResource("Resource_60o0b")
-tween_damaged = SubResource("Resource_ytl8k")
-
-[node name="HunterSpawner" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(1876, 647)
 
-[node name="HunterSpawner2" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner2" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(3215, 52)
 
-[node name="HunterSpawner3" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner3" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(1287, -1065)
 
-[node name="HunterSpawner5" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner5" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(135, -2334)
 
-[node name="HunterSpawner6" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner6" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(3413, -2234)
 
-[node name="HunterSpawner7" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner7" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(1631, -1988)
 
-[node name="HunterSpawner8" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner8" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(2550, -1114)
 
-[node name="HunterSpawner9" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner9" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(1966, 5734)
 
-[node name="HunterSpawner10" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner10" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(2745, 5734)
 
-[node name="HunterSpawner11" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner11" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(3, 4550)
 
-[node name="HunterSpawner25" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner25" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(-894, 11761)
 
-[node name="HunterSpawner26" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner26" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(3201, 14781)
 
-[node name="HunterSpawner27" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner27" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(6676, 9878)
 
-[node name="HunterSpawner28" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner28" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(-2178, 10195)
 
-[node name="HunterSpawner29" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner29" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(-521, 7104)
 
-[node name="HunterSpawner30" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner30" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(11551, 9901)
 
-[node name="HunterSpawner31" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner31" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(9860, 6873)
 
-[node name="HunterSpawner32" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(8699, 2367)
+[node name="HunterSpawner32" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(9106, 3311)
 
-[node name="HunterSpawner33" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(8606, -699)
+[node name="HunterSpawner33" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(8305, -1928)
 
-[node name="HunterSpawner34" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner34" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(6353, -4252)
 
-[node name="HunterSpawner35" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner35" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(1824, -6365)
 
-[node name="HunterSpawner36" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner36" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(-3286, -5496)
 
-[node name="HunterSpawner37" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner37" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(-6403, -3478)
 
-[node name="HunterSpawner12" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner12" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(5381, 2018)
 
-[node name="HunterSpawner13" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner13" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(4192, 4991)
 
-[node name="HunterSpawner14" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner14" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(5566, 3533)
 
-[node name="HunterSpawner15" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner15" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(2341, 4218)
 scale = Vector2(0.998352, 1)
 
-[node name="HunterSpawner16" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner16" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(1376, 2650)
 scale = Vector2(0.998352, 1)
 
-[node name="HunterSpawner17" parent="Enemies" instance=ExtResource("11_k2vu7")]
+[node name="HunterSpawner17" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
 position = Vector2(3890, 2297)
 
-[node name="TargetDummy2" parent="Enemies" instance=ExtResource("4_lsna4")]
-position = Vector2(2341, 5538)
-damagable = SubResource("Resource_44p8q")
-on_death_handler = SubResource("Resource_qi3qa")
-tween_damaged = SubResource("Resource_dse6n")
+[node name="HunterSpawner18" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(1565.85, 10214.7)
 
-[node name="TargetDummy3" parent="Enemies" instance=ExtResource("4_lsna4")]
-position = Vector2(5628, 1742)
-damagable = SubResource("Resource_6smsd")
-on_death_handler = SubResource("Resource_ajp5a")
-tween_damaged = SubResource("Resource_4n2ey")
+[node name="HunterSpawner19" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(2564, 9751)
 
-[node name="TargetDummy4" parent="Enemies" instance=ExtResource("4_lsna4")]
-position = Vector2(4071, 10274)
-scale = Vector2(3, 3)
+[node name="HunterSpawner20" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(2560, 10916)
+
+[node name="HunterSpawner21" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(3592, 9546)
+
+[node name="HunterSpawner22" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(3500, 11188)
+
+[node name="HunterSpawner23" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(1340, 11746)
+
+[node name="HunterSpawner24" parent="HunterSpawners" instance=ExtResource("11_k2vu7")]
+position = Vector2(2874, 12062)
+
+[node name="GoalEnemies" type="Node2D" parent="."]
+
+[node name="VertexStation" parent="GoalEnemies" instance=ExtResource("18_gm4il")]
+position = Vector2(2350, 5427)
+damagable = SubResource("Resource_ubfyp")
+on_death_handler = SubResource("Resource_qm2uh")
+tween_damaged = SubResource("Resource_keuh3")
+
+[node name="LaserCannon" parent="GoalEnemies/VertexStation" instance=ExtResource("18_6cor7")]
+firing_style = 1
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 4
+laser_cast_time_max = 2.0
+laser_max_length = 600.0
+activation_laser_count = 4
+activation_cooldown = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEnemies/VertexStation/LaserCannon"]
+shape = SubResource("CircleShape2D_ua10i")
+
+[node name="LaserCannon2" parent="GoalEnemies/VertexStation" instance=ExtResource("18_6cor7")]
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 8
+laser_cast_time_max = 1.0
+laser_warning_linear_accel = 1000.0
+laser_max_length = 1000.0
+target_lock_time = 1.0
+activation_cooldown = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEnemies/VertexStation/LaserCannon2"]
+shape = SubResource("CircleShape2D_ua10i")
+
+[node name="RapidMinionLaserStation" parent="GoalEnemies" instance=ExtResource("19_gm4il")]
+position = Vector2(188, 3038)
+damagable = SubResource("Resource_1thj5")
+on_death_handler = SubResource("Resource_34xt4")
+tween_damaged = SubResource("Resource_unxg3")
+
+[node name="RapidMinionLaserStation2" parent="GoalEnemies" instance=ExtResource("19_gm4il")]
+position = Vector2(2354, 6029)
 damagable = SubResource("Resource_gm4il")
-on_death_handler = SubResource("Resource_1thj5")
-tween_damaged = SubResource("Resource_34xt4")
-
-[node name="TargetDummy5" parent="Enemies" instance=ExtResource("4_lsna4")]
-position = Vector2(462, 3457)
-damagable = SubResource("Resource_unxg3")
 on_death_handler = SubResource("Resource_8dtdm")
 tween_damaged = SubResource("Resource_f6crb")
 
-[node name="HunterSpawner18" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(1565.85, 10214.7)
+[node name="PinWheelStationCW" parent="GoalEnemies" instance=ExtResource("18_gm4il")]
+position = Vector2(5198, 1604)
+damagable = SubResource("Resource_ua10i")
+on_death_handler = SubResource("Resource_xxspd")
+tween_damaged = SubResource("Resource_km3pt")
 
-[node name="HunterSpawner19" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(2564, 9751)
-
-[node name="HunterSpawner20" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(2560, 10916)
-
-[node name="HunterSpawner21" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(3592, 9546)
-
-[node name="HunterSpawner22" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(3500, 11188)
-
-[node name="HunterSpawner23" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(1340, 11746)
-
-[node name="HunterSpawner24" parent="Enemies" instance=ExtResource("11_k2vu7")]
-position = Vector2(2874, 12062)
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemies"]
-position = Vector2(-2249.62, 2116.63)
-texture = ExtResource("18_gm4il")
-
-[node name="LaserCannon" parent="Enemies/Sprite2D" instance=ExtResource("18_6cor7")]
+[node name="LaserCannon" parent="GoalEnemies/PinWheelStationCW" instance=ExtResource("18_6cor7")]
 firing_style = 1
-laser_pivot_offset = Vector2(20, 0)
-laser_pool_count = 8
-laser_cast_time_max = 1.0
-activation_laser_count = 4
-activation_cooldown = 2.0
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 24
+laser_cast_time_max = 4.0
+laser_warning_time_max = 1.0
+laser_max_length = 800.0
+laser_rotation_step = 0.196
+activation_laser_count = 3
+target_lock_time = 1.0
+activation_cooldown = 0.25
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Sprite2D/LaserCannon"]
-shape = SubResource("CircleShape2D_1thj5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEnemies/PinWheelStationCW/LaserCannon"]
+shape = SubResource("CircleShape2D_ua10i")
+
+[node name="PinWheelStationCCW" parent="GoalEnemies" instance=ExtResource("18_gm4il")]
+position = Vector2(5772, 1618)
+damagable = SubResource("Resource_wr77j")
+on_death_handler = SubResource("Resource_61r76")
+tween_damaged = SubResource("Resource_05d18")
+
+[node name="LaserCannon" parent="GoalEnemies/PinWheelStationCCW" instance=ExtResource("18_6cor7")]
+firing_style = 1
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 24
+laser_cast_time_max = 4.0
+laser_warning_time_max = 1.0
+laser_max_length = 800.0
+laser_rotation_step = 0.196
+activation_laser_count = 3
+target_lock_time = 1.0
+activation_cooldown = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEnemies/PinWheelStationCCW/LaserCannon"]
+shape = SubResource("CircleShape2D_ua10i")
+
+[node name="RapidMinionLaserStation3" parent="GoalEnemies" instance=ExtResource("19_gm4il")]
+position = Vector2(5630, 881)
+damagable = SubResource("Resource_6ckp7")
+on_death_handler = SubResource("Resource_4vcer")
+tween_damaged = SubResource("Resource_80142")
+
+[node name="CannonStation" parent="GoalEnemies" instance=ExtResource("18_gm4il")]
+position = Vector2(2475, -1926)
+damagable = SubResource("Resource_dxnl1")
+on_death_handler = SubResource("Resource_xkcx3")
+tween_damaged = SubResource("Resource_x5tmn")
+
+[node name="LaserCannon" parent="GoalEnemies/CannonStation" instance=ExtResource("18_6cor7")]
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 3
+laser_cast_time_max = 10.0
+laser_warning_time_max = 3.0
+laser_warning_linear_accel = 4000.0
+laser_max_length = 1450.0
+target_lock_time = 1.0
+activation_cooldown = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEnemies/CannonStation/LaserCannon"]
+shape = SubResource("CircleShape2D_j4abi")
+
+[node name="CannonStation2" parent="GoalEnemies" instance=ExtResource("18_gm4il")]
+position = Vector2(1635, -1239)
+damagable = SubResource("Resource_j4abi")
+on_death_handler = SubResource("Resource_cm4it")
+tween_damaged = SubResource("Resource_52lqs")
+
+[node name="LaserCannon" parent="GoalEnemies/CannonStation2" instance=ExtResource("18_6cor7")]
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 2
+laser_cast_time_max = 10.0
+laser_warning_time_max = 3.0
+laser_warning_linear_accel = 4000.0
+laser_max_length = 1450.0
+activation_cooldown = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEnemies/CannonStation2/LaserCannon"]
+shape = SubResource("CircleShape2D_j4abi")
+
+[node name="CenterGuardStation" parent="GoalEnemies" instance=ExtResource("18_gm4il")]
+position = Vector2(2482, 3020)
+damagable = SubResource("Resource_xhj5w")
+on_death_handler = SubResource("Resource_kh3ow")
+tween_damaged = SubResource("Resource_qp7ja")
+
+[node name="LaserCannon" parent="GoalEnemies/CenterGuardStation" instance=ExtResource("18_6cor7")]
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 2
+laser_warning_time_max = 3.0
+laser_warning_linear_accel = 4000.0
+laser_max_length = 1450.0
+target_lock_time = 3.0
+activation_cooldown = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEnemies/CenterGuardStation/LaserCannon"]
+shape = SubResource("CircleShape2D_j4abi")
+
+[node name="LaserCannon2" parent="GoalEnemies/CenterGuardStation" instance=ExtResource("18_6cor7")]
+firing_style = 1
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 24
+laser_cast_time_max = 2.0
+laser_warning_time_max = 1.0
+laser_max_length = 400.0
+laser_rotation_step = 0.196
+activation_laser_count = 2
+target_lock_time = 1.0
+activation_cooldown = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEnemies/CenterGuardStation/LaserCannon2"]
+shape = SubResource("CircleShape2D_gm4il")
 
 [node name="Destructibles" type="Node2D" parent="."]
 
@@ -3096,6 +3404,13 @@ position = Vector2(-620, 1421)
 damagable = SubResource("Resource_78h8m")
 on_death_handler = SubResource("Resource_7iq1v")
 tween_damaged = SubResource("Resource_aaqe3")
+
+[node name="XpRichDestructible28" parent="Destructibles" instance=ExtResource("18_qi3qa")]
+position = Vector2(2325, 3485)
+rotation = 0.450996
+damagable = SubResource("Resource_3fam4")
+on_death_handler = SubResource("Resource_dt78i")
+tween_damaged = SubResource("Resource_4fptu")
 
 [node name="HealthRichDestructible3" parent="Destructibles" instance=ExtResource("20_ytl8k")]
 position = Vector2(3289, 8086)
@@ -3570,12 +3885,30 @@ damagable = SubResource("Resource_6n8tj")
 on_death_handler = SubResource("Resource_dedl0")
 tween_damaged = SubResource("Resource_mq3mu")
 
+[node name="HealthRichDestructible14" parent="Destructibles" instance=ExtResource("20_ytl8k")]
+position = Vector2(6066, 2354)
+damagable = SubResource("Resource_ywmk5")
+on_death_handler = SubResource("Resource_d05yt")
+tween_damaged = SubResource("Resource_mdgs3")
+
+[node name="HealthRichDestructible15" parent="Destructibles" instance=ExtResource("20_ytl8k")]
+position = Vector2(6066, 2354)
+damagable = SubResource("Resource_3uwa6")
+on_death_handler = SubResource("Resource_1xrei")
+tween_damaged = SubResource("Resource_b8f60")
+
+[node name="HealthRichDestructible16" parent="Destructibles" instance=ExtResource("20_ytl8k")]
+position = Vector2(5059, 3154)
+damagable = SubResource("Resource_mr1gj")
+on_death_handler = SubResource("Resource_ae6vd")
+tween_damaged = SubResource("Resource_bb86w")
+
 [node name="FreeParticleContainer" parent="." instance=ExtResource("3_4pxye")]
 
 [node name="FreeCollectibleContainer" parent="." instance=ExtResource("14_qi3qa")]
 
 [node name="Player" parent="." instance=ExtResource("3_n85cx")]
-position = Vector2(-1009, 1902)
+position = Vector2(-994, 1575)
 controller = SubResource("Resource_fw0c5")
 steerable = SubResource("Resource_r18ru")
 player_move_and_collide = SubResource("Resource_x0rwi")

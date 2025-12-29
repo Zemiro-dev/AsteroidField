@@ -7,13 +7,15 @@ var _tween: Tween
 var _color: Color
 
 
-func bind_to_node(node: Node2D):
+func bind_to_node(node: Node2D, node_to_tween: Node2D = null):
+	if node_to_tween == null:
+		node_to_tween = node
 	var damagable := GameActor.get_damagable(node)
-	_color = node.modulate
+	_color = node_to_tween.modulate
 	if damagable:
 		damagable.on_damage_taken.connect(
 			func(_dmg: int): 
-				tween(node, max(damagable.max_invulnerability_time, .2))
+				tween(node_to_tween, max(damagable.max_invulnerability_time, .2))
 		)
 
 

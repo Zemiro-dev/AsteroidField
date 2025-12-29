@@ -34,6 +34,8 @@ signal on_state_change(prev: LaserState, current: LaserState)
 ## Time to show warning before activating laser, in seconds
 @export var warning_time_max := 2.
 var warning_time_remaining := 0.
+## The linear acceleration for the warning particles
+@export var warning_linear_accel := 500.
 ## Max time for the laser to stay in the active state in seconds, if
 ## 0.0 then the cast time is infinite and the state must be switched to cooldown
 ## manually
@@ -93,6 +95,11 @@ func set_state(new_value: LaserState) -> void:
 	## Enter State Handlers
 	match (new_value):
 		LaserState.WARNING:
+			var pm := warning_particles.process_material 
+			if pm is ParticleProcessMaterial:
+				pm.linear_accel_max = warning_linear_accel
+				pm.linear_accel_min = warning_linear_accel
+			_set_visibility_rect(warning_particles)
 			warning_particles.emitting = true
 			warning_time_remaining = warning_time_max
 		LaserState.ACTIVE:
@@ -142,13 +149,8 @@ func _activate_beam() -> void:
 	_update_beam_effects(Vector2.ZERO)
 	for particle in beam_particles:
 		if particle is GPUParticles2D:
+			_set_visibility_rect(particle)
 			particle.emitting = true
-			var origin = -max_length - VISIBILITY_MARGIN
-			var side_length = max_length * 2.0
-			particle.visibility_rect = Rect2(
-				origin, origin,
-				side_length, side_length
-			)
 	hurtbox.monitoring = true
 	cast_time_remaining = cast_time_max
 	beam.show()
@@ -159,6 +161,15 @@ func _activate_beam() -> void:
 	if sound_tween: sound_tween.kill()
 	sound_tween = laser_loop_player.create_tween()
 	sound_tween.tween_property(laser_loop_player, "volume_db", laser_loop_max_volumn_db, growth_time * 2.).from(laser_loop_min_volumn_db)
+
+
+func _set_visibility_rect(particle: GPUParticles2D):
+	var origin = -max_length - VISIBILITY_MARGIN
+	var side_length = max_length * 2.0
+	particle.visibility_rect = Rect2(
+		origin, origin,
+		side_length, side_length
+	)
 
 
 func _deactivate_beam() -> void:
