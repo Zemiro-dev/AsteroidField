@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bx2jpl4ew27p" path="res://collectibles/collectible.tscn" id="1_lme6a"]
 [ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="2_sa61n"]
 [ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="3_qmql0"]
-[ext_resource type="AudioStream" uid="uid://cio5cwvnyikmn" path="res://assets/jukebox/health.wav" id="4_444rq"]
+[ext_resource type="AudioStream" uid="uid://dytgaiwemmurx" path="res://assets/jukebox/pickup.wav" id="4_lme6a"]
 [ext_resource type="Texture2D" uid="uid://dxxbl0p4y1fck" path="res://assets/collectibles/collectible_xp.png" id="5_lme6a"]
 
 [sub_resource type="Resource" id="Resource_t0e3j"]
@@ -26,7 +26,7 @@ radius = 17.0294
 action = 1
 action_amount = 2.0
 steerable = SubResource("Resource_t0e3j")
-collect_sound = ExtResource("4_444rq")
+collect_sound = ExtResource("4_lme6a")
 collect_sound_volumn_db = -20.0
 
 [node name="CollisionShape2D" parent="AttractionZone" index="0"]

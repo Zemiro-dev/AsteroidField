@@ -3,8 +3,8 @@ Modified from Big Structure Collision Heard from Inside by Osvoldon -- https://f
 # explosion_pop
 Modified from Distant Explosion by VanEngelen -- https://freesound.org/s/784660/ -- License: Creative Commons 0
 
-# health
-NEEDS REPLACING
+# pickup
+Health Pickup by KeshaFilm -- https://freesound.org/s/471834/ -- License: Creative Commons 0
 
 # laser_loop
 Modified from Noise Laser Zaps.wav by mju90 -- https://freesound.org/s/703337/ -- License: Creative Commons 0
@@ -20,6 +20,7 @@ Sci-Fi Survival Dreamscape by onderwish -- https://freesound.org/s/468407/ -- Li
 
 # victory
 Modified from You've succeeded (game jingle) by Rolly-SFX -- https://freesound.org/s/626259/ -- License: Creative Commons 0
+
 # zap
 Modified from Scanner Sci-Fi by smokinghotdog -- https://freesound.org/s/584918/ -- License: Creative Commons 0
 

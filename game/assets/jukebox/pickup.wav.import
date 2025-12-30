@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cio5cwvnyikmn"
-path="res://.godot/imported/health.wav-e5f04cdd7ec4a05fbd1ea87d7209555a.sample"
+uid="uid://dytgaiwemmurx"
+path="res://.godot/imported/pickup.wav-c960e131d8f6d56f126d72c49904c8cb.sample"
 
 [deps]
 
-source_file="res://assets/jukebox/health.wav"
-dest_files=["res://.godot/imported/health.wav-e5f04cdd7ec4a05fbd1ea87d7209555a.sample"]
+source_file="res://assets/jukebox/pickup.wav"
+dest_files=["res://.godot/imported/pickup.wav-c960e131d8f6d56f126d72c49904c8cb.sample"]
 
 [params]
 
