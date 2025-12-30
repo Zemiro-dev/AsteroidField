@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODO.md",
+                "file": "LICENSE/LICENSE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
-            }
-          },
-          {
-            "id": "ff1c368b13bfbee2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "scratch.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "scratch"
+              "title": "LICENSE"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.5,
-    "collapsed": true
+    "width": 248.5
   },
   "right": {
     "id": "3caf8c8b3d671c45",
@@ -185,38 +169,53 @@
       "bases:Create new base": false
     }
   },
-  "active": "ff1c368b13bfbee2",
+  "active": "614d627dd8a51a05",
   "lastOpenFiles": [
-    "game/world/debug/debug_world_a.tscn88770051.tmp",
-    "game/world/debug/debug_world_a.tscn53369186.tmp",
-    "game/world/debug/debug_world_a.tscn20032968.tmp",
-    "game/project.godot10189370.tmp",
-    "game/world/debug/debug_world_a.tscn23273071.tmp",
-    "game/project.godot9613951.tmp",
-    "game/world/debug/debug_world_a.tscn12402355.tmp",
-    "game/project.godot9899509.tmp",
-    "game/world/debug/debug_world_a.tscn3980085721.tmp",
-    "game/world/boot/world_boot.tscn3930050453.tmp",
-    "game/world/boot/world_boot.tscn3880498401.tmp",
+    "scratch/assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf",
+    "scratch/assets/fonts/Orbitron/static/Orbitron-Medium.ttf",
+    "scratch/assets/fonts/Orbitron/static/Orbitron-Regular.ttf",
+    "scratch/assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf",
+    "scratch/assets/fonts/Orbitron/static/Orbitron-Bold.ttf",
+    "scratch/assets/fonts/Orbitron/static/Orbitron-Black.ttf",
+    "scratch/assets/fonts/Quantico/OFL.txt",
+    "scratch/assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf",
+    "scratch/assets/fonts/Space_Mono/SpaceMono-Regular.ttf",
+    "scratch/assets/fonts/Space_Mono/SpaceMono-Italic.ttf",
+    "scratch/assets/fonts/Orbitron/static",
+    "scratch/assets/concept/title_card.svg",
+    "scratch/assets/concept/upgrade_ui.svg",
+    "scratch/assets/concept/test_background.svg",
+    "scratch/assets/concept/test_background.png",
+    "scratch/assets/concept/template.svg",
+    "scratch/assets/concept/hunter_drone.svg",
+    "scratch/assets/concept/target_dummy.svg",
+    "scratch/assets/concept/stat_icons.svg",
+    "scratch/assets/concept/projectiles.svg",
+    "scratch/assets/concept/player.svg",
+    "scratch/docs/Player Structure.md",
+    "scratch/docs/Physics.md",
+    "scratch/docs/Game Actors.md",
+    "scratch/docs/Colors.md",
+    "scratch/docs/Entities and Interactions.md",
+    "scratch/scratch.md",
+    "scratch/TODO.md",
+    "scratch/readme.md",
+    "scratch/idea-stash.md",
+    "gitignored/docs/Player Structure.md",
+    "gitignored/docs/Colors.md",
+    "gitignored/docs/Game Actors.md",
+    "gitignored/docs/Physics.md",
+    "gitignored/docs/Entities and Interactions.md",
+    "gitignored/readme.md",
+    "gitignored/TODO.md",
+    "gitignored/scratch.md",
+    "gitignored/idea-stash.md",
+    "LICENSE/TODO.md",
+    "readme.md",
+    "LICENSE/LICENSE.md",
+    "LICENSE/fonts/LICENSE.md",
     "TODO.md",
     "scratch.md",
-    "game/assets/projectiles/yellow_laser_cap_particle.png",
-    "game/assets/projectiles/yellow_laser_cap.png",
-    "game/assets/shapes/yellow_circle_dark_outline_small.png",
-    "assets/concept/enemy_hive.svg",
-    "assets/concept/gameplay_ui - Copy.svg",
-    "game/assets/ui/upgrades/upgrade_focusing_crystal.png",
-    "game/assets/ui/upgrades/upgrade_time_manipulator.png",
-    "game/assets/ui/upgrades/upgrade_projectile_count_up.png",
-    "game/assets/ui/upgrades/upgrade_speed_up.png",
-    "game/assets/destructible/destructible_health_rich.png",
-    "idea-stash.md",
-    "readme.md",
-    "game/addons/script-ide/README.md",
-    "docs/Physics.md",
-    "docs/Player Structure.md",
-    "docs/Game Actors.md",
-    "docs/Entities and Interactions.md",
-    "docs/Colors.md"
+    "idea-stash.md"
   ]
 }
