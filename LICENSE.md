@@ -32,5 +32,10 @@ SOFTWARE.
 # Audio
 
 See the LICENSE.md file under `..\game\assets\jukebox`
+
+Most sounds are CC0 from freesounds.org and links are in the mentioned md file. I hope good things for those creators because I certainly can't make cool noises yet.
 # Font
 See the LICENSE.md file under `..\game\assets\font`
+
+# Thanks
+Thanks to [www.kenney.nl](http://www.kenney.nl)  for some controller ui elements
