@@ -2366,6 +2366,7 @@ metadata/_custom_type_script = "uid://cimfmvdmucw8r"
 [sub_resource type="Resource" id="Resource_fw0c5"]
 resource_local_to_scene = true
 script = ExtResource("16_g36r6")
+controllable = true
 metadata/_custom_type_script = "uid://ck267f0n0aj0v"
 
 [sub_resource type="Resource" id="Resource_r18ru"]

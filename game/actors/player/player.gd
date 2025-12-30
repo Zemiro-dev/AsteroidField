@@ -24,6 +24,7 @@ signal on_boost_duration_changed(new_duration: float, max_duration: float, playe
 @export var on_death_handler: BaseOnDeathHandler
 @export var engine_sound_volumn_db: float = -20.
 @export var engine_sound_rev_speed: float = 200.
+@export var force_thruster_particle_on: bool = false
 
 var remaining_boost_duration: float = 0.0
 var is_boost_on_cd: bool = false
@@ -87,11 +88,11 @@ func _physics_process(delta: float) -> void:
 		engine_sound.volume_db = move_toward(engine_sound.volume_db, engine_sound_volumn_db, engine_sound_rev_speed * delta)
 		direction_steering.goal_vector = direction * steerable.get_max_speed()
 		steerable.steer().call(delta)
-		impulse_particles.emitting = true
+		impulse_particles.emitting = true || force_thruster_particle_on
 	else:
 		engine_sound.volume_db = move_toward(engine_sound.volume_db, -100, engine_sound_rev_speed * delta)
 		steerable.slow().call(delta)
-		impulse_particles.emitting = false
+		impulse_particles.emitting = false || force_thruster_particle_on
 	
 	player_move_and_collide.move_and_collide(self, delta)
 	

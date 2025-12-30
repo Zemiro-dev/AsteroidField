@@ -72,4 +72,8 @@ func play_sound_at(position: Vector2, stream: AudioStream, volumn_db: float = 0.
 	stream_player.global_position = position
 	stream_player.volume_db = volumn_db
 	GlobalSignals.request_sound_spawn.emit(stream_player)
-	
+
+
+func set_master_muted(muted: bool) -> void:
+	var bus_idx = AudioServer.get_bus_index('Master')
+	AudioServer.set_bus_mute(bus_idx, muted)

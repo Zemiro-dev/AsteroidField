@@ -1,0 +1,248 @@
+[gd_scene load_steps=37 format=3 uid="uid://biiwx1u881gx"]
+
+[ext_resource type="Script" uid="uid://baig6iw0ma62g" path="res://world/boot/world_boot.gd" id="1_gqtvx"]
+[ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/player_camera.gd" id="2_lfrih"]
+[ext_resource type="PackedScene" uid="uid://cj6bxuyylc1xc" path="res://world/containers/free_projectile_container.tscn" id="3_2b355"]
+[ext_resource type="PackedScene" uid="uid://c7ocpkjo8mdxd" path="res://world/containers/free_enemy_container.tscn" id="4_3ks4e"]
+[ext_resource type="PackedScene" uid="uid://b4mcxong48o84" path="res://world/containers/free_particle_container.tscn" id="5_fhgm1"]
+[ext_resource type="PackedScene" uid="uid://dneb78jrn1r0x" path="res://world/containers/free_collectible_container.tscn" id="6_7nw7v"]
+[ext_resource type="PackedScene" uid="uid://b32mttqfycxyd" path="res://actors/player/player.tscn" id="7_ohofu"]
+[ext_resource type="Script" uid="uid://ck267f0n0aj0v" path="res://actors/player/base_controller.gd" id="8_5vnpn"]
+[ext_resource type="Script" uid="uid://c7jc7uwjmfido" path="res://steering/base_steerable.gd" id="9_58aku"]
+[ext_resource type="Script" uid="uid://b0rk6sya526rp" path="res://steering/steering_strategy.gd" id="10_t52h4"]
+[ext_resource type="Script" uid="uid://djf22au03k0mc" path="res://actors/player/player_move_and_collide.gd" id="11_j8hy6"]
+[ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="12_gkhwf"]
+[ext_resource type="PackedScene" uid="uid://nwj7votb2bgb" path="res://actors/enemy/hunter_drone/hunter_spawner.tscn" id="13_58aku"]
+[ext_resource type="PackedScene" uid="uid://ddaq8clvumn2m" path="res://actors/enemy/laser_base/laser_base_large.tscn" id="14_t52h4"]
+[ext_resource type="PackedScene" uid="uid://c8evrqqc8b313" path="res://particles/explosion_base.tscn" id="15_j8hy6"]
+[ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="16_gkhwf"]
+[ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="17_tflfo"]
+[ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="18_s6w4h"]
+[ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="19_w4o6s"]
+[ext_resource type="PackedScene" uid="uid://c14kgjhddxhi6" path="res://projectiles/laser/laser_cannon.tscn" id="20_5dnnx"]
+[ext_resource type="Theme" uid="uid://bhkdalbpqdc6a" path="res://ui/theme/text-large.tres" id="21_t52h4"]
+
+[sub_resource type="Resource" id="Resource_fw0c5"]
+resource_local_to_scene = true
+script = ExtResource("8_5vnpn")
+controllable = true
+metadata/_custom_type_script = "uid://ck267f0n0aj0v"
+
+[sub_resource type="Resource" id="Resource_r18ru"]
+resource_local_to_scene = true
+script = ExtResource("9_58aku")
+base_max_speed = 500.0
+base_max_acceleration = 1250.0
+turn_around_multiplier = 3.0
+overspeed_break_force = 500.0
+steering_strategies = Array[ExtResource("10_t52h4")]([])
+metadata/_custom_type_script = "uid://c7jc7uwjmfido"
+
+[sub_resource type="Resource" id="Resource_x0rwi"]
+resource_local_to_scene = true
+script = ExtResource("11_j8hy6")
+metadata/_custom_type_script = "uid://djf22au03k0mc"
+
+[sub_resource type="Resource" id="Resource_dtx64"]
+resource_local_to_scene = true
+script = ExtResource("12_gkhwf")
+max_health = 10
+max_invulnerability_time = 0.05
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_ngdlc"]
+resource_local_to_scene = true
+script = ExtResource("12_gkhwf")
+max_health = 50000
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_tmftv"]
+resource_local_to_scene = true
+script = ExtResource("17_tflfo")
+explosion_scene = ExtResource("15_j8hy6")
+chance_to_spawn_health = 1.0
+health_drop_scene = ExtResource("16_gkhwf")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("18_s6w4h")
+max_collectible_delta = 50.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_sqtso"]
+resource_local_to_scene = true
+script = ExtResource("19_w4o6s")
+damaged_color = Color(0.87451, 0.160784, 0.207843, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yn1qd"]
+radius = 1000.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3fiec"]
+resource_local_to_scene = true
+radius = 2500.0
+
+[sub_resource type="Animation" id="Animation_58aku"]
+resource_name = "boot"
+length = 5.0
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"transition_to_main_menu"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ProgressBar:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="Animation" id="Animation_t52h4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/ProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t52h4"]
+_data = {
+&"RESET": SubResource("Animation_t52h4"),
+&"boot": SubResource("Animation_58aku")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58aku"]
+bg_color = Color(0.02, 0.02, 0.02, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t52h4"]
+bg_color = Color(0.113725, 0.113725, 0.109804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8hy6"]
+bg_color = Color(0, 0.690196, 0.952941, 1)
+
+[node name="WorldBoot" type="Node2D"]
+script = ExtResource("1_gqtvx")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+process_callback = 0
+drag_left_margin = 0.05
+drag_top_margin = 0.05
+drag_right_margin = 0.05
+drag_bottom_margin = 0.05
+script = ExtResource("2_lfrih")
+
+[node name="FreeProjectileContainer" parent="." instance=ExtResource("3_2b355")]
+
+[node name="FreeEnemyContainer" parent="." instance=ExtResource("4_3ks4e")]
+
+[node name="FreeParticleContainer" parent="." instance=ExtResource("5_fhgm1")]
+
+[node name="FreeCollectibleContainer" parent="." instance=ExtResource("6_7nw7v")]
+
+[node name="Player" parent="." instance=ExtResource("7_ohofu")]
+controller = SubResource("Resource_fw0c5")
+steerable = SubResource("Resource_r18ru")
+player_move_and_collide = SubResource("Resource_x0rwi")
+damagable = SubResource("Resource_dtx64")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="HunterSpawner" parent="Enemies" instance=ExtResource("13_58aku")]
+position = Vector2(-4, -249)
+
+[node name="LaserBaseLarge" parent="Enemies" instance=ExtResource("14_t52h4")]
+position = Vector2(0, 539)
+damagable = SubResource("Resource_ngdlc")
+on_death_handler = SubResource("Resource_tmftv")
+tween_damaged = SubResource("Resource_sqtso")
+
+[node name="AreaDefense" parent="Enemies/LaserBaseLarge" instance=ExtResource("20_5dnnx")]
+firing_style = 1
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 12
+laser_cast_time_max = 1.5
+laser_warning_time_max = 1.0
+laser_max_length = 600.0
+laser_rotation_step = 1.178
+activation_laser_count = 2
+target_lock_time = 1.0
+activation_cooldown = 0.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/LaserBaseLarge/AreaDefense"]
+visible = false
+shape = SubResource("CircleShape2D_yn1qd")
+
+[node name="LaserCannon" parent="Enemies/LaserBaseLarge" instance=ExtResource("20_5dnnx")]
+laser_pivot_offset = Vector2(40, 0)
+laser_pool_count = 12
+laser_cast_time_max = 1.5
+laser_warning_time_max = 1.0
+laser_warning_linear_accel = 6000.0
+laser_max_length = 2500.0
+target_lock_time = 3.0
+activation_cooldown = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/LaserBaseLarge/LaserCannon"]
+visible = false
+shape = SubResource("CircleShape2D_3fiec")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_t52h4")
+}
+autoplay = "boot"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_58aku")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("21_t52h4")
+text = "Loading Things"
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_t52h4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j8hy6")
+show_percentage = false
