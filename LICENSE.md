@@ -1,4 +1,8 @@
+# Asteroid Field Game Files and Image Assets
 
+Applies to files under `game` unless otherwise licensed.
+
+   Asteroid Field © 2025 by Logan Wilkerson is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
 # Game Engine
 
 This game uses Godot Engine, available under the following license:
@@ -24,7 +28,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-# Art
-# Sounds
+
+# Audio
+
+See the LICENSE.md file under `..\game\assets\jukebox`
 # Font
-See the LICENSE.md file under fonts
+See the LICENSE.md file under `..\game\assets\font`
