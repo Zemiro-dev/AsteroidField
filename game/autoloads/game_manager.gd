@@ -12,17 +12,16 @@ class InstallData extends RefCounted:
 		data.set(FIRST_LOAD, true)
 
 const INSTALL_DATA_PATH := "user://install.data"
-var install_data: InstallData
+@onready var install_data: InstallData = InstallData.new()
 
 
 func _ready() -> void:
 	GlobalSignals.request_game_win.connect(func(): game_win_count += 1)
 	var loaded_install_data := get_install_data_from_file()
-	install_data.data.assign(loaded_install_data)
+	install_data.data.merge(loaded_install_data, true)
 
 
 func get_install_data_from_file() -> Dictionary:
-	install_data = InstallData.new()
 	if not FileAccess.file_exists(INSTALL_DATA_PATH): return {}
 	
 	var install_data_file = FileAccess.open(INSTALL_DATA_PATH, FileAccess.READ)
