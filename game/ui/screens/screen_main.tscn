@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://e8354pl52w2l"]
+[gd_scene load_steps=10 format=3 uid="uid://e8354pl52w2l"]
 
 [ext_resource type="Texture2D" uid="uid://cs23671mxlh1k" path="res://assets/ui/screens/screen_main.png" id="1_faa2a"]
 [ext_resource type="Script" uid="uid://c4ek4m8ic1ax2" path="res://ui/screens/screen_main.gd" id="1_gtmg7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dysweixfc5fy3" path="res://assets/ui/screens/button_abort_normal.png" id="5_1cw8y"]
 [ext_resource type="Texture2D" uid="uid://dy244ff77web5" path="res://assets/ui/screens/button_abort_focused.png" id="6_pyvk1"]
 [ext_resource type="Theme" uid="uid://w84mrrl43phd" path="res://ui/theme/text-base.tres" id="7_ama0g"]
+[ext_resource type="Texture2D" uid="uid://4cyj4nlo2epd" path="res://assets/ui/control_instructions.png" id="8_3lkr3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdxwf"]
 texture = ExtResource("1_faa2a")
@@ -54,3 +55,7 @@ layout_mode = 2
 theme = ExtResource("7_ama0g")
 text = "a game by Zemiro"
 horizontal_alignment = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(342, 978)
+texture = ExtResource("8_3lkr3")
