@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bg4856y75n6ij"]
+[gd_scene load_steps=13 format=3 uid="uid://bg4856y75n6ij"]
 
 [ext_resource type="Script" uid="uid://d20nrltt7bjd1" path="res://ui/player_resource_ui.gd" id="1_i4qh4"]
 [ext_resource type="Texture2D" uid="uid://c0q5vh17n5duo" path="res://assets/ui/health/boost_progress_bottom.png" id="2_lvkyc"]
@@ -11,49 +11,53 @@
 [ext_resource type="Theme" uid="uid://xwss8bfpaeiq" path="res://ui/theme/text-mono-base.tres" id="9_h8h71"]
 [ext_resource type="Script" uid="uid://bqultxnjnyfd3" path="res://ui/stopwatch.gd" id="9_lvkyc"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8h71"]
+bg_color = Color(0.113725, 0.113725, 0.109804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xb8m7"]
+bg_color = Color(0.87451, 0.160784, 0.207843, 1)
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_i4qh4")
 
-[node name="Health" type="TextureProgressBar" parent="."]
-offset_left = 74.0
-offset_top = 88.0
-offset_right = 474.0
-offset_bottom = 162.0
+[node name="ResourceBarContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResourceBarContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Health" type="TextureProgressBar" parent="ResourceBarContainer/VBoxContainer"]
+layout_mode = 2
 value = 1.0
 texture_under = ExtResource("2_lvkyc")
 texture_over = ExtResource("3_h8h71")
 texture_progress = ExtResource("4_xb8m7")
 texture_progress_offset = Vector2(6, 6)
 
-[node name="Boost" type="TextureProgressBar" parent="."]
-offset_left = 74.0
-offset_top = 170.0
-offset_right = 474.0
-offset_bottom = 210.0
+[node name="Boost" type="TextureProgressBar" parent="ResourceBarContainer/VBoxContainer"]
+layout_mode = 2
 value = 100.0
 texture_under = ExtResource("5_4rm1d")
 texture_progress = ExtResource("6_37fqi")
 
-[node name="Xp" type="TextureProgressBar" parent="."]
-offset_left = 74.0
-offset_top = 208.0
-offset_right = 474.0
-offset_bottom = 248.0
+[node name="Xp" type="TextureProgressBar" parent="ResourceBarContainer/VBoxContainer"]
+layout_mode = 2
 value = 100.0
 texture_under = ExtResource("7_kvoop")
 texture_progress = ExtResource("8_86s2v")
 
-[node name="Level" type="TextureProgressBar" parent="."]
+[node name="Level" type="TextureProgressBar" parent="ResourceBarContainer/VBoxContainer"]
 modulate = Color(0, 0.376471, 0.94902, 1)
-offset_left = 74.0
-offset_top = 238.0
-offset_right = 474.0
-offset_bottom = 278.0
+layout_mode = 2
 max_value = 40.0
 texture_under = ExtResource("7_kvoop")
 texture_progress = ExtResource("8_86s2v")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="BottomRightContainer" type="MarginContainer" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -66,9 +70,27 @@ grow_vertical = 0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="StopwatchLabel" type="Label" parent="MarginContainer"]
+[node name="StopwatchLabel" type="Label" parent="BottomRightContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("9_h8h71")
 vertical_alignment = 1
 script = ExtResource("9_lvkyc")
+
+[node name="TargetResourceContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 10
+
+[node name="TargetHealth" type="ProgressBar" parent="TargetResourceContainer"]
+modulate = Color(1, 1, 1, 0.75)
+custom_minimum_size = Vector2(600, 4)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_h8h71")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xb8m7")
+show_percentage = false

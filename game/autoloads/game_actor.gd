@@ -11,7 +11,7 @@ func get_actor_type(o: Object) -> ActorType:
 		if ActorType.has(m_actor_type):
 			return m_actor_type
 	var actor_type = o.get("actor_type")
-	if actor_type != null and ActorType.has(actor_type):
+	if actor_type != null and ActorType.values().has(actor_type):
 		return actor_type
 	return ActorType.UNKNOWN
 

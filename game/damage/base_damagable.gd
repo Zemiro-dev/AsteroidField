@@ -43,6 +43,8 @@ func take_damage(damage: int) -> bool:
 	current_health -= damage
 	on_health_changed.emit(current_health, max_health)
 	on_damage_taken.emit(damage)
+	if game_actor:
+		GlobalSignals.on_actor_damaged.emit(game_actor, self)
 	if max_invulnerability_time > 0.0 and current_health > 0:
 		remaining_invulnerability_time = max_invulnerability_time
 	
