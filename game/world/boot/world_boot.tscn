@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://biiwx1u881gx"]
+[gd_scene load_steps=47 format=3 uid="uid://biiwx1u881gx"]
 
 [ext_resource type="Script" uid="uid://baig6iw0ma62g" path="res://world/boot/world_boot.gd" id="1_gqtvx"]
 [ext_resource type="Script" uid="uid://b13lta0625vob" path="res://world/camera/player_camera.gd" id="2_lfrih"]
@@ -21,6 +21,10 @@
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="19_w4o6s"]
 [ext_resource type="PackedScene" uid="uid://c14kgjhddxhi6" path="res://projectiles/laser/laser_cannon.tscn" id="20_5dnnx"]
 [ext_resource type="Theme" uid="uid://bhkdalbpqdc6a" path="res://ui/theme/text-large.tres" id="21_t52h4"]
+[ext_resource type="PackedScene" uid="uid://fsyucuwjstyu" path="res://actors/destructible/worthless_small_destructible.tscn" id="22_s6w4h"]
+[ext_resource type="PackedScene" uid="uid://cfopltgr1wfwx" path="res://particles/asteroid_explosion.tscn" id="23_w4o6s"]
+[ext_resource type="PackedScene" uid="uid://co6p4i708qfli" path="res://actors/destructible/xp_rich_destructible.tscn" id="24_5dnnx"]
+[ext_resource type="PackedScene" uid="uid://j2rqvedttth7" path="res://collectibles/collectible_xp_large.tscn" id="25_ngdlc"]
 
 [sub_resource type="Resource" id="Resource_fw0c5"]
 resource_local_to_scene = true
@@ -142,6 +146,54 @@ bg_color = Color(0.113725, 0.113725, 0.109804, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8hy6"]
 bg_color = Color(0, 0.690196, 0.952941, 1)
 
+[sub_resource type="Resource" id="Resource_yn1qd"]
+resource_local_to_scene = true
+script = ExtResource("12_gkhwf")
+max_health = 100
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_3fiec"]
+resource_local_to_scene = true
+script = ExtResource("17_tflfo")
+explosion_scene = ExtResource("23_w4o6s")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("16_gkhwf")
+change_to_spawn_xp = 0.0
+xp_drop_scene = ExtResource("18_s6w4h")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_upiby"]
+resource_local_to_scene = true
+script = ExtResource("19_w4o6s")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
+[sub_resource type="Resource" id="Resource_smuv2"]
+resource_local_to_scene = true
+script = ExtResource("12_gkhwf")
+max_health = 30
+max_invulnerability_time = 0.0
+metadata/_custom_type_script = "uid://lrbq0gpybxmg"
+
+[sub_resource type="Resource" id="Resource_ewo62"]
+resource_local_to_scene = true
+script = ExtResource("17_tflfo")
+explosion_scene = ExtResource("23_w4o6s")
+chance_to_spawn_health = 0.0
+health_drop_scene = ExtResource("16_gkhwf")
+change_to_spawn_xp = 1.0
+xp_drop_scene = ExtResource("25_ngdlc")
+max_collectible_delta = 25.0
+metadata/_custom_type_script = "uid://cxcn7u635ub72"
+
+[sub_resource type="Resource" id="Resource_aev2r"]
+resource_local_to_scene = true
+script = ExtResource("19_w4o6s")
+damaged_color = Color(0, 0.945098, 0.952941, 1)
+metadata/_custom_type_script = "uid://cimfmvdmucw8r"
+
 [node name="WorldBoot" type="Node2D"]
 script = ExtResource("1_gqtvx")
 
@@ -246,3 +298,15 @@ layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_t52h4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_j8hy6")
 show_percentage = false
+
+[node name="WorthlessSmallDestructible" parent="." instance=ExtResource("22_s6w4h")]
+position = Vector2(228, 0)
+damagable = SubResource("Resource_yn1qd")
+on_death_handler = SubResource("Resource_3fiec")
+tween_damaged = SubResource("Resource_upiby")
+
+[node name="XpRichDestructible" parent="." instance=ExtResource("24_5dnnx")]
+position = Vector2(-237, -3)
+damagable = SubResource("Resource_smuv2")
+on_death_handler = SubResource("Resource_ewo62")
+tween_damaged = SubResource("Resource_aev2r")

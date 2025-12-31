@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://fsyucuwjstyu"]
+[gd_scene load_steps=15 format=3 uid="uid://fsyucuwjstyu"]
 
 [ext_resource type="Script" uid="uid://lu127lhly6tw" path="res://actors/destructible/rich_destructible.gd" id="1_ykyyv"]
 [ext_resource type="Script" uid="uid://lrbq0gpybxmg" path="res://damage/base_damagable.gd" id="2_3qnt7"]
 [ext_resource type="PackedScene" uid="uid://bxxk5aowxxwu2" path="res://collectibles/collectible_health_small.tscn" id="3_1ufti"]
+[ext_resource type="PackedScene" uid="uid://cfopltgr1wfwx" path="res://particles/asteroid_explosion.tscn" id="3_3qnt7"]
 [ext_resource type="Script" uid="uid://cxcn7u635ub72" path="res://damage/base_on_death_handler.gd" id="4_tmeo3"]
 [ext_resource type="PackedScene" uid="uid://bojdffmgy6nd8" path="res://collectibles/collectible_xp_small.tscn" id="5_ykyyv"]
 [ext_resource type="Script" uid="uid://cimfmvdmucw8r" path="res://tweens/tween_damaged.gd" id="6_qowtj"]
@@ -18,6 +19,7 @@ metadata/_custom_type_script = "uid://lrbq0gpybxmg"
 [sub_resource type="Resource" id="Resource_jogxa"]
 resource_local_to_scene = true
 script = ExtResource("4_tmeo3")
+explosion_scene = ExtResource("3_3qnt7")
 chance_to_spawn_health = 0.0
 health_drop_scene = ExtResource("3_1ufti")
 change_to_spawn_xp = 0.0

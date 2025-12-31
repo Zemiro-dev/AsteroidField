@@ -5,6 +5,16 @@ extends Node2D
 
 
 func _ready() -> void:
+	var power := LevelableStatModifier.FocusingCrystals.new()
+	power.strength = power.max_strength
+	var speed := LevelableStatModifier.ProjectileAttackSpeedUp.new()
+	speed.strength = speed.max_strength
+	var shots := LevelableStatModifier.ProjectileBonusProjectile.new()
+	shots.strength = shots.max_strength
+	player.levelable.stat_modifiers.append(power)
+	player.levelable.stat_modifiers.append(speed)
+	player.levelable.stat_modifiers.append(shots)
+	player.levelable.calc_stats()
 	player_camera.player = player
 	player_camera.make_current()
 	player.controller.controllable = false
